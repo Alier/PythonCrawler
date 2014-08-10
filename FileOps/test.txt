@@ -1,0 +1,42 @@
+        Param1317 =
+                0,                      $ reserved, shall equal 0
+                6,"20 F6 24 01 30 80",  $ Link Path Size, Link Path
+                0x0000,                 $ Descriptor
+                0xC7,                   $ Data Type
+                2,                      $ Data Size in bytes
+                "Fa1/1 Number Dynamic MAC's from port security table",    $ name
+                "",                     $ units
+                "Dynamic MAC Port sec", $ help string
+                ,,0,                    $ min, max, default data values
+                ,,,,                    $ mult, div, base, offset scaling
+                ,,,,                    $ mult, div, base, offset links
+                ;                       $ decimal places
+        
+        Param1317 =
+                0,                      $ reserved, shall equal 0
+                6,"20 F6 24 01 30 80",  $ Link Path Size, Link Path
+                0x0000,                 $ Descriptor
+                0xC7,                   $ Data Type
+                2,                      $ Data Size in bytes
+                "Fa1/1 Number Dynamic MAC's from port security table",    $ name
+                "",                     $ units
+                "Dynamic MAC Port sec", $ help string
+                ,,0,                    $ min, max, default data values
+                ,,,,                    $ mult, div, base, offset scaling
+                ,,,,                    $ mult, div, base, offset links
+                ;                       $ decimal places
+        
+        Param2317 =
+                0,                      $ reserved, shall equal 0
+                6,"20 F6 24 01 30 80",  $ Link Path Size, Link Path
+                0x0000,                 $ Descriptor
+                0xC7,                   $ Data Type
+                2,                      $ Data Size in bytes
+                "Fa1/1 Number Dynamic MAC's from port security table",    $ name
+                "",                     $ units
+                "Dynamic MAC Port sec", $ help string
+                ,,0,                    $ min, max, default data values
+                ,,,,                    $ mult, div, base, offset scaling
+                ,,,,                    $ mult, div, base, offset links
+                ;                       $ decimal places
+
