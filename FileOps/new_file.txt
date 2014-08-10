@@ -1,0 +1,28 @@
+	Param1317:
+	jljljljl
+	"Fa1/1 kkkkk bbbb" $ name
+	mmmmmmmmm
+	end
+[1319]
+Fa1/1	Param1317:
+	jljljljljlj
+	"Fa1/2 kkkkk bbbb" $ name
+	mmmmmmmmm
+	end
+[1319]
+Fa1/2	Param2317:
+	jljljljlj
+	"Fa1/3 kkkkk bbbb" $ name
+	end
+[2319]
+Fa1/3	Param13317:
+	jljljljljjl
+	"Gi1/1 kkkkk bbbb" $ name
+	end
+[13319]
+Gi1/1	Param23317:
+	jljljljljjl
+	"SVI1 kkkkk bbbb" $ name
+	end
+[23319]
+SVI1
