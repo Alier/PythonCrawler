@@ -7,6 +7,8 @@ AssemExaPrefix = "AssemExa"
 
 NameLine_EthlnkParam = "$ name"
 EndLine_EthlnkParam = "$ decimal places"
+EndLine_EthlnkAssem = ";"
+
 EndLine_Param = "$ decimal places"
 EndLine_Assem = ";"
 EndLine_AssemExa = ";"
@@ -34,7 +36,7 @@ def get_allStartLines(firstDigitsList,ParamSeed,Prefix):
 
 #from first parameter, get interface number, which would be just the hex of this first parameter. e.g : 1 -> 01, 10->0A, and 16->10
 def get_intfNum(firstDigit):
-	print firstDigit
+	#print firstDigit
 	val = hex(firstDigit).split('x')[1]
 	if(firstDigit < 16):
 		return ("0"+val).upper()
@@ -82,18 +84,18 @@ def insert_ethlnk_param(InputFile, LastParamSeed, NewParamSeed, SampleFile):
 				Output.write(line)
 				if substr_in_str(line,startLines) :
 					started = True
-					print "START"
+					#print "START"
 					firstDigit = line.split('m')[1].split(LastParamSeed)[0]
 				if started and line.find(NameLine_EthlnkParam) > 0:
 					intfName = line.split('"')[1].split(' ')[0]
 				if started and line.find(EndLine_EthlnkParam) > 0:
 					started = False
-					print "END"
+					#print "END"
 					intfNum = get_intfNum(int(firstDigit))
 					Param = firstDigit+NewParamSeed
-					print Param
-					print intfNum
-					print intfName
+					#print Param
+					#print intfNum
+					#print intfName
 					newSection = generate_section(SampleFile,Param,intfNum,intfName)
 					Output.write(newSection)
 	Input.close()
@@ -111,25 +113,27 @@ def insert_ethlnk_assem(InputFile, LastAssemSeed, NewAssemSeed, SampleFile):
 	with open(InputFile,'r') as Input:
 		with open(outputFile,'w') as Output:
 			started = False
+			lineNum = 0
 			for line in Input:
-				intfNameLine = False
 				Output.write(line)
+				if started :
+					lineNum += 1
 				if substr_in_str(line,startLines) :
 					started = True
-					intfNameLine = True
-					print "START"
+					#print "START"
 					firstDigit = line.split('m')[1].split(LastAssemSeed)[0]
-				if started and intfNameLine :
+				if started and lineNum == 1 :
+					#print line
 					intfName = line.split('"')[1].split(' ')[0]
-					intfNameLine = False
-				if started and line.find(EndLine_EthlnkParam) > 0:
+				if started and line.find(EndLine_EthlnkAssem) > 0:
 					started = False
-					print "END"
+					#print "END"
+					lineNum = 0
 					intfNum = get_intfNum(int(firstDigit))
 					assemNum = firstDigit+NewAssemSeed
-					print assemNum
-					print intfNum
-					print intfName
+					#print assemNum
+					#print intfNum
+					#print intfName
 					newSection = generate_section(SampleFile,assemNum,intfNum,intfName)
 					Output.write(newSection)
 	Input.close()
@@ -151,7 +155,7 @@ def insert_global_feature(InputFile, LastParamNum,sectionFile,Param):
 		outputFile = InputFile+'_assem'
 		startLine = "Assem"+LastParamNum+" ="
 		endLine = EndLine_Assem
-	print startLine
+	#print startLine
 	with open(InputFile,'r') as Input:
 		with open(outputFile,'w') as Output:
 			started = False
@@ -160,10 +164,10 @@ def insert_global_feature(InputFile, LastParamNum,sectionFile,Param):
 				#print line
 				if line.find(startLine) > 0:
 					started = True
-					print "START"
+					#print "START"
 				if started and line.find(endLine) > 0:
 					started = False
-					print "END"
+					#print "END"
 					newSection = open(sectionFile,'r').read()
 					#print newSection
 					Output.write(newSection)
