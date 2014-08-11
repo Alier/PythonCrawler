@@ -1,4 +1,4 @@
-	    Assem31013 =
+        Assem31013 =
                 "IP Device Tracking auto-source fallback address",
                 "21 5F 03 24 01 30 1C",
                 ,
