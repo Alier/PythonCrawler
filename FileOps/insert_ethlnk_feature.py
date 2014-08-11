@@ -16,7 +16,7 @@ def get_first_digits(InputFile,LastParamSeed):
 
 #from first digits and seed value, form the line of "	Param[paramNum]:" for later search purpose. returns a string
 def get_SectionStartLine(firstDigit, ParamSeed):
-	return "\tParam"+firstDigit+ParamSeed+":\n"
+	return "\tParam"+firstDigit+ParamSeed+" =\n"
 
 def get_allStartLines(firstDigitsList,ParamSeed):
 	allStartLines = []
@@ -74,10 +74,8 @@ def insert_ethlnk_feature(InputFile, LastParamSeed, NewParamSeed, SampleFile):
 	outputFile = InputFile+'_new'
 	firstDigitList = get_first_digits(InputFile,LastParamSeed)
 	print firstDigitList
-	#digit_to_intfName_Map = get_firstDigit_intfName_mapping(InputFile,firstDigitList,LastParamSeed)
-	#print digit_to_intfName_Map
 	startLines = get_allStartLines(firstDigitList,LastParamSeed)
-	print startLines
+	#print startLines
 	firstDigit = 0
 	intfName = ''
 	with open(InputFile,'r') as Input:
@@ -87,13 +85,18 @@ def insert_ethlnk_feature(InputFile, LastParamSeed, NewParamSeed, SampleFile):
 				Output.write(line)
 				if line in startLines:
 					started = True
+					#print "START"
 					firstDigit = line.split('m')[1].split(LastParamSeed)[0]
 				if started and line.find(NameLineComment) > 0:
-					intfName = line.split(' ')[0].split('"')[1]
+					intfName = line.split('"')[1].split(' ')[0]
 				if started and line.find(EndLineComment) > 0:
 					started = False
+					#print "END"
 					intfNum = get_intfNum(int(firstDigit))
 					Param = firstDigit+NewParamSeed
+					#print Param
+					#print intfNum
+					#print intfName
 					newSection = generate_section(SampleFile,Param,intfNum,intfName)
 					Output.write(newSection)
 					#Output.write('\n')
