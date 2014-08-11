@@ -1,6 +1,6 @@
 import sys
 
-pattern = "param"+sys.argv[1]
+pattern = '=\n'
 f = open('lines.txt','r')
 for line in f:
 	print line
