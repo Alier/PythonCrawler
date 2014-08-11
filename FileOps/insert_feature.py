@@ -164,10 +164,10 @@ def insert_global_feature(InputFile, LastParamNum,sectionFile,Param):
 				#print line
 				if line.find(startLine) > 0:
 					started = True
-					#print "START"
+					print "START"
 				if started and line.find(endLine) > 0:
 					started = False
-					#print "END"
+					print "END"
 					newSection = open(sectionFile,'r').read()
 					#print newSection
 					Output.write(newSection)

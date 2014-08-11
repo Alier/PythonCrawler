@@ -1,9 +1,0 @@
-	Assem[PARAMNUM] =
-                "[INTFNAME] Interface Control",
-                "20 F6 24 [INTFNUM] 30 06",    $ Path
-                ,                       $ Length in bytes
-                0x0000,                 $ descriptor
-                ,,                      $ reserved
-                ,Param1234,
-                ,Param1235;
-

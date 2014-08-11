@@ -1,4 +1,4 @@
-	Param31206 =
+	    Param31206 =
                 0,                      $ reserved, shall equal 0
                 7,"21 5F 03 24 01 30 1D",    $ Link Path Size, Link Path
                 0x0000,                 $ Descriptor
@@ -43,7 +43,7 @@
                 ,,,,                    $ mult, div, base, offset links
                 ;                       $ decimal places
 	
-	Param31209 =
+	    Param31209 =
                 0,                      $ reserved, shall equal 0
                 7,"21 5F 03 24 01 30 1C",    $ Link Path Size, Link Path
                 0x0000,                 $ Descriptor
@@ -81,7 +81,7 @@
                 8,"EIP_PLATFORM_LICENSE_INSTALL_SYSTEM",
                 9,"EIP_PLATFORM_LICENSE_INSTALL_TFTP",
                 10,"EIP_PLATFORM_LICENSE_INSTALL_TEMPSYS";
-	Param31211 =
+        Param31211 =
                 0,                      $ reserved, shall equal 0
                 7,"21 5F 03 24 01 30 16",    $ Link Path Size, Link Path
                 0x4000,                 $ Descriptor
