@@ -1,17 +1,21 @@
-	Param1317:
+	Param1317 =
 	jljljljl
 	"Fa1/1 kkkkk bbbb" $ name
 	mmmmmmmmm
 	end                $ decimal places
-	Param2317:
+	Param2317 =
 	jljljljlj
 	"Fa1/3 kkkkk bbbb" $ name
 	end		   $ decimal places
-	Param17317:
+	Assem17317 =
 	jljljljljjl
 	"Gi1/1 kkkkk bbbb" $ name
 	end		   $ decimal places
-	Param27317:
+	param2317,
+	param2317,
+	param2317;
+
+	Param27317 =
 	jljljljljjl
 	"SVI1 kkkkk bbbb" $ name
 	end		  $ decimal places

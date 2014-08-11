@@ -1,0 +1,69 @@
+	Param1317:
+	jljljljl
+	"Fa1/1 kkkkk bbbb" $ name
+	mmmmmmmmm
+	end                $ decimal places
+	Param1319 =
+                0,                      $ reserved, shall equal 0
+                6,"20 F6 24 01 30 90",  $ Link Path Size, Link Path
+                0x0000,                 $ Descriptor
+                0xC7,                   $ Data Type
+                2,                      $ Data Size in bytes
+                "Fa1/1 IP Device Tracking Max",    $ name
+                "",                     $ units
+                "enable/disable IP Device Tracking with settting Maximum device number",    $ help string
+                0,50,0,                 $ min, max, default data values
+                ,,,,                    $ mult, div, base, offset scaling
+                ,,,,                    $ mult, div, base, offset links
+                ;                       $ decimal places
+	Param2317:
+	jljljljlj
+	"Fa1/3 kkkkk bbbb" $ name
+	end		   $ decimal places
+	Param2319 =
+                0,                      $ reserved, shall equal 0
+                6,"20 F6 24 02 30 90",  $ Link Path Size, Link Path
+                0x0000,                 $ Descriptor
+                0xC7,                   $ Data Type
+                2,                      $ Data Size in bytes
+                "Fa1/3 IP Device Tracking Max",    $ name
+                "",                     $ units
+                "enable/disable IP Device Tracking with settting Maximum device number",    $ help string
+                0,50,0,                 $ min, max, default data values
+                ,,,,                    $ mult, div, base, offset scaling
+                ,,,,                    $ mult, div, base, offset links
+                ;                       $ decimal places
+	Param17317:
+	jljljljljjl
+	"Gi1/1 kkkkk bbbb" $ name
+	end		   $ decimal places
+	Param17319 =
+                0,                      $ reserved, shall equal 0
+                6,"20 F6 24 11 30 90",  $ Link Path Size, Link Path
+                0x0000,                 $ Descriptor
+                0xC7,                   $ Data Type
+                2,                      $ Data Size in bytes
+                "Gi1/1 IP Device Tracking Max",    $ name
+                "",                     $ units
+                "enable/disable IP Device Tracking with settting Maximum device number",    $ help string
+                0,50,0,                 $ min, max, default data values
+                ,,,,                    $ mult, div, base, offset scaling
+                ,,,,                    $ mult, div, base, offset links
+                ;                       $ decimal places
+	Param27317:
+	jljljljljjl
+	"SVI1 kkkkk bbbb" $ name
+	end		  $ decimal places
+	Param27319 =
+                0,                      $ reserved, shall equal 0
+                6,"20 F6 24 1B 30 90",  $ Link Path Size, Link Path
+                0x0000,                 $ Descriptor
+                0xC7,                   $ Data Type
+                2,                      $ Data Size in bytes
+                "SVI1 IP Device Tracking Max",    $ name
+                "",                     $ units
+                "enable/disable IP Device Tracking with settting Maximum device number",    $ help string
+                0,50,0,                 $ min, max, default data values
+                ,,,,                    $ mult, div, base, offset scaling
+                ,,,,                    $ mult, div, base, offset links
+                ;                       $ decimal places

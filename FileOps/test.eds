@@ -36564,7 +36564,7 @@ $ */
                 0,"SWITCH_PARAM_DSM_DEFAULT",
                 1,"SWITCH_PARAM_SDM_LANBASE",
                 2,"SWITCH_PARAM_SDM_DUALV4V6";
-        Param31215 =
+	Param31215 =
                 0,                      $ reserved, shall equal 0
                 7,"21 5F 03 24 01 30 19",    $ Link Path Size, Link Path
                 0x0000,                 $ Descriptor
@@ -36583,7 +36583,7 @@ $ */
 
 
 
-        Param40000 =
+      	Param40000 =
                 0,                      $ reserved, shall equal 0
                 ,,                      $ Link Path Size, Link Path
                 0x0000,                 $ Descriptor
@@ -39447,7 +39447,7 @@ $ */
                 8,Param31207,
                 32,Param31208,
                 32,Param31209;
-        Assem31014 =
+	Assem31014 =
                 $ Need to supply full patch of license upgrade file
                 "License Install",
                 ,
@@ -39471,8 +39471,8 @@ $ */
                 1,Param1248,
                 2,Param1249,
                 3,Param1250;
-
-        Variant1151 =
+	
+	Variant1151 =
                 "Fa1/1 Broadcast fall_level",
                 "Falling level with value based on level-unit",
                 ,,,

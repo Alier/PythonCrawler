@@ -1,0 +1,130 @@
+	Param31206 =
+                0,                      $ reserved, shall equal 0
+                7,"21 5F 03 24 01 30 1D",    $ Link Path Size, Link Path
+                0x0000,                 $ Descriptor
+                0xC8,                   $ Data Type
+                4,                      $ Data Size in bytes
+                "IP Device Tracking probe interval",    $ name
+                "",                     $ units
+                "Specify the probe interval for IPDT",    $ help string
+                30,1814400,30,          $ min, max, default data values
+                ,,,,                    $ mult, div, base, offset scaling
+                ,,,,                    $ mult, div, base, offset links
+                ;                       $ decimal places
+
+        Param31207 =
+                0,                      $ reserved, shall equal 0
+                7,"21 5F 03 24 01 30 1C",    $ Link Path Size, Link Path
+                0x0000,                 $ Descriptor
+                0xC6,                   $ Data Type: UDINT
+                1,                      $ Data Size in bytes
+                "IP Device Tracking fallback enable flag",    $ name
+                "",                     $ units
+                "00 means  disabled, 01 means enabled",    $ help string
+                0,1,0,                  $ min, max, default data values
+                ,,,,                    $ mult, div, base, offset scaling
+                ,,,,                    $ mult, div, base, offset links
+                ;                       $ decimal places
+        Enum31207 =
+                00,"disabled",
+                01,"enabled";
+
+        Param31208 =
+                0,                      $ reserved, shall equal 0
+                7,"21 5F 03 24 01 30 1C",    $ Link Path Size, Link Path
+                0x0000,                 $ Descriptor
+                0xC8,                   $ Data Type
+                4,                      $ Data Size in bytes
+                "IP Device Tracking fallback ip address",    $ name
+                "32-bit integer",       $ units
+                "The device's fallback ip Network Mask.",    $ help string
+                ,,0,                    $ min, max, default data values
+                ,,,,                    $ mult, div, base, offset scaling
+                ,,,,                    $ mult, div, base, offset links
+                ;                       $ decimal places
+	
+	Param31209 =
+                0,                      $ reserved, shall equal 0
+                7,"21 5F 03 24 01 30 1C",    $ Link Path Size, Link Path
+                0x0000,                 $ Descriptor
+                0xC8,                   $ Data Type
+                4,                      $ Data Size in bytes
+                "IP Device Tracking fallback address ip mask",    $ name
+                "32-bit integer",       $ units
+                "The device's fallback ip Network Mask.",    $ help string
+                ,,0,                    $ min, max, default data values
+                ,,,,                    $ mult, div, base, offset scaling
+                ,,,,                    $ mult, div, base, offset links
+                ;                       $ decimal places
+        Param31210 =
+                0,                      $ reserved, shall equal 0
+                7,"21 5F 03 24 01 30 16",    $ Link Path Size, Link Path
+                0x4000,                 $ Descriptor
+                0xC6,                   $ Data Type
+                1,                      $ Data Size in bytes
+                "File System for license upgrade file",    $ name
+                "",                     $ units
+                "",                     $ help string
+                0,10,0,                 $ min, max, default data values
+                ,,,,                    $ mult, div, base, offset scaling
+                ,,,,                    $ mult, div, base, offset links
+                ;                       $ decimal places
+        Enum31210 =
+                0,"EIP_PLATFORM_LICENSE_INSTALL_FLASH",
+                1,"EIP_PLATFORM_LICENSE_INSTALL_FTP",
+                2,"EIP_PLATFORM_LICENSE_INSTALL_HTTP",
+                3,"EIP_PLATFORM_LICENSE_INSTALL_NUL",
+                4,"EIP_PLATFORM_LICENSE_INSTALL_NVRAM",
+                5,"EIP_PLATFORM_LICENSE_INSTALL_RCP",
+                6,"EIP_PLATFORM_LICENSE_INSTALL_SCP",
+                7,"EIP_PLATFORM_LICENSE_INSTALL_SDFLASH",
+                8,"EIP_PLATFORM_LICENSE_INSTALL_SYSTEM",
+                9,"EIP_PLATFORM_LICENSE_INSTALL_TFTP",
+                10,"EIP_PLATFORM_LICENSE_INSTALL_TEMPSYS";
+	Param31211 =
+                0,                      $ reserved, shall equal 0
+                7,"21 5F 03 24 01 30 16",    $ Link Path Size, Link Path
+                0x4000,                 $ Descriptor
+                0xD0,                   $ Data Type
+                1,                      $ Data Size in bytes
+                "File Path for license upgrade file",    $ name
+                "license_upgrade",      $ units
+                "",                     $ help string
+                0,64,"",                $ min, max, default data values
+                ,,,,                    $ mult, div, base, offset scaling
+                ,,,,                    $ mult, div, base, offset links
+                ;                       $ decimal places
+        Param31212 =
+                0,                      $ reserved, shall equal 0
+                7,"21 5F 03 24 01 30 17",    $ Link Path Size, Link Path
+                0x0010,                 $ Descriptor
+                0xC6,                   $ Data Type
+                1,                      $ Data Size in bytes
+                "Running License Level",$ name
+                "",                     $ units
+                "Get the current license level",    $ help string
+                1,3,1,                  $ min, max, default data values
+                ,,,,                    $ mult, div, base, offset scaling
+                ,,,,                    $ mult, div, base, offset links
+                ;                       $ decimal places
+        Enum31212 =
+                1,"LANLITE",
+                2,"LANBASE",
+                3,"ENHANCED_LANBASE";
+        Param31213 =
+                0,                      $ reserved, shall equal 0
+                7,"21 5F 03 24 01 30 1B",    $ Link Path Size, Link Path
+                0x4000,                 $ Descriptor
+                0xC6,                   $ Data Type
+                1,                      $ Data Size in bytes
+                "Boot License Level",   $ name
+                "",                     $ units
+                "Set the license level for next reboot",    $ help string
+                1,3,1,                  $ min, max, default data values
+                ,,,,                    $ mult, div, base, offset scaling
+                ,,,,                    $ mult, div, base, offset links
+                ;                       $ decimal places
+        Enum31213 =
+                1,"LANLITE",
+                2,"LANBASE",
+                3,"ENHANCED_LANBASE";

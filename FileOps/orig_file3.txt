@@ -1,0 +1,40 @@
+	Param1317 =
+	jljljljl
+	"Fa1/1 kkkkk bbbb" $ name
+	mmmmmmmmm
+	end                $ decimal places
+	Param2317 =
+	jljljljlj
+	"Fa1/3 kkkkk bbbb" $ name
+	end		   $ decimal places
+	Assem17317 =
+	jljljljljjl
+	"Gi1/1 kkkkk bbbb" $ name
+	end		   $ decimal places
+	param2317,
+	param2317,
+	param2317;
+	Assem31013 =
+                "IP Device Tracking auto-source fallback address",
+                "21 5F 03 24 01 30 1C",
+                ,
+                0x0002,
+                ,,
+                8,Param31207,
+                32,Param31208,
+                32,Param31209;
+	Assem31014 =
+                $ Need to supply full patch of license upgrade file
+                "License Install",
+                ,
+                ,
+                0x0000,
+                ,,
+                8,Param31210,
+                120,Param31211;
+
+
+	Param27317 =
+	jljljljljjl
+	"SVI1 kkkkk bbbb" $ name
+	end		  $ decimal places

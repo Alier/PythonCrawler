@@ -1,8 +1,9 @@
 import re
 import sys
 
-NameLineComment = "$ name"
-EndLineComment = "$ decimal places"
+NameLineMarkEthLnk = "$ name"
+EndLineMarkParam = "$ decimal places"
+EndLineMarkAssem = ";"
 
 #get the first digits of last parameters, for example, last parameter for fa1/1 is 1317, then the seed for last parameter is 317, and we'll find all these parameters for all interfaces, would be 1,2,.... 16 maybe , which in turn maps to paramters 1317,2317,...16317, etc. To get the Line Paramxxxxx which we'll use later.
 
@@ -47,7 +48,7 @@ def get_firstDigit_intfName_mapping(InputFile,firstDigitsList,LastParamSeed):
 			if line in startLines:
 				started = True
 				key = line.split('m')[1].split(LastParamSeed)[0]
-			if started and line.find(NameLineComment) > 0:
+			if started and line.find(NameLineMarkEthlnk) > 0:
 				started = False
 				value = line.split(' ')[0].split('"')[1]
 				mapping[key]=value
@@ -87,9 +88,9 @@ def insert_ethlnk_feature(InputFile, LastParamSeed, NewParamSeed, SampleFile):
 					started = True
 					#print "START"
 					firstDigit = line.split('m')[1].split(LastParamSeed)[0]
-				if started and line.find(NameLineComment) > 0:
+				if started and line.find(NameLineMarkEthlnk) > 0:
 					intfName = line.split('"')[1].split(' ')[0]
-				if started and line.find(EndLineComment) > 0:
+				if started and line.find(EndLineMarkParam) > 0:
 					started = False
 					#print "END"
 					intfNum = get_intfNum(int(firstDigit))
@@ -105,22 +106,33 @@ def insert_ethlnk_feature(InputFile, LastParamSeed, NewParamSeed, SampleFile):
 	
 #insert static section from sectionFile into specific position in InputFile
 #LastParamNum should be 31205 something like this
-def insert_param_feature(InputFile, LastParamNum,sectionFile):
+#Param is flag, if Param = True, then it's Paramxxxx feature ,otherwise, it's Assemxxxx feature
+
+def insert_global_feature(InputFile, LastParamNum,sectionFile,Param):
 	outputFile = InputFile+'_new'
-	startLine = "\tParam"+LastParamNum+" =\n"
+	startLine = " "
+	endLine = " "
+	if Param:
+		startLine = "Param"+LastParamNum+" ="
+		endLine = EndLineMarkParam
+	else:
+		startLine = "Assem"+LastParamNum+" ="
+		endLine = EndLineMarkAssem
+	print startLine
 	with open(InputFile,'r') as Input:
 		with open(outputFile,'w') as Output:
 			started = False
 			for line in Input:
 				Output.write(line)
-				if line.startswith(startLine):
+				#print line
+				if line.find(startLine) > 0:
 					started = True
 					print "START"
-				if started and line.find(EndLineComment) > 0:
+				if started and line.find(endLine) > 0:
 					started = False
 					print "END"
 					newSection = open(sectionFile,'r').read()
-					print newSection
+					#print newSection
 					Output.write(newSection)
 					#Output.write('\n')
 	Input.close()
