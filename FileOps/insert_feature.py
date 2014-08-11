@@ -69,12 +69,11 @@ def substr_in_str(curStr,subStrList):
 
 #!!!!this Routine would not work properly if the LastParam has been followed by an Enum section
 
-def insert_ethlnk_param(InputFile, LastParamSeed, NewParamSeed, SampleFile):
-	outputFile = InputFile+'_ethParam'
+def insert_ethlnk_param(InputFile, outputFile,LastParamSeed, NewParamSeed, SampleFile):
 	firstDigitList = get_first_digits(InputFile,LastParamSeed,ParamPrefix)
-	print firstDigitList
+    #print firstDigitList
 	startLines = get_allStartLines(firstDigitList,LastParamSeed,ParamPrefix)
-	print startLines
+    #print startLines
 	firstDigit = 0
 	intfName = ''
 	with open(InputFile,'r') as Input:
@@ -102,12 +101,11 @@ def insert_ethlnk_param(InputFile, LastParamSeed, NewParamSeed, SampleFile):
 	Output.close()
 
 # for adding AssemX for each interface
-def insert_ethlnk_assem(InputFile, LastAssemSeed, NewAssemSeed, SampleFile):
-	outputFile = InputFile+'_ethAssem'
+def insert_ethlnk_assem(InputFile,outputFile,LastAssemSeed, NewAssemSeed, SampleFile):
 	firstDigitList = get_first_digits(InputFile,LastAssemSeed,AssemPrefix)
-	print firstDigitList
+#print firstDigitList
 	startLines = get_allStartLines(firstDigitList,LastAssemSeed,AssemPrefix)
-	print startLines
+#print startLines
 	firstDigit = 0
 	intfName = ''
 	with open(InputFile,'r') as Input:
@@ -143,16 +141,15 @@ def insert_ethlnk_assem(InputFile, LastAssemSeed, NewAssemSeed, SampleFile):
 #LastParamNum should be 31205 something like this
 #Param is flag, if Param = True, then it's Paramxxxx feature ,otherwise, it's Assemxxxx feature
 
-def insert_global_feature(InputFile, LastParamNum,sectionFile,Param):
-	outputFile = " "
+def insert_global_feature(InputFile,outputFile,LastParamNum,sectionFile,Param):
 	startLine = " "
 	endLine = " "
 	if Param:
-		outputFile = InputFile+'_param'
+#outputFile = InputFile+'_param'
 		startLine = "Param"+LastParamNum+" ="
 		endLine = EndLine_Param
 	else:
-		outputFile = InputFile+'_assem'
+#outputFile = InputFile+'_assem'
 		startLine = "Assem"+LastParamNum+" ="
 		endLine = EndLine_Assem
 	#print startLine
@@ -164,10 +161,10 @@ def insert_global_feature(InputFile, LastParamNum,sectionFile,Param):
 				#print line
 				if line.find(startLine) > 0:
 					started = True
-					print "START"
+#print "START"
 				if started and line.find(endLine) > 0:
 					started = False
-					print "END"
+#print "END"
 					newSection = open(sectionFile,'r').read()
 					#print newSection
 					Output.write(newSection)
