@@ -1,0 +1,58 @@
+        Param31206 =
+                0,                      $ reserved, shall equal 0
+                7,"21 5F 03 24 01 30 1D",    $ Link Path Size, Link Path
+                0x0000,                 $ Descriptor
+                0xC8,                   $ Data Type
+                4,                      $ Data Size in bytes
+                "IP Device Tracking probe interval",    $ name
+                "",                     $ units
+                "Specify the probe interval for IPDT",    $ help string
+                30,1814400,30,          $ min, max, default data values
+                ,,,,                    $ mult, div, base, offset scaling
+                ,,,,                    $ mult, div, base, offset links
+                ;                       $ decimal places
+
+        Param31207 =
+                0,                      $ reserved, shall equal 0
+                7,"21 5F 03 24 01 30 1C",    $ Link Path Size, Link Path
+                0x0000,                 $ Descriptor
+                0xC6,                   $ Data Type: UDINT
+                1,                      $ Data Size in bytes
+                "IP Device Tracking fallback enable flag",    $ name
+                "",                     $ units
+                "00 means  disabled, 01 means enabled",    $ help string
+                0,1,0,                  $ min, max, default data values
+                ,,,,                    $ mult, div, base, offset scaling
+                ,,,,                    $ mult, div, base, offset links
+                ;                       $ decimal places
+        Enum31207 =
+                00,"disabled",
+                01,"enabled";
+
+        Param31208 =
+                0,                      $ reserved, shall equal 0
+                7,"21 5F 03 24 01 30 1C",    $ Link Path Size, Link Path
+                0x0000,                 $ Descriptor
+                0xC8,                   $ Data Type
+                4,                      $ Data Size in bytes
+                "IP Device Tracking fallback ip address",    $ name
+                "32-bit integer",       $ units
+                "The device's fallback ip Network Mask.",    $ help string
+                ,,0,                    $ min, max, default data values
+                ,,,,                    $ mult, div, base, offset scaling
+                ,,,,                    $ mult, div, base, offset links
+                ;                       $ decimal places
+
+        Param31209 =
+                0,                      $ reserved, shall equal 0
+                7,"21 5F 03 24 01 30 1C",    $ Link Path Size, Link Path
+                0x0000,                 $ Descriptor
+                0xC8,                   $ Data Type
+                4,                      $ Data Size in bytes
+                "IP Device Tracking fallback address ip mask",    $ name
+                "32-bit integer",       $ units
+                "The device's fallback ip Network Mask.",    $ help string
+                ,,0,                    $ min, max, default data values
+                ,,,,                    $ mult, div, base, offset scaling
+                ,,,,                    $ mult, div, base, offset links
+                ;                       $ decimal places

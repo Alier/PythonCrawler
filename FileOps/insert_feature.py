@@ -1,14 +1,22 @@
 import re
 import sys
 
-NameLineMarkEthLnk = "$ name"
-EndLineMarkParam = "$ decimal places"
-EndLineMarkAssem = ";"
+ParamPrefix = "Param"
+AssemPrefix = "Assem"
+AssemExaPrefix = "AssemExa"
+
+NameLine_EthlnkParam = "$ name"
+EndLine_EthlnkParam = "$ decimal places"
+EndLine_EthlnkAssem = ";"
+
+EndLine_Param = "$ decimal places"
+EndLine_Assem = ";"
+EndLine_AssemExa = ";"
 
 #get the first digits of last parameters, for example, last parameter for fa1/1 is 1317, then the seed for last parameter is 317, and we'll find all these parameters for all interfaces, would be 1,2,.... 16 maybe , which in turn maps to paramters 1317,2317,...16317, etc. To get the Line Paramxxxxx which we'll use later.
 
-def get_first_digits(InputFile,LastParamSeed):
-	pattern = '([0-9]*)'+LastParamSeed
+def get_first_digits(InputFile,LastParamSeed,Prefix):
+	pattern = Prefix+'([0-9]*)'+LastParamSeed+' ='
 	f = open(InputFile,'r')
 	matches = re.findall(pattern,f.read())
 	f.close()
@@ -16,44 +24,24 @@ def get_first_digits(InputFile,LastParamSeed):
 
 
 #from first digits and seed value, form the line of "	Param[paramNum]:" for later search purpose. returns a string
-def get_SectionStartLine(firstDigit, ParamSeed):
-	return "\tParam"+firstDigit+ParamSeed+" =\n"
+def get_SectionStartLine(firstDigit, ParamSeed, Prefix):
+	return Prefix+firstDigit+ParamSeed+" ="
 
-def get_allStartLines(firstDigitsList,ParamSeed):
+def get_allStartLines(firstDigitsList,ParamSeed,Prefix):
 	allStartLines = []
 	for digit in firstDigitsList:
-		allStartLines += [get_SectionStartLine(digit,ParamSeed)]
+		allStartLines += [get_SectionStartLine(digit,ParamSeed,Prefix)]
 	return allStartLines
 
 
 #from first parameter, get interface number, which would be just the hex of this first parameter. e.g : 1 -> 01, 10->0A, and 16->10
 def get_intfNum(firstDigit):
-	print firstDigit
+	#print firstDigit
 	val = hex(firstDigit).split('x')[1]
 	if(firstDigit < 16):
 		return ("0"+val).upper()
 	else:
 		return val.upper()
-
-
-#get mapping from firstDigitList to interface names. As different SKUs might have different mapping, we just use the orig file to get the mapping without analyzing the SKUs. return a dictionary of {firstDigit1:intfname1, firstDigit2:intfname2,....}
-
-def get_firstDigit_intfName_mapping(InputFile,firstDigitsList,LastParamSeed):
-	mapping = {}
-	with open(InputFile,'r') as inputFile:
-		started = False
-		key = None
-		startLines = get_allStartLines(firstDigitsList,LastParamSeed)
-		for line in inputFile:
-			if line in startLines:
-				started = True
-				key = line.split('m')[1].split(LastParamSeed)[0]
-			if started and line.find(NameLineMarkEthlnk) > 0:
-				started = False
-				value = line.split(' ')[0].split('"')[1]
-				mapping[key]=value
-	inputFile.close()
-	return mapping
 
 #return a string of the new section generated for ParamNum
 def generate_section(sampleFile,ParamNum,intfNum,intfName):
@@ -64,6 +52,14 @@ def generate_section(sampleFile,ParamNum,intfNum,intfName):
 	newText = newText.replace('[INTFNAME]',intfName)
 	return newText
 
+# return True if any substr in the subStrList can be found as part of curStr, otherwise return False
+def substr_in_str(curStr,subStrList):
+	for substr in subStrList:
+		if curStr.find(substr) > 0 :
+			return True
+
+	return False
+
 #inputs: 
 #LastParamSeed:
 #NewParamSeed:
@@ -71,12 +67,13 @@ def generate_section(sampleFile,ParamNum,intfNum,intfName):
 #SampleFile: sample feature section in file, with MACROS to be replaced
 #output: Updated EDS file with name InputFile.eds_new
 
-def insert_ethlnk_feature(InputFile, LastParamSeed, NewParamSeed, SampleFile):
-	outputFile = InputFile+'_new'
-	firstDigitList = get_first_digits(InputFile,LastParamSeed)
-	print firstDigitList
-	startLines = get_allStartLines(firstDigitList,LastParamSeed)
-	#print startLines
+#!!!!this Routine would not work properly if the LastParam has been followed by an Enum section
+
+def insert_ethlnk_param(InputFile, outputFile,LastParamSeed, NewParamSeed, SampleFile):
+	firstDigitList = get_first_digits(InputFile,LastParamSeed,ParamPrefix)
+    #print firstDigitList
+	startLines = get_allStartLines(firstDigitList,LastParamSeed,ParamPrefix)
+    #print startLines
 	firstDigit = 0
 	intfName = ''
 	with open(InputFile,'r') as Input:
@@ -84,13 +81,13 @@ def insert_ethlnk_feature(InputFile, LastParamSeed, NewParamSeed, SampleFile):
 			started = False
 			for line in Input:
 				Output.write(line)
-				if line in startLines:
+				if substr_in_str(line,startLines) :
 					started = True
 					#print "START"
 					firstDigit = line.split('m')[1].split(LastParamSeed)[0]
-				if started and line.find(NameLineMarkEthlnk) > 0:
+				if started and line.find(NameLine_EthlnkParam) > 0:
 					intfName = line.split('"')[1].split(' ')[0]
-				if started and line.find(EndLineMarkParam) > 0:
+				if started and line.find(EndLine_EthlnkParam) > 0:
 					started = False
 					#print "END"
 					intfNum = get_intfNum(int(firstDigit))
@@ -100,7 +97,43 @@ def insert_ethlnk_feature(InputFile, LastParamSeed, NewParamSeed, SampleFile):
 					#print intfName
 					newSection = generate_section(SampleFile,Param,intfNum,intfName)
 					Output.write(newSection)
-					#Output.write('\n')
+	Input.close()
+	Output.close()
+
+# for adding AssemX for each interface
+def insert_ethlnk_assem(InputFile,outputFile,LastAssemSeed, NewAssemSeed, SampleFile):
+	firstDigitList = get_first_digits(InputFile,LastAssemSeed,AssemPrefix)
+#print firstDigitList
+	startLines = get_allStartLines(firstDigitList,LastAssemSeed,AssemPrefix)
+#print startLines
+	firstDigit = 0
+	intfName = ''
+	with open(InputFile,'r') as Input:
+		with open(outputFile,'w') as Output:
+			started = False
+			lineNum = 0
+			for line in Input:
+				Output.write(line)
+				if started :
+					lineNum += 1
+				if substr_in_str(line,startLines) :
+					started = True
+					#print "START"
+					firstDigit = line.split('m')[1].split(LastAssemSeed)[0]
+				if started and lineNum == 1 :
+					#print line
+					intfName = line.split('"')[1].split(' ')[0]
+				if started and line.find(EndLine_EthlnkAssem) > 0:
+					started = False
+					#print "END"
+					lineNum = 0
+					intfNum = get_intfNum(int(firstDigit))
+					assemNum = firstDigit+NewAssemSeed
+					#print assemNum
+					#print intfNum
+					#print intfName
+					newSection = generate_section(SampleFile,assemNum,intfNum,intfName)
+					Output.write(newSection)
 	Input.close()
 	Output.close()
 	
@@ -108,17 +141,18 @@ def insert_ethlnk_feature(InputFile, LastParamSeed, NewParamSeed, SampleFile):
 #LastParamNum should be 31205 something like this
 #Param is flag, if Param = True, then it's Paramxxxx feature ,otherwise, it's Assemxxxx feature
 
-def insert_global_feature(InputFile, LastParamNum,sectionFile,Param):
-	outputFile = InputFile+'_new'
+def insert_global_feature(InputFile,outputFile,LastParamNum,sectionFile,Param):
 	startLine = " "
 	endLine = " "
 	if Param:
+#outputFile = InputFile+'_param'
 		startLine = "Param"+LastParamNum+" ="
-		endLine = EndLineMarkParam
+		endLine = EndLine_Param
 	else:
+#outputFile = InputFile+'_assem'
 		startLine = "Assem"+LastParamNum+" ="
-		endLine = EndLineMarkAssem
-	print startLine
+		endLine = EndLine_Assem
+	#print startLine
 	with open(InputFile,'r') as Input:
 		with open(outputFile,'w') as Output:
 			started = False
@@ -127,10 +161,10 @@ def insert_global_feature(InputFile, LastParamNum,sectionFile,Param):
 				#print line
 				if line.find(startLine) > 0:
 					started = True
-					print "START"
+#print "START"
 				if started and line.find(endLine) > 0:
 					started = False
-					print "END"
+#print "END"
 					newSection = open(sectionFile,'r').read()
 					#print newSection
 					Output.write(newSection)
