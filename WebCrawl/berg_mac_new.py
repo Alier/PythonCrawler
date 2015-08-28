@@ -3,6 +3,7 @@ import time
 import os
 import re
 import webbrowser
+import httplib
 
 #import windowsSound
 
@@ -36,8 +37,10 @@ UrlList = {
 "YSL": YSLUri, 
 "SF": SFUri,
 "AlexanderWang":AlexWangUri,
-"Gucci":Gucci
+"Gucci":GucciUri
 }
+
+Patterns = ["Bag","Shoe"]
 
 BlackList=[]
 
@@ -49,7 +52,10 @@ def getItemList(url):
 	
 	req = urllib2.Request(url,headers=hdr)
 	response = urllib2.urlopen(req)
-	source = response.read()
+	try:
+		source = response.read()
+	except httplib.IncompleteRead, e:
+		source = e.partial
 	idList = re.findall(IDregex,source)
 	#print idList
 	for id in idList:
@@ -58,11 +64,14 @@ def getItemList(url):
 		cat = re.search(LinkRegex,source).group(2)
 		link = re.search(LinkRegex,source).group(3)
 		cmCat = re.search(LinkRegex,source).group(4)
-			#print productName
-			#print link
-		fulllink = "http://www.bergdorfgoodman.com/"+productName+"/prod"+id+"_cat"+cat+"__/p.prod?"+link+"&cmCat="+cmCat
-		#print fulllink
-		itemdict[id]=fulllink
+		#print productName
+		#print link
+		for pat in Patterns:
+			if pat in productName:
+				fulllink = "http://www.bergdorfgoodman.com/"+productName+"/prod"+id+"_cat"+cat+"__/p.prod?"+link+"&cmCat="+cmCat
+				#print fulllink
+				itemdict[id]=fulllink
+				break
 	return itemdict
 
 def crawlBrand():
@@ -91,7 +100,7 @@ def crawlBrand():
 						print brand + ":" + str(len(add_ids)) + " items!!!"
 						for id in add_ids:
 							if id not in BlackList:
-								link = new_itmes.get(id)
+								link = new_items.get(id)
 						    	webbrowser.open(link)
 						    	print link
 				#print old_ids

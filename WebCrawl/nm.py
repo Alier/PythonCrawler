@@ -35,9 +35,12 @@ def getItemList():
 			link = re.search(LinkRegex,source).group(2)
 			#print productName
 			#print link
-			fulllink = "http://www.neimanmarcus.com/"+productName+"/prod"+id+"_cat46520737__/p.prod?"+link+"&eItemId=prod"+id+"&cmCat=product"
+			if "Shirt" or "Pant" or "Jacket" or "Dress" in productName:
+				idList.remove(id)
+			else:
+				fulllink = "http://www.neimanmarcus.com/"+productName+"/prod"+id+"_cat46520737__/p.prod?"+link+"&eItemId=prod"+id+"&cmCat=product"
 			#print fulllink
-			itemdict[id]=fulllink
+				itemdict[id]=fulllink
 	return itemdict
 
 def crawlBrand():

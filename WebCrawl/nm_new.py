@@ -3,6 +3,7 @@ import time
 import os
 import re
 import webbrowser
+import httplib
 
 #import windowsSound
 
@@ -13,19 +14,19 @@ hdr = {'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.11 (KHTML,
        'Accept-Language': 'en-US,en;q=0.8',
        'Connection': 'keep-alive'}
 
-PradaUri = "http://www.bergdorfgoodman.com/search.jsp?N=0&from=saledi&st=s&rd=1&Ntt=Prada"
+PradaUri = "http://www.neimanmarcus.com/search.jsp?N=0&from=saledi&st=s&rd=1&Ntt=Prada"
 
-ValentinoUri = "http://www.bergdorfgoodman.com/search.jsp?N=0&from=saledi&st=s&rd=1&Ntt=Valentino"
+ValentinoUri = "http://www.neimanmarcus.com/search.jsp?N=0&from=saledi&st=s&rd=1&Ntt=Valentino"
 
-PhilipUri = "http://www.bergdorfgoodman.com/search.jsp?N=0&from=saledi&st=s&rd=1&Ntt=3.1+Phillip+Lim"
+PhilipUri = "http://www.neimanmarcus.com/search.jsp?N=0&from=saledi&st=s&rd=1&Ntt=3.1+Phillip+Lim"
 
-YSLUri = "http://www.bergdorfgoodman.com/search.jsp?N=0&from=saledi&st=s&rd=1&Ntt=Saint+Laurent"
+YSLUri = "http://www.neimanmarcus.com/search.jsp?N=0&from=saledi&st=s&rd=1&Ntt=Saint+Laurent"
 
-SFUri = "http://www.bergdorfgoodman.com/search.jsp?N=0&from=saledi&st=s&rd=1&Ntt=Salvatore+Ferragamo"
+SFUri = "http://www.neimanmarcus.com/search.jsp?N=0&from=saledi&st=s&rd=1&Ntt=Salvatore+Ferragamo"
 
-AlexWangUri = "http://www.bergdorfgoodman.com/search.jsp?N=0&from=saledi&st=s&rd=1&Ntt=Alexander+Wang"
+#AlexWangUri = "http://www.neimanmarcus.com/search.jsp?N=0&from=saledi&st=s&rd=1&Ntt=Alexander+Wang"
 
-GucciUri = "http://www.bergdorfgoodman.com/search.jsp?N=0&from=saledi&st=s&rd=1&Ntt=Gucci"
+GucciUri = "http://www.neimanmarcus.com/search.jsp?N=0&from=saledi&st=s&rd=1&Ntt=Gucci"
 #Page1 = "http://www.bergdorfgoodman.com/Handbags/Sale/cat487302_cat257221_cat000000/c.cat"
 
 #Page2 = "http://www.bergdorfgoodman.com/Sale/Shoes/Shop-All-Shoes/cat477621_cat421105_cat205700/c.cat"
@@ -35,11 +36,13 @@ UrlList = {
 "3.1 Philip Lim":PhilipUri, 
 "YSL": YSLUri, 
 "SF": SFUri,
-"AlexanderWang":AlexWangUri,
-"Gucci":Gucci
+#"AlexanderWang":AlexWangUri,
+"Gucci":GucciUri
 }
 
-BlackList=[]
+Patterns = ["Bag","Shoe"]
+
+BlackList=['175280391']
 
 def getItemList(url):
 	global testcontent
@@ -49,7 +52,11 @@ def getItemList(url):
 	
 	req = urllib2.Request(url,headers=hdr)
 	response = urllib2.urlopen(req)
-	source = response.read()
+	try:
+		source = response.read()
+	except httplib.IncompleteRead, e:
+		source = e.partial
+	#source = response.read()
 	idList = re.findall(IDregex,source)
 	#print idList
 	for id in idList:
@@ -58,11 +65,14 @@ def getItemList(url):
 		cat = re.search(LinkRegex,source).group(2)
 		link = re.search(LinkRegex,source).group(3)
 		cmCat = re.search(LinkRegex,source).group(4)
-			#print productName
-			#print link
-		fulllink = "http://www.bergdorfgoodman.com/"+productName+"/prod"+id+"_cat"+cat+"__/p.prod?"+link+"&cmCat="+cmCat
-		#print fulllink
-		itemdict[id]=fulllink
+		#print productName
+		#print link
+		for pat in Patterns:
+			if pat in productName:
+				fulllink = "http://www.neimanmarcus.com/"+productName+"/prod"+id+"_cat"+cat+"__/p.prod?"+link+"&cmCat="+cmCat
+				#print fulllink
+				itemdict[id]=fulllink
+				break
 	return itemdict
 
 def crawlBrand():
@@ -91,7 +101,7 @@ def crawlBrand():
 						print brand + ":" + str(len(add_ids)) + " items!!!"
 						for id in add_ids:
 							if id not in BlackList:
-								link = new_itmes.get(id)
+								link = new_items.get(id)
 						    	webbrowser.open(link)
 						    	print link
 				#print old_ids
