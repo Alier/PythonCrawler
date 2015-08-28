@@ -4,9 +4,10 @@ import os
 import re
 import webbrowser
 
-import windowsSound
+#import windowsSound
 
-designerList = ["31_phillip_lim","alexander_mcqueen","alexander_wang","proenza_schouler","saint_laurent","valentino"]
+designerList = ["31-phillip-lim","saint-laurent","valentino"]
+#,"alexander_mcqueen","alexander_wang","proenza_schouler","saint_laurent","valentino"]
 
 #Uri ="https://www.ssense.com/women/designers/<designer[*]>/bags"
 
@@ -31,21 +32,22 @@ def getItemList():
                 	print e.fp.read()
 		
 		source = response.read()
-		IDregex = '<a href="/women/product/'+ designer +'/.*/([0-9]*)">'
+		IDregex = ' data-product-id="([0-9]*)"'
 		idList = re.findall(IDregex,source)
 		#print idList
 		
 		for id in idList:
-			LinkRegex = '/women/product/'+ designer +'/.*/'+id
+			LinkRegex = '/en-us/women/product/'+ designer +'/.*/'+id
 			linkelem = re.findall(LinkRegex,source)
 			fulllink = "https://www.ssense.com"+linkelem[0]
+			#print fulllink
 			itemdict[id]=fulllink
 	return itemdict
 
 def crawlBrand():
 	ids = getItemList().keys()
 	#print len(ids)
-	#print ids
+	print ids
 	cntr = 0
 	flg = True
 	while True:

@@ -4,7 +4,7 @@ import os
 import re
 import webbrowser
 
-import windowsSound
+#import windowsSound
 
 hdr = {'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.64 Safari/537.11',
        'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
@@ -13,19 +13,22 @@ hdr = {'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.11 (KHTML,
        'Accept-Language': 'en-US,en;q=0.8',
        'Connection': 'keep-alive'}
 
-Page1 = "http://www.neimanmarcus.com/Sale/Handbags/cat46520737_cat980731_cat000000/c.cat?icid=SiloMain4_3_Sale_Handbags_US#endecaDrivenSiloRefinements=icid%3DSiloMain4_3_Sale_Handbags_US&userConstrainedResults=true&refinements=61,75,4294949206,4294965746,125,142,4294957485,4294965222,4294910321,518,605,&page=1&pageSize=120&sort=PCS_SORT&definitionPath=/nm/commerce/pagedef/template/EndecaDrivenHome&locationInput=&radiusInput=100&allStoresInput=false"
+Page1 = "http://www.neimanmarcus.com/Sale/Handbags/cat46520737_cat980731_cat980731/c.cat"
+Page2 = "http://www.neimanmarcus.com/Sale/Handbags/cat46520737_cat980731_cat980731/c.cat#userConstrainedResults=true&refinements=&page=2&pageSize=30&sort=PCS_SORT&definitionPath=/nm/commerce/pagedef_rwd/template/EndecaDrivenHome&locationInput=&radiusInput=100&onlineOnly=&allStoresInput=false&rwd=true&catalogId=cat46520737"
 
-UriList = [Page1]
+UriList = [Page1, Page2]
 
 def getItemList():
 	global testcontent
 	itemdict = {}
-	IDregex = '<div product_id="prod([0-9]*)"'
+	IDregex = ' product_id="prod([0-9]*)"'
 	for url in UriList:
+		print url
 		req = urllib2.Request(url,headers=hdr)
 		response = urllib2.urlopen(req)
 		source = response.read()
 		idList = re.findall(IDregex,source)
+		print idList
 		for id in idList:
 			LinkRegex = 'href=\"/(.*)/prod'+id+'_cat46520737__/p.prod?(.*)&eItemId=prod'+id+'&cmCat=product\">'
 			productName = re.search(LinkRegex,source).group(1)
@@ -51,7 +54,7 @@ def crawlBrand():
       			new_ids = new_items.keys()
 			add_ids = [i for i in new_ids if not i in ids ]
       			if(len(add_ids)):
-				windowsSound.beep(100)
+				#windowsSound.beep(100)
 				print str(len(add_ids)) + " items!!!"
 				for id in add_ids:
 	  				link = new_items.get(id)

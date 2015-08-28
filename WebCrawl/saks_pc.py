@@ -75,7 +75,7 @@ def crawlBrand():
 		ids = getItemList(source).keys()
 		brandItems[brand] = ids		
 	
-	print brandItems
+	#print brandItems
 	cntr = 0
 	flg = True
 	while True:
