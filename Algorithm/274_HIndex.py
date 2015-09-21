@@ -16,7 +16,7 @@ class Solution(object):
         if incCitations[midIndex] == countFromMid:
             return countFromMid
             
-        elif incCitations[midIndex] > countFromMid:
+        if incCitations[midIndex] > countFromMid:
             while midIndex >= 0 and incCitations[midIndex] > countFromMid:
                 midIndex -= 1
                 countFromMid += 1
