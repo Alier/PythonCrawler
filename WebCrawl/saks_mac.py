@@ -43,20 +43,27 @@ AlexanderUri = "http://www.saksfifthavenue.com/search/EndecaSearch.jsp?N=1553+42
 
 LongChampUri = "http://www.saksfifthavenue.com/search/EndecaSearch.jsp?brandLanding=true&N=1553+1714"
 
-BlackList = ['0414923887806','0442314047157','0414936894815','0454318311141','0414313053477','0442370450397','0442127697655','0400086710411','0419713581155', '0415233143262', '0419713580899','0442314080819','0442127694579','0439028152468'] 
+MCMUri = "http://www.saksfifthavenue.com/search/EndecaSearch.jsp?N=1553+4294919520&brandLanding=true"
+
+KSUri = "http://www.saksfifthavenue.com/search/EndecaSearch.jsp?N=1553+4294911028&brandLanding=true"
+
+#BlackList = ['0468237205542','0408845359084','0434011446517','0439028154349','0400086591391','0439008487726','0442314060279','0437837644402','0400087298267','0468299952729','0468237202756','0468237212601','0434036987934','0437837655125','0452428806540','0452435882087','0419713461297','0452469153498','0452446211630','0437837659383','0400087297670','0468237235105','0468295269371','0468248698340','0434044608272','0468239126272','0468248709947','0468248211792','0468248699156','0468237222693','0452446216987','0454318301210','0468237220927','0468230247259','0468238903829','0468248710905','0468237218153','0414923887806','0442314047157','0414936894815','0454318311141','0414313053477','0442370450397','0442127697655','0400086710411','0419713581155', '0415233143262', '0419713580899','0442314080819','0442127694579','0439028152468'] 
+#BlackList = ['0400477989318','0400477991304','0407212782586']
 
 #UrlList = {"Valentino":ValentinoUri}
 UrlList = {
 "Longchamp":LongChampUri,#"AlexanderMcqueen":AlexanderUri,
 "Valentino":ValentinoUri,
 "Philip": PhilipUri,
-"Tory":ToryUri,
+#"Tory":ToryUri,
 #"BV":BVUri, 
 "SF":SFUri, 
-#"Burberry":BurberryUri,
+"Burberry":BurberryUri,
 "Prada":PradaUri,
 "Gucci":GucciUri,
-"MB":MBUri
+"MB":MBUri,
+"MCM":MCMUri
+#"KS":KSUri
 }
 
 fromaddr = "aliertest238@gmail.com"
@@ -99,10 +106,14 @@ def crawlBrand():
 	print brandItems
 	cntr = 0
 	flg = True
+	#windowsOpen = False
+	
 	while True:
 		if flg:
 			time.sleep(5)	#refresh every 5 seconds
 		try:
+			count = 0
+			#print brandItems["Tory"]
 			for brand in UrlList.keys():
 				old_ids = brandItems[brand]
 				uri = UrlList.get(brand)
@@ -114,15 +125,14 @@ def crawlBrand():
 				if (len(add_ids)):
 					print brand + ":" + str(len(add_ids)) + " items!!!"
 					for id in add_ids:
-						if id not in BlackList:
+						#if id not in BlackList:
 						#print add_ids
-						    link = new_items.get(id)
-						    webbrowser.open(link)
-						    print link
+						link = new_items.get(id)
+						webbrowser.open(link)
+						print link
 				#print old_ids
 				#print new_ids
 				brandItems[brand] = new_ids
-				
 		except IOError:
 			print "Error in reading url"
 			flg=False
