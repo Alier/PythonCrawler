@@ -4,6 +4,7 @@ import os
 import re
 import webbrowser
 import httplib
+import random
 
 #import windowsSound
 
@@ -60,19 +61,18 @@ def getItemList(url):
 	idList = re.findall(IDregex,source)
 	#print idList
 	for id in idList:
-		LinkRegex = 'href=\"/(.*)/prod'+id+'_cat([0-9]*)'+'__/p.prod?(.*)&cmCat=(.*)\">'
+		LinkRegex = 'href=\"/(.*)/prod'+id+'_cat([0-9]*)'+'__/p.prod?(.*)&cmCat=search\">'
 		productName = re.search(LinkRegex,source).group(1)
 		cat = re.search(LinkRegex,source).group(2)
 		link = re.search(LinkRegex,source).group(3)
-		cmCat = re.search(LinkRegex,source).group(4)
 		#print productName
 		#print link
-		for pat in Patterns:
-			if pat in productName:
-				fulllink = "http://www.neimanmarcus.com/"+productName+"/prod"+id+"_cat"+cat+"__/p.prod?"+link+"&cmCat="+cmCat
-				#print fulllink
-				itemdict[id]=fulllink
-				break
+		#for pat in Patterns:
+		#if pat in productName:
+		fulllink = "http://www.neimanmarcus.com/"+productName+"/prod"+id+"_cat"+cat+"__/p.prod?"+link+"&cmCat=search"
+		#print fulllink
+		itemdict[id]=fulllink
+		#break
 	return itemdict
 
 def crawlBrand():
@@ -87,10 +87,13 @@ def crawlBrand():
 	flg = True
 	while True:
     		if flg:
-      			time.sleep(10)  #refresh every 5 seconds
-      		
+    			randomt = random.randint(5,30)
+    			print "sleeping "+ str(randomt)
+    			time.sleep(randomt)
       		try:
-      			for brand in UrlList.keys():
+      			brand = random.choice(UrlList.keys())
+      			if True:
+					print "brand: "+brand
 					old_ids = brandItems[brand]
 					uri = UrlList.get(brand)
 					new_items = getItemList(uri)
@@ -98,7 +101,7 @@ def crawlBrand():
 					add_ids = [i for i in new_ids if not i in old_ids]
 					#print add_ids
 					if (len(add_ids)):
-						print brand + ":" + str(len(add_ids)) + " items!!!"
+						print str(len(add_ids)) + " items!!!"
 						for id in add_ids:
 							if id not in BlackList:
 								link = new_items.get(id)
