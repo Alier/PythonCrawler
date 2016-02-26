@@ -105,7 +105,7 @@ def crawlBrand():
 						for id in add_ids:
 							if id not in BlackList:
 								link = new_items.get(id)
-						    	webbrowser.open(link)
+						    	#webbrowser.open(link)
 						    	print link
 				#print old_ids
 				#print new_ids

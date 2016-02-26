@@ -15,30 +15,36 @@ hdr = {'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.11 (KHTML,
        'Accept-Language': 'en-US,en;q=0.8',
        'Connection': 'keep-alive'}
 
-PradaUri = "http://www.neimanmarcus.com/search.jsp?N=0&from=saledi&st=s&rd=1&Ntt=Prada"
+PradabagsUri = "http://www.neimanmarcus.com/eSearch.jsp?N=4294914334+&st=s&pageSize=30&Ntt=Prada&_requestid=283851"
 
-ValentinoUri = "http://www.neimanmarcus.com/search.jsp?N=0&from=saledi&st=s&rd=1&Ntt=Valentino"
+#ValentinoUri = "http://www.neimanmarcus.com/search.jsp?N=0&from=saledi&st=s&rd=1&Ntt=Valentino"
 
-PhilipUri = "http://www.neimanmarcus.com/search.jsp?N=0&from=saledi&st=s&rd=1&Ntt=3.1+Phillip+Lim"
+VshoesUri ="http://www.neimanmarcus.com/eSearch.jsp?N=4294914357&st=s&Ntt=Valentino&from=brSearchExcep&_requestid=284940"
+VbagsUri ="http://www.neimanmarcus.com/eSearch.jsp?N=4294914334&st=s&Ntt=Valentino&from=brSearchExcep&_requestid=285151"
 
-YSLUri = "http://www.neimanmarcus.com/search.jsp?N=0&from=saledi&st=s&rd=1&Ntt=Saint+Laurent"
+PhilipbagsUri = "http://www.neimanmarcus.com/eSearch.jsp?N=4294914334&st=s&Ntt=3.1+Phillip+Lim&from=brSearchExcep&_requestid=285420"
 
-SFUri = "http://www.neimanmarcus.com/search.jsp?N=0&from=saledi&st=s&rd=1&Ntt=Salvatore+Ferragamo"
+YSLbagsUri = "http://www.neimanmarcus.com/eSearch.jsp?N=4294914334&st=s&Ntt=Saint+Laurent&from=brSearchExcep&_requestid=285635"
+
+SFshoesUri = "http://www.neimanmarcus.com/eSearch.jsp?N=4294914357&st=s&Ntt=Salvatore+Ferragamo&from=brSearchExcep&_requestid=285848"
+SFbagsUri = "http://www.neimanmarcus.com/eSearch.jsp?N=4294914334&st=s&Ntt=Salvatore+Ferragamo&from=brSearchExcep&_requestid=286096"
 
 #AlexWangUri = "http://www.neimanmarcus.com/search.jsp?N=0&from=saledi&st=s&rd=1&Ntt=Alexander+Wang"
 
-GucciUri = "http://www.neimanmarcus.com/search.jsp?N=0&from=saledi&st=s&rd=1&Ntt=Gucci"
+GuccibagsUri = "http://www.neimanmarcus.com/eSearch.jsp?N=4294914334&st=s&Ntt=Gucci&from=brSearchExcep&_requestid=286272"
 #Page1 = "http://www.bergdorfgoodman.com/Handbags/Sale/cat487302_cat257221_cat000000/c.cat"
 
 #Page2 = "http://www.bergdorfgoodman.com/Sale/Shoes/Shop-All-Shoes/cat477621_cat421105_cat205700/c.cat"
 UrlList = {
-"Prada":PradaUri,
-"Valentino":ValentinoUri,
-"3.1 Philip Lim":PhilipUri, 
-"YSL": YSLUri, 
-"SF": SFUri,
+"Prada":PradabagsUri,
+"Valentino1":VshoesUri,
+"Valentino2":VbagsUri,
+"3.1 Philip Lim":PhilipbagsUri, 
+"YSL": YSLbagsUri, 
+"SF1": SFshoesUri,
+"SF2": SFbagsUri,
 #"AlexanderWang":AlexWangUri,
-"Gucci":GucciUri
+"Gucci":GuccibagsUri
 }
 
 Patterns = ["Bag","Shoe"]
@@ -87,13 +93,13 @@ def crawlBrand():
 	flg = True
 	while True:
     		if flg:
-    			randomt = random.randint(5,30)
+    			randomt = random.randint(5,15)
     			print "sleeping "+ str(randomt)
     			time.sleep(randomt)
       		try:
-      			brand = random.choice(UrlList.keys())
-      			if True:
-					print "brand: "+brand
+      			#brand = random.choice(UrlList.keys())
+      			for brand in UrlList.keys():
+					#print "brand: "+brand
 					old_ids = brandItems[brand]
 					uri = UrlList.get(brand)
 					new_items = getItemList(uri)

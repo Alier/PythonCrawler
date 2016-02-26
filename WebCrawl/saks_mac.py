@@ -54,15 +54,21 @@ MCMUri = "http://www.saksfifthavenue.com/search/EndecaSearch.jsp?N=1553+42949195
 
 KSUri = "http://www.saksfifthavenue.com/search/EndecaSearch.jsp?N=1553+4294911028&brandLanding=true"
 
+YSLUri = "http://www.saksfifthavenue.com/search/EndecaSearch.jsp?N=1553+4294908031&brandLanding=true"
+
+MKCollectionUri = "http://www.saksfifthavenue.com/search/EndecaSearch.jsp?N=1553+4294902945&brandLanding=true"
+
+MMKUri = "http://www.saksfifthavenue.com/search/EndecaSearch.jsp?N=1553+4294917683&brandLanding=true"
+
 #BlackList = ['0468237205542','0408845359084','0434011446517','0439028154349','0400086591391','0439008487726','0442314060279','0437837644402','0400087298267','0468299952729','0468237202756','0468237212601','0434036987934','0437837655125','0452428806540','0452435882087','0419713461297','0452469153498','0452446211630','0437837659383','0400087297670','0468237235105','0468295269371','0468248698340','0434044608272','0468239126272','0468248709947','0468248211792','0468248699156','0468237222693','0452446216987','0454318301210','0468237220927','0468230247259','0468238903829','0468248710905','0468237218153','0414923887806','0442314047157','0414936894815','0454318311141','0414313053477','0442370450397','0442127697655','0400086710411','0419713581155', '0415233143262', '0419713580899','0442314080819','0442127694579','0439028152468'] 
 #BlackList = ['0400086706170','0400086723567','0400086723513','0400086645149']
 
 #UrlList = {"Valentino":ValentinoUri}
 UrlList = {
-#"Longchamp":LongChampUri,#"AlexanderMcqueen":AlexanderUri,
+#"AlexanderMcqueen":AlexanderUri,
 "Valentino":ValentinoUri,
 "Philip": PhilipUri,
-#"Tory":ToryUri,
+"Tory":ToryUri,
 #"BV":BVUri, 
 "SF":SFUri, 
 "Burberry":BurberryUri,
@@ -70,7 +76,10 @@ UrlList = {
 "Gucci":GucciUri,
 "MB":MBUri,
 "MCM":MCMUri,
-"AlexanderWang":AlexanderUri
+"YSL":YSLUri,
+"MKCollection": MKCollectionUri,
+"MMK":MMKUri
+#"AlexanderWang":AlexanderUri
 #"KS":KSUri
 }
 
@@ -120,15 +129,16 @@ def crawlBrand():
 	
 	while True:
 		if flg:
-			randomt = random.randint(5,30)
+			randomt = random.randint(5,15)
 			print "sleeping "+ str(randomt)
 			time.sleep(randomt)	#refresh every 5 seconds
 		try:
+			#print brandItems
 			count = 0
 			#print brandItems["Tory"]
-			brand = random.choice(UrlList.keys())
-			if brand in UrlList.keys():
-				print "brand = " +brand
+			#brand = random.choice(UrlList.keys())
+			for brand in UrlList.keys():
+				#print "brand = " +brand
 				old_ids = brandItems[brand]
 				uri = UrlList.get(brand)
 				new_req = urllib2.Request(uri,headers=hdr)
@@ -143,7 +153,7 @@ def crawlBrand():
 					#if id not in BlackList:
 					#print add_ids
 						link = new_items.get(id)
-						webbrowser.open(link)
+						#webbrowser.open(link)
 						print link
 				#print old_ids
 				#print new_ids
