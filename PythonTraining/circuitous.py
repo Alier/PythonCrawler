@@ -37,6 +37,10 @@ class Circle(object):
         'Perform quadrature on a planar shape of uniform revolution'
         return math.pi * self.radius**2.0
 
+    def perimeter(self):
+        'Compute the closed line integral for the locus of points equidistant from a given point'
+        return 2.0 * math.pi * self.radius
+    
     # Best practice for repr is to look like how the object COULD have been created
     # %r is using __repr__
     def __repr__(self):

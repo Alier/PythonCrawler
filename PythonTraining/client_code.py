@@ -35,3 +35,16 @@ average_area = sum(areas)/n
 print 'The average area is %.1f'% average_area
 print
 
+## Rubber Sheet Company ######################################
+
+cut_template = [0.1,0.2,0.7]
+print 'Spec sheet for the cur template:', cut_template
+circles = [Circle(cut_radius) for cut_radius in cut_template]
+for i, circle in enumerate(circles, 1):
+    print 'Circle #%d' % i
+    print 'A rubber circle with a cut radius of', circle.radius
+    print 'has a perimeter of', circle.perimeter()
+    print 'and a cold area of', circle.area()
+    circle.radius *= 1.1
+    print 'and a warm area of', circle.area()
+    print
