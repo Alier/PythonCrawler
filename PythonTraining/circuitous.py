@@ -43,5 +43,6 @@ class Circle(object):
     
     # Best practice for repr is to look like how the object COULD have been created
     # %r is using __repr__
-    def __repr__(self):
-        return 'Circle(%r)' % self.radius
+    # Don't assume self means you ,it could be one of your children
+    def __repr__(self): 
+        return '%s(%r)' % (self.__class__.__name__, self.radius)

@@ -48,3 +48,27 @@ for i, circle in enumerate(circles, 1):
     circle.radius *= 1.1
     print 'and a warm area of', circle.area()
     print
+
+## National Tire Chain ######################################
+import math
+
+class Tire(Circle):
+    'Circle analytics specialized for tires'
+    RUBBER_RATIO = 1.25
+    
+    def perimeter(self):
+        'Perimeter corrected for the rubber on the tire'
+        return Circle.perimeter(self) * self.RUBBER_RATIO
+    
+class MonsterTire(Tire):
+    RUBBER_RATIO = 1.50
+    
+t = Tire(30)
+print 'A tire with an inner radius of',t.radius
+print 'has an inner area of',t.area()
+print 'and an odometer corrected outer perimeter of',t.perimeter()
+print
+
+m = MonsterTire(30)
+print 'A tire has an odometer corrected outer perimeter of',m.perimeter()
+print
