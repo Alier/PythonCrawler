@@ -10,10 +10,6 @@ ValentinoUri = "http://www.saksfifthavenue.com/search/EndecaSearch.jsp?Ns=P_3064
 
 PradaUri = "http://www.saksfifthavenue.com/search/EndecaSearch.jsp?Ns=P_306418049_sort&Ns=P_306418049_sort&N=306418049%201553+1686"
 
-fromaddr = "aliertest238@gmail.com"
-toaddr = "zhangai.za@gmail.com"
-password = "aliertest"
-
 server = smtplib.SMTP('smtp.gmail.com', 587)
  
 def LoginEmail():

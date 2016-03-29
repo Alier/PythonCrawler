@@ -87,10 +87,6 @@ UrlList = {
 #"KS":KSUri
 }
 
-fromaddr = "aliertest238@gmail.com"
-toaddr = "zhangai.za@gmail.com"
-password = "aliertest"
-
 #server = smtplib.SMTP('smtp.gmail.com', 587)
  
 def LoginEmail():

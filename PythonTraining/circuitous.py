@@ -23,7 +23,7 @@ from collections import namedtuple
 Version = namedtuple('Version',['major','minor','micro'])
 
 class Circle(object):
-    version = Version(0,1,1)       # Class variables are shared by all instance and visible 
+    version = Version(0,1,2)       # Class variables are shared by all instance and visible 
     
     'Advanced circle analytic toolkit'
     # The use of "self" is a cultural norm
@@ -36,3 +36,8 @@ class Circle(object):
     def area(self):
         'Perform quadrature on a planar shape of uniform revolution'
         return math.pi * self.radius**2.0
+
+    # Best practice for repr is to look like how the object COULD have been created
+    # %r is using __repr__
+    def __repr__(self):
+        return 'Circle(%r)' % self.radius

@@ -35,9 +35,6 @@ BurUri = "http://www.saksfifthavenue.com/search/EndecaSearch.jsp?brandLanding=tr
 #UrlList = {"Valentino":ValentinoUri}
 UrlList = {"Valentino":ValentinoUri,"Vince":VinceUri, "Philip": PhilipUri,"Tory":ToryUri,"BV":BVUri, "SF":SFUri, "Burberry":BurUri}
 
-fromaddr = "aliertest238@gmail.com"
-toaddr = "zhangai.za@gmail.com"
-password = "aliertest"
 
 server = smtplib.SMTP('smtp.gmail.com', 587)
 
