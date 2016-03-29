@@ -1,0 +1,6192 @@
+﻿Python 2.7.11 (v2.7.11:6d1b6a68f775, Dec  5 2015, 12:54:16) 
+[GCC 4.2.1 (Apple Inc. build 5666) (dot 3)] on darwin
+Type "copyright", "credits" or "license()" for more information.
+>>> 
+========== RESTART: /Users/raymond/Dropbox/Public/sj136/download.py ==========
+============================== Source: http://dl.dropbox.com/u/3967849/sj136/links.txt ==============================
+                                    Starting download at Tue Mar  8 09:38:45 2016                                    
+200  OK               https://dl.dropbox.com/u/3967849/sj136/daythree.log     --> notes2/daythree.log       (current) 
+200  OK               https://dl.dropbox.com/u/3967849/sj136/dayfour.log      --> notes2/dayfour.log        (current) 
+200  OK               https://dl.dropbox.com/u/3967849/sj136/daytwo.log       --> notes2/daytwo.log         (current) 
+304  NOT MODIFIED     https://dl.dropbox.com/u/3967849/shared/pexpect.py
+304  NOT MODIFIED     https://dl.dropbox.com/u/3967849/sj136/download.py
+304  NOT MODIFIED     https://dl.dropbox.com/u/3967849/sj136/p_vs_np_1.py
+304  NOT MODIFIED     https://dl.dropbox.com/u/3967849/shared/__init__.py
+304  NOT MODIFIED     https://dl.dropbox.com/u/3967849/shared/PythonAwesome.pdf
+304  NOT MODIFIED     https://dl.dropbox.com/u/3967849/shared/mpl_demo.py
+200* OK               https://dl.dropbox.com/u/3967849/sj136/dayone.log       --> notes2/dayone.log         (updated) 
+200* OK               https://dl.dropbox.com/u/3967849/sj136/links.txt        --> notes2/links.txt          (current) 
+304  NOT MODIFIED     https://dl.dropbox.com/u/3967849/shared/IntermediatePython.pdf
+200* OK               https://dl.dropbox.com/u/3967849/shared/hamlet.txt      --> notes2/hamlet.txt         (current) 
+304  NOT MODIFIED     https://dl.dropbox.com/u/3967849/shared/lru_cache.py
+200* OK               https://dl.dropbox.com/u/3967849/shared/common_passwords.txt --> notes2/common_passwords.txt (current) 
+304  NOT MODIFIED     https://dl.dropbox.com/u/3967849/shared/spelling.py
+304  NOT MODIFIED     https://dl.dropbox.com/u/3967849/shared/PythonTips.pdf
+>>> 
+========== RESTART: /Users/raymond/Dropbox/Public/sj136/algebra.py ==========
+>>> area(10)
+314.15700000000004
+>>> 
+========== RESTART: /Users/raymond/Dropbox/Public/sj136/algebra.py ==========
+>>> help(area)
+Help on function area in module __main__:
+
+area(radius)
+    Compute the area of a circle
+    
+    >>> area(10)
+    314.15700000000004
+
+>>> 
+========== RESTART: /Users/raymond/Dropbox/Public/sj136/algebra.py ==========
+TestResults(failed=0, attempted=1)
+>>> 
+========== RESTART: /Users/raymond/Dropbox/Public/sj136/algebra.py ==========
+**********************************************************************
+File "/Users/raymond/Dropbox/Public/sj136/algebra.py", line 12, in __main__.area
+Failed example:
+    area(10)
+Expected:
+    314.15700000000004
+Got:
+    314.25700000000006
+**********************************************************************
+1 items had failures:
+   1 of   1 in __main__.area
+***Test Failed*** 1 failures.
+TestResults(failed=1, attempted=1)
+>>> 
+========== RESTART: /Users/raymond/Dropbox/Public/sj136/algebra.py ==========
+TestResults(failed=0, attempted=1)
+>>> __name__
+'__main__'
+>>> 
+=============================== RESTART: Shell ===============================
+>>> import algebra
+>>> algebra.__name__
+'algebra'
+>>> algebra.area(20)
+1256.6280000000002
+>>> 
+========== RESTART: /Users/raymond/Dropbox/Public/sj136/algebra.py ==========
+TestResults(failed=0, attempted=1)
+>>> area_triangle(20.0, 10.0)
+100.0
+>>> 
+========== RESTART: /Users/raymond/Dropbox/Public/sj136/algebra.py ==========
+TestResults(failed=0, attempted=2)
+>>> area_triangle(-20.0, 10.0)
+-100.0
+>>> 
+========== RESTART: /Users/raymond/Dropbox/Public/sj136/algebra.py ==========
+TestResults(failed=0, attempted=2)
+>>> 
+>>> 
+>>> 
+========== RESTART: /Users/raymond/Dropbox/Public/sj136/algebra.py ==========
+TestResults(failed=0, attempted=2)
+>>> area_triangle(-20.0, 10.0)
+
+Traceback (most recent call last):
+  File "<pyshell#10>", line 1, in <module>
+    area_triangle(-20.0, 10.0)
+  File "/Users/raymond/Dropbox/Public/sj136/algebra.py", line 26, in area_triangle
+    raise RuntimeError('Imaginary numbers not applicable to Kronecker spaces')
+RuntimeError: Imaginary numbers not applicable to Kronecker spaces
+>>> 
+========== RESTART: /Users/raymond/Dropbox/Public/sj136/algebra.py ==========
+TestResults(failed=0, attempted=2)
+>>> quadratic(a=12, b=23, c=10)
+(-0.6666666666666666, -1.25)
+>>> 
+>>> 
+>>> x1, x2 = quadratic(a=12, b=23, c=10)
+>>> x1, x2
+(-0.6666666666666666, -1.25)
+>>> 12 * x1 ** 2.0 + 23 * x1 + 10
+0.0
+>>> 12 * x2 ** 2.0 + 23 * x2 + 10
+0.0
+>>> 
+========== RESTART: /Users/raymond/Dropbox/Public/sj136/algebra.py ==========
+**********************************************************************
+File "/Users/raymond/Dropbox/Public/sj136/algebra.py", line 39, in __main__.quadratic
+Failed example:
+    12 * x2 ** 2.0 + 23 * x2 + 10
+Expected:
+    0.0            
+Got:
+    0.0
+**********************************************************************
+1 items had failures:
+   1 of   4 in __main__.quadratic
+***Test Failed*** 1 failures.
+TestResults(failed=1, attempted=6)
+>>> 
+========== RESTART: /Users/raymond/Dropbox/Public/sj136/algebra.py ==========
+TestResults(failed=0, attempted=6)
+>>> 
+========== RESTART: /Users/raymond/Dropbox/Public/sj136/algebra.py ==========
+**********************************************************************
+File "/Users/raymond/Dropbox/Public/sj136/algebra.py", line 35, in __main__.quadratic
+Failed example:
+    x1, x2
+Expected:
+    (-0.6666666666666666, -1.25)
+Got:
+    (-0.6666666666666666, -1.15)
+**********************************************************************
+File "/Users/raymond/Dropbox/Public/sj136/algebra.py", line 39, in __main__.quadratic
+Failed example:
+    12 * x2 ** 2.0 + 23 * x2 + 10
+Expected:
+    0.0
+Got:
+    -0.5800000000000018
+**********************************************************************
+1 items had failures:
+   2 of   4 in __main__.quadratic
+***Test Failed*** 2 failures.
+TestResults(failed=2, attempted=6)
+>>> 
+========== RESTART: /Users/raymond/Dropbox/Public/sj136/algebra.py ==========
+TestResults(failed=0, attempted=6)
+>>> import algebra
+>>> help(algebra)
+Help on module algebra:
+
+NAME
+    algebra - Fancy, expensive math package for rich people who have forgotten everything since 7th grade
+
+FILE
+    /Users/raymond/Dropbox/Public/sj136/algebra.py
+
+FUNCTIONS
+    area(radius)
+        Compute the area of a circle
+        
+        >>> area(10)
+        314.15700000000004
+    
+    area_triangle(base, height)
+        Return the area of a triangle
+        
+        >>> area_triangle(20.0, 10.0)
+        100.0
+    
+    quadratic(a, b, c)
+        Return the two roots for the quadratic equation:
+        
+        ax^2 + bx + c = 0
+        
+        >>> x1, x2 = quadratic(a=12, b=23, c=10)
+        >>> x1, x2
+        (-0.6666666666666666, -1.25)
+        >>> 12 * x1 ** 2.0 + 23 * x1 + 10
+        0.0
+        >>> 12 * x2 ** 2.0 + 23 * x2 + 10
+        0.0
+
+DATA
+    pi = 3.14157
+
+
+>>> 
+========== RESTART: /Users/raymond/Dropbox/Public/sj136/algebra.py ==========
+TestResults(failed=0, attempted=6)
+>>> quadratic(a=12, b=23, c=10)
+(-0.6666666666666666, -1.25)
+>>> quadratic(12, 23, 10)
+(-0.6666666666666666, -1.25)
+>>> 32 / 5
+6
+>>> area_triangle(10, 20)
+100
+>>> area_triangle(10, 21)
+105
+>>> area_triangle(3, 5)
+7
+>>> 
+======== RESTART: /Users/raymond/Dropbox/Public/sj136/client_code.py ========
+Tutorial for Circuitous(tm)
+>>> 
+======== RESTART: /Users/raymond/Dropbox/Public/sj136/client_code.py ========
+Tutorial for Circuitous™
+>>> 
+======== RESTART: /Users/raymond/Dropbox/Public/sj136/client_code.py ========
+Tutorial for Circuitous™
+>>> 
+======== RESTART: /Users/raymond/Dropbox/Public/sj136/client_code.py ========
+Tutorial for Circuitous™
+Software version
+>>> 
+========= RESTART: /Users/raymond/Dropbox/Public/sj136/circuitous.py =========
+>>> 
+>>> Circle(1).version
+0.1
+>>> c = Circle(10)
+>>> d = Circle(10)
+>>> d = Circle(12)
+>>> c.__dict__
+{'version': 0.1, 'radius': 10}
+>>> d.__dict__
+{'version': 0.1, 'radius': 12}
+>>> 
+========= RESTART: /Users/raymond/Dropbox/Public/sj136/circuitous.py =========
+>>> c = Circle(10)
+>>> d = Circle(12)
+>>> c.__dict__
+{'radius': 10}
+>>> d.__dict__
+{'radius': 12}
+>>> Circle.version
+0.1
+>>> c.version
+0.1
+>>> d.version
+0.1
+>>> 
+======== RESTART: /Users/raymond/Dropbox/Public/sj136/client_code.py ========
+Tutorial for Circuitous™
+Circle version
+
+Traceback (most recent call last):
+  File "/Users/raymond/Dropbox/Public/sj136/client_code.py", line 4, in <module>
+    print 'Circle version', Circle.version
+NameError: name 'Circle' is not defined
+>>> 
+>>> 
+>>> 0.1.1
+SyntaxError: invalid syntax
+>>> 
+>>> print "God created the integers, all the rest is the work of man"
+God created the integers, all the rest is the work of man
+>>> 
+>>> 11 + 22 == 33
+True
+>>> 1.1 + 2.2 == 3.3
+False
+>>> s = 1.1 + 2.2
+>>> t = 3.3
+>>> s
+3.3000000000000003
+>>> t
+3.3
+>>> s == t
+False
+>>> abs(s - t) < 0.0000001
+True
+>>> Circle.version + 0.6 >= 0.7
+
+Traceback (most recent call last):
+  File "<pyshell#54>", line 1, in <module>
+    Circle.version + 0.6 >= 0.7
+NameError: name 'Circle' is not defined
+>>> 
+========= RESTART: /Users/raymond/Dropbox/Public/sj136/circuitous.py =========
+>>> Circle.version + 0.6 >= 0.7
+True
+>>> Circle.version + 0.6 <= 0.7
+True
+>>> 
+>>> [10] * 5
+[10, 10, 10, 10, 10]
+>>> [0.1] * 10
+[0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1]
+>>> sum([0.1] * 10)
+0.9999999999999999
+>>> sum([0.1] * 10) == 1.0
+False
+>>> sum([0.1] * 10) >= 1.0
+False
+>>> 0.0.1
+SyntaxError: invalid syntax
+>>> version = '0.0.1'
+>>> 
+========= RESTART: /Users/raymond/Dropbox/Public/sj136/circuitous.py =========
+>>> 
+>>> 
+>>> version = '2.7.9'
+>>> required_minimum = '2.7.6'
+>>> version >= required_minimum
+True
+>>> 
+>>> version = '2.7.11'
+>>> version >= required_minimum
+False
+>>> 
+========= RESTART: /Users/raymond/Dropbox/Public/sj136/circuitous.py =========
+>>> version = (2, 7, 9)
+>>> required_minimum = (2, 7, 6)
+>>> version >= required_minimum
+True
+>>> version = (2, 7, 11)
+>>> version >= required_minimum
+True
+>>> 
+>>> 
+>>> version[:2] == (2, 7)
+True
+>>> 
+======== RESTART: /Users/raymond/Dropbox/Public/sj136/client_code.py ========
+Tutorial for Circuitous™
+
+Traceback (most recent call last):
+  File "/Users/raymond/Dropbox/Public/sj136/client_code.py", line 4, in <module>
+    print 'Circle version %d.%d' % Circle.version[:2]
+NameError: name 'Circle' is not defined
+>>> 
+======== RESTART: /Users/raymond/Dropbox/Public/sj136/client_code.py ========
+Tutorial for Circuitous™
+Circle version 0.1
+>>> 
+>>> 
+>>> 
+>>> p = 170, 0.6, 0.4
+>>> type(p)
+<type 'tuple'>
+>>> len(p)
+3
+>>> p[0]
+170
+>>> p[-1]
+0.4
+>>> p[:2]
+(170, 0.6)
+>>> a, b, c = p
+>>> a
+170
+>>> b
+0.6
+>>> c
+0.4
+>>> if p[1] >= 0.5:
+	print 'Whew!  That is bright!'
+
+	
+Whew!  That is bright!
+>>> if p[2] >= 0.5:
+	print 'Whew!  That is light!'
+
+	
+>>> p
+(170, 0.6, 0.4)
+>>> from collections import namedtuple
+>>> # Factory function for creating new tuple subclasses that have named fields
+>>> Color = namedtuple('Color', ['hue', 'saturation', 'luminosity'])
+>>> issubclass(Color, tuple)
+True
+>>> p = Color(170, 0.6, 0.4)
+>>> isinstance(p, Color)
+True
+>>> isinstance(p, tuple)
+True
+>>> 
+>>> len(p)
+3
+>>> p[0]
+170
+>>> p[:2]
+(170, 0.6)
+>>> a, b, c = p
+>>> p
+Color(hue=170, saturation=0.6, luminosity=0.4)
+>>> 
+>>> p.hue
+170
+>>> p.saturation
+0.6
+>>> p.luminosity
+0.4
+>>> p[0]
+170
+>>> p[1]
+0.6
+>>> p[2]
+0.4
+>>> 
+>>> 
+>>> r = 0, 6
+>>> r
+(0, 6)
+>>> len(r)
+2
+>>> a, b = r
+>>> r[:1]
+(0,)
+>>> 
+========== RESTART: /Users/raymond/Dropbox/Public/sj136/algebra.py ==========
+TestResults(failed=0, attempted=6)
+>>> 
+========= RESTART: /Users/raymond/Dropbox/Public/sj136/circuitous.py =========
+>>> Circle.version
+Version(major=0, minor=1, micro=1)
+>>> Circle.version[:2]
+(0, 1)
+>>> Circle.version.micro
+1
+>>> 
+>>> 
+>>> 
+>>> import sys
+>>> print sys.version
+2.7.11 (v2.7.11:6d1b6a68f775, Dec  5 2015, 12:54:16) 
+[GCC 4.2.1 (Apple Inc. build 5666) (dot 3)]
+>>> print tuple(sys.version_info)
+(2, 7, 11, 'final', 0)
+>>> print sys.version_info
+sys.version_info(major=2, minor=7, micro=11, releaselevel='final', serial=0)
+>>> print sys.version_info.releaselevel
+final
+>>> import time
+>>> tuple(time.localtime())
+(2016, 3, 8, 10, 48, 19, 1, 68, 0)
+>>> time.localtime()
+time.struct_time(tm_year=2016, tm_mon=3, tm_mday=8, tm_hour=10, tm_min=48, tm_sec=41, tm_wday=1, tm_yday=68, tm_isdst=0)
+>>> 
+======== RESTART: /Users/raymond/Dropbox/Public/sj136/client_code.py ========
+Tutorial for Circuitous™
+Circle version 0.1
+A circle with a radius of 10
+has an area of 314.159265359
+
+>>> from random import *
+>>> random()                            # 0.0 <= x < 1.0
+0.24781155678322286
+>>> random() * 100.0                    # 0.0 <= x < 100.0
+44.48598294043066
+>>> 
+>>> # int() and frac()
+>>> # a floating pointing number consists of a signed integer component plus a signed fractional componet
+>>> x = 3.14;   print int(x)
+3
+>>> x = 3.14;   print int(x),  x - int(x)
+3 0.14
+>>> x = -3.14;   print int(x),  x - int(x)
+-3 -0.14
+>>> #  int(-x) == int(x)
+>>> #  symmetric around the origin
+>>> #  int(-x) == -int(x)
+>>> 
+>>> from math import floor, ceiling
+
+Traceback (most recent call last):
+  File "<pyshell#154>", line 1, in <module>
+    from math import floor, ceiling
+ImportError: cannot import name ceiling
+>>> from math import floor, ceil
+>>> floor(3.14)
+3.0
+>>> floor(-3.14)
+-4.0
+>>> # assymmetric
+>>> ceil(3.14)
+4.0
+>>> ceil(-3.14)
+-3.0
+>>> # ceil(x) == floor(x) + 1.0
+>>> # assymmetric
+>>> # ceil(Float) -> Float
+>>> 
+>>> # int(Float) -> Int
+>>> 
+>>> round(3.1)
+3.0
+>>> # round(Float) -> Float
+>>> round(-3.1)
+-3.0
+>>> # int and round are symmetric  while  ceil and floor are assymetric
+>>> round(3.9)
+4.0
+>>> round(-3.9)
+-4.0
+>>> 
+>>> round(3.5)
+4.0
+>>> round(-3.5)
+-4.0
+>>> round(4.5)
+5.0
+>>> round(-4.5)
+-5.0
+>>> 
+>>> # round(Float) -> Float   round-half-away-from-zero
+>>> random()                            # 0.0 <= x < 1.0
+0.9203124853699327
+>>> random() * 100.0                    # 0.0 <= x < 100.0
+62.22710304829816
+>>> int(random() * 100.0 )              # 0 <= x < 100
+84
+>>> # chunking
+>>> 
+>>> range(100)
+[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99]
+>>> randrange(100)
+27
+>>> range(2, 10)
+[2, 3, 4, 5, 6, 7, 8, 9]
+>>> randrange(2, 10)
+6
+>>> range(2, 10, 3)
+[2, 5, 8]
+>>> randrange(1000, 2000, 100)
+1300
+>>> randrange(1000, 2000, 100)
+1300
+>>> randrange(1000, 2000, 100)
+1000
+>>> randrange(1000, 2000, 100)
+1900
+>>> # Good API design principle:  model an API after what people already know
+>>> 
+>>> outcomes = 'win lose draw'.split()
+>>> [0, 1, 2]
+[0, 1, 2]
+>>> outcomes[int(random() * len(outcomes))]
+'lose'
+>>> outcomes[int(random() * len(outcomes))]
+'lose'
+>>> outcomes[int(random() * len(outcomes))]
+'win'
+>>> outcomes[randrange(len(outcomes))]
+'win'
+>>> choice(outcomes)
+'win'
+>>> 
+>>> 
+>>> 
+>>> outcomes[int(random() * len(outcomes))]
+'win'
+>>> outcomes[randrange(len(outcomes))]
+'draw'
+>>> choice(outcomes)
+'lose'
+>>> 
+>>> [choice(outcomes) for i in range(10)]
+['win', 'lose', 'draw', 'lose', 'draw', 'draw', 'draw', 'win', 'win', 'win']
+>>> 
+>>> 
+>>> from random import *
+>>> outcomes = 'win lose draw'.split()
+>>> [choice(outcomes) for i in range(10)]
+['win', 'draw', 'lose', 'draw', 'lose', 'draw', 'draw', 'win', 'draw', 'lose']
+>>> # ^-- Sampling WITH replacement
+>>> 
+>>> 
+>>> sample(outcomes, 2)
+['win', 'draw']
+>>> sample(outcomes, 2)
+['draw', 'lose']
+>>> sample(outcomes, 2)
+['win', 'draw']
+>>> sample(outcomes, 2)
+['draw', 'lose']
+>>> sample(outcomes, 3)
+['win', 'lose', 'draw']
+>>> rr = ['safe'] * 5 + ['bang']
+>>> sample(outcomes, 2)
+['lose', 'win']
+>>> sample(rr, 2)
+['safe', 'safe']
+>>> sample(rr, 6)
+['safe', 'safe', 'safe', 'safe', 'safe', 'bang']
+>>> 
+>>> 
+>>> 
+>>> dir()
+['Circle', 'Random', 'SystemRandom', 'WichmannHill', '__builtins__', '__doc__', '__file__', '__name__', '__package__', 'betavariate', 'c', 'ceil', 'choice', 'expovariate', 'floor', 'gammavariate', 'gauss', 'getrandbits', 'getstate', 'i', 'jumpahead', 'lognormvariate', 'normalvariate', 'outcomes', 'paretovariate', 'randint', 'random', 'randrange', 'rr', 'sample', 'seed', 'setstate', 'shuffle', 'triangular', 'uniform', 'vonmisesvariate', 'weibullvariate', 'x']
+>>> 
+>>> 
+>>> uniform(1000, 2000)
+1190.7175627039985
+>>> sum([uniform(1000, 2000) for i in range(100)]) / 100.0
+1457.963776719558
+>>> sum([uniform(1000, 2000) for i in range(100)]) / 100.0
+1525.9685031176978
+>>> sum([uniform(1000, 2000) for i in range(100)]) / 100.0
+1525.358845888903
+>>> [round(normalvariate(100.0, 15.0)) for i in range(10)]
+[90.0, 75.0, 112.0, 104.0, 72.0, 144.0, 114.0, 87.0, 117.0, 96.0]
+>>> 
+>>> 
+>>> expovariate(1 / 5.0)
+5.8366387572300535
+>>> expovariate(1 / 5.0)
+27.491479106728082
+>>> expovariate(1 / 5.0)
+5.1583863825993985
+>>> expovariate(1 / 5.0)
+3.6297966749614443
+>>> expovariate(1 / 5.0)
+25.925677284968074
+>>> expovariate(1 / 5.0)
+1.2411022424201212
+>>> expovariate(1 / 5.0)
+0.7829969193225441
+>>> # Why doe buses come in threes?
+>>> 
+>>> 
+>>> 
+======== RESTART: /Users/raymond/Dropbox/Public/sj136/client_code.py ========
+Tutorial for Circuitous™
+Circle version 0.1
+A circle with a radius of 10
+has an area of 314.159265359
+
+DARPA grant proposal
+to study the average area of random circles
+
+Traceback (most recent call last):
+  File "/Users/raymond/Dropbox/Public/sj136/client_code.py", line 16, in <module>
+    print 'using Circuitous version %d.%d' % Circle.version
+TypeError: not all arguments converted during string formatting
+>>> 
+======== RESTART: /Users/raymond/Dropbox/Public/sj136/client_code.py ========
+Tutorial for Circuitous™
+Circle version 0.1
+A circle with a radius of 10
+has an area of 314.159265359
+
+DARPA grant proposal
+to study the average area of random circles
+using Circuitous version 0.1
+>>> 
+======== RESTART: /Users/raymond/Dropbox/Public/sj136/client_code.py ========
+Tutorial for Circuitous™
+Circle version 0.1
+A circle with a radius of 10
+has an area of 314.159265359
+
+DARPA grant proposal
+to study the average area of random circles
+using Circuitous version 0.1
+preliminary study using 10 circles
+>>> 
+======== RESTART: /Users/raymond/Dropbox/Public/sj136/client_code.py ========
+Tutorial for Circuitous™
+Circle version 0.1
+A circle with a radius of 10
+has an area of 314.159265359
+
+DARPA grant proposal
+to study the average area of random circles
+using Circuitous version 0.1
+preliminary study using 10 circles
+seeded using Jenny' number:' 8675309
+>>> import random
+>>> random.seed(8575309)
+>>> from random import seed
+>>> seed(8575309)
+>>> 
+======== RESTART: /Users/raymond/Dropbox/Public/sj136/client_code.py ========
+Tutorial for Circuitous™
+Circle version 0.1
+A circle with a radius of 10
+has an area of 314.159265359
+
+DARPA grant proposal
+to study the average area of random circles
+using Circuitous version 0.1
+preliminary study using 10 circles
+seeded using Jenny' number: 8675309
+[<circuitous.Circle object at 0x103874490>, <circuitous.Circle object at 0x103874450>, <circuitous.Circle object at 0x1038744d0>, <circuitous.Circle object at 0x103874550>, <circuitous.Circle object at 0x103874590>, <circuitous.Circle object at 0x1038745d0>, <circuitous.Circle object at 0x103874650>, <circuitous.Circle object at 0x103874610>, <circuitous.Circle object at 0x1038746d0>, <circuitous.Circle object at 0x103874690>]
+>>> 
+======== RESTART: /Users/raymond/Dropbox/Public/sj136/client_code.py ========
+Tutorial for Circuitous™
+Circle version 0.1
+A circle with a radius of 10
+has an area of 314.159265359
+
+DARPA grant proposal
+to study the average area of random circles
+using Circuitous version 0.1
+preliminary study using 10 circles
+seeded using Jenny' number: 8675309
+[<circuitous.Circle object at 0x103949490>, <circuitous.Circle object at 0x103949450>, <circuitous.Circle object at 0x1039494d0>, <circuitous.Circle object at 0x103949550>, <circuitous.Circle object at 0x103949590>, <circuitous.Circle object at 0x1039495d0>, <circuitous.Circle object at 0x103949650>, <circuitous.Circle object at 0x103949610>, <circuitous.Circle object at 0x1039496d0>, <circuitous.Circle object at 0x103949690>]
+>>> Circle(10)
+<circuitous.Circle object at 0x10393ba90>
+>>> 
+========= RESTART: /Users/raymond/Dropbox/Public/sj136/circuitous.py =========
+>>> Circle(10)
+Circle(10.000000)
+>>> 
+========= RESTART: /Users/raymond/Dropbox/Public/sj136/circuitous.py =========
+>>> Circle(10)
+Circle(10)
+>>> Circle(10.125)
+Circle(10.125)
+>>> Circle(math.pi)
+Circle(3.14159265359)
+>>> math.pi
+3.141592653589793
+>>> Circle(3.14159265359)
+Circle(3.14159265359)
+>>> Circle(3.14159265359).radius
+3.14159265359
+>>> math.pi
+3.141592653589793
+>>> Circle(3.14159265359).radius == math.pi
+False
+>>> 
+========= RESTART: /Users/raymond/Dropbox/Public/sj136/circuitous.py =========
+>>> Circle(math.pi)
+Circle(3.141592653589793)
+>>> math.pi
+3.141592653589793
+>>> Circle(math.pi).radius == math.pi
+True
+>>> 
+======== RESTART: /Users/raymond/Dropbox/Public/sj136/client_code.py ========
+Tutorial for Circuitous™
+Circle version 0.1
+A circle with a radius of 10
+has an area of 314.159265359
+
+DARPA grant proposal
+to study the average area of random circles
+using Circuitous version 0.1
+preliminary study using 10 circles
+seeded using Jenny' number: 8675309
+[Circle(0.5331910886437722), Circle(0.45920575408644104), Circle(0.6108347843744834), Circle(0.3909962713631955), Circle(0.2661431056217092), Circle(0.8788563220363951), Circle(0.6458276690538312), Circle(0.6750121238099426), Circle(0.2036597674342342), Circle(0.8394082599761632)]
+>>> 
+======== RESTART: /Users/raymond/Dropbox/Public/sj136/client_code.py ========
+Tutorial for Circuitous™
+Circle version 0.1
+A circle with a radius of 10
+has an area of 314.159265359
+
+DARPA grant proposal
+to study the average area of random circles
+using Circuitous version 0.1
+preliminary study using 10 circles
+seeded using Jenny' number: 8675309
+[Circle(0.556363889890686),
+ Circle(0.7672540793171715),
+ Circle(0.5841579827494632),
+ Circle(0.05853210623646632),
+ Circle(0.4724045088970653),
+ Circle(0.1407391075235237),
+ Circle(0.49337505702908435),
+ Circle(0.042202431287608366),
+ Circle(0.6388585155433661),
+ Circle(0.8346072423474268)]
+>>> 
+======== RESTART: /Users/raymond/Dropbox/Public/sj136/client_code.py ========
+Tutorial for Circuitous™
+Circle version 0.1
+A circle with a radius of 10
+has an area of 314.159265359
+
+DARPA grant proposal
+to study the average area of random circles
+using Circuitous version 0.1
+preliminary study using 10 circles
+seeded using Jenny' number: 8675309
+0.965984943544
+>>> 
+======== RESTART: /Users/raymond/Dropbox/Public/sj136/client_code.py ========
+Tutorial for Circuitous™
+Circle version 0.1
+A circle with a radius of 10
+has an area of 314.159265359
+
+DARPA grant proposal
+to study the average area of random circles
+using Circuitous version 0.1
+preliminary study using 10 circles
+seeded using Jenny' number: 8675309
+[0.38533690659639447,
+ 1.7326212653771003,
+ 0.4425251144350176,
+ 0.42970362348019997,
+ 0.10661262807992342,
+ 2.5528549917358623,
+ 2.1480309235905013,
+ 0.23643883362220683,
+ 0.002137089107357473,
+ 1.0489851872885603]
+>>> 
+======== RESTART: /Users/raymond/Dropbox/Public/sj136/client_code.py ========
+Tutorial for Circuitous™
+Circle version 0.1
+A circle with a radius of 10
+has an area of 314.159265359
+
+DARPA grant proposal
+to study the average area of random circles
+using Circuitous version 0.1
+preliminary study using 10 circles
+seeded using Jenny' number: 8675309
+9.84921041616
+>>> 
+======== RESTART: /Users/raymond/Dropbox/Public/sj136/client_code.py ========
+Tutorial for Circuitous™
+Circle version 0.1
+A circle with a radius of 10
+has an area of 314.159265359
+
+DARPA grant proposal
+to study the average area of random circles
+using Circuitous version 0.1
+preliminary study using 10 circles
+seeded using Jenny' number: 8675309
+The average is 1.10173501122
+
+>>> 32 / 5
+6
+>>> 
+======== RESTART: /Users/raymond/Dropbox/Public/sj136/client_code.py ========
+Tutorial for Circuitous™
+Circle version 0.1
+A circle with a radius of 10
+has an area of 314.159265359
+
+DARPA grant proposal
+to study the average area of random circles
+using Circuitous version 0.1
+preliminary study using 10 circles
+seeded using Jenny' number: 8675309
+The average is 1.47010845601
+
+>>> from __future__ import division
+>>> 32 / 5
+6.4
+>>> 
+======== RESTART: /Users/raymond/Dropbox/Public/sj136/client_code.py ========
+Tutorial for Circuitous™
+Circle version 0.1
+A circle with a radius of 10
+has an area of 314.159265359
+
+DARPA grant proposal
+to study the average area of random circles
+using Circuitous version 0.1
+preliminary study using 10 circles
+seeded using Jenny' number: 8675309
+The average is 1.21571982364
+
+>>> 
+======== RESTART: /Users/raymond/Dropbox/Public/sj136/client_code.py ========
+Tutorial for Circuitous™
+Circle version 0.1
+A circle with a radius of 10
+has an area of 314.159265359
+
+DARPA grant proposal
+to study the average area of random circles
+using Circuitous version 0.1
+preliminary study using 10 circles
+seeded using Jenny' number: 8675309
+The average is 0.7
+
+>>> 
+======== RESTART: /Users/raymond/Dropbox/Public/sj136/client_code.py ========
+Tutorial for Circuitous™
+Circle version 0.1
+A circle with a radius of 10
+has an area of 314.159265359
+
+DARPA grant proposal
+to study the average area of random circles
+using Circuitous version 0.1
+preliminary study using 10 circles
+seeded using Jenny' number: 8675309
+The average is 1.1
+
+>>> 
+======== RESTART: /Users/raymond/Dropbox/Public/sj136/client_code.py ========
+Tutorial for Circuitous™
+Circle version 0.1
+A circle with a radius of 10
+has an area of 314.159265359
+
+DARPA grant proposal
+to study the average area of random circles
+using Circuitous version 0.1
+preliminary study using 10 circles
+seeded using Jenny' number: 8675309
+The average is 1.0
+
+>>> 
+====== RESTART: /Users/raymond/Dropbox/Public/sj136/password_cracker.py ======
+{'anoop': 'anoop', 'shunfen': 'cisco', 'qu': 'football', 'raymondh': 'superman'}
+>>> 
+====== RESTART: /Users/raymond/Dropbox/Public/sj136/password_cracker.py ======
+{'anoop': 'anoop', 'shunfen': 'cisco', 'qu': 'football', 'raymondh': 'superman'}
+>>> verify('anoop', 'cisco')
+False
+>>> verify('anoop', 'anoop')
+True
+>>> 
+====== RESTART: /Users/raymond/Dropbox/Public/sj136/password_cracker.py ======
+{'shunfen': 'cisco', 'qu': 'football', 'jcq': 'giants', 'raymondh': 'superman', 'anoop': 'anoop', 'vincent': 'sharapova'}
+>>> 
+>>> 
+>>> import hashlib
+>>> dir(hashlib)
+['__all__', '__builtins__', '__doc__', '__file__', '__get_builtin_constructor', '__name__', '__package__', '_hashlib', '_trans_36', '_trans_5C', 'algorithms', 'algorithms_available', 'algorithms_guaranteed', 'binascii', 'md5', 'new', 'pbkdf2_hmac', 'sha1', 'sha224', 'sha256', 'sha384', 'sha512', 'struct']
+>>> 
+>>> hashlib.sha512('superman')
+<sha512 HASH object @ 0x104a39af0>
+>>> dir(_)
+['__class__', '__delattr__', '__doc__', '__format__', '__getattribute__', '__hash__', '__init__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', 'block_size', 'copy', 'digest', 'digest_size', 'digestsize', 'hexdigest', 'name', 'update']
+>>> hashlib.sha512('superman').digest()
+'\x9a\xd0\xd0\x1d\x17f\xbb`\x02[\xa3@>\x85\x1d\x14\x93\xa1\xce/\x14\xbd\xcf\x14\xd1\x98\xf4\xa4\x9e\x08?EG\xa6\xe5\xf9\x90\x84D\xaa\xd0-\x8d#\x83\xfb\xc7J\xf0!\xc7\xeey~\xa12T\xc6`=\xe7b\x91\xb8'
+>>> len(_)
+64
+>>> 
+====== RESTART: /Users/raymond/Dropbox/Public/sj136/password_cracker.py ======
+{'shunfen': '\xac\x8562\xa1*\xe1(\x15\x8f\xab$\xce:Tr\x96(&\xb0&\xf1\xf45d\xa8\x9d\x92\xafT\x9c\xa7{\xe6Xs\x81\xb67#s\x87)M\xcb\xee\x06\x9f\x8b8h\xfb-.\xae\x16\xc2\xf1*4\x12$\x0f\xe5', 'qu': 'A\xb8\xa0M\xcb\x8c%yr\x04}\xb75\x9b\xb5D\xb1[\xea\xa6.9\xfa\x16\xa4X}\xba\x07\xb7\xdf\xca\xf7\xf23B\x96\x1e?\x92{\xdd\xf4\x96\xbbP\xe76\x97^\x82Y\xc9\xa9\x90\xdbRU\x85\xac^k\xe4\x02', 'jcq': '\xd2\x88j<\xc3\x98\xf0\xa6\x96J\xcd\xe6_\xf9\x18\xdd\x91\x8cE\x13\x17\nhI\xee#\xee\xb3\x1af\'\x1b~\x17\x00\xaa\x1d\xf7\x05\x7f\xa6\xc2\xca%\xcdZ\x12\xf0x\xbe\xb8\xffW\xea8\xe4g\x1c\xb6\xdf\x9c8"Z', 'raymondh': '\x9a\xd0\xd0\x1d\x17f\xbb`\x02[\xa3@>\x85\x1d\x14\x93\xa1\xce/\x14\xbd\xcf\x14\xd1\x98\xf4\xa4\x9e\x08?EG\xa6\xe5\xf9\x90\x84D\xaa\xd0-\x8d#\x83\xfb\xc7J\xf0!\xc7\xeey~\xa12T\xc6`=\xe7b\x91\xb8', 'anoop': "\xf7\xd9fh0%\xd7k\xdff=\xc5\x8b)C\x91\xa0\xd4\xe7^\x16\x9bv'\xcc\x7f\xe5\xe8\x0f\x9a\xd4/\xd3v\xc9\xea\xc4\xdd\x85e\x9e \xa6\xfeIb\x98\xce\xd3\x90\xa6aA\xd9]\x9eDF\x0c\x00\x9f2\xff=", 'vincent': '\xae6D\xa7%\x9f\xa2Sp)v\xad\xa4}\xc6\xba\xcd-=\x85\xb9\x01<\x1a\x95R\x1a\x13\xf7h\xc8H^e=\x05mW\x14iR\x0b\xaeH\xebr\x8c7\x8c\xd3\xf8\x9d\xfd\x9dP\x0bG\x8b`\xf0X\x8fF\x95'}
+>>> verify('anoop', 'cisco')
+False
+>>> verify('anoop', 'anoop')
+True
+>>> 
+====== RESTART: /Users/raymond/Dropbox/Public/sj136/password_cracker.py ======
+False
+True
+'password, 32027\r\n'
+'123456, 25969\r\n'
+'12345678, 8667\r\n'
+'1234, 5786\r\n'
+'qwerty, 5455\r\n'
+'12345, 4523\r\n'
+'dragon, 4321\r\n'
+'pussy, 3945\r\n'
+'baseball, 3739\r\n'
+'football, 3682\r\n'
+'letmein, 3536\r\n'
+'monkey, 3487\r\n'
+'696969, 3345\r\n'
+'abc123, 3310\r\n'
+'mustang, 3289\r\n'
+'michael, 3249\r\n'
+'shadow, 3209\r\n'
+'master, 3182\r\n'
+'jennifer, 2581\r\n'
+'111111, 2570\r\n'
+'2000, 2550\r\n'
+'jordan, 2538\r\n'
+'superman, 2523\r\n'
+'harley, 2485\r\n'
+'1234567, 2479\r\n'
+'fuckme, 2378\r\n'
+'hunter, 2377\r\n'
+'fuckyou, 2362\r\n'
+'trustno1, 2347\r\n'
+'ranger, 2265\r\n'
+'buster, 2254\r\n'
+'thomas, 2194\r\n'
+'tigger, 2192\r\n'
+'robert, 2176\r\n'
+'soccer, 2120\r\n'
+'fuck, 2119\r\n'
+'batman, 2108\r\n'
+'test, 2097\r\n'
+'pass, 2093\r\n'
+'killer, 2044\r\n'
+'hockey, 2040\r\n'
+'george, 2033\r\n'
+'charlie, 2013\r\n'
+'andrew, 2009\r\n'
+'michelle, 1977\r\n'
+'love, 1960\r\n'
+'sunshine, 1956\r\n'
+'jessica, 1924\r\n'
+'asshole, 1913\r\n'
+'6969, 1889\r\n'
+'pepper, 1881\r\n'
+'daniel, 1822\r\n'
+'access, 1817\r\n'
+'123456789, 1793\r\n'
+'654321, 1772\r\n'
+'joshua, 1737\r\n'
+'maggie, 1690\r\n'
+'starwars, 1679\r\n'
+'silver, 1666\r\n'
+'william, 1662\r\n'
+'dallas, 1659\r\n'
+
+
+Traceback (most recent call last):
+  File "/Users/raymond/Dropbox/Public/sj136/password_cracker.py", line 25, in <module>
+    print repr(password)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/idlelib/PyShell.py", line 1356, in write
+    return self.shell.write(s, self.tags)
+KeyboardInterrupt
+>>> 
+====== RESTART: /Users/raymond/Dropbox/Public/sj136/password_cracker.py ======
+False
+True
+'password'
+'123456'
+'12345678'
+'1234'
+'qwerty'
+'12345'
+'dragon'
+'pussy'
+'baseball'
+'football'
+'letmein'
+'monkey'
+'696969'
+'abc123'
+'mustang'
+'michael'
+Traceback (most recent call last):
+  File "/Users/raymond/Dropbox/Public/sj136/password_cracker.py", line 26, in <module>
+    print repr(password)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/idlelib/PyShell.py", line 1356, in write
+    return self.shell.write(s, self.tags)
+KeyboardInterrupt
+>>> 
+====== RESTART: /Users/raymond/Dropbox/Public/sj136/password_cracker.py ======
+False
+True
+password
+PASSWORD
+Password
+123456
+123456
+123456
+12345678
+12345678
+12345678
+1234
+1234
+1234
+qwerty
+QWERTY
+Qwerty
+12345
+12345
+12345
+dragon
+DRAGON
+Dragon
+pussy
+PUSSY
+Pussy
+baseball
+BASEBALL
+Baseball
+
+
+Traceback (most recent call last):
+  File "/Users/raymond/Dropbox/Public/sj136/password_cracker.py", line 28, in <module>
+    print variant
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/idlelib/PyShell.py", line 1356, in write
+    return self.shell.write(s, self.tags)
+KeyboardInterrupt
+>>> 
+====== RESTART: /Users/raymond/Dropbox/Public/sj136/password_cracker.py ======
+False
+True
+
+Traceback (most recent call last):
+  File "/Users/raymond/Dropbox/Public/sj136/password_cracker.py", line 35, in <module>
+    rainbow_table = make_rainbow()
+  File "/Users/raymond/Dropbox/Public/sj136/password_cracker.py", line 31, in make_rainbow
+    return rainbox_table
+NameError: global name 'rainbox_table' is not defined
+>>> 
+====== RESTART: /Users/raymond/Dropbox/Public/sj136/password_cracker.py ======
+False
+True
+shunfen cisco
+qu football
+jcq giants
+raymondh superman
+>>> 
+>>> 
+>>> import itertools
+>>> for t in itertools.product(['A', 'B'], ['x', 'y', 'z']):
+	print t
+
+	
+('A', 'x')
+('A', 'y')
+('A', 'z')
+('B', 'x')
+('B', 'y')
+('B', 'z')
+>>> for t in itertools.product(['A', 'B', 'C'], ['x', 'y', 'z']):
+	print t
+
+	
+('A', 'x')
+('A', 'y')
+('A', 'z')
+('B', 'x')
+('B', 'y')
+('B', 'z')
+('C', 'x')
+('C', 'y')
+('C', 'z')
+>>> 
+>>> map(str, range(10))
+['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
+>>> for t in itertools.product(['A', 'B', 'C'], map(str, range(100))):
+	print t
+
+	
+('A', '0')
+('A', '1')
+('A', '2')
+('A', '3')
+('A', '4')
+('A', '5')
+('A', '6')
+('A', '7')
+('A', '8')
+('A', '9')
+('A', '10')
+('A', '11')
+('A', '12')
+('A', '13')
+('A', '14')
+('A', '15')
+('A', '16')
+('A', '17')
+('A', '18')
+('A', '19')
+('A', '20')
+('A', '21')
+('A', '22')
+('A', '23')
+('A', '24')
+('A', '25')
+('A', '26')
+('A', '27')
+('A', '28')
+('A', '29')
+('A', '30')
+('A', '31')
+('A', '32')
+('A', '33')
+('A', '34')
+('A', '35')
+('A', '36')
+('A', '37')
+('A', '38')
+('A', '39')
+('A', '40')
+('A', '41')
+('A', '42')
+('A', '43')
+('A', '44')
+('A', '45')
+('A', '46')
+('A', '47')
+('A', '48')
+('A', '49')
+('A', '50')
+('A', '51')
+('A', '52')
+('A', '53')
+('A', '54')
+('A', '55')
+('A', '56')
+('A', '57')
+('A', '58')
+('A', '59')
+('A', '60')
+('A', '61')
+('A', '62')
+('A', '63')
+('A', '64')
+('A', '65')
+('A', '66')
+('A', '67')
+('A', '68')
+('A', '69')
+('A', '70')
+('A', '71')
+('A', '72')
+('A', '73')
+('A', '74')
+('A', '75')
+('A', '76')
+('A', '77')
+('A', '78')
+('A', '79')
+('A', '80')
+('A', '81')
+('A', '82')
+('A', '83')
+('A', '84')
+('A', '85')
+('A', '86')
+('A', '87')
+('A', '88')
+('A', '89')
+('A', '90')
+('A', '91')
+('A', '92')
+('A', '93')
+('A', '94')
+('A', '95')
+('A', '96')
+('A', '97')
+('A', '98')
+('A', '99')
+('B', '0')
+('B', '1')
+('B', '2')
+('B', '3')
+('B', '4')
+('B', '5')
+('B', '6')
+('B', '7')
+('B', '8')
+('B', '9')
+('B', '10')
+('B', '11')
+('B', '12')
+('B', '13')
+('B', '14')
+('B', '15')
+('B', '16')
+('B', '17')
+('B', '18')
+('B', '19')
+('B', '20')
+('B', '21')
+('B', '22')
+('B', '23')
+('B', '24')
+('B', '25')
+('B', '26')
+('B', '27')
+('B', '28')
+('B', '29')
+('B', '30')
+('B', '31')
+('B', '32')
+('B', '33')
+('B', '34')
+('B', '35')
+('B', '36')
+('B', '37')
+('B', '38')
+('B', '39')
+('B', '40')
+('B', '41')
+('B', '42')
+('B', '43')
+('B', '44')
+('B', '45')
+('B', '46')
+('B', '47')
+('B', '48')
+('B', '49')
+('B', '50')
+('B', '51')
+('B', '52')
+('B', '53')
+('B', '54')
+('B', '55')
+('B', '56')
+('B', '57')
+('B', '58')
+('B', '59')
+('B', '60')
+('B', '61')
+('B', '62')
+('B', '63')
+('B', '64')
+('B', '65')
+('B', '66')
+('B', '67')
+('B', '68')
+('B', '69')
+('B', '70')
+('B', '71')
+('B', '72')
+('B', '73')
+('B', '74')
+('B', '75')
+('B', '76')
+('B', '77')
+('B', '78')
+('B', '79')
+('B', '80')
+('B', '81')
+('B', '82')
+('B', '83')
+('B', '84')
+('B', '85')
+('B', '86')
+('B', '87')
+('B', '88')
+('B', '89')
+('B', '90')
+('B', '91')
+('B', '92')
+('B', '93')
+
+
+Traceback (most recent call last):
+  File "<pyshell#296>", line 2, in <module>
+    print t
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/idlelib/PyShell.py", line 1356, in write
+    return self.shell.write(s, self.tags)
+KeyboardInterrupt
+>>> str.isdigit('u')
+False
+>>> str.isdigit('5')
+True
+>>> str.islower('a')
+True
+>>> str.islower('A')
+False
+>>> 
+>>> 
+>>> all([True, True, True])
+True
+>>> all([True, True, False])
+False
+>>> any([True, True, False])
+True
+>>> any([False, False, False])
+False
+>>> 
+====== RESTART: /Users/raymond/Dropbox/Public/sj136/password_cracker.py ======
+False
+True
+shunfen cisco
+qu football
+jcq giants
+raymondh superman
+>>> is_strong('cisco')
+False
+>>> is_strong('cisco123')
+False
+>>> is_strong('Cisco123')
+>>> 
+====== RESTART: /Users/raymond/Dropbox/Public/sj136/password_cracker.py ======
+Yuck, %r is too weak.  Must be six or more letters with lowercase, uppercase, and numbers
+
+Traceback (most recent call last):
+  File "/Users/raymond/Dropbox/Public/sj136/password_cracker.py", line 28, in <module>
+    new_account('raymondh', 'superman')
+  File "/Users/raymond/Dropbox/Public/sj136/password_cracker.py", line 19, in new_account
+    raise ValueError
+ValueError
+>>> 
+====== RESTART: /Users/raymond/Dropbox/Public/sj136/password_cracker.py ======
+Yuck raymondh,  'superman' is too weak.  Must be six or more letters with lowercase, uppercase, and numbers
+
+Traceback (most recent call last):
+  File "/Users/raymond/Dropbox/Public/sj136/password_cracker.py", line 28, in <module>
+    new_account('raymondh', 'superman')
+  File "/Users/raymond/Dropbox/Public/sj136/password_cracker.py", line 19, in new_account
+    raise ValueError
+ValueError
+>>> 
+====== RESTART: /Users/raymond/Dropbox/Public/sj136/password_cracker.py ======
+Yuck raymondh,  'Superman' is too weak.  Must be six or more letters with lowercase, uppercase, and numbers
+
+Traceback (most recent call last):
+  File "/Users/raymond/Dropbox/Public/sj136/password_cracker.py", line 28, in <module>
+    new_account('raymondh', 'Superman')
+  File "/Users/raymond/Dropbox/Public/sj136/password_cracker.py", line 19, in new_account
+    raise ValueError
+ValueError
+>>> 
+====== RESTART: /Users/raymond/Dropbox/Public/sj136/password_cracker.py ======
+Yuck raymondh,  'Superman7' is too weak.  Must be six or more letters with lowercase, uppercase, and numbers
+
+Traceback (most recent call last):
+  File "/Users/raymond/Dropbox/Public/sj136/password_cracker.py", line 28, in <module>
+    new_account('raymondh', 'Superman7')
+  File "/Users/raymond/Dropbox/Public/sj136/password_cracker.py", line 19, in new_account
+    raise ValueError
+ValueError
+>>> 
+====== RESTART: /Users/raymond/Dropbox/Public/sj136/password_cracker.py ======
+Yuck anoop,  'Anoop1' is too weak.  Must be six or more letters with lowercase, uppercase, and numbers
+
+Traceback (most recent call last):
+  File "/Users/raymond/Dropbox/Public/sj136/password_cracker.py", line 30, in <module>
+    new_account('anoop', 'Anoop1')
+  File "/Users/raymond/Dropbox/Public/sj136/password_cracker.py", line 20, in new_account
+    raise ValueError
+ValueError
+>>> 
+====== RESTART: /Users/raymond/Dropbox/Public/sj136/password_cracker.py ======
+False
+True
+>>> 
+====== RESTART: /Users/raymond/Dropbox/Public/sj136/password_cracker.py ======
+False
+True
+
+=============================== RESTART: Shell ===============================
+>>> 
+====== RESTART: /Users/raymond/Dropbox/Public/sj136/password_cracker.py ======
+False
+True
+>>> 
+====== RESTART: /Users/raymond/Dropbox/Public/sj136/password_cracker.py ======
+False
+True
+
+Traceback (most recent call last):
+  File "/Users/raymond/Dropbox/Public/sj136/password_cracker.py", line 55, in <module>
+    rainbow_table = make_rainbow()
+  File "/Users/raymond/Dropbox/Public/sj136/password_cracker.py", line 48, in make_rainbow
+    hashpass = hashlib.sha512(numvar.digest())
+AttributeError: 'tuple' object has no attribute 'digest'
+>>> 
+====== RESTART: /Users/raymond/Dropbox/Public/sj136/password_cracker.py ======
+False
+True
+
+Traceback (most recent call last):
+  File "/Users/raymond/Dropbox/Public/sj136/password_cracker.py", line 55, in <module>
+    rainbow_table = make_rainbow()
+  File "/Users/raymond/Dropbox/Public/sj136/password_cracker.py", line 48, in make_rainbow
+    hashpass = hashlib.sha512(numvar).digest()
+TypeError: must be string or buffer, not tuple
+>>> 
+====== RESTART: /Users/raymond/Dropbox/Public/sj136/password_cracker.py ======
+False
+True
+p0
+p1
+p2
+p3
+p4
+p5
+p6
+p7
+p8
+p9
+p10
+p11
+p12
+p13
+p14
+p15
+p16
+p17
+p18
+p19
+p20
+p21
+p22
+p23
+p24
+p25
+p26
+p27
+p28
+p29
+p30
+p31
+p32
+p33
+p34
+p35
+p36
+p37
+p38
+p39
+p40
+p41
+p42
+p43
+p44
+p45
+p46
+p47
+p48
+p49
+p50
+p51
+p52
+p53
+p54
+p55
+p56
+p57
+p58
+p59
+p60
+p61
+p62
+p63
+p64
+p65
+p66
+p67
+p68
+p69
+p70
+p71
+p72
+p73
+p74
+p75
+p76
+p77
+p78
+p79
+p80
+p81
+
+
+Traceback (most recent call last):
+  File "/Users/raymond/Dropbox/Public/sj136/password_cracker.py", line 56, in <module>
+    rainbow_table = make_rainbow()
+  File "/Users/raymond/Dropbox/Public/sj136/password_cracker.py", line 51, in make_rainbow
+    print numvar
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/idlelib/PyShell.py", line 1356, in write
+    return self.shell.write(s, self.tags)
+KeyboardInterrupt
+>>> 
+====== RESTART: /Users/raymond/Dropbox/Public/sj136/password_cracker.py ======
+False
+True
+
+Traceback (most recent call last):
+  File "/Users/raymond/Dropbox/Public/sj136/password_cracker.py", line 57, in <module>
+    rainbow_table = make_rainbow()
+  File "/Users/raymond/Dropbox/Public/sj136/password_cracker.py", line 48, in make_rainbow
+    print number
+NameError: global name 'number' is not defined
+>>> 
+====== RESTART: /Users/raymond/Dropbox/Public/sj136/password_cracker.py ======
+False
+True
+('p', '0')
+p0
+('p', '1')
+p1
+('p', '2')
+p2
+('p', '3')
+p3
+('p', '4')
+p4
+('p', '5')
+p5
+('p', '6')
+p6
+('p', '7')
+p7
+('p', '8')
+p8
+('p', '9')
+p9
+('p', '10')
+p10
+('p', '11')
+
+
+Traceback (most recent call last):
+  File "/Users/raymond/Dropbox/Public/sj136/password_cracker.py", line 57, in <module>
+    rainbow_table = make_rainbow()
+  File "/Users/raymond/Dropbox/Public/sj136/password_cracker.py", line 48, in make_rainbow
+    print numvar
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/idlelib/PyShell.py", line 1356, in write
+    return self.shell.write(s, self.tags)
+KeyboardInterrupt
+>>> 
+====== RESTART: /Users/raymond/Dropbox/Public/sj136/password_cracker.py ======
+False
+True
+Variant password
+('p', '0')
+p0
+('p', '1')
+p1
+('p', '2')
+p2
+('p', '3')
+p3
+('p', '4')
+p4
+('p', '5')
+p5
+
+
+Traceback (most recent call last):
+  File "/Users/raymond/Dropbox/Public/sj136/password_cracker.py", line 58, in <module>
+    rainbow_table = make_rainbow()
+  File "/Users/raymond/Dropbox/Public/sj136/password_cracker.py", line 53, in make_rainbow
+    print numvar
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/idlelib/PyShell.py", line 1356, in write
+    return self.shell.write(s, self.tags)
+KeyboardInterrupt
+>>> 
+====== RESTART: /Users/raymond/Dropbox/Public/sj136/password_cracker.py ======
+False
+True
+('password', '0')
+
+Traceback (most recent call last):
+  File "/Users/raymond/Dropbox/Public/sj136/password_cracker.py", line 58, in <module>
+    rainbow_table = make_rainbow()
+  File "/Users/raymond/Dropbox/Public/sj136/password_cracker.py", line 50, in make_rainbow
+    numvar = ''.join(numvar)
+UnboundLocalError: local variable 'numvar' referenced before assignment
+>>> 
+====== RESTART: /Users/raymond/Dropbox/Public/sj136/password_cracker.py ======
+False
+True
+qu Football16
+
+
+Traceback (most recent call last):
+  File "/Users/raymond/Dropbox/Public/sj136/password_cracker.py", line 59, in <module>
+    print user, rainbow_table[hashpass]
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/idlelib/PyShell.py", line 1356, in write
+    return self.shell.write(s, self.tags)
+KeyboardInterrupt
+>>> 
+====== RESTART: /Users/raymond/Dropbox/Public/sj136/password_cracker.py ======
+False
+True
+password0 ֎{ÁÇ"ﾼﾢﾸ,
+password1 ﾼTwPﾹ'ﾗùUﾳ
+password2 ﾒﾨﾑøﾈçﾝ.ﾋ
+password3 *dÖV=ﾗ)I?ﾑ
+password4 ﾖﾽNò6H
+password5 9Æõ2ﾞﾕﾛ*ðÞ
+password6 $"ﾊvmå
+password7 ﾧׅy
+췚J;
+password8 !ﾚﾫk,÷8Ùóp
+password9 &âaã
+password10 ,åö5Ò[y7ﾩ
+password11 òrﾽãﾠ]+êÏ
+password12 U-ÂæÃQáﾦÿ
+password13 4Ê2ﾛﾃ﾿
+password14 lﾃã¸ﾠ5﾿UÇ
+password15 VDíTcﾮﾷxõﾤ
+password16 37ﾋ{fÅïﾨ4
+password17 ;ËVﾑàTG
+password18 bëEFâþ$
+password19 9B"ﾞpk5ñ
+password20 ﾙ4Lá:aﾆ
+password21 Èõﾯ7ÿgOG
+password22 ﾺ9ﾉ~ﾨzHYK
+password23 ﾶﾝEsٕbP_
+password24 «IfOﾍC(q
+password25 ԅ-Éyþ	K
+password26 AÆìá(ﾸﾫk6
+password27 Lﾊ^ÔýÔ
+password28 ?&vÇm﾿õ÷ﾶ-
+password29 iAêMåâʋw
+password30 ﾹZÒHﾦõﾼ
+password31 þì2@΄oÆ/
+password32 !Tﾯ"ﾠﾄÓ0
+password33 \<ûﾎﾔ﾿ìﾹÞ
+password34 ﾈ?ﾬ?gù2ﾟ
+password35  éﾱÀÆFüù
+password36 q~Ç/kﾞﾰ+ô
+password37 ðұﾷE#D*
+password38 dÏ6f9ﾣZÃ`
+password39 ﾆU÷{aó7ﾬí 
+password40 ʺ".ØoÌe
+password41 ﾕ?ڝÖá.
+password42 QKÏö0ﾯ%!
+password43 tﾡﾄ0ﾳÀBzﾢî
+password44 ﾐﾂﾊﾶÕÎñ`
+password45 ñÞ!̀ﾑBçÑÉ
+password46 ﾃﾊﾧ}ﾌﾓÕùBç
+password47 îNrǥﾛÎò
+password48 _û׫äÂÌM
+password49 ð×Ã×K,3@ﾕ
+password50 *fãGæ?nﾅÈ
+password51 ﾜ~ﾅ%1E;É
+password52 \`ﾷﾙͺVﾁd
+password53 ïOÏ#ßٵ
+password54 ÛfﾋﾩÚRX?Á
+password55 1ﾡﾄkﾲ<ﾠﾣ
+password56 ﾤÊ+ì]ﾬøV
+password57 óﾳîÆ!ô﾿ﾼ
+password58 ﾏǢàÄ{|ðK
+password59 ﾴçﾌtÁøeq,ï
+password60 ]^züﾭ>~A
+password61 ﾤöXﾲmL&ﾢﾊ
+password62 ú}
+úZ)ﾚ
+password63 ɑÝáﾦGSﾸ,
+password64 ӱÏ҉áﾂdﾵ
+password65 sﾖÓ]ﾀﾑ*Ȳﾪ
+password66 ú-ú3ûúﾇﾴﾮÇ
+password67 Z!Á6sﾋﾢﾔ
+password68 ﾠﾟØsﾘvﾩﾮK
+password69 	ﾦDÅsﾚ ýﾜﾆ
+password70 ﾸﾰ#ÙcﾜÿÚ
+password71 pÁYoU>Ë͞
+password72 ﾫﾏﾆo﾿ﾮ(í
+password73 ﾦñaÍ,Nﾗﾚ5
+password74 ﾕﾧåü\ÃßoﾜM
+password75 ÜÁsÒdﾊﾵ÷ﾡ
+password76 bæ(ÇôﾲﾸÖ^
+password77 ﾛäQFﾝYe#ﾚ[
+password78 õá|8ÖvÔߵú
+password79 zﾦﾶﾒjÁñﾾ
+password80 ﾤëﾋWﾵñﾟС
+password81 ùÄ]íA÷ﾟﾸèò
+password82 æòﾕﾺﾘ	v.+ﾩ
+password83 ﾴ~ﾼﾏýJﾤﾚơ
+password84 ﾴÃ"ﾥtäﾉIâ
+password85 ﾤ<ﾯKҺﾝà
+password86 ﾕXﾀﾍÓ8ﾼ
+password87 ЪÝ4Å̅Ⱥê
+password88 َﾐíkNzﾚv
+password89 0ﾄnNﾨIﾵﾡﾝ
+password90 NÊQÀüﾃY
+password91 ﾆ1(ý&PZ
+
+password92 CÕWÏHﾵ{}
+password93 rilî è'{q
+password94 |ﾇOﾹﾙgﾕÝSÄ
+password95 ﾏaÝfÄ&2Û
+password96 ﾪﾵ.zÐyàqÎÞ
+password97 ﾱﾐﾕôﾽNﾐﾮâﾭ
+password98 ÂzsBﾑ
+password99 yﾩﾕdﾙMêdU
+PASSWORD0 ]ïÜtﾆﾰÊW
+PASSWORD1 "ÓۨËTkâ
+PASSWORD2 ñçrﾚﾈÂy
+PASSWORD3 J@ÑﾸﾕÁ"ﾣz
+PASSWORD4 Wﾲw)C﾿i^ﾛ
+PASSWORD5 ﾣfﾇéIﾥ34Î
+PASSWORD6 UåݡÈhﾍéﾋÙ
+PASSWORD7 BO󰝞!o
+PASSWORD8 e+
+ﾦלìêS
+PASSWORD9 :V9ϳﾭ*ﾼvﾔ
+PASSWORD10 ÁVõﾚß2ﾬzÑ
+PASSWORD11 'AGÒ4ﾕH
+PASSWORD12 UﾕõöﾻﾞﾵCB
+PASSWORD13 8EﾦƦAﾤí
+PASSWORD14 Eﾰﾜﾳﾦﾗ7ﾐëG
+PASSWORD15 ì1ﾟBÄғMﾪò
+PASSWORD16 +iKﾥg5ÏWÆË
+PASSWORD17 }bﾵﾲÆ}hÒ
+PASSWORD18 Rèﾐ3xﾦﾹTÄ
+PASSWORD19 XË	@Q%*ﾫﾘ
+PASSWORD20 ﾌﾘﾢs6<Lﾣ
+PASSWORD21 ﾾëâèȖÕŻﾩ
+PASSWORD22 qLՠﾳ ﾒd
+PASSWORD23 *@ðﾜk"ﾹ9R
+PASSWORD24 tﾕÿﾴ(yéﾟq?
+PASSWORD25 \ĠﾛÓ_ä|7
+PASSWORD26 .(áâõìÍﾷ
+PASSWORD27 æsﾣm÷æfÆ<
+PASSWORD28 rèîc#
+PASSWORD29 6õ~,jﾩÅ \
+PASSWORD30 ÑmÛaðÔØp
+PASSWORD31 ﾓæ3,ûíﾯiY
+PASSWORD32 ?EüdﾙJﾍÓìÊ
+PASSWORD33 EÈÿPi;Ä1Q
+PASSWORD34 hﾰﾬ(ÆþËß
+PASSWORD35 ÕÄ%Yﾌw9ﾒﾮ
+PASSWORD36 CiYibﾨɲﾝ
+PASSWORD37 듩âkﾗßY﾿À
+PASSWORD38 ﾧﾒﾾc(ﾺÆO
+PASSWORD39 ȪNÌÊüù
+PASSWORD40 ˎTUì:$ﾽd
+PASSWORD41 IÉֽÁUﾔPﾧò
+PASSWORD42 [ﾂ,uﾶ)ﾶ>Â,
+PASSWORD43 ﾪﾦo>ðﾫëæ
+PASSWORD44 R	3#Ñz*\
+PASSWORD45 MþÅäæáגﾲ
+PASSWORD46 
+oﾐ[Ñþﾤﾚﾂá
+PASSWORD47 ﾸ<ﾉ+,øòﾸ
+PASSWORD48 ßŘﾚÂïòzWP
+PASSWORD49 J5r&ﾰnﾸﾨ×Û
+PASSWORD50 ﾾoþﾗ|ﾺ
+PASSWORD51 ?Â}ûﾯK3ﾓK
+PASSWORD52 Ñ'árﾀá%oj
+PASSWORD53 ﾈÐÆÒòFñﾞcﾑ
+PASSWORD54 Ì×
+ﾺI|3ﾷ
+PASSWORD55 ﾼøﾁëﾻQq
+PASSWORD56 ßëﾨõÓeÛjﾉ
+PASSWORD57 
+ﾊBﾆﾷJV%ﾢﾄ
+PASSWORD58 йO×[1jõ
+PASSWORD59 :Á9Ýpóﾄﾱﾙ
+PASSWORD60 ^z$ﾾÏÒ.Úi~
+PASSWORD61 ﾼﾡ	XﾂGÞÃÓ'
+PASSWORD62 +ëóÉüßصﾆﾖ
+PASSWORD63 ﾞﾰC)þÕDÓh"
+PASSWORD64 ÅNﾾÃjﾪﾦMb
+PASSWORD65 ﾲﾐÓfﾠvtﾃ;Ù
+PASSWORD66 l/QﾹﾀL{ﾲ
+PASSWORD67 ﾆ·úËTÁñﾺ
+PASSWORD68 Y4gﾍô,#æ
+PASSWORD69 ﾩ-ﾦLíwÿS0
+PASSWORD70 Kﾧ@QË>ÿwv
+PASSWORD71 ﾌ5Iﾆòﾤ8ﾶ"à
+PASSWORD72 ﾟTlÁZÓLﾅ^
+PASSWORD73 ×8ﾵﾴSXoyﾹ
+PASSWORD74 Iﾞﾡ*ðynäﾧd
+PASSWORD75 ﾶbﾕﾭﾨ2
+PASSWORD76 ﾅÃ?ﾣMÕVÑ,
+PASSWORD77 5HêbâX]ﾧ~ﾧ
+PASSWORD78 ﾧﾨâﾪMﾗ
+PASSWORD79 5ñ}ﾉYﾂB
+PASSWORD80 ×[GﾏﾵﾷﾟOﾳ
+PASSWORD81 um%CRﾘ 
+PASSWORD82 ﾷﾊﾌFmﾊTﾢ
+PASSWORD83 ﾠÍÂùÁX﾿e
+PASSWORD84 ÞÞﾎÝöﾵJǡ
+PASSWORD85 zÖøﾰÂæ"j3Ö
+PASSWORD86 lÖ^ﾺ0Åâo
+PASSWORD87 ﾤÒG	DðïÈ
+PASSWORD88 ﾔ SRvﾼ<Êõ
+PASSWORD89 uۧDﾳ@O
+
+PASSWORD90 {øﾁÒê"ﾆﾉ
+PASSWORD91 ÕZjﾤÊn
+ﾣam
+PASSWORD92 EsﾒDéí^Æù_
+PASSWORD93 ﾙàXùRﾇyýÅ
+PASSWORD94 ٮﾇï}'âìﾸÝ
+PASSWORD95 :ýòISﾷﾃxþê
+PASSWORD96 çòﾣ÷zïƑ
+PASSWORD97  ﾁ ܮ]øðU
+PASSWORD98 
+"LdOø!5ﾝ
+PASSWORD99 wùËü`HﾘﾙÖ÷
+Password0 .6WﾗÚf×~{z
+Password1 ËàÍhËÊ8h%
+Password2  dﾂXﾏﾀ!ﾽp
+Password3 FNÌþZﾋÍ,{6
+Password4 ﾟ>Ú|[É]BÕ
+Password5 }côֱ\Ð4
+Password6 LÈ&JÙôﾬM4
+Password7 Ï1ðﾌﾁÙ.Ô
+Password8 ﾒü⡸4îÌ4
+Password9 ﾪQíX8bÞ
+Password10 ﾨ*+háﾗZﾦ
+Password11 yﾥãkØ*cÛ)6
+Password12 Îmôﾰﾜd⌔
+Password13 ѱ6/ÕãﾩVﾞ
+Password14 Û
+?¨ìﾵ/[ý
+Password15 ëKÉ[ﾾﾷâÁ
+Password16 ﾍRhY}`(È
+Password17 ﾊ*a÷×vèﾁc
+Password18 õzﾲf<$ﾞﾭfà
+Password19 	'ᎉîoi'ç
+Password20 lÆzﾭy~jUﾷ
+Password21 _ﾀﾖRÑeÀä
+Password22 Ì
+Password23 RﾗCÏﾶ@
+Password24 ﾷäU"{뱹ﾰP
+Password25 [åcﾟﾨÁyﾽﾄ
+Password26 ﾍ'ﾠÍ0ﾓﾕ=>
+Password27 ﾩ-ﾍﾞﾡÓe
+Password28 ﾺﾃvÀzSåÇrÑ
+Password29 Ý:ﾒ
+Password30 ﾴfﾼöﾨﾰﾓﾎI
+Password31 ~ﾇÎWY5Ë&
+Password32 AﾂòﾧﾌV#,
+Password33 pJBÇQÿåÝäÛ
+Password34 FAîﾈðÔäB+ﾌ
+Password35 sõ;Zﾅﾪb
+Password36 ãPﾧýﾠﾝﾧ
+Password37 ﾅﾄá:ﾼ$[f
+Password38 ﾩ|ﾬúﾨ^ﾶýÄ
+Password39 ﾫ+×îˎcﾞ
+Password40 ﾆâEﾌïãͳÚV
+Password41 kè_üÅìJ
+Password42 3TﾎﾸÏöæeÖÑ
+Password43 üﾈÄÅ}ﾱZ
+Password44 y:ﾵ_ﾯÉfóﾯ
+Password45 ﾋﾓﾁ+ﾺﾌARÏë
+Password46 ﾭ}ìpyØ|Jﾈﾎ
+Password47 iÙ&Ú*^ﾷËI
+Password48 d7ﾍ?#ﾍDﾷﾧm
+Password49 =1åûÆ]>ﾓÓ
+Password50 ÉVÆ;E[ﾶﾃﾦ
+Password51 s$ﾎɇ&d
+Password52 ﾽﾦﾌﾐÉEßlﾈ
+Password53 dﾲﾜﾺ?ﾪÄﾕﾲ
+Password54 o>ﾜw÷ôﾉiÐû
+Password55 ҔyPږôoﾫ
+Password56 ﾶ45NbàøQ
+Password57 [HﾽE=ﾑﾎ;ë
+Password58 j9ﾡﾟé
+Password59 ﾰð5ﾃZﾃ-ﾎ
+Password60 ÚtZﾨzﾉԐØ
+Password61 ÷ÈﾶÝ!ößﾸ
+Password62 &örîùﾖﾭ
+Password63 ﾲﾬmYﾃW|Áä
+Password64 }'﾿h?úÝ--û
+Password65 f(>ﾅ`Вﾶ
+Password66 =ﾴkߢﾸYýﾚﾶ
+Password67 öﾋÃFﾋu\?ﾇ
+Password68 Týﾸ+ôﾔÊðﾕﾓ
+Password69 ﾠﾍùéNÞf
+ðd
+Password70 ﾼjZﾒOTﾚûø
+Password71 -Jﾖ﾿ﾏÍ8ﾛVï
+Password72 T%ﾼﾻﾞ6{)
+Password73 Y?ﾀﾴOpêU]ﾩ
+Password74 üXëb:ﾈe{:
+Password75 aåﾆúЎÓëÕ
+Password76 ﾈçrﾹﾦﾰﾤÁ3
+Password77 &ú:1MﾰﾑPﾨÔ
+Password78 mãﾏ÷Ìál
+Password79 ﾇÂU2ﾮﾫäSﾦﾖ
+Password80 _	3wqﾡﾚú
+Password81 ﾴﾾO|â)ɖ
+Password82 ﾏlË쐭ﾵ~
+Password83 ò
+ooﾹ SÐ
+Password84 wﾙëeﾊÂAI
+Password85 íB׭ﾀÂê&~
+Password86 ﾽûÂﾜﾇ5esﾛ
+Password87 îﾘ䫿æ*ﾘ
+Password88 2ﾏﾬXﾡÇ4þ2t
+Password89 0ﾓøVÃeãÛÃÊ
+Password90 ôﾂﾓﾅbòﾫlÙ
+Password91 ﾨﾺÒrcã^ﾲMï
+Password92 ﾎﾬæ=٢q	kf
+Password93 æoﾋﾎ:×-ﾅÞÌ
+Password94 ûÕ{ØòWÙå
+Password95 [߆﾿ðﾥﾪﾚﾲÇ
+Password96 4ìÖé÷sﾸ}
+Password97 Sﾟnﾡìì:)ËI
+Password98 ﾫP@üDeﾵH
+Password99 ﾌÆnﾵÉﾟÜõ
+1234560 ,ýﾱﾢﾔﾺTﾗ
+1234561 ôTﾊﾆﾽÐR
+1234562 /ʧñFﾌﾱp
+1234563 ø*RKFLÜçPÄ
+1234564 \Ëﾱ4>ñ8ﾄp
+1234565 ﾄﾐﾩ]ﾀﾳ)
+1234566 ÑñﾕØÌq-tﾏ
+1234567 á>üﾙﾛôKﾻM
+1234568 e&ﾋCèMËL
+1234569 ×ìxo1UùA!ß
+12345610 b.﾿ﾕﾰﾺßHË
+12345611 ÕUﾗﾺﾓﾝGrL
+12345612 ﾡﾴﾀj|:xó
+12345613 þÞN2ﾯËÆ
+12345614 Sﾤ!AÜsÈ
+12345615 ﾥÉ3ﾢﾄﾎﾮﾱE
+12345616 Z×ueﾦm)×Zﾇ
+12345617 :*õä<ﾜíÜ9p
+12345618 oﾹﾽî9ÃÄöíW
+12345619 ﾨﾳﾚ,ËAMﾀW
+12345620 ãÄ}#dﾠy$`â
+12345621 ﾦýéﾔ2Kp,
+12345622 ^7Zï"D8ﾡ
+12345623 L2çrCCt
+12345624 6ﾜ
+ﾼÜtﾏﾴU
+12345625 bﾠﾬõﾠëÓ/ﾳÅ
+12345626 ÞxÝ7ؾ85ﾡ
+12345627 ﾹÍt ﾵeﾊÎ#
+12345628 CﾺûüýrJÊ
+12345629 å>ðpXﾱ̍N;
+12345630 óâá5ﾥ-kÅeA
+12345631 Ƨnސ9#@s
+12345632 8/eoYﾐ
+12345633 úﾗ@îõöﾂﾔ
+12345634 UﾈЇﾺiﾥPﾁ
+12345635 ﾸﾗKnd
+12345636 Ԁ6ﾖ&MÚш
+12345637 ^ﾴ2Q޿ﾴ7/Ê
+12345638 Õöﾷ%\6﾿ﾳﾌ
+12345639 &iﾱ%ﾢﾜﾄì
+12345640 ﾑPmh9ÜJm}
+12345641 ﾜeﾢEQ:!ﾰ
+12345642 ﾄw
+12345643 ﾸølIﾙﾌ$\Â
+12345644 ö5ﾫTPﾺõqÎ
+12345645 zHoﾏuê
+12345646 ﾣç(:ÖɲÔ
+12345647 ÖZNﾘþðﾃmﾪﾞ
+12345648 1TÖÁ%ﾉͩ
+12345649 C\æﾭ^4:ʗ
+12345650 LoÝnz@ﾀﾽ
+12345651 ﾠ/ﾷ<MyË
+12345652 !ﾳﾵﾜw%ﾑﾟ
+12345653 Z_ﾧ íEﾤﾦ
+12345654 ßvúﾯ@ñEgÏ3
+12345655 Â=ﾪkbﾢEâﾶÅ
+12345656 |ﾏﾕﾰﾉﾯi2ﾙ
+12345657 Bݫﾐڊﾨﾰr
+12345658 ﾫﾎæÈ(
+12345659 ﾻﾬﾧf#ﾨÎ]
+12345660 ﾑŧ÷JÔb
+12345661 Ü?ﾾnﾠQE
+12345662 kÃIﾀøõﾲﾷLK
+12345663 ﾝﾕýﾼè\Ìã
+12345664 G2ôÂÜaﾫLàﾈ
+12345665 
+12345666 7$8;IlÛåoÙ
+12345667 ÐËlSﾤﾋ!À
+12345668 Pﾁ=,OﾾﾉﾑU
+12345669 Vë=uؤﾴ
+12345670 ÿ,/ﾥâk*ﾰë
+12345671 RÐåíèßKëﾪ
+12345672 0Ã@ﾣﾥ5jﾶ1ﾺ
+12345673 vÞIlﾁﾐﾳoÛT
+12345674 `lﾵx@`Y'
+12345675 üÊe~ﾁÓÛ=
+12345676 yﾵﾫﾑﾐûﾬYw
+12345677 ^Z{TÔ1Aﾻï
+12345678 úX]ﾉÈQÝ3ﾊp
+12345679 ûﾰçÄÖs~ﾄsÎ
+12345680 zÎ-×ﾣﾵ
+È
+12345681 h[ï/ﾉ6~4ﾉﾚ
+12345682 mZ﾿ÇëÐñÔ
+12345683 Tۘɮ2åñﾼﾧ
+12345684 ýÄsévcy
+12345685 \ﾇT&yﾷﾥﾝØÎ
+12345686 ;×)ÒWùþ3Éæ
+12345687 ﾠﾠﾚÿﾱﾼﾃyf-
+12345688 ñ$Cÿﾩ!êﾗܠ
+12345689 lÙ=ﾇ×YB
+12345690 ﾅﾜÿ>á&Ö(ﾣ
+12345691 Kùﾴæﾍac}
+12345692 bﾼﾘﾎþò.w?
+12345693 ﾆﾩ\ﾷzGOlﾬ
+12345694 ﾄﾯﾌ﾿2ﾐÃmÜ
+12345695 ÃxAE2ﾂa
+12345696 ìﾚáÂY~V.
+12345697 üﾪﾁdøøÕÅf
+12345698 ôhXﾊäﾣO
+12345699 ËÇǢKÒ]t
+1234560 ,ýﾱﾢﾔﾺTﾗ
+1234561 ôTﾊﾆﾽÐR
+1234562 /ʧñFﾌﾱp
+1234563 ø*RKFLÜçPÄ
+1234564 \Ëﾱ4>ñ8ﾄp
+1234565 ﾄﾐﾩ]ﾀﾳ)
+1234566 ÑñﾕØÌq-tﾏ
+1234567 á>üﾙﾛôKﾻM
+1234568 e&ﾋCèMËL
+1234569 ×ìxo1UùA!ß
+12345610 b.﾿ﾕﾰﾺßHË
+12345611 ÕUﾗﾺﾓﾝGrL
+12345612 ﾡﾴﾀj|:xó
+12345613 þÞN2ﾯËÆ
+12345614 Sﾤ!AÜsÈ
+12345615 ﾥÉ3ﾢﾄﾎﾮﾱE
+12345616 Z×ueﾦm)×Zﾇ
+12345617 :*õä<ﾜíÜ9p
+12345618 oﾹﾽî9ÃÄöíW
+12345619 ﾨﾳﾚ,ËAMﾀW
+12345620 ãÄ}#dﾠy$`â
+12345621 ﾦýéﾔ2Kp,
+12345622 ^7Zï"D8ﾡ
+12345623 L2çrCCt
+12345624 6ﾜ
+ﾼÜtﾏﾴU
+12345625 bﾠﾬõﾠëÓ/ﾳÅ
+12345626 ÞxÝ7ؾ85ﾡ
+12345627 ﾹÍt ﾵeﾊÎ#
+12345628 CﾺûüýrJÊ
+12345629 å>ðpXﾱ̍N;
+12345630 óâá5ﾥ-kÅeA
+12345631 Ƨnސ9#@s
+12345632 8/eoYﾐ
+12345633 úﾗ@îõöﾂﾔ
+12345634 UﾈЇﾺiﾥPﾁ
+12345635 ﾸﾗKnd
+12345636 Ԁ6ﾖ&MÚш
+12345637 ^ﾴ2Q޿ﾴ7/Ê
+12345638 Õöﾷ%\6﾿ﾳﾌ
+12345639 &iﾱ%ﾢﾜﾄì
+12345640 ﾑPmh9ÜJm}
+12345641 ﾜeﾢEQ:!ﾰ
+12345642 ﾄw
+12345643 ﾸølIﾙﾌ$\Â
+12345644 ö5ﾫTPﾺõqÎ
+12345645 zHoﾏuê
+12345646 ﾣç(:ÖɲÔ
+12345647 ÖZNﾘþðﾃmﾪﾞ
+12345648 1TÖÁ%ﾉͩ
+12345649 C\æﾭ^4:ʗ
+12345650 LoÝnz@ﾀﾽ
+12345651 ﾠ/ﾷ<MyË
+12345652 !ﾳﾵﾜw%ﾑﾟ
+12345653 Z_ﾧ íEﾤﾦ
+12345654 ßvúﾯ@ñEgÏ3
+12345655 Â=ﾪkbﾢEâﾶÅ
+12345656 |ﾏﾕﾰﾉﾯi2ﾙ
+12345657 Bݫﾐڊﾨﾰr
+12345658 ﾫﾎæÈ(
+12345659 ﾻﾬﾧf#ﾨÎ]
+12345660 ﾑŧ÷JÔb
+12345661 Ü?ﾾnﾠQE
+12345662 kÃIﾀøõﾲﾷLK
+12345663 ﾝﾕýﾼè\Ìã
+12345664 G2ôÂÜaﾫLàﾈ
+12345665 
+12345666 7$8;IlÛåoÙ
+12345667 ÐËlSﾤﾋ!À
+12345668 Pﾁ=,OﾾﾉﾑU
+12345669 Vë=uؤﾴ
+12345670 ÿ,/ﾥâk*ﾰë
+12345671 RÐåíèßKëﾪ
+12345672 0Ã@ﾣﾥ5jﾶ1ﾺ
+12345673 vÞIlﾁﾐﾳoÛT
+12345674 `lﾵx@`Y'
+12345675 üÊe~ﾁÓÛ=
+12345676 yﾵﾫﾑﾐûﾬYw
+12345677 ^Z{TÔ1Aﾻï
+12345678 úX]ﾉÈQÝ3ﾊp
+12345679 ûﾰçÄÖs~ﾄsÎ
+12345680 zÎ-×ﾣﾵ
+È
+12345681 h[ï/ﾉ6~4ﾉﾚ
+12345682 mZ﾿ÇëÐñÔ
+12345683 Tۘɮ2åñﾼﾧ
+12345684 ýÄsévcy
+12345685 \ﾇT&yﾷﾥﾝØÎ
+12345686 ;×)ÒWùþ3Éæ
+12345687 ﾠﾠﾚÿﾱﾼﾃyf-
+12345688 ñ$Cÿﾩ!êﾗܠ
+12345689 lÙ=ﾇ×YB
+12345690 ﾅﾜÿ>á&Ö(ﾣ
+12345691 Kùﾴæﾍac}
+12345692 bﾼﾘﾎþò.w?
+12345693 ﾆﾩ\ﾷzGOlﾬ
+12345694 ﾄﾯﾌ﾿2ﾐÃmÜ
+12345695 ÃxAE2ﾂa
+12345696 ìﾚáÂY~V.
+12345697 üﾪﾁdøøÕÅf
+12345698 ôhXﾊäﾣO
+12345699 ËÇǢKÒ]t
+1234560 ,ýﾱﾢﾔﾺTﾗ
+1234561 ôTﾊﾆﾽÐR
+1234562 /ʧñFﾌﾱp
+1234563 ø*RKFLÜçPÄ
+1234564 \Ëﾱ4>ñ8ﾄp
+1234565 ﾄﾐﾩ]ﾀﾳ)
+1234566 ÑñﾕØÌq-tﾏ
+1234567 á>üﾙﾛôKﾻM
+1234568 e&ﾋCèMËL
+1234569 ×ìxo1UùA!ß
+12345610 b.﾿ﾕﾰﾺßHË
+12345611 ÕUﾗﾺﾓﾝGrL
+12345612 ﾡﾴﾀj|:xó
+12345613 þÞN2ﾯËÆ
+12345614 Sﾤ!AÜsÈ
+12345615 ﾥÉ3ﾢﾄﾎﾮﾱE
+12345616 Z×ueﾦm)×Zﾇ
+12345617 :*õä<ﾜíÜ9p
+12345618 oﾹﾽî9ÃÄöíW
+12345619 ﾨﾳﾚ,ËAMﾀW
+12345620 ãÄ}#dﾠy$`â
+12345621 ﾦýéﾔ2Kp,
+12345622 ^7Zï"D8ﾡ
+12345623 L2çrCCt
+12345624 6ﾜ
+ﾼÜtﾏﾴU
+12345625 bﾠﾬõﾠëÓ/ﾳÅ
+12345626 ÞxÝ7ؾ85ﾡ
+12345627 ﾹÍt ﾵeﾊÎ#
+12345628 CﾺûüýrJÊ
+12345629 å>ðpXﾱ̍N;
+12345630 óâá5ﾥ-kÅeA
+12345631 Ƨnސ9#@s
+12345632 8/eoYﾐ
+12345633 úﾗ@îõöﾂﾔ
+12345634 UﾈЇﾺiﾥPﾁ
+12345635 ﾸﾗKnd
+12345636 Ԁ6ﾖ&MÚш
+12345637 ^ﾴ2Q޿ﾴ7/Ê
+12345638 Õöﾷ%\6﾿ﾳﾌ
+12345639 &iﾱ%ﾢﾜﾄì
+12345640 ﾑPmh9ÜJm}
+12345641 ﾜeﾢEQ:!ﾰ
+12345642 ﾄw
+12345643 ﾸølIﾙﾌ$\Â
+12345644 ö5ﾫTPﾺõqÎ
+12345645 zHoﾏuê
+12345646 ﾣç(:ÖɲÔ
+12345647 ÖZNﾘþðﾃmﾪﾞ
+12345648 1TÖÁ%ﾉͩ
+12345649 C\æﾭ^4:ʗ
+12345650 LoÝnz@ﾀﾽ
+12345651 ﾠ/ﾷ<MyË
+12345652 !ﾳﾵﾜw%ﾑﾟ
+12345653 Z_ﾧ íEﾤﾦ
+12345654 ßvúﾯ@ñEgÏ3
+12345655 Â=ﾪkbﾢEâﾶÅ
+12345656 |ﾏﾕﾰﾉﾯi2ﾙ
+12345657 Bݫﾐڊﾨﾰr
+12345658 ﾫﾎæÈ(
+12345659 ﾻﾬﾧf#ﾨÎ]
+12345660 ﾑŧ÷JÔb
+12345661 Ü?ﾾnﾠQE
+12345662 kÃIﾀøõﾲﾷLK
+12345663 ﾝﾕýﾼè\Ìã
+12345664 G2ôÂÜaﾫLàﾈ
+12345665 
+12345666 7$8;IlÛåoÙ
+12345667 ÐËlSﾤﾋ!À
+12345668 Pﾁ=,OﾾﾉﾑU
+12345669 Vë=uؤﾴ
+12345670 ÿ,/ﾥâk*ﾰë
+12345671 RÐåíèßKëﾪ
+12345672 0Ã@ﾣﾥ5jﾶ1ﾺ
+12345673 vÞIlﾁﾐﾳoÛT
+12345674 `lﾵx@`Y'
+12345675 üÊe~ﾁÓÛ=
+12345676 yﾵﾫﾑﾐûﾬYw
+12345677 ^Z{TÔ1Aﾻï
+12345678 úX]ﾉÈQÝ3ﾊp
+12345679 ûﾰçÄÖs~ﾄsÎ
+12345680 zÎ-×ﾣﾵ
+È
+12345681 h[ï/ﾉ6~4ﾉﾚ
+12345682 mZ﾿ÇëÐñÔ
+12345683 Tۘɮ2åñﾼﾧ
+12345684 ýÄsévcy
+12345685 \ﾇT&yﾷﾥﾝØÎ
+12345686 ;×)ÒWùþ3Éæ
+12345687 ﾠﾠﾚÿﾱﾼﾃyf-
+12345688 ñ$Cÿﾩ!êﾗܠ
+12345689 lÙ=ﾇ×YB
+12345690 ﾅﾜÿ>á&Ö(ﾣ
+12345691 Kùﾴæﾍac}
+12345692 bﾼﾘﾎþò.w?
+12345693 ﾆﾩ\ﾷzGOlﾬ
+12345694 ﾄﾯﾌ﾿2ﾐÃmÜ
+12345695 ÃxAE2ﾂa
+12345696 ìﾚáÂY~V.
+12345697 üﾪﾁdøøÕÅf
+12345698 ôhXﾊäﾣO
+12345699 ËÇǢKÒ]t
+123456780 óþ-ߥPȨ
+123456781 RG<0ü.
+123456782 Úﾁÿ1sðáð
+123456783 ﾔ6ﾭ]ﾭËÖÔ
+123456784 ﾩﾅÃìw)
+123456785 81ﾨJôçﾃì*ê
+123456786 þk]ﾴﾰﾊﾎﾎ0
+123456787 ﾳùZﾛnÛ(5
+123456788 ﾚﾭÏC6!ﾩA
+123456789 Ùæv-ÑÈêöÖ
+1234567810 "âÏûӄIﾄ
+ﾠ
+1234567811 9ÊUtÊ/Äﾠ
+1234567812 ﾒﾗãﾎjVﾒöR
+1234567813 *ﾹ~]ﾦ_FÁê
+1234567814 ﾙq-ES}îMﾢ
+1234567815 ﾂJ/ﾘ]ﾺãxØÕ
+1234567816 ﾴäkD+ﾀ`n
+1234567817 )Ãåù	a8Ø:ó
+1234567818 mﾎÇã(Ê0Dã
+1234567819 ûG
+1234567820 æFê÷Wþ3×Â
+1234567821 +Oyﾬﾅ[Ûì<Û
+1234567822 GIﾉyÔì(jv
+1234567823 _ﾪröﾓﾠﾋwﾕx
+1234567824 øViñ:uyNﾓG
+1234567825 (6ﾂ3ﾲkﾧNmﾙ
+1234567826 Çð1Iﾼs.ﾢ
+1234567827 ﾀﾄøm]8ﾕﾳ
+1234567828 Vﾅ
+ﾍ<îﾵRÅå
+1234567829 ﾱ+ÆHﾮﾼÇ?Ñ
+1234567830 åﾴ;;ÅâGﾧ
+1234567831 øﾭvﾍ÷(øþtø
+1234567832  zﾼﾓyﾜ=*í
+1234567833 õ-~ﾡﾬüﾾ
+1234567834 JêÇϡﾮﾰh
+1234567835 *ÍKﾞÇä) ê
+1234567836 ﾵﾀJûﾹéFø
+1234567837 \ﾴ nﾰèﾕ7D
+1234567838 ﾴþﾐY#ﾃﾺC
+1234567839 ?!ﾛ$ƺg
+1234567840 ìɪﾟ
+1234567841 $mhaëϕàGù
+1234567842 7ﾦﾜhC
+1234567843 ﾈﾧþýMﾺ1}
+1234567844 ﾮaﾫﾛz8ﾼÔfà
+1234567845 ﾉ7:gæﾭ:ï^
+1234567846 zZéFOÌíﾁ;ﾆ
+1234567847 Åąñ|ﾠﾇ2
+1234567848 ﾼ2hÊúﾒ<÷n
+1234567849 a?Ò'lnK+
+1234567850 ÜÿﾡÅØÿﾅÏÕ
+1234567851 3Ê^6&/,ÿﾀﾻ
+1234567852 ﾥÇàﾨm={ﾾ,
+1234567853 ﾥèù~ÿ#ﾸﾅ)
+1234567854 CüﾢÂ4GB
+1234567855 ùYӸﾈÝËUý
+1234567856 5ﾶüC`æ8ﾲ^x
+1234567857 ﾘdDoQDﾷÝd~
+1234567858 ﾷﾼè߂wϪì
+1234567859 ÷ZÙÜ)NQw
+1234567860 ﾤhﾶﾏ[q8Dm
+1234567861 ëﾍ^,÷ý
+1234567862 ]poW6ÏèBﾟ
+1234567863 Sﾸ+2ﾰÉé﾿<
+1234567864 BېﾲﾫﾌÎ#×
+1234567865 
+1234567866 ﾃøc'!|6ﾡF
+1234567867 ãÚ~ﾙõﾐBﾄÀX
+1234567868 'ﾬjﾬùfﾀ\ô
+1234567869 Æ-òAzyqﾪÃß
+1234567870 ﾰé4zﾂÆEww
+1234567871 Ï覮hÖޫ﾿
+1234567872 ﾵﾈíMﾬ6xúﾭ
+1234567873 áóﾔ	òÁzÞ
+1234567874 ﾿ﾥUùÎä7jV
+1234567875 ñL*àﾯë	ÿW\
+1234567876 ﾔﾓ:ﾕ2uﾌﾐﾾÎ
+1234567877 ﾪﾹ$ﾄȯ"bÑ
+1234567878 dPÒ݅Kôﾳã
+1234567879 ﾩÉçﾤ?
+1234567880 HïÑgﾺ[ºçB
+1234567881 6LôGﾎÈa
+1234567882 i?Ù3pﾈ`á	ﾂ
+1234567883 í0ﾝ1ðﾤ3eﾸ
+1234567884 ﾆﾞﾘ÷×éY
+1234567885 "vNﾘﾋsd_îﾗ
+1234567886 %É÷e-Ä'ﾘÅ
+1234567887 ﾸ2ﾰ,ÚN
+1234567888 ìyâﾙ@xﾾI×
+1234567889 ﾏﾊDûﾼﾶ#Àð
+1234567890 ﾰ2&ﾦؾﾜnﾌ
+1234567891 QRwﾁa[Ä6v
+1234567892 ﾓÿQGÀÏﾣØû
+1234567893 ﾩÝzHþ<]ﾇﾔﾟ
+1234567894 FஊPﾲÅt
+1234567895 î]YУ^ﾭËç
+1234567896 î]ëÞ×ﾸﾚ
+1234567897 :MúÕÅīﾻøz
+1234567898 ﾇﾻíßnܭﾸÅï
+1234567899 ôîHmﾘ\DúÜ
+123456780 óþ-ߥPȨ
+123456781 RG<0ü.
+123456782 Úﾁÿ1sðáð
+123456783 ﾔ6ﾭ]ﾭËÖÔ
+123456784 ﾩﾅÃìw)
+123456785 81ﾨJôçﾃì*ê
+123456786 þk]ﾴﾰﾊﾎﾎ0
+123456787 ﾳùZﾛnÛ(5
+123456788 ﾚﾭÏC6!ﾩA
+123456789 Ùæv-ÑÈêöÖ
+1234567810 "âÏûӄIﾄ
+ﾠ
+1234567811 9ÊUtÊ/Äﾠ
+1234567812 ﾒﾗãﾎjVﾒöR
+1234567813 *ﾹ~]ﾦ_FÁê
+1234567814 ﾙq-ES}îMﾢ
+1234567815 ﾂJ/ﾘ]ﾺãxØÕ
+1234567816 ﾴäkD+ﾀ`n
+1234567817 )Ãåù	a8Ø:ó
+1234567818 mﾎÇã(Ê0Dã
+1234567819 ûG
+1234567820 æFê÷Wþ3×Â
+1234567821 +Oyﾬﾅ[Ûì<Û
+1234567822 GIﾉyÔì(jv
+1234567823 _ﾪröﾓﾠﾋwﾕx
+1234567824 øViñ:uyNﾓG
+1234567825 (6ﾂ3ﾲkﾧNmﾙ
+1234567826 Çð1Iﾼs.ﾢ
+1234567827 ﾀﾄøm]8ﾕﾳ
+1234567828 Vﾅ
+ﾍ<îﾵRÅå
+1234567829 ﾱ+ÆHﾮﾼÇ?Ñ
+1234567830 åﾴ;;ÅâGﾧ
+1234567831 øﾭvﾍ÷(øþtø
+1234567832  zﾼﾓyﾜ=*í
+1234567833 õ-~ﾡﾬüﾾ
+1234567834 JêÇϡﾮﾰh
+1234567835 *ÍKﾞÇä) ê
+1234567836 ﾵﾀJûﾹéFø
+1234567837 \ﾴ nﾰèﾕ7D
+1234567838 ﾴþﾐY#ﾃﾺC
+1234567839 ?!ﾛ$ƺg
+1234567840 ìɪﾟ
+1234567841 $mhaëϕàGù
+1234567842 7ﾦﾜhC
+1234567843 ﾈﾧþýMﾺ1}
+1234567844 ﾮaﾫﾛz8ﾼÔfà
+1234567845 ﾉ7:gæﾭ:ï^
+1234567846 zZéFOÌíﾁ;ﾆ
+1234567847 Åąñ|ﾠﾇ2
+1234567848 ﾼ2hÊúﾒ<÷n
+1234567849 a?Ò'lnK+
+1234567850 ÜÿﾡÅØÿﾅÏÕ
+1234567851 3Ê^6&/,ÿﾀﾻ
+1234567852 ﾥÇàﾨm={ﾾ,
+1234567853 ﾥèù~ÿ#ﾸﾅ)
+1234567854 CüﾢÂ4GB
+1234567855 ùYӸﾈÝËUý
+1234567856 5ﾶüC`æ8ﾲ^x
+1234567857 ﾘdDoQDﾷÝd~
+1234567858 ﾷﾼè߂wϪì
+1234567859 ÷ZÙÜ)NQw
+1234567860 ﾤhﾶﾏ[q8Dm
+1234567861 ëﾍ^,÷ý
+1234567862 ]poW6ÏèBﾟ
+1234567863 Sﾸ+2ﾰÉé﾿<
+1234567864 BېﾲﾫﾌÎ#×
+1234567865 
+1234567866 ﾃøc'!|6ﾡF
+1234567867 ãÚ~ﾙõﾐBﾄÀX
+1234567868 'ﾬjﾬùfﾀ\ô
+1234567869 Æ-òAzyqﾪÃß
+1234567870 ﾰé4zﾂÆEww
+1234567871 Ï覮hÖޫ﾿
+1234567872 ﾵﾈíMﾬ6xúﾭ
+1234567873 áóﾔ	òÁzÞ
+1234567874 ﾿ﾥUùÎä7jV
+1234567875 ñL*àﾯë	ÿW\
+1234567876 ﾔﾓ:ﾕ2uﾌﾐﾾÎ
+1234567877 ﾪﾹ$ﾄȯ"bÑ
+1234567878 dPÒ݅Kôﾳã
+1234567879 ﾩÉçﾤ?
+1234567880 HïÑgﾺ[ºçB
+1234567881 6LôGﾎÈa
+1234567882 i?Ù3pﾈ`á	ﾂ
+1234567883 í0ﾝ1ðﾤ3eﾸ
+1234567884 ﾆﾞﾘ÷×éY
+1234567885 "vNﾘﾋsd_îﾗ
+1234567886 %É÷e-Ä'ﾘÅ
+1234567887 ﾸ2ﾰ,ÚN
+1234567888 ìyâﾙ@xﾾI×
+1234567889 ﾏﾊDûﾼﾶ#Àð
+1234567890 ﾰ2&ﾦؾﾜnﾌ
+1234567891 QRwﾁa[Ä6v
+1234567892 ﾓÿQGÀÏﾣØû
+1234567893 ﾩÝzHþ<]ﾇﾔﾟ
+1234567894 FஊPﾲÅt
+1234567895 î]YУ^ﾭËç
+1234567896 î]ëÞ×ﾸﾚ
+1234567897 :MúÕÅīﾻøz
+1234567898 ﾇﾻíßnܭﾸÅï
+1234567899 ôîHmﾘ\DúÜ
+123456780 óþ-ߥPȨ
+123456781 RG<0ü.
+123456782 Úﾁÿ1sðáð
+123456783 ﾔ6ﾭ]ﾭËÖÔ
+123456784 ﾩﾅÃìw)
+123456785 81ﾨJôçﾃì*ê
+123456786 þk]ﾴﾰﾊﾎﾎ0
+123456787 ﾳùZﾛnÛ(5
+123456788 ﾚﾭÏC6!ﾩA
+123456789 Ùæv-ÑÈêöÖ
+1234567810 "âÏûӄIﾄ
+ﾠ
+1234567811 9ÊUtÊ/Äﾠ
+1234567812 ﾒﾗãﾎjVﾒöR
+1234567813 *ﾹ~]ﾦ_FÁê
+1234567814 ﾙq-ES}îMﾢ
+1234567815 ﾂJ/ﾘ]ﾺãxØÕ
+1234567816 ﾴäkD+ﾀ`n
+1234567817 )Ãåù	a8Ø:ó
+1234567818 mﾎÇã(Ê0Dã
+1234567819 ûG
+1234567820 æFê÷Wþ3×Â
+1234567821 +Oyﾬﾅ[Ûì<Û
+1234567822 GIﾉyÔì(jv
+1234567823 _ﾪröﾓﾠﾋwﾕx
+1234567824 øViñ:uyNﾓG
+1234567825 (6ﾂ3ﾲkﾧNmﾙ
+1234567826 Çð1Iﾼs.ﾢ
+1234567827 ﾀﾄøm]8ﾕﾳ
+1234567828 Vﾅ
+ﾍ<îﾵRÅå
+1234567829 ﾱ+ÆHﾮﾼÇ?Ñ
+1234567830 åﾴ;;ÅâGﾧ
+1234567831 øﾭvﾍ÷(øþtø
+1234567832  zﾼﾓyﾜ=*í
+1234567833 õ-~ﾡﾬüﾾ
+1234567834 JêÇϡﾮﾰh
+1234567835 *ÍKﾞÇä) ê
+1234567836 ﾵﾀJûﾹéFø
+1234567837 \ﾴ nﾰèﾕ7D
+1234567838 ﾴþﾐY#ﾃﾺC
+1234567839 ?!ﾛ$ƺg
+1234567840 ìɪﾟ
+1234567841 $mhaëϕàGù
+1234567842 7ﾦﾜhC
+1234567843 ﾈﾧþýMﾺ1}
+1234567844 ﾮaﾫﾛz8ﾼÔfà
+1234567845 ﾉ7:gæﾭ:ï^
+1234567846 zZéFOÌíﾁ;ﾆ
+1234567847 Åąñ|ﾠﾇ2
+1234567848 ﾼ2hÊúﾒ<÷n
+1234567849 a?Ò'lnK+
+1234567850 ÜÿﾡÅØÿﾅÏÕ
+1234567851 3Ê^6&/,ÿﾀﾻ
+1234567852 ﾥÇàﾨm={ﾾ,
+1234567853 ﾥèù~ÿ#ﾸﾅ)
+1234567854 CüﾢÂ4GB
+1234567855 ùYӸﾈÝËUý
+1234567856 5ﾶüC`æ8ﾲ^x
+1234567857 ﾘdDoQDﾷÝd~
+1234567858 ﾷﾼè߂wϪì
+1234567859 ÷ZÙÜ)NQw
+1234567860 ﾤhﾶﾏ[q8Dm
+1234567861 ëﾍ^,÷ý
+1234567862 ]poW6ÏèBﾟ
+1234567863 Sﾸ+2ﾰÉé﾿<
+1234567864 BېﾲﾫﾌÎ#×
+1234567865 
+1234567866 ﾃøc'!|6ﾡF
+1234567867 ãÚ~ﾙõﾐBﾄÀX
+1234567868 'ﾬjﾬùfﾀ\ô
+1234567869 Æ-òAzyqﾪÃß
+1234567870 ﾰé4zﾂÆEww
+1234567871 Ï覮hÖޫ﾿
+1234567872 ﾵﾈíMﾬ6xúﾭ
+1234567873 áóﾔ	òÁzÞ
+1234567874 ﾿ﾥUùÎä7jV
+1234567875 ñL*àﾯë	ÿW\
+1234567876 ﾔﾓ:ﾕ2uﾌﾐﾾÎ
+1234567877 ﾪﾹ$ﾄȯ"bÑ
+1234567878 dPÒ݅Kôﾳã
+1234567879 ﾩÉçﾤ?
+1234567880 HïÑgﾺ[ºçB
+1234567881 6LôGﾎÈa
+1234567882 i?Ù3pﾈ`á	ﾂ
+1234567883 í0ﾝ1ðﾤ3eﾸ
+1234567884 ﾆﾞﾘ÷×éY
+1234567885 "vNﾘﾋsd_îﾗ
+1234567886 %É÷e-Ä'ﾘÅ
+1234567887 ﾸ2ﾰ,ÚN
+1234567888 ìyâﾙ@xﾾI×
+1234567889 ﾏﾊDûﾼﾶ#Àð
+1234567890 ﾰ2&ﾦؾﾜnﾌ
+1234567891 QRwﾁa[Ä6v
+1234567892 ﾓÿQGÀÏﾣØû
+1234567893 ﾩÝzHþ<]ﾇﾔﾟ
+1234567894 FஊPﾲÅt
+1234567895 î]YУ^ﾭËç
+1234567896 î]ëÞ×ﾸﾚ
+1234567897 :MúÕÅīﾻøz
+1234567898 ﾇﾻíßnܭﾸÅï
+1234567899 ôîHmﾘ\DúÜ
+12340 هYﾭﾹF
+12341 tﾰfﾨuﾟwáﾀ
+12342 áﾌdÝÙ[Â%ﾰ
+12343 Æi䷧ﾫeõS
+12344 7~ﾘױﾆH:?ﾟ
+12345 6'ﾐﾚ)Ãﾁﾠq
+12346 ﾝUaÑfᯝﾖì
+12347 ȳ#ﾦY3Ù[ﾸ
+12348 -âﾰÉææv]ﾀ
+12349 ﾩÝDyﾜﾲﾃﾆá
+123410 ﾋïXCsè=xo?
+123411 =bÌü|ﾫÂë
+123412 (ë]ô]ﾈ6üﾼ
+123413 ﾌc>ﾋﾌ<ﾚﾴ
+123414 ﾬGMcÑdaﾯﾣ
+123415 Eąu þk&_H
+123416 ØâﾷNﾧݧ^[
+123417 ﾥDÕfﾙÅNﾵeR
+123418 ﾃb%ùPﾒQûÄ
+123419 3YﾳñåÔRU_ﾡ
+123420 Û+ﾸrMﾟÃG
+123421 iﾹamﾧ)SDy
+123422 ﾧݠ
+123423 ݠÓұVﾂީÑ
+123424 [ﾶÀèïb
+123425 Ì'øﾭÇFF&L
+123426 ﾫÝóCè\ﾂJ;
+123427 ﾮf}ü:1Axﾛ
+123428 *0î"[Éÿ
+123429 ﾫô3݋úﾂﾵ^
+123430 inﾇﾕBﾯ0Çj
+123431 >tﾺﾼ'BCveﾴ
+123432 ﾾh)ﾋﾄʘﾫ:Ò
+123433 Ӿﾅқ+ﾗXﾨ
+123434 {.:ﾻÈÛ跚ﾌ
+123435 @!}SÄ]eM8ﾕ
+123436 TﾷIﾢ+Ý3
+123437 ñZﾘS÷ﾔÔè
+123438 üҤﾓZ!'͟à
+123439 Mæv~
+123440 YûWﾃóﾷ\Oﾷ{
+123441 ﾶH)67èÑç
+123442 ÛyﾲéﾰîÆù>\
+123443 ﾮﾖﾶﾋﾣá׳Z
+123444 3ðﾌùâpﾶrP
+123445 8ËÐ%Î_ﾧdﾞ
+123446 |ﾑLҫﾙÝË0
+123447 <ÅPìÕèZﾂe
+123448 ÞrÔv)ﾐþó:
+123449 #ﾆﾕB렾ç
+123450 ﾀﾁy]ZRnÛ0
+123451 5
+õ̙
+ﾼ/
+123452 Cb+ﾱȳTTﾱù
+123453 -ÃóﾹïﾣXú
+123454 &7åﾓGﾘﾮ
+123455 ﾻéjﾢÎIﾈ/
+123456 ﾺ2SﾇjíkÂ-J
+123457 mmÆ۹ﾥ* È}
+123458 Ƌﾠﾾﾂéb
+123459 %ﾺÀÑè1UÙ<J
+123460 Ò
+ÜxxÌÞ
+123461 Äﾎﾣﾒﾥõ`1
+123462 ﾰV)ﾬ\úìHj
+123463 Oﾘ+ﾭÞyGﾽ!æ
+123464 ﾽ<ÍIÅúê"N
+123465 ﾁmﾍOﾦﾌDÅ{Y
+123466 <Ê
+123467 
+öïkJﾞﾊ
+123468 ﾦtﾋôZﾚk
+123469 [ӷYÜÆWJ
+123470 ﾄBiÄ7çÙWﾄ
+123471 >ØÝWqgäå
+123472 ﾒIﾧﾏxYﾼ
+123473 ﾎÎ|clﾓ×
+123474 ﾈÂðк&+!Y
+123475 Úÿî﾿vBUô
+123476 ÉzJÿﾶ	ﾪﾬ_Ø
+123477 uxﾐ(_ýﾫﾘi
+123478 Nnﾘ$Q4áíX
+123479 ããâiﾍBﾳﾦ
+123480 ﾲﾩﾠî#ﾺ
+123481 SﾋÐÞnRïﾭÓ
+123482 îyﾇÕz9æÒï
+123483 ﾼ=UÕ*U4ﾼﾴ
+123484 ﾄﾏﾖ9ëH5ﾌﾗﾕ
+123485 ﾡﾏrl!þﾬMãh
+123486 Òè±ﾉﾐZﾁ[
+123487 ÿ}Hfﾓﾴﾇ
+123488 ÞNﾭﾧʆﾺﾫg
+123489 òﾸK'å+kPc
+123490 ﾈÌ#ҫ?ﾹﾀ
+123491 äæÔßzﾽEü	Ç
+123492 Ânﾨ:áçﾜiBI
+123493 ùSﾳ;ﾋﾱØö
+123494 ﾰ﾿ﾩizﾧã,ﾁ
+123495 ﾗC
+123496 úü;(VØ	Ʉﾤ
+123497 ﾄﾵbﾊﾜ^ÌàrW
+123498 ÷åﾡ_ﾄa@9ﾝ
+123499 ;ïýäåoﾁC
+12340 هYﾭﾹF
+12341 tﾰfﾨuﾟwáﾀ
+12342 áﾌdÝÙ[Â%ﾰ
+12343 Æi䷧ﾫeõS
+12344 7~ﾘױﾆH:?ﾟ
+12345 6'ﾐﾚ)Ãﾁﾠq
+12346 ﾝUaÑfᯝﾖì
+12347 ȳ#ﾦY3Ù[ﾸ
+12348 -âﾰÉææv]ﾀ
+12349 ﾩÝDyﾜﾲﾃﾆá
+123410 ﾋïXCsè=xo?
+123411 =bÌü|ﾫÂë
+123412 (ë]ô]ﾈ6üﾼ
+123413 ﾌc>ﾋﾌ<ﾚﾴ
+123414 ﾬGMcÑdaﾯﾣ
+123415 Eąu þk&_H
+123416 ØâﾷNﾧݧ^[
+123417 ﾥDÕfﾙÅNﾵeR
+123418 ﾃb%ùPﾒQûÄ
+123419 3YﾳñåÔRU_ﾡ
+123420 Û+ﾸrMﾟÃG
+123421 iﾹamﾧ)SDy
+123422 ﾧݠ
+123423 ݠÓұVﾂީÑ
+123424 [ﾶÀèïb
+123425 Ì'øﾭÇFF&L
+123426 ﾫÝóCè\ﾂJ;
+123427 ﾮf}ü:1Axﾛ
+123428 *0î"[Éÿ
+123429 ﾫô3݋úﾂﾵ^
+123430 inﾇﾕBﾯ0Çj
+123431 >tﾺﾼ'BCveﾴ
+123432 ﾾh)ﾋﾄʘﾫ:Ò
+123433 Ӿﾅқ+ﾗXﾨ
+123434 {.:ﾻÈÛ跚ﾌ
+123435 @!}SÄ]eM8ﾕ
+123436 TﾷIﾢ+Ý3
+123437 ñZﾘS÷ﾔÔè
+123438 üҤﾓZ!'͟à
+123439 Mæv~
+123440 YûWﾃóﾷ\Oﾷ{
+123441 ﾶH)67èÑç
+123442 ÛyﾲéﾰîÆù>\
+123443 ﾮﾖﾶﾋﾣá׳Z
+123444 3ðﾌùâpﾶrP
+123445 8ËÐ%Î_ﾧdﾞ
+123446 |ﾑLҫﾙÝË0
+123447 <ÅPìÕèZﾂe
+123448 ÞrÔv)ﾐþó:
+123449 #ﾆﾕB렾ç
+123450 ﾀﾁy]ZRnÛ0
+123451 5
+õ̙
+ﾼ/
+123452 Cb+ﾱȳTTﾱù
+123453 -ÃóﾹïﾣXú
+123454 &7åﾓGﾘﾮ
+123455 ﾻéjﾢÎIﾈ/
+123456 ﾺ2SﾇjíkÂ-J
+123457 mmÆ۹ﾥ* È}
+123458 Ƌﾠﾾﾂéb
+123459 %ﾺÀÑè1UÙ<J
+123460 Ò
+ÜxxÌÞ
+123461 Äﾎﾣﾒﾥõ`1
+123462 ﾰV)ﾬ\úìHj
+123463 Oﾘ+ﾭÞyGﾽ!æ
+123464 ﾽ<ÍIÅúê"N
+123465 ﾁmﾍOﾦﾌDÅ{Y
+123466 <Ê
+123467 
+öïkJﾞﾊ
+123468 ﾦtﾋôZﾚk
+123469 [ӷYÜÆWJ
+123470 ﾄBiÄ7çÙWﾄ
+123471 >ØÝWqgäå
+123472 ﾒIﾧﾏxYﾼ
+123473 ﾎÎ|clﾓ×
+123474 ﾈÂðк&+!Y
+123475 Úÿî﾿vBUô
+123476 ÉzJÿﾶ	ﾪﾬ_Ø
+123477 uxﾐ(_ýﾫﾘi
+123478 Nnﾘ$Q4áíX
+123479 ããâiﾍBﾳﾦ
+123480 ﾲﾩﾠî#ﾺ
+123481 SﾋÐÞnRïﾭÓ
+123482 îyﾇÕz9æÒï
+123483 ﾼ=UÕ*U4ﾼﾴ
+123484 ﾄﾏﾖ9ëH5ﾌﾗﾕ
+123485 ﾡﾏrl!þﾬMãh
+123486 Òè±ﾉﾐZﾁ[
+123487 ÿ}Hfﾓﾴﾇ
+123488 ÞNﾭﾧʆﾺﾫg
+123489 òﾸK'å+kPc
+123490 ﾈÌ#ҫ?ﾹﾀ
+123491 äæÔßzﾽEü	Ç
+123492 Ânﾨ:áçﾜiBI
+123493 ùSﾳ;ﾋﾱØö
+123494 ﾰ﾿ﾩizﾧã,ﾁ
+123495 ﾗC
+123496 úü;(VØ	Ʉﾤ
+123497 ﾄﾵbﾊﾜ^ÌàrW
+123498 ÷åﾡ_ﾄa@9ﾝ
+123499 ;ïýäåoﾁC
+12340 هYﾭﾹF
+12341 tﾰfﾨuﾟwáﾀ
+12342 áﾌdÝÙ[Â%ﾰ
+12343 Æi䷧ﾫeõS
+12344 7~ﾘױﾆH:?ﾟ
+12345 6'ﾐﾚ)Ãﾁﾠq
+12346 ﾝUaÑfᯝﾖì
+12347 ȳ#ﾦY3Ù[ﾸ
+12348 -âﾰÉææv]ﾀ
+12349 ﾩÝDyﾜﾲﾃﾆá
+123410 ﾋïXCsè=xo?
+123411 =bÌü|ﾫÂë
+123412 (ë]ô]ﾈ6üﾼ
+123413 ﾌc>ﾋﾌ<ﾚﾴ
+123414 ﾬGMcÑdaﾯﾣ
+123415 Eąu þk&_H
+123416 ØâﾷNﾧݧ^[
+123417 ﾥDÕfﾙÅNﾵeR
+123418 ﾃb%ùPﾒQûÄ
+123419 3YﾳñåÔRU_ﾡ
+123420 Û+ﾸrMﾟÃG
+123421 iﾹamﾧ)SDy
+123422 ﾧݠ
+123423 ݠÓұVﾂީÑ
+123424 [ﾶÀèïb
+123425 Ì'øﾭÇFF&L
+123426 ﾫÝóCè\ﾂJ;
+123427 ﾮf}ü:1Axﾛ
+123428 *0î"[Éÿ
+123429 ﾫô3݋úﾂﾵ^
+123430 inﾇﾕBﾯ0Çj
+123431 >tﾺﾼ'BCveﾴ
+123432 ﾾh)ﾋﾄʘﾫ:Ò
+123433 Ӿﾅқ+ﾗXﾨ
+123434 {.:ﾻÈÛ跚ﾌ
+123435 @!}SÄ]eM8ﾕ
+123436 TﾷIﾢ+Ý3
+123437 ñZﾘS÷ﾔÔè
+123438 üҤﾓZ!'͟à
+123439 Mæv~
+123440 YûWﾃóﾷ\Oﾷ{
+123441 ﾶH)67èÑç
+123442 ÛyﾲéﾰîÆù>\
+123443 ﾮﾖﾶﾋﾣá׳Z
+123444 3ðﾌùâpﾶrP
+123445 8ËÐ%Î_ﾧdﾞ
+123446 |ﾑLҫﾙÝË0
+123447 <ÅPìÕèZﾂe
+123448 ÞrÔv)ﾐþó:
+123449 #ﾆﾕB렾ç
+123450 ﾀﾁy]ZRnÛ0
+123451 5
+õ̙
+ﾼ/
+123452 Cb+ﾱȳTTﾱù
+123453 -ÃóﾹïﾣXú
+123454 &7åﾓGﾘﾮ
+123455 ﾻéjﾢÎIﾈ/
+123456 ﾺ2SﾇjíkÂ-J
+123457 mmÆ۹ﾥ* È}
+123458 Ƌﾠﾾﾂéb
+123459 %ﾺÀÑè1UÙ<J
+123460 Ò
+ÜxxÌÞ
+123461 Äﾎﾣﾒﾥõ`1
+123462 ﾰV)ﾬ\úìHj
+123463 Oﾘ+ﾭÞyGﾽ!æ
+123464 ﾽ<ÍIÅúê"N
+123465 ﾁmﾍOﾦﾌDÅ{Y
+123466 <Ê
+123467 
+öïkJﾞﾊ
+123468 ﾦtﾋôZﾚk
+123469 [ӷYÜÆWJ
+123470 ﾄBiÄ7çÙWﾄ
+123471 >ØÝWqgäå
+123472 ﾒIﾧﾏxYﾼ
+123473 ﾎÎ|clﾓ×
+123474 ﾈÂðк&+!Y
+123475 Úÿî﾿vBUô
+123476 ÉzJÿﾶ	ﾪﾬ_Ø
+123477 uxﾐ(_ýﾫﾘi
+123478 Nnﾘ$Q4áíX
+123479 ããâiﾍBﾳﾦ
+123480 ﾲﾩﾠî#ﾺ
+123481 SﾋÐÞnRïﾭÓ
+123482 îyﾇÕz9æÒï
+123483 ﾼ=UÕ*U4ﾼﾴ
+123484 ﾄﾏﾖ9ëH5ﾌﾗﾕ
+123485 ﾡﾏrl!þﾬMãh
+123486 Òè±ﾉﾐZﾁ[
+123487 ÿ}Hfﾓﾴﾇ
+123488 ÞNﾭﾧʆﾺﾫg
+123489 òﾸK'å+kPc
+123490 ﾈÌ#ҫ?ﾹﾀ
+123491 äæÔßzﾽEü	Ç
+123492 Ânﾨ:áçﾜiBI
+123493 ùSﾳ;ﾋﾱØö
+123494 ﾰ﾿ﾩizﾧã,ﾁ
+123495 ﾗC
+123496 úü;(VØ	Ʉﾤ
+123497 ﾄﾵbﾊﾜ^ÌàrW
+123498 ÷åﾡ_ﾄa@9ﾝ
+123499 ;ïýäåoﾁC
+qwerty0 RXÈ5_Jä÷
+qwerty1 íÓ_q
+neﾳn
+qwerty2 ﾯ(ͣá-ð3ﾺ
+qwerty3 ﾍäcÏÿ9ﾁﾺi
+qwerty4 ]ﾭﾢshçﾴÑ
+qwerty5 ﾃﾍhBﾶbﾥLÿ'
+qwerty6 çﾠﾘﾬﾵﾩﾞk
+qwerty7 !ȨâmﾗRﾕﾊ;
+qwerty8 ﾍMï&óì@ ﾽ
+qwerty9 ﾚ<iAXùﾪ/
+qwerty10 áÙӾﾵ[qÕöX
+qwerty11 ÿÅòzDå/ﾀﾶﾈ
+qwerty12 lﾵ+ﾆóﾥﾎﾂﾪﾚ
+qwerty13 XﾢJ(XA\ɹ
+qwerty14 ;$2Ùﾊýﾷﾀ
+qwerty15 ]XdٌDkÓn
+qwerty16 @4ﾩÊ6I
+qwerty17 ﾬúC>b+&܎
+qwerty18 ﾪQéﾍ4ÿÜ>
+qwerty19 __þ!â
+qwerty20 kﾌ6r#FnﾻuÓ
+qwerty21 ï÷pﾌﾤﾣó)6
+qwerty22 Ý:uﾁýãﾏð
+qwerty23 ﾃÂÓòî^e
+qwerty24 U>ïV,%Zﾉ
+qwerty25 ﾧÿwﾏÚӖݝ
+qwerty26 ֈãeRﾵýﾚﾈﾛ
+qwerty27 }#LﾣêﾒW>i
+qwerty28 jﾲﾏڦpß
+qwerty29 >̴ÆßÔ@ÁQ
+qwerty30 ×FÆü|ﾪﾝﾚr
+qwerty31 *\Hﾲòß'8OT
+qwerty32 ﾏþﾣﾧuê^ﾸﾹ
+qwerty33 4;]äí},âl
+qwerty34 ñﾊﾰﾶrҜﾾ
+qwerty35 ੉ﾧﾷ+ﾇ;hY
+qwerty36 Iܚ[Ü\_0IR
+qwerty37 ﾘﾙ
+ûÉßL 
+qwerty38 y1ﾮﾔpﾜò
+qwerty39 aùﾕﾶﾡQ×ﾁ
+qwerty40 VBòﾄﾩ-%ﾪ
+qwerty41 ÕÿﾺÑPﾡﾜﾴ5w
+qwerty42 VÄ5ﾃûﾤnﾡo
+qwerty43 ﾺðﾣïÛrﾮﾆéÚ
+qwerty44 ÍváÎDHﾒ}ù
+qwerty45 [lø`1+Ú
+qwerty46 DOôﾣﾹ\ª
+M
+qwerty47 0ﾪÞoTÎﾀ
+qwerty48 'Ñfw8"`ﾨ÷
+qwerty49 DS|P7_2
+qwerty50 ﾓ_I)5CAĽﾽ
+qwerty51 ~pÀ0,Qﾫﾭú
+qwerty52 Cxü܋_ﾎó
+qwerty53 ﾈﾐäÔrﾕﾄÝ
+qwerty54 ؽﾺyﾣﾃÁly[
+qwerty55 ëJﾀôsÉÌ{
+qwerty56 ﾛﾆaDEÈðTB
+qwerty57 ﾐﾤ`UõnPf
+qwerty58 ﾛâ=ﾐﾟ&
+qwerty59 ǸגöHÛT
+qwerty60 èOﾛG,ﾣ+
+qwerty61 xçuﾺ<9ﾾñ
+qwerty62 ÜXÌ[ZʱGﾚ
+qwerty63 ûæ"úﾵcòﾪ*
+qwerty64 ޸úøﾬýﾈ^
+qwerty65 ʭﾑÎàﾥ_
+qwerty66 eò쀸-×ê
+qwerty67 bﾸHíﾮH\ﾂﾤâ
+qwerty68 Fﾳﾃv~rÊËè
+qwerty69 ﾤﾴb'/y_ﾺMN
+qwerty70 Ù&ﾡﾞﾎ7ﾭ
+qwerty71 ckî$ﾫ6wﾍü
+qwerty72 ﾞ9ﾳÕßÝE}i
+qwerty73 ÇÍqÞWoHﾗL
+qwerty74 ﾳﾕ:ﾔﾠ# õ
+qwerty75 ÈCVbﾇ-e+Ä5
+qwerty76 ÚﾥuD﾿]!
+qwerty77 @Ї[/ﾌﾘ~Åè
+qwerty78 fﾺ6ﾬì,ﾱZGﾦ
+qwerty79 NÕ̿Xçò
+qwerty80 üÁIﾛ$ex/*
+qwerty81 ðÁ
+qwerty82 iﾘﾂﾠüﾻöﾩùn
+qwerty83 îQ%`CQ,b
+qwerty84 `R徤ﾶﾖǊﾘ
+qwerty85 mügÅÔù﾿Dﾣ
+qwerty86 ﾎNäNíﾪ	՟
+qwerty87 ﾡǟ@ﾡﾶﾊ
+qwerty88 Jﾅlﾽﾉ
+ﾞ
+qwerty89 YeﾚﾯmÃm=w)
+qwerty90 ܅?
+{,Áﾌy
+qwerty91 rﾓﾲ^ÖçÍØéY
+qwerty92 ﾏﾍBﾸ5òﾣiKﾅ
+qwerty93 ﾣçÎeÊrQ
+qwerty94 LAï̷ﾡô4i
+qwerty95 o_ïÏ
+qwerty96 ü'ñgÅsﾅÖ
+qwerty97 ýñ`ﾮﾇﾫs*[Ë
+qwerty98 ^0
+qwerty99 ﾜû=ﾠÔﾪﾹﾩê
+QWERTY0 r×]ﾝÍxnÓ`
+QWERTY1 VòîñîFﾅﾜvﾔ
+QWERTY2 .ﾁßIﾩ
+QWERTY3 \RL- _ﾩó
+QWERTY4 ^Gﾨuﾟ:8ÞÏr
+QWERTY5 ýﾥÄÊ!ﾄ
+QWERTY6 Ö>ﾏﾼﾉ6Rjﾇ
+QWERTY7 )ﾏf.cﾟ
+QWERTY8 ]%ﾛeﾪﾼﾺd:
+QWERTY9 =[ﾴﾱcý
+QWERTY10 4Jò*ﾇﾎråﾜ
+QWERTY11 Wﾥêø	q3ﾸﾢ
+QWERTY12 ﾫ Idèôqﾐﾂﾎ
+QWERTY13 ﾋQ߹ïá1
+QWERTY14 ﾪﾝG䜅xðÀ
+QWERTY15 úﾳ`ﾻﾣƏQﾜz
+QWERTY16 	kﾲﾣërﾋ]î
+QWERTY17 ﾃzxﾠﾌÁë
+QWERTY18  ﾃﾐô÷ɤ~ﾺ×
+QWERTY19 ýRﾠﾫÂɞﾆ(
+QWERTY20 Ä0Wpﾍﾠe?1
+QWERTY21 ܷﾒﾮᓨﾈë
+QWERTY22 r6WﾫäH)ﾝwﾉ
+QWERTY23 bqEﾢﾱwc
+QWERTY24 Rߟ6Ê[çﾕ]W
+QWERTY25 	ﾇﾯ2ÇHﾕzs
+QWERTY26 ñÐ>4ﾃ$ﾌ3.ﾞ
+QWERTY27 6ﾴ_1ﾥÙáÛÕÏ
+QWERTY28 Â÷gÍÙ=r/E
+QWERTY29 jL{(.låâóÍ
+QWERTY30 ÁLﾜﾕnﾁﾾﾾH
+QWERTY31 ﾔòﾶoÈ$b+yﾹ
+QWERTY32 ÝZͥ6Ëﾭüﾥ
+QWERTY33 h/lﾠÞÕÅ9Lî
+QWERTY34 س9<;SÐ
+QWERTY35 :؂[ļÖ6Ø
+QWERTY36 SPÜkﾻﾇŏF#
+QWERTY37 2ﾩﾛ41ﾷ)	ﾣ
+QWERTY38 uFk5#âéﾇ	D
+QWERTY39 rt~GﾪﾑÌbﾹ
+QWERTY40 a3REﾏﾯlﾽNﾢ
+QWERTY41 HKÁÖ2Ȧ,4ﾣ
+QWERTY42 îeëNÒ_ü2ﾑ
+QWERTY43 4ﾸׅÆÜzﾢ
+QWERTY44 ﾥTív4sﾫ7
+QWERTY45 ﾝ[ﾌﾈ{ÛA
+QWERTY46 9ﾖoÕ-ﾀOﾕÜ
+QWERTY47 ﾆﾣmﾸá{ﾩ1ﾆ
+QWERTY48 ﾊ1þOﾔﾥFﾉ?
+QWERTY49 æ%Ö7ÑÏ){à2
+QWERTY50 3ÉVٝﾠç
+QWERTY51 ÈïéﾍIﾂ!sﾻ4
+QWERTY52 FWﾯKñ
+
+QWERTY53 X1`ÇýÍî1Ï
+QWERTY54 ﾤHjÁ~ﾀﾌC
+QWERTY55 ﾺﾎm.ﾅwﾆZ
+QWERTY56 Ã0ﾒ5Þ_ﾽﾖﾏ
+QWERTY57 ÄAío,ÜâEG+
+QWERTY58 ﾻ[vﾎ%޷çﾸÚ
+QWERTY59 Yﾐ[îþ;T
+QWERTY60 ðRﾪ/ﾰF'- 
+QWERTY61 ﾮ=t,ﾴG
+QWERTY62 òﾧﾽ|@!ﾩﾀþ
+QWERTY63 9ﾰ×ÁÎÞåÜ 
+QWERTY64 Ctﾶ+Ï¸Çe
+QWERTY65 öﾜ}ﾡﾤÑîSO
+QWERTY66 ﾰØ>ﾲÈ"ÈÎäô
+QWERTY67 EWﾑðrëåﾅ
+QWERTY68 }HﾨÕPæàﾨð
+QWERTY69 6BÍð	Ðt
+QWERTY70 ﾵrÑNáòﾬﾗﾁ
+QWERTY71 áÐçëíﾖﾉD
+QWERTY72 NrﾦÄSﾒàc(ô
+QWERTY73 h7wâ9of÷ﾹö
+QWERTY74 \ﾍýﾵUýwﾷI
+QWERTY75 $-ÎﾩﾪB~E
+QWERTY76 Û1ﾮÍ
+QWERTY77 ﾉﾄKﾨLﾗ
+QWERTY78 !MƗﾒÍ1Pﾒô
+QWERTY79 ΊﾬÈﾯﾷ%ý,
+QWERTY80 næ,àcxòﾽ
+QWERTY81 ﾪﾰ{ﾷﾨﾏK
+QWERTY82 K{МÞðﾻlﾎÑ
+QWERTY83 ﾔ=5ﾏo%@Ԁ
+QWERTY84 ÀJﾤ4Þ5w^WÔ
+QWERTY85 kH3óTL]Òï
+QWERTY86 ﾿ﾛDáÆ.,Ӗ|
+QWERTY87 ﾆ}øAsﾪ㒍
+QWERTY88 qÃäﾙ(ﾸﾯﾫ
+QWERTY89 Gj!çÆZﾷY
+QWERTY90 KU0ﾛÝx?ﾬÍþ
+QWERTY91 ﾿%ﾒﾢm#äﾪd
+QWERTY92 >'ÌØç
+ͭÏ
+QWERTY93 ﾲ
+QWERTY94 öﾤàoﾩ^rÖJ
+QWERTY95 ñùﾟګGÿê7Õ
+QWERTY96 ØޖٶÏ,nJ
+QWERTY97 Y>ܜ-jR9:L
+QWERTY98 Øבî5øﾯw
+QWERTY99 ]ưp1~P{
+Qwerty0 =ﾳﾅ#TjﾶÓ_ﾉ
+Qwerty1 sZ8ﾼm﾿pﾋú
+Qwerty2 0﾿?ﾑök]tËf
+Qwerty3 !ﾀq.ñÞN
+Qwerty4 .ﾹﾠ^ﾛ|aoﾫK
+Qwerty5 1Ã5*Í\"ﾝﾶ
+Qwerty6 öﾂUáﾊÜfx`
+Qwerty7 ﾨûv*)ÐÜ=
+Qwerty8 /՝$9ÓK5ﾭ5
+Qwerty9 ÑFÞ^ﾏw,f~
+Qwerty10 	óÌYUìòﾶ
+Qwerty11 ÿ&ùCäËÈ
+Qwerty12 ÓǕﾴB^<ÐàE
+Qwerty13 Úlﾨﾪ6t^ޡ
+Qwerty14 òÕ
+Qwerty15 ﾀEÑBﾼ5Ó
+Qwerty16 ìRþ'lmÅ
+Qwerty17 ﾨﾰG÷0Ȫøfu
+Qwerty18 (ﾇﾷﾝﾚﾲrð,ý
+Qwerty19 Kﾛù]ÔFﾅﾆo
+Qwerty20 Oﾮ8ﾅÂáOﾜ
+Qwerty21 3ﾩÀRvbuﾩ
+Qwerty22 ﾨﾵÊÜ÷@IﾒK
+Qwerty23 ﾹwﾉﾭö~?
+Qwerty24 ﾰÝﾭﾺ÷ÐѭR
+Qwerty25 ìﾬ'ﾺﾩ"[_àﾇ
+Qwerty26 ØÛ_bﾵT[ﾗó
+Qwerty27 t!ﾔ[|ﾦiuﾠﾥ
+Qwerty28 åﾾ
+Qwerty29 @.9ﾇﾜﾰ:Ñ
+Qwerty30 ז
+Qwerty31 ÁoKﾓüZﾎÏ
+Qwerty32 æ{PZ(uB
+Qwerty33 ĚOâV_ﾎKx
+Qwerty34 ﾁ!X#ﾶAb
+Qwerty35 ßóÊﾜﾻﾣGﾃ
+Qwerty36 ﾽþ\XﾜFä&|
+Qwerty37 ﾝýﾽñ)RﾳÈ`	
+Qwerty38 @À+ﾹTüﾫﾴﾾ
+Qwerty39 õﾶﾯàﾐﾉﾒﾾﾚ
+Qwerty40 Gj*ùõKÒü
+Qwerty41 NkHrFﾙ+U/ﾒ
+Qwerty42 ﾏ$jJ+ƳqM
+Qwerty43 5ä}$^xâ3ä
+Qwerty44 ﾅhg?{Θ
+Qwerty45 ԫÞYWﾒ
+Qwerty46 ﾇ'0Tvﾪﾺõw
+Qwerty47 ØÆ/h(ﾓﾺﾒﾾﾾ
+Qwerty48 ʂՒÄ'êõ7
+Qwerty49 /69ﾟ[õiﾎﾈ
+Qwerty50 e9ôﾽﾞ^:\h
+Qwerty51 aﾊﾏçGﾴuÀÌà
+Qwerty52 ^ﾜ2ﾺ5ﾤjõ\
+Qwerty53 xÝPTüﾼêêﾲ
+Qwerty54 ﾭlﾔHçﾮ<cﾻ
+Qwerty55 ﾻ2@óöﾍÇ
+Qwerty56 Dﾶ4Plﾵí메
+Qwerty57 ﾆtÜéÂ;ﾖw
+Qwerty58 éé~Ûv/﾿Ô
+Qwerty59 ÒڣﾗóæﾠÛ
+Qwerty60 ﾓﾒUÿöﾑ"Äy
+Qwerty61 ﾫﾗn{+ՊﾜÖ
+Qwerty62 æmﾊﾪﾱAWïÞd
+Qwerty63 /5\aZ
+Qwerty64 ﾺë;+؝ããØÃ
+Qwerty65 ﾢﾩWAWPõâ`
+Qwerty66 ﾿ÍæÎébíTﾁ
+Qwerty67 @Z+üðﾆﾶÐ÷)
+Qwerty68 ﾌÕÓ,ģ
+Qwerty69 óÍöﾆJNíâﾒ
+Qwerty70 ﾺﾚbﾔﾪÈwﾰÚÐ
+Qwerty71 >ðזÔÙSHﾂd
+Qwerty72 ùÞ2äÊﾃʫ+
+Qwerty73 ãﾄ6Gﾑ)ﾯÚM
+Qwerty74 ñﾳ
+UýÅzi
+Qwerty75 ﾣֵêÍä,mPﾟ
+Qwerty76 LNTùŠﾇK
+Qwerty77 ﾩs×UÒapLñ
+Qwerty78 ﾆﾤÃW=ﾈëﾎ
+Qwerty79 øﾧí5ﾄanCﾃÑ
+Qwerty80 qôﾅDﾆﾸrﾷﾆ
+Qwerty81 OWyӥ÷?
+Qwerty82 ﾗpÂoçèﾄ
+Qwerty83 ríãﾚqÃüﾓ
+Qwerty84 ^ﾵﾇﾏH#ﾆý
+Qwerty85 ×àD÷ÌðuáF
+Qwerty86 ﾕuêﾪêâﾪ7
+Qwerty87 ﾲñ隣ﾩﾈa
+Qwerty88 ǎýÐÊúﾑÿ#
+Qwerty89 НoãlﾕﾈﾝçN
+Qwerty90 nﾽêéﾢÂÊ=ȭ
+Qwerty91 KﾸÈÀüﾮgﾸeﾰ
+Qwerty92 FNü]ﾄ:B
+Qwerty93 ZﾍdSﾇ JÄÍ
+Qwerty94 Z]8.﾿ﾖ^ûﾀ
+Qwerty95 wﾁHfQL~c
+Qwerty96 ﾍﾾﾻéﾢ{ﾅñ1ﾫ
+Qwerty97 ÞOÌ}mﾬﾃjﾞ
+Qwerty98 ﾱX˩[Å Ò
+Qwerty99 $FZ?F#Bûﾈ
+123450 ﾀﾁy]ZRnÛ0
+123451 5
+õ̙
+ﾼ/
+123452 Cb+ﾱȳTTﾱù
+123453 -ÃóﾹïﾣXú
+123454 &7åﾓGﾘﾮ
+123455 ﾻéjﾢÎIﾈ/
+123456 ﾺ2SﾇjíkÂ-J
+123457 mmÆ۹ﾥ* È}
+123458 Ƌﾠﾾﾂéb
+123459 %ﾺÀÑè1UÙ<J
+1234510 -ﾸ*úRÚ
+!ﾺ
+1234511 vﾤðX܈ﾅ4
+1234512 ﾀéﾫ0ßE@çﾤ
+1234513 ﾰB4ﾔﾉ
+1234514 *nﾟﾌ{ﾀÏ+óÙ
+1234515 ﾻ,+Iﾥ=Tﾞﾜ
+1234516 ÜxYeﾵﾈﾯsﾪV
+1234517 wÄçßÇTj$
+1234518 ﾟD:ﾟê|ﾣùÄ
+1234519 ÍGGʴﾾ̢v2
+1234520 ﾻﾣﾭ﾿ﾈ&V؋U
+1234521 Æ:ﾬﾙ?D
+1234522 pÁ(;ﾯIﾙ)ﾨ
+1234523 GÊuﾙ$ﾲﾣI
+1234524 ÂY9@ëﾛO
+1234525 0ﾞﾃÍwþ9ﾅù
+1234526 qǷ
+p癸ﾫZ
+1234527 ﾏüﾔِﾀ,ﾈ
+1234528 ﾀ&ﾾÛ<È*ﾣþg
+1234529 ﾂaYÔβ1ﾔ
+1234530 óﾈqEﾮTH(V
+1234531 ﾲ	Îßïjﾄôﾽ
+1234532 ﾖÄ"wå>ÊpK
+1234533 ﾶ`ã_ﾔÍ!^$É
+1234534 ^Ť\Qoﾙuf
+1234535 ×KÏ&ﾪdöÅ&q
+1234536 ﾧKﾆHÊÀ1æÃ
+1234537 ÈçﾩZﾾÿ=öû
+1234538 t×Ô]ﾵéﾇæﾹ
+1234539 yæﾏq
+Æü3:+
+1234540 ^3/ÛYlC9
+1234541 mﾭ ä,Rﾨﾛâ^
+1234542 Ýﾻ!yrﾺﾜþ
+1234543 3ø7kﾬ
+cﾘ
+1234544 <!ÿﾣÐÃWX
+1234545 GíﾈÈÚ@ﾱ×ÎÁ
+1234546 Œá^âXYﾚﾌ
+1234547 ﾳﾐ9Æ×>HﾷﾂN
+1234548 ö=S+ßæﾏX
+1234549 ﾿`ﾊgìﾰPxhÅ
+1234550 ྭy\bﾖÔ=
+1234551 Êöð3F̈́ëÌ
+1234552 ﾇûâﾩó`ﾡΨ
+1234553 
+ﾟø<`ÏJL?
+1234554 ԍﾲﾯQõÁ
+1234555 _ üﾓ
+@ﾺﾒ
+1234556  3Î譎Ùo
+1234557 èLPﾭﾯË(Kq
+1234558 GgÕÀ-0
+1234559 nÅÇ{nﾗòJl
+1234560 ,ýﾱﾢﾔﾺTﾗ
+1234561 ôTﾊﾆﾽÐR
+1234562 /ʧñFﾌﾱp
+1234563 ø*RKFLÜçPÄ
+1234564 \Ëﾱ4>ñ8ﾄp
+1234565 ﾄﾐﾩ]ﾀﾳ)
+1234566 ÑñﾕØÌq-tﾏ
+1234567 á>üﾙﾛôKﾻM
+1234568 e&ﾋCèMËL
+1234569 ×ìxo1UùA!ß
+1234570 ﾤﾴÄÑ֝}éﾜÚ
+1234571 0IÊOﾎnﾻﾾr
+1234572 ﾎﾻb×I
+1234573 æ7xxTÍÑ÷ﾝ
+1234574 ﾪØuÀÖ֑ﾼÅ
+1234575 _ûEZ×Ívﾑ
+1234576 ô#ﾄ&!?ﾋPô
+1234577 ﾵÎÐúﾅﾈxÁ@,
+1234578 ﾘ%ÙÒAﾥY
+1234579 ﾉ<ȿþF/&ﾀ
+1234580 ҃Dfß	ﾁ
+1234581 øëôèþ(%ﾥﾁz
+1234582 ðﾳ_ﾁW hÕÒö
+1234583 çﾠéi.ﾴҿﾋ
+1234584 /8ùòðﾏÂU5
+1234585 ﾩ?ˬHﾧﾙÜ
+1234586 ﾚröVPïﾚڛ
+1234587 ﾼﾡﾨصs"
+1234588 6޾ﾨﾰ.maﾕË
+1234589 D^ﾊ?Qﾝﾳf	
+1234590 ﾡ
+ﾷﾉﾐë[í
+1234591 ﾳ9íN5
+1234592 ÒxpﾙKë]ﾏQ
+1234593 óíﾍ#ß$
+1234594 ﾟK)ö}þﾋ4ﾂ
+1234595 Ï-ﾗ$ð3sM
+1234596 (Çs"ﾝﾛ#ﾑW
+1234597 ιÞƽÓdFåc
+1234598 ÜÔ^ﾃtﾘ÷
+1234599 jsÚZÐ>CﾲÝ
+123450 ﾀﾁy]ZRnÛ0
+123451 5
+õ̙
+ﾼ/
+123452 Cb+ﾱȳTTﾱù
+123453 -ÃóﾹïﾣXú
+123454 &7åﾓGﾘﾮ
+123455 ﾻéjﾢÎIﾈ/
+123456 ﾺ2SﾇjíkÂ-J
+123457 mmÆ۹ﾥ* È}
+123458 Ƌﾠﾾﾂéb
+123459 %ﾺÀÑè1UÙ<J
+1234510 -ﾸ*úRÚ
+!ﾺ
+1234511 vﾤðX܈ﾅ4
+1234512 ﾀéﾫ0ßE@çﾤ
+1234513 ﾰB4ﾔﾉ
+1234514 *nﾟﾌ{ﾀÏ+óÙ
+1234515 ﾻ,+Iﾥ=Tﾞﾜ
+1234516 ÜxYeﾵﾈﾯsﾪV
+1234517 wÄçßÇTj$
+1234518 ﾟD:ﾟê|ﾣùÄ
+1234519 ÍGGʴﾾ̢v2
+1234520 ﾻﾣﾭ﾿ﾈ&V؋U
+1234521 Æ:ﾬﾙ?D
+1234522 pÁ(;ﾯIﾙ)ﾨ
+1234523 GÊuﾙ$ﾲﾣI
+1234524 ÂY9@ëﾛO
+1234525 0ﾞﾃÍwþ9ﾅù
+1234526 qǷ
+p癸ﾫZ
+1234527 ﾏüﾔِﾀ,ﾈ
+1234528 ﾀ&ﾾÛ<È*ﾣþg
+1234529 ﾂaYÔβ1ﾔ
+1234530 óﾈqEﾮTH(V
+1234531 ﾲ	Îßïjﾄôﾽ
+1234532 ﾖÄ"wå>ÊpK
+1234533 ﾶ`ã_ﾔÍ!^$É
+1234534 ^Ť\Qoﾙuf
+1234535 ×KÏ&ﾪdöÅ&q
+1234536 ﾧKﾆHÊÀ1æÃ
+1234537 ÈçﾩZﾾÿ=öû
+1234538 t×Ô]ﾵéﾇæﾹ
+1234539 yæﾏq
+Æü3:+
+1234540 ^3/ÛYlC9
+1234541 mﾭ ä,Rﾨﾛâ^
+1234542 Ýﾻ!yrﾺﾜþ
+1234543 3ø7kﾬ
+cﾘ
+1234544 <!ÿﾣÐÃWX
+1234545 GíﾈÈÚ@ﾱ×ÎÁ
+1234546 Œá^âXYﾚﾌ
+1234547 ﾳﾐ9Æ×>HﾷﾂN
+1234548 ö=S+ßæﾏX
+1234549 ﾿`ﾊgìﾰPxhÅ
+1234550 ྭy\bﾖÔ=
+1234551 Êöð3F̈́ëÌ
+1234552 ﾇûâﾩó`ﾡΨ
+1234553 
+ﾟø<`ÏJL?
+1234554 ԍﾲﾯQõÁ
+1234555 _ üﾓ
+@ﾺﾒ
+1234556  3Î譎Ùo
+1234557 èLPﾭﾯË(Kq
+1234558 GgÕÀ-0
+1234559 nÅÇ{nﾗòJl
+1234560 ,ýﾱﾢﾔﾺTﾗ
+1234561 ôTﾊﾆﾽÐR
+1234562 /ʧñFﾌﾱp
+1234563 ø*RKFLÜçPÄ
+1234564 \Ëﾱ4>ñ8ﾄp
+1234565 ﾄﾐﾩ]ﾀﾳ)
+1234566 ÑñﾕØÌq-tﾏ
+1234567 á>üﾙﾛôKﾻM
+1234568 e&ﾋCèMËL
+1234569 ×ìxo1UùA!ß
+1234570 ﾤﾴÄÑ֝}éﾜÚ
+1234571 0IÊOﾎnﾻﾾr
+1234572 ﾎﾻb×I
+1234573 æ7xxTÍÑ÷ﾝ
+1234574 ﾪØuÀÖ֑ﾼÅ
+1234575 _ûEZ×Ívﾑ
+1234576 ô#ﾄ&!?ﾋPô
+1234577 ﾵÎÐúﾅﾈxÁ@,
+1234578 ﾘ%ÙÒAﾥY
+1234579 ﾉ<ȿþF/&ﾀ
+1234580 ҃Dfß	ﾁ
+1234581 øëôèþ(%ﾥﾁz
+1234582 ðﾳ_ﾁW hÕÒö
+1234583 çﾠéi.ﾴҿﾋ
+1234584 /8ùòðﾏÂU5
+1234585 ﾩ?ˬHﾧﾙÜ
+1234586 ﾚröVPïﾚڛ
+1234587 ﾼﾡﾨصs"
+1234588 6޾ﾨﾰ.maﾕË
+1234589 D^ﾊ?Qﾝﾳf	
+1234590 ﾡ
+ﾷﾉﾐë[í
+1234591 ﾳ9íN5
+1234592 ÒxpﾙKë]ﾏQ
+1234593 óíﾍ#ß$
+1234594 ﾟK)ö}þﾋ4ﾂ
+1234595 Ï-ﾗ$ð3sM
+1234596 (Çs"ﾝﾛ#ﾑW
+1234597 ιÞƽÓdFåc
+1234598 ÜÔ^ﾃtﾘ÷
+1234599 jsÚZÐ>CﾲÝ
+123450 ﾀﾁy]ZRnÛ0
+123451 5
+õ̙
+ﾼ/
+123452 Cb+ﾱȳTTﾱù
+123453 -ÃóﾹïﾣXú
+123454 &7åﾓGﾘﾮ
+123455 ﾻéjﾢÎIﾈ/
+123456 ﾺ2SﾇjíkÂ-J
+123457 mmÆ۹ﾥ* È}
+123458 Ƌﾠﾾﾂéb
+123459 %ﾺÀÑè1UÙ<J
+1234510 -ﾸ*úRÚ
+!ﾺ
+1234511 vﾤðX܈ﾅ4
+1234512 ﾀéﾫ0ßE@çﾤ
+1234513 ﾰB4ﾔﾉ
+1234514 *nﾟﾌ{ﾀÏ+óÙ
+1234515 ﾻ,+Iﾥ=Tﾞﾜ
+1234516 ÜxYeﾵﾈﾯsﾪV
+1234517 wÄçßÇTj$
+1234518 ﾟD:ﾟê|ﾣùÄ
+1234519 ÍGGʴﾾ̢v2
+1234520 ﾻﾣﾭ﾿ﾈ&V؋U
+1234521 Æ:ﾬﾙ?D
+1234522 pÁ(;ﾯIﾙ)ﾨ
+1234523 GÊuﾙ$ﾲﾣI
+1234524 ÂY9@ëﾛO
+1234525 0ﾞﾃÍwþ9ﾅù
+1234526 qǷ
+p癸ﾫZ
+1234527 ﾏüﾔِﾀ,ﾈ
+1234528 ﾀ&ﾾÛ<È*ﾣþg
+1234529 ﾂaYÔβ1ﾔ
+1234530 óﾈqEﾮTH(V
+1234531 ﾲ	Îßïjﾄôﾽ
+1234532 ﾖÄ"wå>ÊpK
+1234533 ﾶ`ã_ﾔÍ!^$É
+1234534 ^Ť\Qoﾙuf
+1234535 ×KÏ&ﾪdöÅ&q
+1234536 ﾧKﾆHÊÀ1æÃ
+1234537 ÈçﾩZﾾÿ=öû
+1234538 t×Ô]ﾵéﾇæﾹ
+1234539 yæﾏq
+Æü3:+
+1234540 ^3/ÛYlC9
+1234541 mﾭ ä,Rﾨﾛâ^
+1234542 Ýﾻ!yrﾺﾜþ
+1234543 3ø7kﾬ
+cﾘ
+1234544 <!ÿﾣÐÃWX
+1234545 GíﾈÈÚ@ﾱ×ÎÁ
+1234546 Œá^âXYﾚﾌ
+1234547 ﾳﾐ9Æ×>HﾷﾂN
+1234548 ö=S+ßæﾏX
+1234549 ﾿`ﾊgìﾰPxhÅ
+1234550 ྭy\bﾖÔ=
+1234551 Êöð3F̈́ëÌ
+1234552 ﾇûâﾩó`ﾡΨ
+1234553 
+ﾟø<`ÏJL?
+1234554 ԍﾲﾯQõÁ
+1234555 _ üﾓ
+@ﾺﾒ
+1234556  3Î譎Ùo
+1234557 èLPﾭﾯË(Kq
+1234558 GgÕÀ-0
+1234559 nÅÇ{nﾗòJl
+1234560 ,ýﾱﾢﾔﾺTﾗ
+1234561 ôTﾊﾆﾽÐR
+1234562 /ʧñFﾌﾱp
+1234563 ø*RKFLÜçPÄ
+1234564 \Ëﾱ4>ñ8ﾄp
+1234565 ﾄﾐﾩ]ﾀﾳ)
+1234566 ÑñﾕØÌq-tﾏ
+1234567 á>üﾙﾛôKﾻM
+1234568 e&ﾋCèMËL
+1234569 ×ìxo1UùA!ß
+1234570 ﾤﾴÄÑ֝}éﾜÚ
+1234571 0IÊOﾎnﾻﾾr
+1234572 ﾎﾻb×I
+1234573 æ7xxTÍÑ÷ﾝ
+1234574 ﾪØuÀÖ֑ﾼÅ
+1234575 _ûEZ×Ívﾑ
+1234576 ô#ﾄ&!?ﾋPô
+1234577 ﾵÎÐúﾅﾈxÁ@,
+1234578 ﾘ%ÙÒAﾥY
+1234579 ﾉ<ȿþF/&ﾀ
+1234580 ҃Dfß	ﾁ
+1234581 øëôèþ(%ﾥﾁz
+1234582 ðﾳ_ﾁW hÕÒö
+1234583 çﾠéi.ﾴҿﾋ
+1234584 /8ùòðﾏÂU5
+1234585 ﾩ?ˬHﾧﾙÜ
+1234586 ﾚröVPïﾚڛ
+1234587 ﾼﾡﾨصs"
+1234588 6޾ﾨﾰ.maﾕË
+1234589 D^ﾊ?Qﾝﾳf	
+1234590 ﾡ
+ﾷﾉﾐë[í
+1234591 ﾳ9íN5
+1234592 ÒxpﾙKë]ﾏQ
+1234593 óíﾍ#ß$
+1234594 ﾟK)ö}þﾋ4ﾂ
+1234595 Ï-ﾗ$ð3sM
+1234596 (Çs"ﾝﾛ#ﾑW
+1234597 ιÞƽÓdFåc
+1234598 ÜÔ^ﾃtﾘ÷
+1234599 jsÚZÐ>CﾲÝ
+dragon0 p@XSﾃ5ﾨ)ë
+dragon1 nß#HﾚäQ7ﾳJ
+dragon2 M.õËÚķêÓ
+dragon3 WXwũﾛﾄ؄}
+dragon4 gœﾚÃРGÙo
+dragon5 ﾰaﾞ=$òèÜñ
+dragon6 ÁÏ"ݷ?ﾄ֧
+dragon7 Õ
+dragon8 áﾦ>ﾨûcﾭﾞﾘ
+dragon9 ZìITpܡﾩﾚ
+dragon10 !Àq|$MﾊﾴÏ
+dragon11 gß`ﾢﾃ}ﾑôò'
+dragon12 ﾺﾦNð(
+dragon13 ïﾇmÓoÎmW
+dragon14 hﾝáҐék,m
+dragon15 ﾥÕÊﾫ$ɔﾢﾤ
+dragon16 jYÇUuÿf÷^ﾢ
+dragon17 h4ߊbﾤrﾼÑ
+dragon18 VgͲá`àﾓyﾂ
+dragon19 ﾖíﾩtﾾÂd^
+dragon20 )Fømﾅ7ﾟy
+dragon21 ﾢqqÐ<MJﾩÇ
+dragon22 ﾌWﾢﾉﾤßiï
+dragon23 ﾋÞbﾫÄÉûﾁ
+dragon24 .ø0ﾆlâ~
+dragon25 ﾪA}þ+^]æ7#
+dragon26 ä]ﾭThﾢJﾻ|
+dragon27 ×áwﾴ9^ÌçÅ
+dragon28 ﾈáﾵRÒ-ﾬﾹﾅ
+dragon29 ûñ!ÞJõ-ﾼ
+dragon30 Ó@ﾮdﾆ]1g
+dragon31 jdü×2ﾶV⋤
+dragon32 ﾋå÷ShIﾍikg
+dragon33 Ê%"ﾺﾣãﾸFî
+dragon34 jíﾀNqtﾾﾴQQ
+dragon35 ﾈﾁ*ﾝ?Ôwﾔ(+
+dragon36 ﾕsuﾹÒcﾈè
+dragon37 ﾗÜhcK
+dragon38 Ĺﾍ6ﾎ4ﾩ﾿
+dragon39 wﾎÚlÄÊø
+dragon40 GúÓä+[ﾳäô
+dragon41 (ã{ﾄﾤ4屫
+dragon42 ﾗiGO[蚇
+dragon43 0óê}ﾲﾆﾀÎ
+dragon44 \Tﾔpú?ﾰﾰO
+dragon45 Ê4Þ|úﾙb:
+dragon46 ÍÛ(ﾎﾌqﾃGmâ
+dragon47 ZcuﾳﾪZԆﾣM
+dragon48 iﾳñﾞéc[ý,Ä
+dragon49 üüaﾃﾎqnÐ
+dragon50 ﾋﾭùËOØàéb
+dragon51 êCﾰ\H+éﾠ8
+dragon52 uôﾢﾱﾁpﾑB
+dragon53 }ﾎﾧþA
+dragon54 ä7e-ìöÔ)
+dragon55 ﾣóõﾾÍñﾲCﾡ
+dragon56 äﾘﾦﾬﾮÛ
+dragon57 	dﾃòzqèø
+dragon58 Z*ê\êﾷö
+ﾸ1
+dragon59 ôHø'ôåﾩÝ
+dragon60 ﾶVﾖ1`ﾷﾶ
+dragon61 =ﾶæôö	2,ﾬ
+dragon62 ﾡÒái÷{P
+dragon63 ﾧö
+òS:ﾢﾋÁ
+dragon64 éñדﾓ=ﾦÖC
+dragon65 Ô÷_÷Úk;så}
+dragon66 ﾕÍ*ﾤâÞw9u
+dragon67 kÕr÷ﾋW$XÉì
+dragon68 áEM
+òQﾻ5}Â
+dragon69 ﾚAZ?ﾦ|ﾚze;
+dragon70 zԒV\ÅÖ(:
+dragon71 Yﾎäﾘñﾜﾋ@ﾤK
+dragon72 [þԚFﾸ
+dragon73 *ﾲ\V@pÊÖ
+dragon74 ç8ﾙ@ðÂ/+Õ
+dragon75 5=ﾏÃáËÓ"ﾴê
+dragon76 ﾆﾧﾮﾷWﾪ3Õ
+dragon77 ózd﾿M%O
+dragon78 Q6úﾘFÂ1Éø
+dragon79 ﾁﾉ_#ﾷﾳ ﾾﾞ
+dragon80 ʔﾗè3ﾲ6ÝW
+dragon81 ﾢÓq-ìﾺíÌ
+dragon82 E-?8NäﾨÆ
+dragon83 ﾴf$fÀ9u
+dragon84 Ij#b͸3Lﾕ
+dragon85 ôSÎﾊﾝH{lh
+dragon86 Q[kﾆ~ݯﾯËï
+dragon87 }ﾔÛóﾨ'FèﾰI
+dragon88 ﾅôﾐ ÃòQﾩQÅ
+dragon89 ﾻﾇﾏJﾇAKܞ[
+dragon90 õoÛ?nAäJ﾿
+dragon91 ïàघ8ﾗ
+dragon92 'ÊwÝ?ﾹiË=
+dragon93 "Áﾯ%ú1r#
+dragon94 îﾓç5ﾘAﾻﾤﾑá
+dragon95 ﾸﾗfﾏXá^.Tﾒ
+dragon96 ﾼﾟ9Lvﾱﾟﾓ
+dragon97 ~vÝ'×kﾣ
+dragon98 uBäﾐ7
+dragon99 SnEÌÚ꼰ﾑ
+DRAGON0 huaåﾙá÷
+DRAGON1 ﾶﾔeêuﾼèU4
+DRAGON2 A*ﾎÿﾙ	ﾍﾷ
+DRAGON3 ﾿?PﾶÁpç[&k
+DRAGON4 cdï0ﾏﾂj|ﾉÇ
+DRAGON5 õ<ﾫ-LﾦÈiﾠﾜ
+DRAGON6 ÇZ`ﾷ핥ÈÝK
+DRAGON7 åﾒþςZﾩ~U
+DRAGON8 ﾎÝ^äZɑﾽÞý
+DRAGON9 )0ﾫ[ﾓﾭ/
+DRAGON10 Çñﾣj?ù}ã
+DRAGON11 ﾎËÝâáﾧÎÍà
+DRAGON12 ûqÊ öIõ%N
+DRAGON13 ﾥﾌ0eﾷﾥZèﾒ
+DRAGON14 ÿﾣ}J2îíŎﾸ
+DRAGON15 ðIÅHﾞﾹÃúﾓ
+DRAGON16 jgﾛJ*pÓţ
+DRAGON17 ﾲﾇEﾲﾷ_ﾠ
+DRAGON18 ﾩCx4'þﾌﾩ
+DRAGON19 ùÎ#ﾉn|dﾴ
+DRAGON20 û-ú)KàüﾧA
+DRAGON21 ﾐ}ﾆBﾷ
+DRAGON22 ÷ﾐúÜïwHﾘ3
+DRAGON23 ÿßíïðz`&
+DRAGON24 ﾤoﾑ5èVJﾓ
+DRAGON25 I}Wû(Gﾓﾮ×
+DRAGON26 QÞAﾡáè.ﾭ@ﾱ
+DRAGON27 Ìq_Ǜﾖcfﾳ
+DRAGON28 ô2
+iS)Ë
+DRAGON29 3ﾵﾢ5ﾉÎSCÎÒ
+DRAGON30 ﾢﾞ=Dä÷ü
+DRAGON31 ("JëÝ/5Oﾄﾁ
+DRAGON32 Fﾮßjﾹﾮﾼﾞ
+DRAGON33 ñﾒfﾷﾆâﾎë
+DRAGON34 Eﾖy+ﾚúﾶùV
+DRAGON35 O(GøPﾌﾘÅõ
+DRAGON36 ýT;nﾀiﾳ.E
+DRAGON37 9mÞ9wÆFއ
+DRAGON38 %\áE	Ïﾂ.
+DRAGON39 Ñt&ﾌó6S
+DRAGON40 íæﾊ}í0ﾃuUÜ
+DRAGON41 ñﾭ̲ﾇﾧÚîﾵ
+DRAGON42 ùﾜﾗﾠԈÍﾳ
+DRAGON43 ﾪw8<ﾓﾶÁÍdû
+DRAGON44 ﾜ6/âﾣá
+DRAGON45 ﾦYﾦﾩﾅdïcÏü
+DRAGON46 9~Î3ÂÑ
+DRAGON47 V>Øgyaé
+DRAGON48 ﾭﾟﾃ$Æl
+DRAGON49 ÁC?ﾓzönPéK
+DRAGON50 ﾤﾾﾗﾂ:	Pﾛ
+DRAGON51 aÄãgþÙñﾱ|
+DRAGON52 Rﾍ4ﾭÓãÂÛK
+DRAGON53 hsÀ~﾿NﾆΥ]
+DRAGON54 þﾗã{c	
+DRAGON55 ﾀ;GÀùËóHbÌ
+DRAGON56 ﾑﾺﾼ>xXñﾩ
+DRAGON57 sﾵ3
+.bﾨÛ)
+DRAGON58 GÔ^E28Hﾹ
+DRAGON59 í+æﾘJﾂOL
+DRAGON60 ÍﾘVv}ﾊm
+DRAGON61 ﾜUﾢkFZ)ﾪ 
+DRAGON62 7Ú<ﾉæõñÔ[>
+DRAGON63 %Iðçﾹ#Wﾾ:
+DRAGON64 @9fEÊîm(i
+DRAGON65 ݶﾄôGØÜHﾂ
+DRAGON66 ﾏﾲﾗå~ﾃûﾄg
+DRAGON67 ﾝØÞëߔްﾈê
+DRAGON68 ÖUȓÅ☘Gﾛ
+DRAGON69 íٮﾑﾆﾺîÌ	
+DRAGON70 \ÒiÒæSﾸñ}
+DRAGON71 fﾬ3ﾛﾷﾞ]ﾊ
+DRAGON72 ﾑﾂﾨ3góﾜy
+DRAGON73 ﾧÈñúkYä%,ﾛ
+DRAGON74 ﾻèﾳeﾓCﾩﾎ
+DRAGON75 Pﾄ2cﾽJﾀ
+DRAGON76 p|ÄàﾂÙÓâﾦ
+DRAGON77 4ﾱ@ﾤﾟ0ﾺ,s
+DRAGON78 o\gTáÝ_o
+DRAGON79 VÆì@ÃB|ﾣ
+DRAGON80 Pﾄyd#ﾐZ÷"
+DRAGON81 û3ßﾹ^ﾞﾡX
+DRAGON82 eﾱWò-"ٗé
+DRAGON83 ÊÓ{ﾉ﾿	uﾂ
+DRAGON84 2ÿkMÙﾋﾾ
+DRAGON85 ﾞﾪdﾆ8ﾺ2ﾹ[ﾅ
+DRAGON86 Þ̧aÜ
+."mÞ
+DRAGON87 âÿþﾃﾣﾹ 
+DRAGON88 þﾰÞyﾦﾞﾰ܇/
+DRAGON89 @ﾏcîҚﾬﾩÁ
+DRAGON90 -qjBnUﾡﾉ
+DRAGON91 Týﾽñ_ﾼà2ã
+DRAGON92 ]óöuôÕ@%6ﾋ
+DRAGON93 ?Ҳo]*Dû|
+DRAGON94 {(ﾺﾧ6bu
+DRAGON95 |bÙeÏMaúﾘ
+DRAGON96 2ﾊ(Î)ìù
+DRAGON97 Ìôﾧ`ﾳÇ#í
+DRAGON98 +qÀ×ðhzﾍå
+DRAGON99 ﾹﾓÍOMì뎵
+Dragon0 ey>Dq!u{ﾋﾎ
+Dragon1 ﾩhe	G}2s
+Dragon2 $jÿﾪíH)ﾋÖ
+Dragon3 ﾴn
+gaﾬl1
+Dragon4 nﾓZë^cﾓﾛÎ
+Dragon5 ﾘàæﾁﾾèþü
+Dragon6 AYﾊﾬ|;ﾗﾒQ
+Dragon7 CﾶﾮÊcCﾎﾔü
+Dragon8 sﾊ]=ﾠ*kFü
+Dragon9 6ﾁeﾠÁH
+UV
+Dragon10 d\=ﾈ3&NﾎﾚÅ
+Dragon11 %k?éâﾛ0Vﾽå
+Dragon12 ﾽçZñFcîh
+Dragon13 )÷ﾋèóﾐ
+Dragon14 	fﾬ4җF÷Û"
+Dragon15 %jGٴ(?wÆ)
+Dragon16 ç%ÒCﾣﾖzÆ
+Dragon17 ՘ÑEIöﾾ7ﾫﾱ
+Dragon18 ﾩﾴyﾧGﾶ^-
+Dragon19 ﾂSݧﾍÄêðy3
+Dragon20 Obúçﾠ0Òd
+Dragon21 ﾋn>@Fﾫﾐtﾯ/
+Dragon22 ~þÀAûüv|
+Dragon23 ﾕﾖﾘaÈ9A
+Dragon24 s#5ﾘdgíKﾀ
+Dragon25 e)xó}äi
+
+Dragon26 ﾭﾽØ9#ﾕֺﾭﾜ
+Dragon27 ﾍMJﾹVﾕﾽﾂ:D
+Dragon28 øå$[_ﾩﾊeñ
+Dragon29 Ü{Q6/wߪ5s
+Dragon30 ÎaﾴáﾹþèÀNÎ
+Dragon31 ^ﾝﾂ5"öﾦ5w7
+Dragon32 ^Ñ Ü$rﾺﾞ
+Dragon33 e`ﾪﾓÄáXﾈÔø
+Dragon34 ËuﾺþÕìuQﾅ
+Dragon35 ﾖgﾋ$ä@ﾮKû
+Dragon36 Àì÷÷ﾁ{)àÏ
+Dragon37 ﾖﾠﾨﾣﾣÞ|úF
+Dragon38 ^BﾳﾅÝF;ïÍ
+Dragon39 ﾿1ñﾎÝ&+X6
+Dragon40 ,ﾳﾯj;ÎÅ+
+Dragon41 UﾺﾲêɤO[Ñ
+Dragon42 ﾳl
+Dragon43 Þ9çêX#;ãÊ
+Dragon44 Ý؄mlﾣﾃë
+Dragon45 ﾺæÃP2úﾖɑ
+Dragon46 Ö˥Z
+ASﾡf
+Dragon47 ÙJñX5Â
+Dragon48 ﾭ
+tﾊ4@﾿Å,
+Dragon49 ﾂxﾯöýﾓ=ﾂÄ
+Dragon50 lﾵÅÞﾒüﾠsn
+Dragon51 a}Å7Ndﾱچﾰ
+Dragon52 ßp^rﾗ?H6
+Dragon53 5ëﾲfAë3ê
+Dragon54 þSﾆp6ã"@B
+Dragon55 ﾁﾍþ-2ÚåE﾿Ù
+Dragon56 8﾿ﾎõﾝﾦﾮ
+4N
+Dragon57 íVú-ÉLûﾶ
+Dragon58 ﾯÆ\eÚͳd^ﾍ
+Dragon59 ﾫÜäåCPﾝﾍ:
+Dragon60 ﾹﾃ_ﾲëIﾽD
+Dragon61 ÞÖÄUàﾜ>þ
+Dragon62 )ﾢ
+Dragon63 ﾃàÕõﾔeQtﾚ
+Dragon64 sﾵﾏÊó<Doﾇ
+Dragon65 íoﾬIÒoﾉﾍ
+Dragon66 joöXﾶﾢK
+Dragon67 ﾁkﾩﾾkt(Ìﾬ
+Dragon68 û`ﾜ>Ù+Îﾘ}
+Dragon69 HAﾒ,Oﾞ
+Dragon70 G洡IOﾖﾯ.E
+Dragon71 ﾉùﾂ#ﾓå_m
+Dragon72 Pﾩk
+Dragon73 [ﾒMﾩnPÂﾚÃ
+Dragon74 ÷ﾮËæøﾩ>ﾟÙ
+Dragon75 ô7V.ü
+Dragon76 ﾰﾪÉ1ﾝﾠ;C
+Dragon77  nﾱܥsïOﾀﾾ
+Dragon78 ,BQ=Fßíﾏҵ
+Dragon79 ﾝîﾩﾹﾀZ£
+Dragon80 Rfﾎ4ﾊÎ8ï
+Dragon81 P9"yt*
+Dragon82 cﾦﾾösðﾌ
+Dragon83 ~ﾪÍ]|ﾬÓèâí
+Dragon84 AðﾣﾻÅÌEﾨ~ﾱ
+Dragon85 ßáfMﾈðﾽ'ﾥ
+Dragon86 ܙßs|Wﾲ
+Dragon87 ﾙ|oÆÔ3ﾽyzﾙ
+Dragon88 t6ñﾻﾫE-ê
+Dragon89 xÖ)Õìï7
+Dragon90 âñîÍð2tè
+Dragon91 ÌﾄzkIñﾜó
+Dragon92 6äüﾓﾫzVxXﾔ
+Dragon93 ﾘ.ﾺöﾕr//"
+Dragon94 yèﾙ'6^ßxÌÚ
+Dragon95 v/),\ù,à
+Dragon96 éëﾺí4qÈá
+Dragon97 uՖmO쮻ﾉ
+Dragon98 @ÃÊÌÏUu
+Dragon99 $)Ýèüæ?/3
+pussy0 ﾾﾤÀÃØÂ|
+pussy1 ﾲ$ﾾzOÓQ;Ï5
+pussy2 ê(ﾐUﾏyô
+pussy3 ÄXji<á@ﾒﾪÃ
+pussy4 ﾏðK~Tcﾞf
+pussy5 ﾆ!ñﾭyﾹﾢ%
+pussy6 Ó2NçÈ8í\õﾀ
+pussy7 EÏ{V,ﾁﾮ(v
+pussy8 ëkjAﾞIﾺﾯY
+pussy9 $Ö~AﾨﾁQí+õ
+pussy10 |üﾚkLÄGÐ8
+pussy11 þÑÏ$iﾧq9
+pussy12 nﾡﾝ:ﾗϩùZñ
+pussy13 ZMP,ﾊXﾮÌÏ
+pussy14 vXë-ﾙﾬ*OÎ:
+pussy15 ﾨkÛH-ÎîÚ
+pussy16 Ö<<Iñﾎ6D7Ô
+pussy17 ﾇbrﾞﾞﾪLﾰÍ
+pussy18 @ýJﾈ"ﾃcÕÐ
+pussy19 øﾞñ',ﾇR
+pussy20 ﾓ ﾑﾸëÌïAiﾄ
+pussy21 ﾆWﾈ$حŘﾶ?
+pussy22 Â÷-ﾧÌmﾳy7
+pussy23 ﾡ÷è"dXﾐX"
+pussy24 .Eæﾒ;ﾎÞ4
+pussy25 T×<ÝËÈвè
+pussy26 ÷Õ
+pussy27 ﾔﾅÒð-~Âë(
+pussy28 ﾟh޼ﾆÈçﾼﾸ
+pussy29 5IéWlÉFüàø
+pussy30 ﾃ!ﾍ&ÛÍ2!=
+pussy31 ƍ
+T4ÃﾬN
+pussy32 #éÝÅ(7wﾊﾭ﾿
+pussy33 ﾩﾤVaQﾥ﾿ﾀ/b
+pussy34 ﾹøﾙ]=ﾆﾵﾂ?
+pussy35 ﾑÜE﾿ﾻÌaﾲﾚ
+pussy36 dﾂýðqﾐﾙ-
+pussy37 f !ÝﾴÀм
+pussy38 6ãÿﾀﾶ!nÚ~È
+pussy39 L%kD&A÷u0
+pussy40 ०ﾰ1h-úå=
+pussy41 ó6ﾉ)ﾬç0MÂ
+pussy42 `9	'ýÏëﾂÚÎ
+pussy43 "hs+$Îã
+pussy44 öﾸ"Uﾋ\ﾏ
+pussy45 ÖVi
+Ûﾈqﾂ9
+pussy46 =õ>ìñÀwEﾠ
+pussy47 ﾹ0(Fñﾤh7ﾬ
+pussy48 ﾶ>ﾐoľﾀÞﾛ
+pussy49 ɐ ﾡSs
+pussy50 Éhﾓe-PÐﾾ×
+pussy51 ﾬﾾN}î+ﾀﾤã
+pussy52 Å_3ﾨeþhﾬ^F
+pussy53 ﾤﾶIﾡýc;ì
+pussy54 hðÄ'Ùdﾖåﾈ"
+pussy55 ñﾉNﾹﾰööﾱ,ﾒ
+pussy56 |dIM{ﾓõﾣ
+pussy57 vﾇöﾽÍtB
+pussy58 JLQ'×Î]@ú
+pussy59 Pﾯðﾵﾦﾗ
+pussy60 ﾗõg[Zﾳi6ﾕﾏ
+pussy61 Lﾎ8ﾍﾤYﾄ
+pussy62 óî.ðﾳåü
+pussy63 ﾗﾩ)Sﾈê=ﾧÈé
+pussy64 d#îﾚYﾯIhÙ
+pussy65 ﾒʺﾮã]ôﾾﾇ\
+pussy66 êﾊaèﾱ5âﾽü
+pussy67 ﾴ.tXfü8hI
+pussy68 tóﾻYðﾙÚÞ
+pussy69 /ﾉﾀ~VæKìZ
+pussy70 Þ8B	13Aﾘë
+pussy71 ̎t˃ﾗyﾓ
+pussy72 15Øýﾱ,\Eì
+pussy73 ﾥK÷ﾠHﾶ
+pussy74 &
+ÿﾳäànﾾÆ
+pussy75 Ã\w"ﾔuB
+pussy76 ﾋ"sçÑ])~Ë
+pussy77 ã8Êû]
+í
+pussy78 ﾰCﾮQ÷ì	îüﾟ
+pussy79 ﾷY|äﾨﾗﾩ
+pussy80 ?Mﾟwﾮx#ÿ
+pussy81 /2åﾭAáQË
+pussy82 ﾩ@IﾚuóV
+pussy83 2ﾟﾋ92ﾦﾒ+(
+pussy84 ﾟNÀﾧﾃâN,Ã
+pussy85 +ﾥgMþlﾷÁ
+pussy86 ﾥçﾁ!ÄDNﾶﾻß
+pussy87 ÿˬòGî
+pussy88 ɪþî"é"Dü
+pussy89 /ﾱﾭﾐ=ë6ûz
+pussy90 
+pussy91 Òòd픣2ﾦ
+pussy92 o	ñs7ﾍä
+pussy93 ﾉGﾐTá5ﾾý
+pussy94 sÊmnﾺèﾘ
+pussy95 [qýÈýÆŞÏø
+pussy96 ﾭ9ÈjﾄíÂÏ
+pussy97 îNﾚﾄ
+~,ﾀﾃ
+pussy98 Ø/87ﾬÃ~	
+pussy99 Ðah3E:Ë&'
+PUSSY0 Qvï	gì5ÆÈ
+PUSSY1 ﾯﾉDﾩFÔчZ
+PUSSY2 $ëﾕHBñتﾫ
+PUSSY3 Pﾩﾆ9æBﾜ?é,
+PUSSY4 ﾱﾱﾄðZ"ﾙﾙÃe
+PUSSY5 ù_×"ﾐÄÛoﾌÕ
+PUSSY6 OÑﾗmk⃐ﾅ
+PUSSY7 ﾥﾐcﾶeïýﾆﾄ
+PUSSY8 ﾹ&ﾦ]Ì2lﾥa
+PUSSY9 ÛTPﾶﾒﾟTÂf
+PUSSY10 ﾂﾝﾛèÌﾠ=
+PUSSY11 ãåƚe3zìÌ
+PUSSY12 0á1ͮﾦﾏJ+
+PUSSY13 ﾡﾍﾾOÎ<ög
+PUSSY14 ƌ_x(ààW
+PUSSY15 tXÌڔõÎÊÑ
+PUSSY16 ﾈﾽ5u2ìä5ﾓﾂ
+PUSSY17 1nygﾣﾃ{ﾩ
+PUSSY18 |mìë07âo
+PUSSY19 ﾠﾫﾔQ:þqñ
+PUSSY20 ﾋfc<﾿ﾛòàh
+PUSSY21 ﾐðﾻáJ	A
+PUSSY22 ﾹ+zﾝðþFâM
+PUSSY23 UæWﾺùóﾖﾷ
+PUSSY24 ﾚﾚw-hﾅDü͆
+PUSSY25 ñﾮáﾀʁﾀxﾖê
+PUSSY26 ﾀPﾪYﾰxʤ0
+PUSSY27 óﾲ^dBÝA?ﾳ
+PUSSY28 iﾉґﾰ:ñ,%È
+PUSSY29  BoË%sﾢﾯãî
+PUSSY30 ﾴﾵf
+cRùÄ0
+PUSSY31 N2#ﾉﾕÑ'àﾷK
+PUSSY32 gtNﾢﾉ?Tcò
+PUSSY33 åCﾏIﾚZb?
+PUSSY34 J-ﾃÚïﾅÛ
+PUSSY35 yﾂ+I3ﾟü-K
+PUSSY36 þﾄ!ï{)Ýk4ﾍ
+PUSSY37 yA֫bﾒ'ﾣh:
+PUSSY38 ﾖgﾨﾴ*ZHåï
+PUSSY39 g#IKﾹﾷﾞlyÀ
+PUSSY40 âﾊ<ӳﾭóﾄ
+PUSSY41 ﾝ7Þû|ﾍ	ﾂ|ö
+PUSSY42 énzﾫ֠ﾨ%
+PUSSY43 x9ﾼﾘﾖﾎqçó
+PUSSY44 u[LﾜﾕöﾸÝj
+PUSSY45 ÒýÆ{#ÊYﾁ
+PUSSY46 aâãó	]ÖTc&
+PUSSY47 ﾰòOôﾁ﾿5
+PUSSY48 ﾮﾛ>ﾇΖ65e]
+PUSSY49 pﾭ7.ﾰ
+PUSSY50 ﾜð>ëﾻcÕ]
+PUSSY51  ﾆ~ilﾒﾨ
+PUSSY52 俺ﾥËÊ=
+PUSSY53 ÉǸﾵRﾠﾄÔv
+PUSSY54 ﾰïõúÁ2N
+PUSSY55 ÔïñrSﾮﾽﾝﾞ
+PUSSY56 
+ﾱﾦ6Ê6çUk
+PUSSY57 Jùﾣ_;ﾮﾪ4ú
+PUSSY58 6ﾭﾎﾼxSiﾒZ
+PUSSY59 ﾖÄ37ﾓË߼ﾜﾂ
+PUSSY60 /÷ﾦlﾡﾚã/Iò
+PUSSY61 )ﾎrø^p{ýÆ
+PUSSY62 ﾼﾷ3q,Kßc
+PUSSY63 +ÚÙuﾟBÙ~J
+PUSSY64 Áﾉyﾚê6TO
+PUSSY65 <7ﾍþÙáëm$
+PUSSY66 ﾹ`.uﾡﾳ=*ﾉ
+PUSSY67 ﾱÒwÆ2)ﾃÇԫ
+PUSSY68 &㯽[֔FÍ)
+PUSSY69 km"Ç[ﾮﾤPM
+PUSSY70 ﾢÕγNáﾺ]þ
+PUSSY71 jÒ~ٔփ"p
+PUSSY72 8ZﾌTgÜð^ß
+PUSSY73 Լ}ﾯßùNﾜN
+PUSSY74 éjﾪcﾽ"ﾊÔãÆ
+PUSSY75 Tﾁwù,~büﾖ
+PUSSY76 ÏÑ÷ËМóﾚﾡﾌ
+PUSSY77 &EoÑìﾈl5
+PUSSY78 Mçﾡôﾤﾤð﾿>
+PUSSY79 Ãá2çﾾ䡡
+PUSSY80 ﾻèﾾ
+PUSSY81 hﾭyﾈïﾉ#ﾣﾦ
+PUSSY82 ﾨﾤGﾄMÂÛ;
+PUSSY83 ﾭ)'ÕpﾵﾧÁØÌ
+PUSSY84  fﾀÛèiråÖ
+PUSSY85  pÎÛ_òW7º
+PUSSY86 ﾆ9ﾥ=åADÂ
+PUSSY87 ﾂ38oÛpЬ
+PUSSY88 Wdﾗ/3ßjm!
+PUSSY89 ͩ
+âzyÌÖ@ﾱ
+PUSSY90 V6ﾁﾃTîoþzﾋ
+PUSSY91 2ﾈﾳnúޝìjÔ
+PUSSY92 kQøﾽà<}ﾡ÷
+PUSSY93 <ﾻ~D`YYQﾠû
+PUSSY94 \ßFﾁ5ﾓÚͪã
+PUSSY95 ҝɑúﾔ**ﾳ
+PUSSY96 åÊäô!þvﾂÆ
+PUSSY97 cﾕ6K!õ|$ﾌ3
+PUSSY98 ﾘØKZí7tó
+PUSSY99 ﾄ{ýﾓﾳsäw
+Pussy0 Rx{ﾇn2Rﾓﾞ
+Pussy1 ôøßmʱﾏﾦÏ
+Pussy2 AuÄIú"(Ä*
+Pussy3 ﾵﾬÐ5ihˊﾬï
+Pussy4 vKﾺ8eÂd{
+Pussy5 ڧÿﾲñﾟuÁ
+Pussy6  Wﾏ<Nﾫnøﾉﾈ
+Pussy7 ó5Éüﾪý:5f
+Pussy8 (ﾘg7f2À
+Pussy9 3(s1òﾦ=â
+Pussy10 ﾰﾠúñÕrÖe
+Pussy11 SﾷIa,Ì>ñﾈø
+Pussy12 ﾲöâm[ﾗÝ_p
+Pussy13 QÌÅ(Ë
+Pussy14 72$áxﾡﾕý
+Pussy15 rﾟB~ﾌﾽﾬﾁs
+Pussy16 !bzȆWß7Í
+Pussy17 "ﾏɬçDjl(È
+Pussy18 ú
+ﾄEo:òﾔ>ö
+Pussy19 4âﾱ?lFﾓﾀû
+Pussy20 >óèXçeC
+Pussy21 gMﾂﾎʾﾸ+É
+Pussy22 ﾕﾒﾉ!*<ñêFﾝ
+Pussy23 bmﾀ+ÚJóøz
+Pussy24 M:PéË=ﾆﾧ0
+Pussy25 ﾼÌ5ﾞﾝ(﾿g
+Pussy26 hùÓêj﾿ÇÆ
+Pussy27 ^:ÊﾞﾸNﾛ
+Pussy28 ﾍêÕ,'öGüBﾞ
+Pussy29 lﾂ!ÂVކDIY
+Pussy30 ﾴøõßXﾏﾦﾤÆ
+Pussy31 ﾌ﾿éK'ﾫòﾪﾶÅ
+Pussy32 å4ßX)8ì.~ç
+Pussy33 ìﾽxgﾭáúRW
+Pussy34 mÝ÷ﾅhﾖ
+Pussy35 ﾝ"ﾴ6ﾞÌ5öó
+Pussy36 wJ݇÷-e
+Pussy37 ﾞ6f(ﾧAﾵó
+Pussy38 ÖyﾘﾩUﾽiè;~
+Pussy39 (ﾞWﾕÃ/æÆ;
+Pussy40 ﾙIﾫOﾂ'ﾷ
+Pussy41 óﾧñﾻÌêﾳs
+Pussy42 Ìâì#ﾬ4!ﾀ
+Pussy43 @ﾄ	ﾕԢaÒÓ	
+Pussy44 ޷4
+Pussy45 ﾣYﾩﾻﾧԙﾅø
+Pussy46 ﾅ]Lﾟù$ÿïﾈc
+Pussy47 #ìýæØÕïĒ
+Pussy48 ͣÔSïáè7!
+Pussy49 <]Ùîzϕêc
+Pussy50 ֍È9OﾕñGZ
+Pussy51 	÷Sﾷﾟޢë
+Pussy52 ﾦÂʑv{[qﾃﾶ
+Pussy53 dfﾥsﾔÒ0Èâﾓ
+Pussy54 ﾃﾾ@%íâ[É)
+Pussy55 ^;CﾔﾌÂÏ
+Pussy56 %ﾬÓÄn>2i
+Pussy57 ﾮﾐﾝT×HâÑ
+Pussy58 gXﾍãé֫ÔÄ
+Pussy59 ﾎ).ﾋý۰ﾙ
+
+Pussy60 Kdﾷèﾏ
+Pussy61 öﾏﾻB<m.È
+Pussy62 dqZﾾä"ӿ
+Pussy63 Ü<êUo1èß
+Pussy64 ÀÂSåﾷsOjﾔ
+Pussy65 yOﾃﾀÛ;ﾊ?ﾛﾴ
+Pussy66 4ﾉ"1"ÎÞm
+Pussy67 ﾒ?oﾧXﾖﾾ>
+Pussy68 I:ﾢÎøﾡﾧﾡ
+Pussy69 _#1}Ü]÷\ﾃﾞ
+Pussy70 õȼ8*åÌٴ
+Pussy71 ﾍÑ,{&ÿﾨﾷ
+Pussy72 c#ﾬﾲpﾺ&ﾉ<ﾖ
+Pussy73 ﾴ$-Kﾇﾘ9'ÂS
+Pussy74 õﾟﾯfﾮß(ﾟﾄ
+Pussy75 ñK
+Pussy76 0ƏﾓEﾄ4À÷
+Pussy77 6ﾄ3ﾪÉﾟﾱq
+Pussy78 Dﾍoß
+;Ë\y
+Pussy79 ﾔﾄ=|MþvjjÑ
+Pussy80 ﾞÏ6,øêM
+Pussy81 ﾘóﾳð#Ên@﾿
+Pussy82 QScýEﾥjÒ
+Pussy83 ﾯ&ﾢﾋèMpﾮ
+ﾕ
+Pussy84 é!A	ﾆ/5{ﾒð
+Pussy85 ﾆﾴﾌ8;	Rﾄﾢ?
+Pussy86 9H[ýÊznﾂﾇ
+Pussy87 7ﾪﾃc4ó{,
+Pussy88 Ûh	ﾤUﾰÆvä
+Pussy89 ~ç.oﾘFz'Lp
+Pussy90 ÊEiUò]ÐO
+Pussy91 ﾺèØçöø6+ﾚ
+Pussy92 iPﾙ7^öﾢ&åF
+Pussy93 ﾯﾡ÷&ﾇﾬﾌná
+Pussy94 ﾵê	ܖﾫw@
+Pussy95 ãþÚÃIPöױ
+Pussy96 oè*ú﾿ﾊﾵﾬﾆ
+Pussy97 ^4ﾼﾏzìﾟ
+Pussy98 u%Wﾔ0`ﾛk
+Pussy99 &þúﾷﾤÈböﾅﾼ
+baseball0 Mﾮﾉﾜömîz
+baseball1 ׶ò6Jﾉöýﾮ
+baseball2 oÓTT*ãÌ
+baseball3 ﾫ|}ﾼbksp×/
+baseball4 )Ïù۳ﾉﾦ"T?
+baseball5 ﾐ9Â;ﾓﾃﾳîSþ
+baseball6 ﾽﾊào	ﾱ÷øVr
+baseball7 =ﾦõ6VHﾦﾥﾬ
+baseball8 Ê7ﾠJTúﾙþå
+baseball9 ﾾI%%ﾛﾫmﾔ
+baseball10 é7Mﾖùâú
+baseball11 (Úãk8ﾻM
+baseball12 ﾠꕢ>6àﾊ
+baseball13 ^䌃xﾴõﾯ9
+baseball14 EﾘEÈ+ﾇyﾱ\
+baseball15 @~ﾐú×VﾼË)
+baseball16 ðr1åﾌȼMG
+baseball17 ﾏﾰÙMèJﾣﾨà
+baseball18 ÿv*fyÐVﾬ,
+baseball19 Rﾏjñ]Iôﾥɩ
+baseball20 Xoáﾌ_%Kʗ
+baseball21 ÒÉӖ}î
+baseball22 ä"zêú6t3ﾬﾴ
+baseball23 (cmf!ﾢYuÓ
+baseball24 ;̦ÏÐȗﾏù
+baseball25 ﾹôÓÆǑx&-
+baseball26 sèöﾰ;Øÿﾽﾓﾥ
+baseball27 ﾳÈêår+Ñ
+baseball28 xíõcﾆÈcëﾻ
+baseball29 GﾦÎﾴﾺﾯ~G
+baseball30 ﾢ;N^ÚÁÞ\ﾺ
+baseball31 ^â*ÚB앇4ﾸ
+baseball32 ﾀåEEÊﾩ;ﾞ
+baseball33 ﾼ6ÁîÎ÷ÅYﾾ
+baseball34 	Ä)|cIOË
+baseball35 4%þﾉÃúﾐìÃ
+baseball36 ʫﾱﾲu⼛ﾲ
+baseball37 ﾙﾸﾄGXﾅﾵØå
+baseball38 
+baseball39 ˝ﾶCﾵIRؤ
+baseball40 ٴ^k@y~ÂàH
+baseball41 ÎâbÁbÂiZ
+baseball42 ﾺð?巆w5Î
+baseball43 *I\ﾼ`ìÐ
+baseball44 ;ﾩÛ؏Ë-ﾛ
+baseball45 VAüﾥ~ﾌÓi
+baseball46 	Ùﾽ4ZﾷÓ
+baseball47 ﾶﾄﾚÁ"àsp6
+baseball48 öÖv#æÂÚÞAÎ
+baseball49 ﾠÓ#ﾲÍÝ]ìõ
+baseball50 ñjlÅû\3ﾢD
+baseball51 ePﾮ`\+١Åè
+baseball52 ﾬﾦﾙ|5[ôúﾐ~
+baseball53 Æaﾈ!/ﾔtË0ê
+baseball54 [yLû3fê,ﾲ
+baseball55 ﾠﾣﾷÇ՞ﾋﾞ
+baseball56 Úêﾙîﾩ'$*6
+baseball57 >?ÎmﾢÃz_
+baseball58 5	?@Jﾒiͥ
+baseball59 sﾷ=äﾮ`7u
+baseball60 Âﾍiñcﾰﾼ
+baseball61 ãﾬF:ÂíﾡNﾚ
+baseball62 NeﾫÜóﾃN_Oﾅ
+baseball63 3Ì
+baseball64 汇þﾌ÷Ûûﾷ
+baseball65 3ﾦÃfﾱoﾚﾉ]
+baseball66 sﾂÈ3ﾛﾧj
+baseball67 ãﾰ$,ﾜﾓdt
+baseball68 ﾩÝ.lﾫ7É
+baseball69 eﾹﾊ"ﾇÉu2
+baseball70 Ý	WﾣÝÂAû
+baseball71 ﾮñﾅþûﾒ{ﾱ:
+baseball72 ﾣËéﾻ#%ÃÐ
+baseball73 ﾷF"Dﾘóﾘ,1
+baseball74 [ÿÿWÈ.Ii
+baseball75 ﾡݺﾞﾌÞ[ﾪ
+baseball76 ﾈﾂrwHÒÃÊ5
+baseball77 CeﾇﾄF9ÔY
+baseball78 ùﾮêﾭ?ùÊóﾇ
+baseball79 Gﾘ:gBﾭm[
+baseball80 Dﾺɔﾨ#rl
+baseball81 4ﾝﾝﾟ0ÃfﾁÏ
+baseball82 ,=7ﾞﾫ̂ﾆ
+baseball83 ﾈé<ﾃÝ2ﾆ
+baseball84 æ@2EÇî߄ﾱ
+baseball85 pKﾕﾽÏá:ãH
+baseball86 ﾎÀU×zÅ!ﾛPã
+baseball87 ﾍñÙܒϲHå
+baseball88 sﾬﾎsäﾮﾫXç
+baseball89 __ﾁﾼ>eöVç
+baseball90 ﾏBﾆPՒÚÔ+:
+baseball91 GzÝÖêﾳyI
+baseball92 ﾌﾑﾁjﾄæ':
+
+baseball93 57"ﾚ×H÷ﾆ
+baseball94 þ2ﾜﾷﾦPï)
+ﾺ
+baseball95 \ùΗaÒۺ{
+baseball96 VﾉJñﾢﾀ]ߋ
+baseball97 ɪﾞʂòÒ
+baseball98 }ÞÀýé ñ
+ÿ
+baseball99 ÈBﾬøþ@nøï-
+BASEBALL0 @F﾿ߖﾧøﾽN
+BASEBALL1 Ř7qug;ﾌ&u
+BASEBALL2 ﾂрf@cﾣӜ*
+BASEBALL3 ü\7EﾝÛ/ﾑXb
+BASEBALL4 8=oPåﾢhÁ
+BASEBALL5 *VÏóûﾜÍnﾇ@
+BASEBALL6 aCdﾈΨFﾜﾼ
+BASEBALL7 IﾮﾓÁ)﾿FﾚﾱÎ
+BASEBALL8 Ë7 çë%#ﾂØ
+BASEBALL9 ﾘﾇxﾃ^ÑEﾽ
+BASEBALL10 ﾵgΡÑgñﾤ
+BASEBALL11 _ﾃæÊå0ﾭPå;
+BASEBALL12 ]>êﾻmﾇ:n|
+BASEBALL13 súëﾰ8ﾺyòJÈ
+BASEBALL14 ﾥ5ﾱﾽڍ8
+BASEBALL15 ƪF85[ﾪ
+BASEBALL16 Ç
+ﾝX% Øüﾏﾀ
+BASEBALL17 Ê=ﾽ0ﾟÎ2N
+BASEBALL18 ﾪﾈèSﾌôﾊﾭ
+BASEBALL19 
+BASEBALL20 íkﾠ,`_`|
+BASEBALL21 4ÚÿÀgñaO
+BASEBALL22 bÚ ý孉ñ
+BASEBALL23 ﾗ^ī6Ô%ﾱ+
+BASEBALL24 l1ôGﾷïqîﾥ
+BASEBALL25 ('|ZH=﾿ﾧCa
+BASEBALL26 ä$lÆôטN_×
+BASEBALL27 âóerﾭﾯóJﾌ
+BASEBALL28 J`j|ﾜFﾪæn
+BASEBALL29 Ö8y[ómﾹ6{
+BASEBALL30 ﾧÁվ99ﾛõﾧ
+BASEBALL31 ÃÉÿ6,*Å
+BASEBALL32 ÑFﾖ+OD_ÒYﾓ
+BASEBALL33 õøﾯrR_ﾝ$)
+BASEBALL34
+Traceback (most recent call last):
+  File "/Users/raymond/Dropbox/Public/sj136/password_cracker.py", line 57, in <module>
+    rainbow_table = make_rainbow()
+  File "/Users/raymond/Dropbox/Public/sj136/password_cracker.py", line 52, in make_rainbow
+    print password, hashpass[:10]
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/idlelib/PyShell.py", line 1356, in write
+    return self.shell.write(s, self.tags)
+KeyboardInterrupt
+>>> 
+KeyboardInterrupt
+>>> 
+=============================== RESTART: Shell ===============================
+>>> 
+﻿Python 2.7.11 (v2.7.11:6d1b6a68f775, Dec  5 2015, 12:54:16) 
+[GCC 4.2.1 (Apple Inc. build 5666) (dot 3)] on darwin
+Type "copyright", "credits" or "license()" for more information.
+>>> 
+====== RESTART: /Users/raymond/Dropbox/Public/sj136/password_cracker.py ======
+False
+True
+qu Football16
+raymondh Superman7
+jcq Giants1
+shunfen Cisco123
+qu Football16
+jcq Giants1
+>>> 
+====== RESTART: /Users/raymond/Dropbox/Public/sj136/password_cracker.py ======
+False
+True
+qu Football16
+raymondh Superman7
+jcq Giants1
+shunfen Cisco123
+qu Football16
+jcq Giants1
+>>> 
+====== RESTART: /Users/raymond/Dropbox/Public/sj136/password_cracker.py ======
+False
+True
+qu Football16
+raymondh Superman7
+jcq Giants1
+shunfen Cisco123
+qu Football16
+jcq Giants1
+>>> 
+====== RESTART: /Users/raymond/Dropbox/Public/sj136/password_cracker.py ======
+False
+True
+qu Football16
+raymondh Superman7
+jcq Giants1
+shunfen Cisco123
+qu Football16
+jcq Giants1
+
+====== RESTART: /Users/raymond/Dropbox/Public/sj136/password_cracker.py ======
+False
+True
+qu Football16
+raymondh Superman7
+jcq Giants1
+
+====== RESTART: /Users/raymond/Dropbox/Public/sj136/password_cracker.py ======
+False
+True
+qu Football16
+raymondh Superman7
+jcq Giants1
+
+=============================== RESTART: Shell ===============================
+>>> s = [i**2 for i in range(10)]
+>>> s
+[0, 1, 4, 9, 16, 25, 36, 49, 64, 81]
+>>> range(10)
+[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+>>> 32 * 10
+320
+>>> sum([i**2 for i in range(10000000)])
+333333283333335000000L
+>>> 32 * 10000000
+320000000
+>>> _ * 2
+640000000
+>>> r = xrange(10)
+>>> r
+xrange(10)
+>>> it = iter(r)
+>>> next(it)
+0
+>>> next(it)
+1
+>>> next(it)
+2
+>>> next(it)
+3
+>>> next(it)
+4
+>>> next(it)
+5
+>>> next(it)
+6
+>>> next(it)
+7
+>>> next(it)
+8
+>>> next(it)
+9
+>>> next(it)
+
+Traceback (most recent call last):
+  File "<pyshell#20>", line 1, in <module>
+    next(it)
+StopIteration
+>>> sum([i**2 for i in xrange(10000000)])
+333333283333335000000L
+>>> g = (i**2 for i in range(6))
+>>> g
+<generator object <genexpr> at 0x104024140>
+>>> next(g)
+0
+>>> next(g)
+1
+>>> next(g)
+4
+>>> next(g)
+9
+>>> next(g)
+16
+>>> next(g)
+25
+>>> next(g)
+
+Traceback (most recent call last):
+  File "<pyshell#30>", line 1, in <module>
+    next(g)
+StopIteration
+>>> sum(i**2 for i in xrange(10000000))
+333333283333335000000L
+>>> # Generators are resumable functions
+>>> # They use for running code on-demand rather than precomputing a memory intensive list of values
+>>> # List comprehension are a beautiful way of making lists
+>>> # Generator expressions are a equally beautiful way of making generators
+>>> 
+>>> 
+>>> 
+>>> [i**2 for i in range(10)]
+[0, 1, 4, 9, 16, 25, 36, 49, 64, 81]
+>>> # [<expr> for <var> in <iterable> if <cond>]            List comprehensions
+>>> 
+>>> {i**2 for i in range(-10, 11)}
+set([64, 1, 100, 0, 49, 9, 16, 81, 25, 4, 36])
+>>> # {<expr> for <var> in <iterable> if <cond>}            Sets comprehensions
+>>> 
+>>> {i**2 : i**3 for i in range(-10, 11)}
+{64: 512, 1: 1, 100: 1000, 0: 0, 49: 343, 9: 27, 16: 64, 81: 729, 25: 125, 4: 8, 36: 216}
+>>> # {<kexpr> : <vexpr> for <var> in <iterable> if <cond>} Dict comprehensions
+>>> (i**2 for i in range(10))
+<generator object <genexpr> at 0x10400ef50>
+>>> # (<expr> for <var> in <iterable> if <cond>)            Generator expressions
+>>> 
+>>> 
+>>> 
+>>> 
+>>> color_pref = {'raymond': 'red', 'rachel': 'blue', 'matthew': 'yellow'}
+>>> color_pref['rachel']
+'blue'
+>>> 
+>>> c2n = {color: name for name, color in color_pref.items()}
+>>> c2n
+{'blue': 'rachel', 'red': 'raymond', 'yellow': 'matthew'}
+>>> c2n['yellow']
+'matthew'
+>>> 
+>>> 
+======== RESTART: /Users/raymond/Dropbox/Public/sj136/client_code.py ========
+Tutorial for Circuitous™
+Circle version 0.2
+A circle with a radius of 10
+has an area of 314.159265359
+
+DARPA grant proposal
+to study the average area of random circles
+using Circuitous version 0.2
+preliminary study using 10 circles
+seeded using Jenny's number: 8675309
+The average is 1.0
+
+Spec sheet for the template: [0.1, 0.2, 0.7]
+>>> 
+======== RESTART: /Users/raymond/Dropbox/Public/sj136/client_code.py ========
+Tutorial for Circuitous™
+Circle version 0.2
+A circle with a radius of 10
+has an area of 314.159265359
+
+DARPA grant proposal
+to study the average area of random circles
+using Circuitous version 0.2
+preliminary study using 10 circles
+seeded using Jenny's number: 8675309
+The average is 1.0
+
+Spec sheet for the template: [0.1, 0.2, 0.7]
+>>> 
+======== RESTART: /Users/raymond/Dropbox/Public/sj136/client_code.py ========
+Tutorial for Circuitous™
+Circle version 0.2
+A circle with a radius of 10
+has an area of 314.159265359
+
+DARPA grant proposal
+to study the average area of random circles
+using Circuitous version 0.2
+preliminary study using 10 circles
+seeded using Jenny's number: 8675309
+The average is 1.0
+
+Spec sheet for the template: [0.1, 0.2, 0.7]
+Circle #1
+Circle #2
+Circle #3
+>>> 
+======== RESTART: /Users/raymond/Dropbox/Public/sj136/client_code.py ========
+Tutorial for Circuitous™
+Circle version 0.2
+A circle with a radius of 10
+has an area of 314.159265359
+
+DARPA grant proposal
+to study the average area of random circles
+using Circuitous version 0.2
+preliminary study using 10 circles
+seeded using Jenny's number: 8675309
+The average is 1.0
+
+Spec sheet for the template: [0.1, 0.2, 0.7]
+Circle #1
+A rubber circle with a cut radius of 10
+has a perimeter of
+Circle #2
+A rubber circle with a cut radius of 10
+has a perimeter of
+Circle #3
+A rubber circle with a cut radius of 10
+has a perimeter of
+>>> 
+======== RESTART: /Users/raymond/Dropbox/Public/sj136/client_code.py ========
+Tutorial for Circuitous™
+Circle version 0.3
+A circle with a radius of 10
+has an area of 314.159265359
+
+DARPA grant proposal
+to study the average area of random circles
+using Circuitous version 0.3
+preliminary study using 10 circles
+seeded using Jenny's number: 8675309
+The average is 1.0
+
+Spec sheet for the template: [0.1, 0.2, 0.7]
+Circle #1
+A rubber circle with a cut radius of 10
+has a perimeter of 62.8318530718
+and a cold area of 314.159265359
+
+Circle #2
+A rubber circle with a cut radius of 10
+has a perimeter of 62.8318530718
+and a cold area of 314.159265359
+
+Circle #3
+A rubber circle with a cut radius of 10
+has a perimeter of 62.8318530718
+and a cold area of 314.159265359
+
+>>> 
+======== RESTART: /Users/raymond/Dropbox/Public/sj136/client_code.py ========
+Tutorial for Circuitous™
+Circle version 0.3
+A circle with a radius of 10
+has an area of 314.159265359
+
+DARPA grant proposal
+to study the average area of random circles
+using Circuitous version 0.3
+preliminary study using 10 circles
+seeded using Jenny's number: 8675309
+The average is 1.0
+
+Spec sheet for the template: [0.1, 0.2, 0.7]
+Circle #1
+A rubber circle with a cut radius of 10
+has a perimeter of 62.8318530718
+and a cold area of 314.159265359
+and a warm area of 314.159265359
+
+Circle #2
+A rubber circle with a cut radius of 10
+has a perimeter of 62.8318530718
+and a cold area of 314.159265359
+and a warm area of 314.159265359
+
+Circle #3
+A rubber circle with a cut radius of 10
+has a perimeter of 62.8318530718
+and a cold area of 314.159265359
+and a warm area of 314.159265359
+
+>>> 
+======== RESTART: /Users/raymond/Dropbox/Public/sj136/client_code.py ========
+Tutorial for Circuitous™
+Circle version 0.3
+A circle with a radius of 10
+has an area of 314.159265359
+
+DARPA grant proposal
+to study the average area of random circles
+using Circuitous version 0.3
+preliminary study using 10 circles
+seeded using Jenny's number: 8675309
+The average is 1.0
+
+Spec sheet for the template: [0.1, 0.2, 0.7]
+Circle #1
+A rubber circle with a cut radius of 0.1
+has a perimeter of 0.628318530718
+and a cold area of 0.0314159265359
+and a warm area of 0.0380132711084
+
+Circle #2
+A rubber circle with a cut radius of 0.2
+has a perimeter of 1.25663706144
+and a cold area of 0.125663706144
+and a warm area of 0.152053084434
+
+Circle #3
+A rubber circle with a cut radius of 0.7
+has a perimeter of 4.39822971503
+and a cold area of 1.53938040026
+and a warm area of 1.86265028431
+
+>>> 
+======== RESTART: /Users/raymond/Dropbox/Public/sj136/client_code.py ========
+Tutorial for Circuitous™
+Circle version 0.3
+A circle with a radius of 10
+has an area of 314.159265359
+
+DARPA grant proposal
+to study the average area of random circles
+using Circuitous version 0.3
+preliminary study using 10 circles
+seeded using Jenny's number: 8675309
+The average is 1.0
+
+Spec sheet for the template: [0.1, 0.2, 0.7]
+Circle #1
+A rubber circle with a cut radius of 0.1
+has a perimeter of 0.628318530718
+and a cold area of 0.0314159265359
+and a warm area of 0.0380132711084
+
+Circle #2
+A rubber circle with a cut radius of 0.2
+has a perimeter of 1.25663706144
+and a cold area of 0.125663706144
+and a warm area of 0.152053084434
+
+Circle #3
+A rubber circle with a cut radius of 0.7
+has a perimeter of 4.39822971503
+and a cold area of 1.53938040026
+and a warm area of 1.86265028431
+
+A tire with an inner radius of 30
+has an inner area of 2827.43338823
+and an outer perimeter of 235.5
+
+>>> 
+======== RESTART: /Users/raymond/Dropbox/Public/sj136/client_code.py ========
+Tutorial for Circuitous™
+Circle version 0.3
+A circle with a radius of 10
+has an area of 314.159265359
+
+DARPA grant proposal
+to study the average area of random circles
+using Circuitous version 0.3
+preliminary study using 10 circles
+seeded using Jenny's number: 8675309
+The average is 1.0
+
+Spec sheet for the template: [0.1, 0.2, 0.7]
+Circle #1
+A rubber circle with a cut radius of 0.1
+has a perimeter of 0.628318530718
+and a cold area of 0.0314159265359
+and a warm area of 0.0380132711084
+
+Circle #2
+A rubber circle with a cut radius of 0.2
+has a perimeter of 1.25663706144
+and a cold area of 0.125663706144
+and a warm area of 0.152053084434
+
+Circle #3
+A rubber circle with a cut radius of 0.7
+has a perimeter of 4.39822971503
+and a cold area of 1.53938040026
+and a warm area of 1.86265028431
+
+A tire with an inner radius of 30
+has an inner area of 2827.43338823
+and an outer perimeter of 235.5
+
+>>> 
+======== RESTART: /Users/raymond/Dropbox/Public/sj136/client_code.py ========
+Tutorial for Circuitous™
+Circle version 0.3
+A circle with a radius of 10
+has an area of 314.159265359
+
+DARPA grant proposal
+to study the average area of random circles
+using Circuitous version 0.3
+preliminary study using 10 circles
+seeded using Jenny's number: 8675309
+The average is 1.0
+
+Spec sheet for the template: [0.1, 0.2, 0.7]
+Circle #1
+A rubber circle with a cut radius of 0.1
+has a perimeter of 0.628318530718
+and a cold area of 0.0314159265359
+and a warm area of 0.0380132711084
+
+Circle #2
+A rubber circle with a cut radius of 0.2
+has a perimeter of 1.25663706144
+and a cold area of 0.125663706144
+and a warm area of 0.152053084434
+
+Circle #3
+A rubber circle with a cut radius of 0.7
+has a perimeter of 4.39822971503
+and a cold area of 1.53938040026
+and a warm area of 1.86265028431
+
+A tire with an inner radius of 30
+has an inner area of 2827.43338823
+and an outer perimeter of 235.5
+
+>>> m = MonsterTire(30)
+>>> m.perimeter()
+235.5
+>>> 
+======== RESTART: /Users/raymond/Dropbox/Public/sj136/client_code.py ========
+Tutorial for Circuitous™
+Circle version 0.3
+A circle with a radius of 10
+has an area of 314.159265359
+
+DARPA grant proposal
+to study the average area of random circles
+using Circuitous version 0.3
+preliminary study using 10 circles
+seeded using Jenny's number: 8675309
+The average is 1.0
+
+Spec sheet for the template: [0.1, 0.2, 0.7]
+Circle #1
+A rubber circle with a cut radius of 0.1
+has a perimeter of 0.628318530718
+and a cold area of 0.0314159265359
+and a warm area of 0.0380132711084
+
+Circle #2
+A rubber circle with a cut radius of 0.2
+has a perimeter of 1.25663706144
+and a cold area of 0.125663706144
+and a warm area of 0.152053084434
+
+Circle #3
+A rubber circle with a cut radius of 0.7
+has a perimeter of 4.39822971503
+and a cold area of 1.53938040026
+and a warm area of 1.86265028431
+
+A tire with an inner radius of 30
+has an inner area of 2827.43338823
+and an outer perimeter of 235.5
+
+>>> m = MonsterTire(30)
+>>> m.perimeter()
+282.6
+>>> 
+========= RESTART: /Users/raymond/Dropbox/Public/sj136/circuitous.py =========
+>>> 
+======== RESTART: /Users/raymond/Dropbox/Public/sj136/client_code.py ========
+Tutorial for Circuitous™
+Circle version 0.3
+A circle with a radius of 10
+has an area of 314.159265359
+
+DARPA grant proposal
+to study the average area of random circles
+using Circuitous version 0.3
+preliminary study using 10 circles
+seeded using Jenny's number: 8675309
+The average is 1.0
+
+Spec sheet for the template: [0.1, 0.2, 0.7]
+Circle #1
+A rubber circle with a cut radius of 0.1
+has a perimeter of Hello from Dad!
+0.628318530718
+and a cold area of 0.0314159265359
+and a warm area of 0.0380132711084
+
+Circle #2
+A rubber circle with a cut radius of 0.2
+has a perimeter of Hello from Dad!
+1.25663706144
+and a cold area of 0.125663706144
+and a warm area of 0.152053084434
+
+Circle #3
+A rubber circle with a cut radius of 0.7
+has a perimeter of Hello from Dad!
+4.39822971503
+and a cold area of 1.53938040026
+and a warm area of 1.86265028431
+
+A tire with an inner radius of 30
+has an inner area of 2827.43338823
+and an outer perimeter of 235.5
+
+>>> # a.attrname
+>>> # inst -> cls -> parent
+>>> #    someclass.method
+>>> t.__dict__
+{'radius': 30}
+>>> t.__class__
+<class '__main__.Tire'>
+>>> t.__class__.__dict__
+dict_proxy({'perimeter': <function perimeter at 0x10397e500>, 'RUBBER_RATIO': 1.25, '__module__': '__main__', '__doc__': 'Circle analytics corrected for the rubber on a tire'})
+>>> t.__class__.__bases__[0].__dict__
+dict_proxy({'perimeter': <function perimeter at 0x103968b90>, '__module__': 'circuitous', 'version': Version(major=0, minor=3, micro=1), '__repr__': <function __repr__ at 0x103968c08>, 'area': <function area at 0x103968b18>, '__dict__': <attribute '__dict__' of 'Circle' objects>, '__weakref__': <attribute '__weakref__' of 'Circle' objects>, '__doc__': 'An Advanced Circle Analytics Toolkit', '__init__': <function __init__ at 0x103968aa0>})
+>>> 
+======== RESTART: /Users/raymond/Dropbox/Public/sj136/client_code.py ========
+Tutorial for Circuitous™
+Circle version 0.3
+A circle with a radius of 10
+has an area of 314.159265359
+
+DARPA grant proposal
+to study the average area of random circles
+using Circuitous version 0.3
+preliminary study using 10 circles
+seeded using Jenny's number: 8675309
+The average is 1.0
+
+Spec sheet for the template: [0.1, 0.2, 0.7]
+Circle #1
+A rubber circle with a cut radius of 0.1
+has a perimeter of Hello from Dad!
+0.628318530718
+and a cold area of 0.0314159265359
+and a warm area of 0.0380132711084
+
+Circle #2
+A rubber circle with a cut radius of 0.2
+has a perimeter of Hello from Dad!
+1.25663706144
+and a cold area of 0.125663706144
+and a warm area of 0.152053084434
+
+Circle #3
+A rubber circle with a cut radius of 0.7
+has a perimeter of Hello from Dad!
+4.39822971503
+and a cold area of 1.53938040026
+and a warm area of 1.86265028431
+
+A tire with an inner radius of 30
+has an inner area of 2827.43338823
+and an outer perimeter of Hello from Dad!
+235.619449019
+
+>>> Circle(10)
+Circle(10)
+>>> Tire(10)
+Circle(10)
+>>> 
+>>> 
+>>> t
+Circle(30)
+>>> t.__class__
+<class '__main__.Tire'>
+>>> t.__class__.__name__
+'Tire'
+>>> 
+======== RESTART: /Users/raymond/Dropbox/Public/sj136/client_code.py ========
+Tutorial for Circuitous™
+Circle version 0.4
+A circle with a radius of 10
+has an area of 314.159265359
+
+DARPA grant proposal
+to study the average area of random circles
+using Circuitous version 0.4
+preliminary study using 10 circles
+seeded using Jenny's number: 8675309
+The average is 1.0
+
+Spec sheet for the template: [0.1, 0.2, 0.7]
+Circle #1
+A rubber circle with a cut radius of 0.1
+has a perimeter of Hello from Dad!
+0.628318530718
+and a cold area of 0.0314159265359
+and a warm area of 0.0380132711084
+
+Circle #2
+A rubber circle with a cut radius of 0.2
+has a perimeter of Hello from Dad!
+1.25663706144
+and a cold area of 0.125663706144
+and a warm area of 0.152053084434
+
+Circle #3
+A rubber circle with a cut radius of 0.7
+has a perimeter of Hello from Dad!
+4.39822971503
+and a cold area of 1.53938040026
+and a warm area of 1.86265028431
+
+A tire with an inner radius of 30
+has an inner area of 2827.43338823
+and an outer perimeter of Hello from Dad!
+235.619449019
+
+>>> c
+Circle(10)
+>>> t
+Tire(30)
+>>> m = MonsterTire(30)
+>>> m
+MonsterTire(30)
+>>> 
+========= RESTART: /Users/raymond/Dropbox/Public/sj136/circuitous.py =========
+>>> 
+========= RESTART: /Users/raymond/Dropbox/Public/sj136/circuitous.py =========
+>>> angle_to_grade(5)
+8.7488663525924
+>>> # The truckers can't find you software
+>>> dir(Circle)
+['__class__', '__delattr__', '__dict__', '__doc__', '__format__', '__getattribute__', '__hash__', '__init__', '__module__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', 'area', 'perimeter', 'version']
+>>> help(Circle)
+Help on class Circle in module __main__:
+
+class Circle(__builtin__.object)
+ |  An Advanced Circle Analytics Toolkit
+ |  
+ |  Methods defined here:
+ |  
+ |  __init__(self, radius)
+ |      # In general we don't document dunder methods because 1) user's don't see the docs, they
+ |      # call short-cuts instead, and 2) the dunder methods tend to have standarized meanings.
+ |      # We tend to spell-out parameter names because 1) they are user visible to help tools,
+ |      # 2) we've lost the information that comes with type declarations, and 3) international audience.
+ |      # When copying (referencing) data from one namespace to another, we usually keep the name the same.
+ |      # Use "self" for the instance variable.  This is a strong cultural norm.
+ |  
+ |  __repr__(self)
+ |      # "self" is a misnomer.  It really means you or one of your children
+ |  
+ |  area(self)
+ |      Perform quadrature on a planar shape of uniform revolution
+ |  
+ |  perimeter(self)
+ |      Compute the closed line integral for the 2-D locus of points equidistant from a given point
+ |  
+ |  ----------------------------------------------------------------------
+ |  Data descriptors defined here:
+ |  
+ |  __dict__
+ |      dictionary for instance variables (if defined)
+ |  
+ |  __weakref__
+ |      list of weak references to the object (if defined)
+ |  
+ |  ----------------------------------------------------------------------
+ |  Data and other attributes defined here:
+ |  
+ |  version = Version(major=0, minor=5, micro=1)
+
+>>> 
+>>> # Problem 1:  Truckers can't angle to grade by using dir(Circle) or help(Circle)
+>>> # Problem 2:  Ship captains are arriving late in port
+>>> 
+>>> 
+>>> # Type I and Type II Errors == False Positives and False Negatives
+>>> 
+========= RESTART: /Users/raymond/Dropbox/Public/sj136/circuitous.py =========
+>>> dir(Circle)
+['__class__', '__delattr__', '__dict__', '__doc__', '__format__', '__getattribute__', '__hash__', '__init__', '__module__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', 'angle_to_grade', 'area', 'perimeter', 'version']
+>>> 
+>>> 
+>>> Circle(1).angle_to_grade()
+
+Traceback (most recent call last):
+  File "<pyshell#95>", line 1, in <module>
+    Circle(1).angle_to_grade()
+TypeError: angle_to_grade() takes exactly 2 arguments (1 given)
+>>> Circle(1).angle_to_grade(5)
+8.7488663525924
+>>> Circle(10).angle_to_grade(5)
+8.7488663525924
+>>> c = Circle(1)
+>>> c.area()
+3.141592653589793
+>>> # The dot makes a sound effect so that we don't have to write  c.area(c)
+>>> 
+========= RESTART: /Users/raymond/Dropbox/Public/sj136/circuitous.py =========
+>>> # Circle(1).angle_to_grade()
+>>> Circle.angle_to_grade()
+
+Traceback (most recent call last):
+  File "<pyshell#102>", line 1, in <module>
+    Circle.angle_to_grade()
+TypeError: angle_to_grade() takes exactly 1 argument (0 given)
+>>> 
+========= RESTART: /Users/raymond/Dropbox/Public/sj136/circuitous.py =========
+>>> Circle.angle_to_grade(5)
+8.7488663525924
+>>> 
+======== RESTART: /Users/raymond/Dropbox/Public/sj136/client_code.py ========
+Tutorial for Circuitous™
+Circle version 0.5
+A circle with a radius of 10
+has an area of 314.159265359
+
+DARPA grant proposal
+to study the average area of random circles
+using Circuitous version 0.5
+preliminary study using 10 circles
+seeded using Jenny's number: 8675309
+The average is 1.0
+
+Spec sheet for the template: [0.1, 0.2, 0.7]
+Circle #1
+A rubber circle with a cut radius of 0.1
+has a perimeter of 0.628318530718
+and a cold area of 0.0314159265359
+and a warm area of 0.0380132711084
+
+Circle #2
+A rubber circle with a cut radius of 0.2
+has a perimeter of 1.25663706144
+and a cold area of 0.125663706144
+and a warm area of 0.152053084434
+
+Circle #3
+A rubber circle with a cut radius of 0.7
+has a perimeter of 4.39822971503
+and a cold area of 1.53938040026
+and a warm area of 1.86265028431
+
+A tire with an inner radius of 30
+has an inner area of 2827.43338823
+and an outer perimeter of 235.619449019
+
+An inclinometer reading of 5 degrees
+is a 8.7488663525924 grade
+>>> 
+======== RESTART: /Users/raymond/Dropbox/Public/sj136/client_code.py ========
+Tutorial for Circuitous™
+Circle version 0.5
+A circle with a radius of 10
+has an area of 314.159265359
+
+DARPA grant proposal
+to study the average area of random circles
+using Circuitous version 0.5
+preliminary study using 10 circles
+seeded using Jenny's number: 8675309
+The average is 1.0
+
+Spec sheet for the template: [0.1, 0.2, 0.7]
+Circle #1
+A rubber circle with a cut radius of 0.1
+has a perimeter of 0.628318530718
+and a cold area of 0.0314159265359
+and a warm area of 0.0380132711084
+
+Circle #2
+A rubber circle with a cut radius of 0.2
+has a perimeter of 1.25663706144
+and a cold area of 0.125663706144
+and a warm area of 0.152053084434
+
+Circle #3
+A rubber circle with a cut radius of 0.7
+has a perimeter of 4.39822971503
+and a cold area of 1.53938040026
+and a warm area of 1.86265028431
+
+A tire with an inner radius of 30
+has an inner area of 2827.43338823
+and an outer perimeter of 235.619449019
+
+An inclinometer reading of 5°
+is a 8.7488663525924 grade
+>>> 
+======== RESTART: /Users/raymond/Dropbox/Public/sj136/client_code.py ========
+Tutorial for Circuitous™
+Circle version 0.5
+A circle with a radius of 10
+has an area of 314.159265359
+
+DARPA grant proposal
+to study the average area of random circles
+using Circuitous version 0.5
+preliminary study using 10 circles
+seeded using Jenny's number: 8675309
+The average is 1.0
+
+Spec sheet for the template: [0.1, 0.2, 0.7]
+Circle #1
+A rubber circle with a cut radius of 0.1
+has a perimeter of 0.628318530718
+and a cold area of 0.0314159265359
+and a warm area of 0.0380132711084
+
+Circle #2
+A rubber circle with a cut radius of 0.2
+has a perimeter of 1.25663706144
+and a cold area of 0.125663706144
+and a warm area of 0.152053084434
+
+Circle #3
+A rubber circle with a cut radius of 0.7
+has a perimeter of 4.39822971503
+and a cold area of 1.53938040026
+and a warm area of 1.86265028431
+
+A tire with an inner radius of 30
+has an inner area of 2827.43338823
+and an outer perimeter of 235.619449019
+
+An inclinometer reading of 5°
+is a 8.7488663525924 grade
+>>> 
+======== RESTART: /Users/raymond/Dropbox/Public/sj136/client_code.py ========
+Tutorial for Circuitous™
+Circle version 0.5
+A circle with a radius of 10
+has an area of 314.159265359
+
+DARPA grant proposal
+to study the average area of random circles
+using Circuitous version 0.5
+preliminary study using 10 circles
+seeded using Jenny's number: 8675309
+The average is 1.0
+
+Spec sheet for the template: [0.1, 0.2, 0.7]
+Circle #1
+A rubber circle with a cut radius of 0.1
+has a perimeter of 0.628318530718
+and a cold area of 0.0314159265359
+and a warm area of 0.0380132711084
+
+Circle #2
+A rubber circle with a cut radius of 0.2
+has a perimeter of 1.25663706144
+and a cold area of 0.125663706144
+and a warm area of 0.152053084434
+
+Circle #3
+A rubber circle with a cut radius of 0.7
+has a perimeter of 4.39822971503
+and a cold area of 1.53938040026
+and a warm area of 1.86265028431
+
+A tire with an inner radius of 30
+has an inner area of 2827.43338823
+and an outer perimeter of 235.619449019
+
+An inclinometer reading of 5° is a 8.7488663525924 grade
+>>> 
+======== RESTART: /Users/raymond/Dropbox/Public/sj136/client_code.py ========
+Tutorial for Circuitous™
+Circle version 0.5
+A circle with a radius of 10
+has an area of 314.159265359
+
+DARPA grant proposal
+to study the average area of random circles
+using Circuitous version 0.5
+preliminary study using 10 circles
+seeded using Jenny's number: 8675309
+The average is 1.0
+
+Spec sheet for the template: [0.1, 0.2, 0.7]
+Circle #1
+A rubber circle with a cut radius of 0.1
+has a perimeter of 0.628318530718
+and a cold area of 0.0314159265359
+and a warm area of 0.0380132711084
+
+Circle #2
+A rubber circle with a cut radius of 0.2
+has a perimeter of 1.25663706144
+and a cold area of 0.125663706144
+and a warm area of 0.152053084434
+
+Circle #3
+A rubber circle with a cut radius of 0.7
+has a perimeter of 4.39822971503
+and a cold area of 1.53938040026
+and a warm area of 1.86265028431
+
+A tire with an inner radius of 30
+has an inner area of 2827.43338823
+and an outer perimeter of 235.619449019
+
+An inclinometer reading of 5° is a 8.7488663525924 percent grade
+>>> 
+======== RESTART: /Users/raymond/Dropbox/Public/sj136/client_code.py ========
+Tutorial for Circuitous™
+Circle version 0.5
+A circle with a radius of 10
+has an area of 314.159265359
+
+DARPA grant proposal
+to study the average area of random circles
+using Circuitous version 0.5
+preliminary study using 10 circles
+seeded using Jenny's number: 8675309
+The average is 1.0
+
+Spec sheet for the template: [0.1, 0.2, 0.7]
+Circle #1
+A rubber circle with a cut radius of 0.1
+has a perimeter of 0.628318530718
+and a cold area of 0.0314159265359
+and a warm area of 0.0380132711084
+
+Circle #2
+A rubber circle with a cut radius of 0.2
+has a perimeter of 1.25663706144
+and a cold area of 0.125663706144
+and a warm area of 0.152053084434
+
+Circle #3
+A rubber circle with a cut radius of 0.7
+has a perimeter of 4.39822971503
+and a cold area of 1.53938040026
+and a warm area of 1.86265028431
+
+A tire with an inner radius of 30
+has an inner area of 2827.43338823
+and an outer perimeter of 235.619449019
+
+An inclinometer reading of 5° is a 8.7 percent grade
+>>> 
+======== RESTART: /Users/raymond/Dropbox/Public/sj136/client_code.py ========
+Tutorial for Circuitous™
+Circle version 0.5
+A circle with a radius of 10
+has an area of 314.159265359
+
+DARPA grant proposal
+to study the average area of random circles
+using Circuitous version 0.5
+preliminary study using 10 circles
+seeded using Jenny's number: 8675309
+The average is 1.0
+
+Spec sheet for the template: [0.1, 0.2, 0.7]
+Circle #1
+A rubber circle with a cut radius of 0.1
+has a perimeter of 0.628318530718
+and a cold area of 0.0314159265359
+and a warm area of 0.0380132711084
+
+Circle #2
+A rubber circle with a cut radius of 0.2
+has a perimeter of 1.25663706144
+and a cold area of 0.125663706144
+and a warm area of 0.152053084434
+
+Circle #3
+A rubber circle with a cut radius of 0.7
+has a perimeter of 4.39822971503
+and a cold area of 1.53938040026
+and a warm area of 1.86265028431
+
+A tire with an inner radius of 30
+has an inner area of 2827.43338823
+and an outer perimeter of 235.619449019
+
+An inclinometer reading of 5°
+
+Traceback (most recent call last):
+  File "/Users/raymond/Dropbox/Public/sj136/client_code.py", line 72, in <module>
+    print 'is a %.1f% grade' % Circle.angle_to_grade(5)
+TypeError: not enough arguments for format string
+>>> 
+======== RESTART: /Users/raymond/Dropbox/Public/sj136/client_code.py ========
+Tutorial for Circuitous™
+Circle version 0.5
+A circle with a radius of 10
+has an area of 314.159265359
+
+DARPA grant proposal
+to study the average area of random circles
+using Circuitous version 0.5
+preliminary study using 10 circles
+seeded using Jenny's number: 8675309
+The average is 1.0
+
+Spec sheet for the template: [0.1, 0.2, 0.7]
+Circle #1
+A rubber circle with a cut radius of 0.1
+has a perimeter of 0.628318530718
+and a cold area of 0.0314159265359
+and a warm area of 0.0380132711084
+
+Circle #2
+A rubber circle with a cut radius of 0.2
+has a perimeter of 1.25663706144
+and a cold area of 0.125663706144
+and a warm area of 0.152053084434
+
+Circle #3
+A rubber circle with a cut radius of 0.7
+has a perimeter of 4.39822971503
+and a cold area of 1.53938040026
+and a warm area of 1.86265028431
+
+A tire with an inner radius of 30
+has an inner area of 2827.43338823
+and an outer perimeter of 235.619449019
+
+An inclinometer reading of 5° is a 8.7% grade
+>>> 
+======== RESTART: /Users/raymond/Dropbox/Public/sj136/client_code.py ========
+Tutorial for Circuitous™
+Circle version 0.5
+A circle with a radius of 10
+has an area of 314.159265359
+
+DARPA grant proposal
+to study the average area of random circles
+using Circuitous version 0.5
+preliminary study using 10 circles
+seeded using Jenny's number: 8675309
+The average is 1.0
+
+Spec sheet for the template: [0.1, 0.2, 0.7]
+Circle #1
+A rubber circle with a cut radius of 0.1
+has a perimeter of 0.628318530718
+and a cold area of 0.0314159265359
+and a warm area of 0.0380132711084
+
+Circle #2
+A rubber circle with a cut radius of 0.2
+has a perimeter of 1.25663706144
+and a cold area of 0.125663706144
+and a warm area of 0.152053084434
+
+Circle #3
+A rubber circle with a cut radius of 0.7
+has a perimeter of 4.39822971503
+and a cold area of 1.53938040026
+and a warm area of 1.86265028431
+
+A tire with an inner radius of 30
+has an inner area of 2827.43338823
+and an outer perimeter of 235.619449019
+
+An inclinometer reading of 5° is a 8.7% grade
+>>> 
+>>> 
+>>> # Alternative constructors
+>>> 
+>>> 
+>>> from datetime import *
+>>> matthew = datetime(2012, 2, 14)
+>>> dir(matthew)
+['__add__', '__class__', '__delattr__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__gt__', '__hash__', '__init__', '__le__', '__lt__', '__ne__', '__new__', '__radd__', '__reduce__', '__reduce_ex__', '__repr__', '__rsub__', '__setattr__', '__sizeof__', '__str__', '__sub__', '__subclasshook__', 'astimezone', 'combine', 'ctime', 'date', 'day', 'dst', 'fromordinal', 'fromtimestamp', 'hour', 'isocalendar', 'isoformat', 'isoweekday', 'max', 'microsecond', 'min', 'minute', 'month', 'now', 'replace', 'resolution', 'second', 'strftime', 'strptime', 'time', 'timetuple', 'timetz', 'today', 'toordinal', 'tzinfo', 'tzname', 'utcfromtimestamp', 'utcnow', 'utcoffset', 'utctimetuple', 'weekday', 'year']
+>>> matthew.weekday
+<built-in method weekday of datetime.datetime object at 0x103a2bad0>
+>>> matthew.weekday()
+1
+>>> 
+>>> from datetime import *
+>>> matthew = datetime(2012, 2, 14)
+>>> #                  Year Month Day
+>>> 
+>>> import time
+>>> time.time()
+1457482762.712449
+>>> two_days_ago = time.time() - 3600 * 48
+>>> # alternative constructors typically are named with the preposition "from"
+>>> datetime.fromtimestamp(two_days_ago)
+datetime.datetime(2016, 3, 6, 16, 19, 52, 143628)
+>>> 
+>>> datetime.fromtimestamp(time.time())
+datetime.datetime(2016, 3, 8, 16, 21, 53, 954078)
+>>> # A.B  -> C     "Giving an API a facelift
+>>> datetime.now()
+datetime.datetime(2016, 3, 8, 16, 23, 6, 78447)
+>>> 
+>>> datetime.fromordinal(725000)
+datetime.datetime(1985, 12, 25, 0, 0)
+>>> datetime.fromordinal(745000)
+datetime.datetime(2040, 9, 27, 0, 0)
+>>> # ymd ts  now  ordinal
+>>> 
+>>> 
+>>> dict()
+{}
+>>> dict( [('raymond', 'red'), ('rachel', 'blue'), ('matthew', 'yellow')] )  # list of tuples
+{'matthew': 'yellow', 'rachel': 'blue', 'raymond': 'red'}
+>>> dict(raymond='red', rachel='blue', matthew='yellow')
+{'matthew': 'yellow', 'rachel': 'blue', 'raymond': 'red'}
+>>> # keywords
+>>> 
+>>> e = {'raymond': 'red'}
+>>> dict(e)
+{'raymond': 'red'}
+>>> 
+>>> 
+>>> # dict(list-of-tuples)   dict(k1=v1, k2=v2)    dict(otherdict)
+>>> 
+>>> names = ['raymond', 'rachel', 'matthew']
+>>> colors = ['red', 'blue', 'yellow']
+>>> zip(names, colors)
+[('raymond', 'red'), ('rachel', 'blue'), ('matthew', 'yellow')]
+>>> dict(zip(names, colors))
+{'matthew': 'yellow', 'rachel': 'blue', 'raymond': 'red'}
+>>> 
+>>> 
+>>> names = ['raymond', 'rachel', 'matthew']
+>>> value = 'unknown'
+>>> 
+>>> [value]
+['unknown']
+>>> [value] * 10
+['unknown', 'unknown', 'unknown', 'unknown', 'unknown', 'unknown', 'unknown', 'unknown', 'unknown', 'unknown']
+>>> [value] * len(names)
+['unknown', 'unknown', 'unknown']
+>>> zip(names, [value] * len(names))
+[('raymond', 'unknown'), ('rachel', 'unknown'), ('matthew', 'unknown')]
+>>> dict(zip(names, [value] * len(names)))
+{'matthew': 'unknown', 'rachel': 'unknown', 'raymond': 'unknown'}
+>>> 
+>>> 
+>>> 
+>>> names = ['raymond', 'rachel', 'matthew']
+>>> value = 'unknown'
+>>> dict(zip(names, [value] * len(names)))
+{'matthew': 'unknown', 'rachel': 'unknown', 'raymond': 'unknown'}
+>>> 
+>>> dict.fromkeys(names, value)
+{'matthew': 'unknown', 'rachel': 'unknown', 'raymond': 'unknown'}
+>>> 
+========= RESTART: /Users/raymond/Dropbox/Public/sj136/circuitous.py =========
+>>> 
+========= RESTART: /Users/raymond/Dropbox/Public/sj136/circuitous.py =========
+>>> Circle(1).from_bbd(30)
+Circle(10.606601717798211)
+>>> 
+========= RESTART: /Users/raymond/Dropbox/Public/sj136/circuitous.py =========
+>>> Circle.from_bbd(30)
+Circle(10.606601717798211)
+>>> 
+======== RESTART: /Users/raymond/Dropbox/Public/sj136/client_code.py ========
+Tutorial for Circuitous™
+Circle version 0.6
+A circle with a radius of 10
+has an area of 314.159265359
+
+DARPA grant proposal
+to study the average area of random circles
+using Circuitous version 0.6
+preliminary study using 10 circles
+seeded using Jenny's number: 8675309
+The average is 1.0
+
+Spec sheet for the template: [0.1, 0.2, 0.7]
+Circle #1
+A rubber circle with a cut radius of 0.1
+has a perimeter of 0.628318530718
+and a cold area of 0.0314159265359
+and a warm area of 0.0380132711084
+
+Circle #2
+A rubber circle with a cut radius of 0.2
+has a perimeter of 1.25663706144
+and a cold area of 0.125663706144
+and a warm area of 0.152053084434
+
+Circle #3
+A rubber circle with a cut radius of 0.7
+has a perimeter of 4.39822971503
+and a cold area of 1.53938040026
+and a warm area of 1.86265028431
+
+A tire with an inner radius of 30
+has an inner area of 2827.43338823
+and an outer perimeter of 235.619449019
+
+An inclinometer reading of 5° is a 8.7% grade
+A circle with a bounding box diagonal of 25
+has a radius of 8.83883476483
+an area of 245.436926062
+and a perimeter of 55.536036727
+
+>>> Tire(30)
+Tire(30)
+>>> dir(Tire)
+['RUBBER_RATIO', '__class__', '__delattr__', '__dict__', '__doc__', '__format__', '__getattribute__', '__hash__', '__init__', '__module__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', 'angle_to_grade', 'area', 'from_bbd', 'perimeter', 'version']
+>>> Tire.from_bbd(40)
+Circle(14.14213562373095)
+>>> 
+>>> 
+>>> C = Circle
+>>> C(10)
+Circle(10)
+>>> 
+>>> 
+>>> cls = Circle
+>>> cls(10)
+Circle(10)
+>>> cls = Tire
+>>> cls(10)
+Tire(10)
+>>> 
+======== RESTART: /Users/raymond/Dropbox/Public/sj136/client_code.py ========
+Tutorial for Circuitous™
+Circle version 0.6
+A circle with a radius of 10
+has an area of 314.159265359
+
+DARPA grant proposal
+to study the average area of random circles
+using Circuitous version 0.6
+preliminary study using 10 circles
+seeded using Jenny's number: 8675309
+The average is 1.0
+
+Spec sheet for the template: [0.1, 0.2, 0.7]
+Circle #1
+A rubber circle with a cut radius of 0.1
+has a perimeter of 0.628318530718
+and a cold area of 0.0314159265359
+and a warm area of 0.0380132711084
+
+Circle #2
+A rubber circle with a cut radius of 0.2
+has a perimeter of 1.25663706144
+and a cold area of 0.125663706144
+and a warm area of 0.152053084434
+
+Circle #3
+A rubber circle with a cut radius of 0.7
+has a perimeter of 4.39822971503
+and a cold area of 1.53938040026
+and a warm area of 1.86265028431
+
+A tire with an inner radius of 30
+has an inner area of 2827.43338823
+and an outer perimeter of 235.619449019
+
+An inclinometer reading of 5° is a 8.7% grade
+A circle with a bounding box diagonal of 25
+has a radius of 8.83883476483
+an area of 245.436926062
+and a perimeter of 55.536036727
+
+>>> Tire.from_bbd(Tire, 40)
+Tire(14.14213562373095)
+>>> Circle.from_bbd(Circle, 30)
+Circle(10.606601717798211)
+>>> 
+>>> # c.area(c)
+>>> 
+>>> # c.area()
+>>> 
+======== RESTART: /Users/raymond/Dropbox/Public/sj136/client_code.py ========
+Tutorial for Circuitous™
+Circle version 0.6
+A circle with a radius of 10
+has an area of 314.159265359
+
+DARPA grant proposal
+to study the average area of random circles
+using Circuitous version 0.6
+preliminary study using 10 circles
+seeded using Jenny's number: 8675309
+The average is 1.0
+
+Spec sheet for the template: [0.1, 0.2, 0.7]
+Circle #1
+A rubber circle with a cut radius of 0.1
+has a perimeter of 0.628318530718
+and a cold area of 0.0314159265359
+and a warm area of 0.0380132711084
+
+Circle #2
+A rubber circle with a cut radius of 0.2
+has a perimeter of 1.25663706144
+and a cold area of 0.125663706144
+and a warm area of 0.152053084434
+
+Circle #3
+A rubber circle with a cut radius of 0.7
+has a perimeter of 4.39822971503
+and a cold area of 1.53938040026
+and a warm area of 1.86265028431
+
+A tire with an inner radius of 30
+has an inner area of 2827.43338823
+and an outer perimeter of 235.619449019
+
+An inclinometer reading of 5° is a 8.7% grade
+
+
+Traceback (most recent call last):
+  File "/Users/raymond/Dropbox/Public/sj136/client_code.py", line 77, in <module>
+    c = Circle.from_bbd(Circle, 25)
+TypeError: from_bbd() takes exactly 2 arguments (3 given)
+>>> 
+======== RESTART: /Users/raymond/Dropbox/Public/sj136/client_code.py ========
+Tutorial for Circuitous™
+Circle version 0.6
+A circle with a radius of 10
+has an area of 314.159265359
+
+DARPA grant proposal
+to study the average area of random circles
+using Circuitous version 0.6
+preliminary study using 10 circles
+seeded using Jenny's number: 8675309
+The average is 1.0
+
+Spec sheet for the template: [0.1, 0.2, 0.7]
+Circle #1
+A rubber circle with a cut radius of 0.1
+has a perimeter of 0.628318530718
+and a cold area of 0.0314159265359
+and a warm area of 0.0380132711084
+
+Circle #2
+A rubber circle with a cut radius of 0.2
+has a perimeter of 1.25663706144
+and a cold area of 0.125663706144
+and a warm area of 0.152053084434
+
+Circle #3
+A rubber circle with a cut radius of 0.7
+has a perimeter of 4.39822971503
+and a cold area of 1.53938040026
+and a warm area of 1.86265028431
+
+A tire with an inner radius of 30
+has an inner area of 2827.43338823
+and an outer perimeter of 235.619449019
+
+An inclinometer reading of 5° is a 8.7% grade
+
+A circle with a bounding box diagonal of 25
+has a radius of 8.83883476483
+an area of 245.436926062
+and a perimeter of 55.536036727
+
+>>> Circle.from_bbd(25)
+Circle(8.838834764831843)
+>>> Tire.from_bbd(25)
+Tire(8.838834764831843)
+>>> 
+========= RESTART: /Users/raymond/Dropbox/Public/sj136/circuitous.py =========
+>>> c = Circle(10)
+>>> c.perimeter()
+62.83185307179586
+>>> c.area()
+314.1592653589793
+>>> 
+======== RESTART: /Users/raymond/Dropbox/Public/sj136/client_code.py ========
+Tutorial for Circuitous™
+Circle version 0.7
+A circle with a radius of 10
+has an area of 314.159265359
+
+DARPA grant proposal
+to study the average area of random circles
+using Circuitous version 0.7
+preliminary study using 10 circles
+seeded using Jenny's number: 8675309
+The average is 1.0
+
+Spec sheet for the template: [0.1, 0.2, 0.7]
+Circle #1
+A rubber circle with a cut radius of 0.1
+has a perimeter of 0.628318530718
+and a cold area of 0.0314159265359
+and a warm area of 0.0380132711084
+
+Circle #2
+A rubber circle with a cut radius of 0.2
+has a perimeter of 1.25663706144
+and a cold area of 0.125663706144
+and a warm area of 0.152053084434
+
+Circle #3
+A rubber circle with a cut radius of 0.7
+has a perimeter of 4.39822971503
+and a cold area of 1.53938040026
+and a warm area of 1.86265028431
+
+A tire with an inner radius of 30
+has an inner area of 4417.86466911
+and an outer perimeter of 235.619449019
+
+An inclinometer reading of 5° is a 8.7% grade
+
+A circle with a bounding box diagonal of 25
+has a radius of 8.83883476483
+an area of 245.436926062
+and a perimeter of 55.536036727
+
+>>> # inst dict  -->   cls dict  -->   base dict
+>>> t.__dict__
+{'radius': 30}
+>>> t.perimeter()
+235.61944901923448
+>>> t.__dict__
+{'radius': 30}
+>>> t.__class__.__dict__
+dict_proxy({'perimeter': <function perimeter at 0x103958578>, 'RUBBER_RATIO': 1.25, '__module__': '__main__', '__doc__': 'Circle analytics corrected for the rubber on a tire'})
+>>> t.area()
+4417.864669110647
+>>> t.__dict__
+{'radius': 30}
+>>> t.__class__.__dict__
+dict_proxy({'perimeter': <function perimeter at 0x103958578>, 'RUBBER_RATIO': 1.25, '__module__': '__main__', '__doc__': 'Circle analytics corrected for the rubber on a tire'})
+>>> t.__class__.__bases__
+(<class 'circuitous.Circle'>,)
+>>> t.__class__.__bases__[0]
+<class 'circuitous.Circle'>
+>>> t.__class__.__bases__[0].__dict__
+dict_proxy({'perimeter': <function perimeter at 0x10393fb18>, '__module__': 'circuitous', 'area': <function area at 0x10393faa0>, 'angle_to_grade': <staticmethod object at 0x1038ade50>, 'from_bbd': <classmethod object at 0x1038ade88>, 'version': Version(major=0, minor=7, micro=1), '__repr__': <function __repr__ at 0x10393fb90>, '__dict__': <attribute '__dict__' of 'Circle' objects>, '__weakref__': <attribute '__weakref__' of 'Circle' objects>, '__doc__': 'An Advanced Circle Analytics Toolkit', '__init__': <function __init__ at 0x10393fa28>})
+>>> 
+>>> 
+>>> 
+>>> x = 10
+>>> print x ** 2
+100
+>>> 
+>>> x = 10
+>>> 
+>>> x = 12
+>>> print 3 * x + 1
+37
+>>> 
+>>> print x ** 2
+144
+>>> 
+>>> 
+>>> x = 10
+>>> _x = x
+>>> 
+>>> print _x ** 2
+100
+>>> 
+>>> 
+>>> x = 10
+>>> _x = x
+>>> 
+>>> 
+>>> x = 12
+>>> print 3 * x + 1
+37
+>>> 
+>>> print _x ** 2
+100
+>>> 
+>>> 
+>>> 
+>>> hex(50)
+'0x32'
+>>> 
+>>> def hex(s):
+	print 'hex' * s
+
+	
+>>> hex(50)
+hexhexhexhexhexhexhexhexhexhexhexhexhexhexhexhexhexhexhexhexhexhexhexhexhexhexhexhexhexhexhexhexhexhexhexhexhexhexhexhexhexhexhexhexhexhexhexhexhexhex
+>>> 
+>>> 
+=============================== RESTART: Shell ===============================
+>>> _hex = hex
+>>> def hex(s):
+	print 'hex' * s
+
+	
+>>> hex(50)
+hexhexhexhexhexhexhexhexhexhexhexhexhexhexhexhexhexhexhexhexhexhexhexhexhexhexhexhexhexhexhexhexhexhexhexhexhexhexhexhexhexhexhexhexhexhexhexhexhexhex
+>>> _hex(50)
+'0x32'
+>>> 
+======== RESTART: /Users/raymond/Dropbox/Public/sj136/client_code.py ========
+Tutorial for Circuitous™
+Circle version 0.7
+A circle with a radius of 10
+has an area of 314.159265359
+
+DARPA grant proposal
+to study the average area of random circles
+using Circuitous version 0.7
+preliminary study using 10 circles
+seeded using Jenny's number: 8675309
+The average is 1.0
+
+Spec sheet for the template: [0.1, 0.2, 0.7]
+Circle #1
+A rubber circle with a cut radius of 0.1
+has a perimeter of 0.628318530718
+and a cold area of 0.0314159265359
+and a warm area of 0.0380132711084
+
+Circle #2
+A rubber circle with a cut radius of 0.2
+has a perimeter of 1.25663706144
+and a cold area of 0.125663706144
+and a warm area of 0.152053084434
+
+Circle #3
+A rubber circle with a cut radius of 0.7
+has a perimeter of 4.39822971503
+and a cold area of 1.53938040026
+and a warm area of 1.86265028431
+
+A tire with an inner radius of 30
+has an inner area of 2827.43338823
+and an outer perimeter of 235.619449019
+
+An inclinometer reading of 5° is a 8.7% grade
+
+A circle with a bounding box diagonal of 25
+has a radius of 8.83883476483
+an area of 245.436926062
+and a perimeter of 55.536036727
+
+>>> 
+======== RESTART: /Users/raymond/Dropbox/Public/sj136/client_code.py ========
+Tutorial for Circuitous™
+Circle version 0.7
+A circle with a radius of 10
+has an area of 314.159265359
+
+DARPA grant proposal
+to study the average area of random circles
+using Circuitous version 0.7
+preliminary study using 10 circles
+seeded using Jenny's number: 8675309
+The average is 1.0
+
+Spec sheet for the template: [0.1, 0.2, 0.7]
+Circle #1
+A rubber circle with a cut radius of 0.1
+has a perimeter of 0.628318530718
+and a cold area of 0.0314159265359
+and a warm area of 0.0380132711084
+
+Circle #2
+A rubber circle with a cut radius of 0.2
+has a perimeter of 1.25663706144
+and a cold area of 0.125663706144
+and a warm area of 0.152053084434
+
+Circle #3
+A rubber circle with a cut radius of 0.7
+has a perimeter of 4.39822971503
+and a cold area of 1.53938040026
+and a warm area of 1.86265028431
+
+A tire with an inner radius of 30
+has an inner area of 4417.86466911
+and an outer perimeter of 235.619449019
+
+An inclinometer reading of 5° is a 8.7% grade
+
+A circle with a bounding box diagonal of 25
+has a radius of 8.83883476483
+an area of 245.436926062
+and a perimeter of 55.536036727
+
+>>> 
+======== RESTART: /Users/raymond/Dropbox/Public/sj136/client_code.py ========
+Tutorial for Circuitous™
+Circle version 0.7
+A circle with a radius of 10
+has an area of 314.159265359
+
+DARPA grant proposal
+to study the average area of random circles
+using Circuitous version 0.7
+preliminary study using 10 circles
+seeded using Jenny's number: 8675309
+The average is 1.0
+
+Spec sheet for the template: [0.1, 0.2, 0.7]
+Circle #1
+A rubber circle with a cut radius of 0.1
+has a perimeter of 0.628318530718
+and a cold area of 0.0314159265359
+and a warm area of 0.0380132711084
+
+Circle #2
+A rubber circle with a cut radius of 0.2
+has a perimeter of 1.25663706144
+and a cold area of 0.125663706144
+and a warm area of 0.152053084434
+
+Circle #3
+A rubber circle with a cut radius of 0.7
+has a perimeter of 4.39822971503
+and a cold area of 1.53938040026
+and a warm area of 1.86265028431
+
+A tire with an inner radius of 30
+has an inner area of 2827.43338823
+and an outer perimeter of 235.619449019
+
+An inclinometer reading of 5° is a 8.7% grade
+
+A circle with a bounding box diagonal of 25
+has a radius of 8.83883476483
+an area of 245.436926062
+and a perimeter of 55.536036727
+
+>>> dir(t)
+['RUBBER_RATIO', '_Circle_perimeter', '_Tire_perimeter', '__class__', '__delattr__', '__dict__', '__doc__', '__format__', '__getattribute__', '__hash__', '__init__', '__module__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', 'angle_to_grade', 'area', 'from_bbd', 'perimeter', 'radius', 'version']
+>>> 
+======== RESTART: /Users/raymond/Dropbox/Public/sj136/client_code.py ========
+Tutorial for Circuitous™
+Circle version 0.7
+A circle with a radius of 10
+has an area of 314.159265359
+
+DARPA grant proposal
+to study the average area of random circles
+using Circuitous version 0.7
+preliminary study using 10 circles
+seeded using Jenny's number: 8675309
+The average is 1.0
+
+Spec sheet for the template: [0.1, 0.2, 0.7]
+Circle #1
+A rubber circle with a cut radius of 0.1
+has a perimeter of 0.628318530718
+and a cold area of 0.0314159265359
+and a warm area of 0.0380132711084
+
+Circle #2
+A rubber circle with a cut radius of 0.2
+has a perimeter of 1.25663706144
+and a cold area of 0.125663706144
+and a warm area of 0.152053084434
+
+Circle #3
+A rubber circle with a cut radius of 0.7
+has a perimeter of 4.39822971503
+and a cold area of 1.53938040026
+and a warm area of 1.86265028431
+
+A tire with an inner radius of 30
+has an inner area of 2827.43338823
+and an outer perimeter of 235.619449019
+
+An inclinometer reading of 5° is a 8.7% grade
+
+A circle with a bounding box diagonal of 25
+has a radius of 8.83883476483
+an area of 245.436926062
+and a perimeter of 55.536036727
+
+>>> dir(t)
+['RUBBER_RATIO', '_Circle__perimeter', '_Tire__perimeter', '__class__', '__delattr__', '__dict__', '__doc__', '__format__', '__getattribute__', '__hash__', '__init__', '__module__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', 'angle_to_grade', 'area', 'from_bbd', 'perimeter', 'radius', 'version']
+>>> 
+>>> 
+>>> d = dict(raymond='red', rachel='blue')
+>>> d.update({'rachel': 'azure', 'matthew': 'yellow'})
+>>> d
+{'matthew': 'yellow', 'rachel': 'azure', 'raymond': 'red'}
+>>> 
+>>> d = dict(raymond='red', rachel='blue')
+>>> d.update(rachel='azure', matthew='yellow')
+>>> d
+{'matthew': 'yellow', 'rachel': 'azure', 'raymond': 'red'}
+>>> 
+>>> d = dict(raymond='red', rachel='blue')
+>>> d.update([('rachel', 'azure'), ('matthew', 'yellow')])
+>>> d
+{'matthew': 'yellow', 'rachel': 'azure', 'raymond': 'red'}
+>>> 
+>>> class D(dict):
+	def update(self, *args, **kwargs):
+		raise NotImplementedError
+
+	
+>>> d = Dict(raymond='red')
+
+Traceback (most recent call last):
+  File "<pyshell#267>", line 1, in <module>
+    d = Dict(raymond='red')
+NameError: name 'Dict' is not defined
+>>> class Dict(dict):
+	def update(self, *args, **kwargs):
+		raise NotImplementedError
+
+	
+>>> d = Dict(raymond='red')
+>>> d
+{'raymond': 'red'}
+>>> 
+======== RESTART: /Users/raymond/Dropbox/Public/sj136/client_code.py ========
+Tutorial for Circuitous™
+Circle version 0.7
+A circle with a radius of 10
+has an area of 314.159265359
+
+DARPA grant proposal
+to study the average area of random circles
+using Circuitous version 0.7
+preliminary study using 10 circles
+seeded using Jenny's number: 8675309
+The average is 1.0
+
+Spec sheet for the template: [0.1, 0.2, 0.7]
+Circle #1
+A rubber circle with a cut radius of 0.1
+has a perimeter of 0.628318530718
+and a cold area of 0.0314159265359
+and a warm area of 0.0380132711084
+
+Circle #2
+A rubber circle with a cut radius of 0.2
+has a perimeter of 1.25663706144
+and a cold area of 0.125663706144
+and a warm area of 0.152053084434
+
+Circle #3
+A rubber circle with a cut radius of 0.7
+has a perimeter of 4.39822971503
+and a cold area of 1.53938040026
+and a warm area of 1.86265028431
+
+A tire with an inner radius of 30
+has an inner area of 2827.43338823
+and an outer perimeter of 235.619449019
+
+An inclinometer reading of 5° is a 8.7% grade
+
+A circle with a bounding box diagonal of 25
+has a radius of 8.83883476483
+an area of 245.436926062
+and a perimeter of 55.536036727
+
+>>> import this
+The Zen of Python, by Tim Peters
+
+Beautiful is better than ugly.
+Explicit is better than implicit.
+Simple is better than complex.
+Complex is better than complicated.
+Flat is better than nested.
+Sparse is better than dense.
+Readability counts.
+Special cases aren't special enough to break the rules.
+Although practicality beats purity.
+Errors should never pass silently.
+Unless explicitly silenced.
+In the face of ambiguity, refuse the temptation to guess.
+There should be one-- and preferably only one --obvious way to do it.
+Although that way may not be obvious at first unless you're Dutch.
+Now is better than never.
+Although never is often better than *right* now.
+If the implementation is hard to explain, it's a bad idea.
+If the implementation is easy to explain, it may be a good idea.
+Namespaces are one honking great idea -- let's do more of those!
+>>> 
+======== RESTART: /Users/raymond/Dropbox/Public/sj136/client_code.py ========
+Tutorial for Circuitous™
+Circle version 0.7
+A circle with a radius of 10
+has an area of 314.159265359
+
+DARPA grant proposal
+to study the average area of random circles
+using Circuitous version 0.7
+preliminary study using 10 circles
+seeded using Jenny's number: 8675309
+The average is 1.0
+
+Spec sheet for the template: [0.1, 0.2, 0.7]
+Circle #1
+A rubber circle with a cut radius of 0.1
+has a perimeter of 0.628318530718
+and a cold area of 0.0314159265359
+and a warm area of 0.0380132711084
+
+Circle #2
+A rubber circle with a cut radius of 0.2
+has a perimeter of 1.25663706144
+and a cold area of 0.125663706144
+and a warm area of 0.152053084434
+
+Circle #3
+A rubber circle with a cut radius of 0.7
+has a perimeter of 4.39822971503
+and a cold area of 1.53938040026
+and a warm area of 1.86265028431
+
+A tire with an inner radius of 30
+has an inner area of 2827.43338823
+and an outer perimeter of 235.619449019
+
+An inclinometer reading of 5° is a 8.7% grade
+
+A circle with a bounding box diagonal of 25
+has a radius of 8.83883476483
+an area of 245.436926062
+and a perimeter of 55.536036727
+
+>>> c.__dict__
+{'radius': 8.838834764831843}
+>>> 
+======== RESTART: /Users/raymond/Dropbox/Public/sj136/client_code.py ========
+Tutorial for Circuitous™
+Circle version 0.7
+A circle with a radius of 10.0
+has an area of 314.159265359
+
+DARPA grant proposal
+to study the average area of random circles
+using Circuitous version 0.7
+preliminary study using 10 circles
+seeded using Jenny's number: 8675309
+The average is 1.0
+
+Spec sheet for the template: [0.1, 0.2, 0.7]
+Circle #1
+A rubber circle with a cut radius of 0.1
+has a perimeter of 0.628318530718
+and a cold area of 0.0314159265359
+and a warm area of 0.0380132711084
+
+Circle #2
+A rubber circle with a cut radius of 0.2
+has a perimeter of 1.25663706144
+and a cold area of 0.125663706144
+and a warm area of 0.152053084434
+
+Circle #3
+A rubber circle with a cut radius of 0.7
+has a perimeter of 4.39822971503
+and a cold area of 1.53938040026
+and a warm area of 1.86265028431
+
+A tire with an inner radius of 30.0
+has an inner area of 2827.43338823
+and an outer perimeter of 235.619449019
+
+An inclinometer reading of 5° is a 8.7% grade
+
+A circle with a bounding box diagonal of 25
+has a radius of 8.83883476483
+an area of 245.436926062
+and a perimeter of 55.536036727
+
+>>> c.__dict__
+{'diameter': 17.677669529663685}
+>>> 
+>>> 
+>>> c = Circle(10)
+>>> c.__dict__
+{'diameter': 20.0}
+>>> c.radius
+10.0
+>>> c.radius = 15
+>>> c.__dict__
+{'diameter': 30.0}
+>>> c.radius
+15.0
+>>> 

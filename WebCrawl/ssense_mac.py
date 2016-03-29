@@ -3,6 +3,7 @@ import time
 import os
 import re
 import webbrowser
+import random
 
 designerList = ["31_phillip_lim","alexander_mcqueen","alexander_wang","proenza_schouler","saint_laurent","valentino"]
 
@@ -20,7 +21,7 @@ def getItemList():
 	
 	for designer in designerList:
 		#print designer
-		url = "https://www.ssense.com/women/designers/"+ designer +"/bags"
+		url = "https://www.ssense.com/en-us/women/designers/"+ designer +"/bags"
 		#print url
 		req = urllib2.Request(url,headers=hdr)
 		try:    
@@ -29,7 +30,8 @@ def getItemList():
                 	print e.fp.read()
 		
 		source = response.read()
-		IDregex = '<a href="/women/product/'+ designer +'/.*/([0-9]*)">'
+		#print source
+		IDregex = 'href="/en-us/women/product/'+ designer +'/.*/([0-9]*)">'
 		idList = re.findall(IDregex,source)
 		#print idList
 		
@@ -38,17 +40,19 @@ def getItemList():
 			linkelem = re.findall(LinkRegex,source)
 			fulllink = "https://www.ssense.com"+linkelem[0]
 			itemdict[id]=fulllink
+	#print itemdict
 	return itemdict
 
 def crawlBrand():
 	ids = getItemList().keys()
 	#print len(ids)
-	#print ids
+	print ids
 	cntr = 0
 	flg = True
 	while True:
     		if flg:
-      			time.sleep(5)  #refresh every 5 seconds
+      			randomt = random.randint(5,30)
+      			time.sleep(randomt)  #refresh every 5 seconds
     		try:
       			new_items = getItemList()
       			new_ids = new_items.keys()

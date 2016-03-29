@@ -4,6 +4,10 @@ import os
 import re
 import webbrowser
 import random
+import httplib
+
+httplib.HTTPConnection._http_vsn = 10
+httplib.HTTPConnection._http_vsn_str = 'HTTP/1.0'
 
 hdr = {'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.64 Safari/537.11',
        'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
@@ -129,7 +133,7 @@ def crawlBrand():
 	
 	while True:
 		if flg:
-			randomt = random.randint(5,15)
+			randomt = random.randint(5,10)
 			print "sleeping "+ str(randomt)
 			time.sleep(randomt)	#refresh every 5 seconds
 		try:

@@ -37,7 +37,7 @@ UrlList = {
 "3.1 Philip Lim":PhilipUri, 
 "YSL": YSLUri, 
 "SF": SFUri,
-"AlexanderWang":AlexWangUri,
+#"AlexanderWang":AlexWangUri,
 "Gucci":GucciUri
 }
 
@@ -92,7 +92,6 @@ def crawlBrand():
       		
       		try:
       			brand = random.choice(UrlList.keys())
-      			print "brand :" + brand
       			if True:
 					old_ids = brandItems[brand]
 					uri = UrlList.get(brand)
@@ -101,6 +100,7 @@ def crawlBrand():
 					add_ids = [i for i in new_ids if not i in old_ids]
 					#print add_ids
 					if (len(add_ids)):
+						print "brand :" + brand
 						print str(len(add_ids)) + " items!!!"
 						for id in add_ids:
 							if id not in BlackList:

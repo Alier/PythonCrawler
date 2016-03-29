@@ -1,0 +1,2431 @@
+Python 2.7.11 (v2.7.11:6d1b6a68f775, Dec  5 2015, 12:54:16) 
+[GCC 4.2.1 (Apple Inc. build 5666) (dot 3)] on darwin
+Type "copyright", "credits" or "license()" for more information.
+>>> 
+
+>>> s = [0, 10, 20, 30, 40, 50]
+>>> len(s)
+6
+>>> s[0]
+0
+>>> s[1]
+10
+>>> s[len(s)]
+
+Traceback (most recent call last):
+  File "<pyshell#5>", line 1, in <module>
+    s[len(s)]
+IndexError: list index out of range
+>>> try:
+	print s[10]
+except IndexError:
+	print 'Oops, too far!'
+
+	
+Oops, too far!
+>>> [s[0], s[1], s[2]]
+[0, 10, 20]
+>>> s[0:3]
+[0, 10, 20]
+>>> 3 - 0
+3
+>>> len(s[0:3])
+3
+>>> len(s[1:4])
+3
+>>> 
+>>> s[0:3]
+[0, 10, 20]
+>>> [s[0], s[1], s[2]]
+[0, 10, 20]
+>>> 'abcdef'[0:3]
+'abc'
+>>> 'abcdef'[0:0]
+''
+>>> 'abcdef'[50]
+
+Traceback (most recent call last):
+  File "<pyshell#21>", line 1, in <module>
+    'abcdef'[50]
+IndexError: string index out of range
+>>> 'abcdef'[2:50]
+'cdef'
+>>> 
+>>> 
+>>> s = [0, 10, 20, 30, 40, 50]
+>>> s[2] = 222
+>>> s
+[0, 10, 222, 30, 40, 50]
+>>> s[2:4]
+[222, 30]
+>>> s[2:4] = [222222, 333333]
+>>> 
+>>> s = [0, 10, 20, 30, 40, 50]
+>>> s[2:4] = [222222, 333333]
+>>> s
+[0, 10, 222222, 333333, 40, 50]
+>>> s[2:4] = ['a', 'b', 'c', 'd']
+>>> s
+[0, 10, 'a', 'b', 'c', 'd', 40, 50]
+>>> s[:]
+[0, 10, 'a', 'b', 'c', 'd', 40, 50]
+>>> s[:] = ['X', 'Y', 'Z']
+>>> s
+['X', 'Y', 'Z']
+>>> s[:] = []
+>>> s
+[]
+>>> s = [0, 10, 20, 30, 40, 50]
+>>> s[2]
+20
+>>> del s[2]
+>>> s
+[0, 10, 30, 40, 50]
+>>> s[1:3]
+[10, 30]
+>>> del s[1:3]
+>>> s
+[0, 40, 50]
+>>> s[:]
+[0, 40, 50]
+>>> del s[:]
+>>> 
+>>> 
+>>> s[:] = []
+>>> del s[:]
+>>> 
+>>> 
+>>> s
+[]
+>>> s = [0, 10, 20, 30, 40, 50]
+>>> s[:] = []
+>>> del s[:]
+>>> 
+>>> s = [0, 10, 20, 30, 40, 50]
+>>> t = s
+>>> u = s[:]
+>>> 
+>>> 
+>>> 
+>>> s = [0, 10, 20, 30, 40, 50]
+>>> s[:4]
+[0, 10, 20, 30]
+>>> s[:10]
+[0, 10, 20, 30, 40, 50]
+>>> 
+>>> 
+>>> 
+>>> s = [0, 10, 20, 30, 40, 50]
+>>> t = s
+>>> u = s[:]
+>>> 
+>>> id(t)
+4344984496
+>>> hex(id(t))
+'0x102fb33b0'
+>>> hex(id(s))
+'0x102fb33b0'
+>>> id(s) == id(t)
+True
+>>> s is t
+True
+>>> hex(id(u))
+'0x102fa58c0'
+>>> id(s) == id(u)
+False
+>>> s is t
+True
+>>> s is not t
+False
+>>> 
+>>> 
+>>> s = [0, 10, 20, 30, 40, 50]
+>>> t = s
+>>> u = s[:]
+>>> s.append(60)
+>>> s
+[0, 10, 20, 30, 40, 50, 60]
+>>> t
+[0, 10, 20, 30, 40, 50, 60]
+>>> u
+[0, 10, 20, 30, 40, 50]
+>>> 
+>>> 
+>>> s = [0, 10, 20, 30, 40, 50]
+>>> t = s
+>>> u = s[:]
+>>> s[1:3] = ['X', 'Y', 'Z']
+>>> s
+[0, 'X', 'Y', 'Z', 30, 40, 50]
+>>> t
+[0, 'X', 'Y', 'Z', 30, 40, 50]
+>>> u
+[0, 10, 20, 30, 40, 50]
+>>> s[:] = []
+>>> t
+[]
+>>> u
+[0, 10, 20, 30, 40, 50]
+>>> 
+>>> s = [0, 10, 20, 30, 40, 50]
+>>> t = s
+>>> u = s[:]
+>>> # s[:] = []
+>>> s = []
+>>> s
+[]
+>>> t
+[0, 10, 20, 30, 40, 50]
+>>> 
+>>> 
+>>> #        t = s               t = s[:]
+>>> #        s[:]=[]             s = []
+>>> 
+>>> 
+>>> 
+>>> # English   Let's -> Let Us -> Start Typing!
+>>> 
+>>> s = [10, 20, 30]
+>>> t = [40, 50, 60]
+>>> u = [0, s, t, 70]
+>>> len(u)
+4
+>>> u
+[0, [10, 20, 30], [40, 50, 60], 70]
+>>> s.append(35)
+>>> s
+[10, 20, 30, 35]
+>>> u
+[0, [10, 20, 30, 35], [40, 50, 60], 70]
+>>> u[1]
+[10, 20, 30, 35]
+>>> u[1][2] = 333
+>>> s
+[10, 20, 333, 35]
+>>> s = [10, 20, 30]
+>>> t = [40, 50, 60]
+>>> u = [0, s, t, 70]
+>>> u[1] = 333
+>>> u
+[0, 333, [40, 50, 60], 70]
+>>> s
+[10, 20, 30]
+>>> 
+>>> 
+>>> 
+>>> # RaymondTel 3003
+>>> 2 ** 3
+8
+>>> # 000 001 010 ... 111
+>>> # RaymondTel 4004
+>>> 2 ** 4
+16
+>>> # There are an EVEN number of numbers
+>>> # Sign bit means negative
+>>> # 1000 ... 1111        1xyz       ->  8 negative numbers
+>>> # 0000                            ->  1 zero
+>>> #                                 ->  7 positive numbers
+>>> 
+>>> 
+>>> # -32768 <= x <= 32767
+>>> x = 10
+>>> -x
+-10
+>>> 0
+0
+>>> -0
+0
+>>> 
+>>> 0.0
+0.0
+>>> -0.0
+-0.0
+>>> 0.0 == -0.0
+True
+>>> 
+>>> -0
+0
+>>> -0 == 0
+True
+>>> 
+>>> s = 2; print s**2
+4
+>>> 
+>>> i = 3;  'abc'[-i:]                  # Give me the last 3 characters
+'abc'
+>>> i = 2;  'abc'[-i:]                  # Give me the last 2 characters
+'bc'
+>>> i = 1;  'abc'[-i:]                  # Give me the last 1 characters
+'c'
+>>> i = 0;  'abc'[-i:]                  # Give me the last 0 characters ARGH!
+'abc'
+>>> i = 3;  'abc'[:-i]                  # Give me all but the last 3 characters
+''
+>>> i = 2;  'abc'[:-i]                  # Give me all but the last 2 characters
+'a'
+>>> i = 1;  'abc'[:-i]                  # Give me all but the last 1 character
+'ab'
+>>> i = 0;  'abc'[:-i]                  # Give me all but the last 0 character ARGH!
+''
+>>> # Rule for packing and unpacking:
+>>> # Internally, the expressions are evaluated left-to-right
+>>> # and the assignments happen left-to-right
+>>> # IOW, it isn't really simultaenous
+>>> # However, is it useful and clear to think of it as simultaenous
+>>> # Programming rule:  don't use simultaenous assignment when
+>>> # the order actually matters.  It spoils the illusion.
+>>> # If someone needs to know the order of operations, use standard sequential assignment instead
+>>> .
+SyntaxError: invalid syntax
+>>> 
+>>> 
+>>> 
+>>> 
+
+>>> # pure functions -> give the same output for the same inputs every time
+>>> #                   AND have no side-effects.
+>>> 
+>>> def f(x):
+	return x ** 2
+
+>>> f(9)
+81
+>>> f(5)
+25
+>>> f(9)
+81
+>>> f(5)
+25
+>>> import time
+>>> time.time()
+1457376809.535723
+>>> time.ctime()
+'Mon Mar  7 10:53:36 2016'
+>>> time.time()
+1457376826.446806
+>>> time.sleep(5); print 'Done!'
+Done!
+>>> import random
+>>> random.random()
+0.7662888020102111
+>>> random.random()
+0.4200560522294299
+>>> random.seed(8675309)
+>>> random.random()
+0.40224696110279223
+>>> random.random()
+0.5102471779215914
+>>> random.random()
+0.6637431122665531
+>>> 
+>>> 
+>>> random.seed(8675309)
+>>> random.random()
+0.40224696110279223
+>>> random.seed(8675309)
+>>> 
+>>> 
+>>> def f(x):
+	global y
+	y += 1
+	return x * y
+
+>>> y = 10
+>>> f(2)
+22
+>>> f(2)
+24
+>>> f(2)
+26
+>>> 
+>>> def f(x):
+	global y
+	y += 1
+	return x * y
+
+>>> y = 10
+>>> 
+>>> a, b, c = f(10), f(20), f(30)         # Never use tuple packing with impure functions
+>>> a
+110
+>>> b
+240
+>>> c
+390
+>>> y = 10
+>>> c, b, a = f(30), f(20), f(10)
+>>> a
+130
+>>> b
+240
+>>> c
+330
+>>> y = 10
+>>> a, b, c = f(10), f(20), f(30)         # Never use tuple packing with impure functions
+>>> 
+>>> a = f(10)
+>>> b = f(20)
+>>> c = f(30)
+>>> 
+>>> 
+>>> a, b, a = 10, 20, 30
+>>> a
+30
+>>> a, b, a = 10, 20, 30                   # Never use tuple unpacking with repeated variables
+>>> 
+>>> a = 10
+>>> b = 20
+>>> a = 30
+>>> 
+>>> 
+>>> arr = [10, 20, 30]
+>>> i = 0
+>>> 
+>>> i, arr[i] = i+1, 40
+>>> arr
+[10, 40, 30]
+>>> 
+>>> arr = [10, 20, 30]
+>>> i = 0
+>>> 
+>>> arr[i], i = 40, i+1
+>>> arr
+[40, 20, 30]
+>>> 
+>>> 
+>>> arr = [10, 20, 30]
+>>> i = 0
+>>> 
+>>> i += 1
+>>> arr[i] = 40
+>>> 
+>>> 
+>>> x = 10
+>>> y = 20
+>>> 
+>>> x, y = y, x
+>>> 
+>>> x
+20
+>>> y
+10
+>>> 
+======= RESTART: /Users/raymond/Dropbox/Public/sj136/looping_idioms.py =======
+Task:  show colors in upper case
+RED
+BLUE
+YELLOW
+GREEN
+>>> 
+======= RESTART: /Users/raymond/Dropbox/Public/sj136/looping_idioms.py =======
+Task:  show colors in upper case
+RED
+BLUE
+YELLOW
+GREEN
+RED
+BLUE
+YELLOW
+GREEN
+>>> 
+======= RESTART: /Users/raymond/Dropbox/Public/sj136/looping_idioms.py =======
+Task:  show colors in upper case
+RED
+BLUE
+YELLOW
+GREEN
+RED
+BLUE
+YELLOW
+GREEN
+Task:  show names and the number of the name
+0 -> raymond
+1 -> rachel
+2 -> matthew
+>>> 
+>>> 
+>>> 
+======= RESTART: /Users/raymond/Dropbox/Public/sj136/looping_idioms.py =======
+Task:  show colors in upper case
+RED
+BLUE
+YELLOW
+GREEN
+RED
+BLUE
+YELLOW
+GREEN
+Task:  show names and the number of the name
+1 -> raymond
+2 -> rachel
+3 -> matthew
+>>> 
+======= RESTART: /Users/raymond/Dropbox/Public/sj136/looping_idioms.py =======
+Task:  show colors in upper case
+RED
+BLUE
+YELLOW
+GREEN
+RED
+BLUE
+YELLOW
+GREEN
+Task:  show names and the number of the name
+1 -> raymond
+2 -> rachel
+3 -> matthew
+1 -> raymond
+2 -> rachel
+3 -> matthew
+>>> 
+======= RESTART: /Users/raymond/Dropbox/Public/sj136/looping_idioms.py =======
+Task:  show colors in upper case
+RED
+BLUE
+YELLOW
+GREEN
+RED
+BLUE
+YELLOW
+GREEN
+Task:  show names and the number of the name
+1 -> raymond
+2 -> rachel
+3 -> matthew
+
+Traceback (most recent call last):
+  File "/Users/raymond/Dropbox/Public/sj136/looping_idioms.py", line 17, in <module>
+    print '%d -> %s' % (i, names[i])
+IndexError: list index out of range
+>>> 
+======= RESTART: /Users/raymond/Dropbox/Public/sj136/looping_idioms.py =======
+Task:  show colors in upper case
+RED
+BLUE
+YELLOW
+GREEN
+RED
+BLUE
+YELLOW
+GREEN
+Task:  show names and the number of the name
+1 -> raymond
+2 -> rachel
+3 -> matthew
+1001 -> raymond
+1002 -> rachel
+1003 -> matthew
+>>> 
+======= RESTART: /Users/raymond/Dropbox/Public/sj136/looping_idioms.py =======
+Task:  show colors in upper case
+RED
+BLUE
+YELLOW
+GREEN
+RED
+BLUE
+YELLOW
+GREEN
+Task:  show names and the number of the name
+1 -> raymond
+2 -> rachel
+3 -> matthew
+1 -> raymond
+2 -> rachel
+3 -> matthew
+>>> 
+======= RESTART: /Users/raymond/Dropbox/Public/sj136/looping_idioms.py =======
+Task:  show colors in upper case
+RED
+BLUE
+YELLOW
+GREEN
+RED
+BLUE
+YELLOW
+GREEN
+Task:  show names and the number of the name
+1 -> raymond
+2 -> rachel
+3 -> matthew
+1 -> raymond
+2 -> rachel
+3 -> matthew
+Task:  show the colors in reverse order
+>>> colors
+['red', 'blue', 'yellow', 'green']
+>>> [colors[3], colors[2], colors[1], colors[0]]
+['green', 'yellow', 'blue', 'red']
+>>> [3, 2, 1, 0]
+[3, 2, 1, 0]
+>>> range(10)
+[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+>>> len(range(10))
+10
+>>> range(2, 10)
+[2, 3, 4, 5, 6, 7, 8, 9]
+>>> 10 - 2
+8
+>>> len(range(2, 10))
+8
+>>> range(2, 10, 3)
+[2, 5, 8]
+>>> # START STOP STEP
+>>> 
+>>> 
+>>> [3, 2, 1, 0]
+[3, 2, 1, 0]
+>>> range(3, 0, -1)
+[3, 2, 1]
+>>> range(3, -1, -1)
+[3, 2, 1, 0]
+>>> len(colors)
+4
+>>> range(len(colors)-1, -1, -1)
+[3, 2, 1, 0]
+>>> 
+======= RESTART: /Users/raymond/Dropbox/Public/sj136/looping_idioms.py =======
+Task:  show colors in upper case
+RED
+BLUE
+YELLOW
+GREEN
+RED
+BLUE
+YELLOW
+GREEN
+Task:  show names and the number of the name
+1 -> raymond
+2 -> rachel
+3 -> matthew
+1 -> raymond
+2 -> rachel
+3 -> matthew
+Task:  show the colors in reverse order
+Green
+Yellow
+Blue
+Red
+>>> 
+======= RESTART: /Users/raymond/Dropbox/Public/sj136/looping_idioms.py =======
+Task:  show colors in upper case
+RED
+BLUE
+YELLOW
+GREEN
+RED
+BLUE
+YELLOW
+GREEN
+Task:  show names and the number of the name
+1 -> raymond
+2 -> rachel
+3 -> matthew
+1 -> raymond
+2 -> rachel
+3 -> matthew
+Task:  show the colors in reverse order
+Green
+Yellow
+Blue
+Red
+
+Traceback (most recent call last):
+  File "/Users/raymond/Dropbox/Public/sj136/looping_idioms.py", line 24, in <module>
+    print colors.title()
+AttributeError: 'list' object has no attribute 'title'
+>>> 
+======= RESTART: /Users/raymond/Dropbox/Public/sj136/looping_idioms.py =======
+Task:  show colors in upper case
+RED
+BLUE
+YELLOW
+GREEN
+RED
+BLUE
+YELLOW
+GREEN
+Task:  show names and the number of the name
+1 -> raymond
+2 -> rachel
+3 -> matthew
+1 -> raymond
+2 -> rachel
+3 -> matthew
+Task:  show the colors in reverse order
+Green
+Yellow
+Blue
+Red
+Green
+Yellow
+Blue
+Red
+>>> 
+>>> s = 'Hello'
+>>> t = s
+>>> s = None
+>>> t = None
+>>> # CPython uses reference counts to determine when to deallocate objects
+>>> s = [10, 20, 30, 40]
+>>> s.append(50)
+>>> s
+[10, 20, 30, 40, 50]
+>>> s.append('hello')
+>>> s
+[10, 20, 30, 40, 50, 'hello']
+>>> s.append(KeyError)
+>>> s.append(bin)
+>>> s[-1](51)
+'0b110011'
+>>> hex(51)
+'0x33'
+>>> s.append(s)
+>>> s
+[10, 20, 30, 40, 50, 'hello', <type 'exceptions.KeyError'>, <built-in function bin>, [...]]
+>>> s[-2][51]
+
+Traceback (most recent call last):
+  File "<pyshell#325>", line 1, in <module>
+    s[-2][51]
+TypeError: 'builtin_function_or_method' object has no attribute '__getitem__'
+>>> s[-2](51)
+'0b110011'
+>>> s[-1][-1][-1][-1][0]
+10
+>>> s[0]
+10
+>>> s = None
+>>> # CPython uses reference counts to determine when to deallocate objects
+>>> # This worked great except for circular references
+>>> # So we add garbage collection.  Three generation mark and sweep algorithm.
+>>> imoort gc
+SyntaxError: invalid syntax
+>>> import gc
+>>> gc.collect()
+1
+>>> gc.collect()
+0
+>>> # PyPy and Jython are GC only
+>>> 
+>>> 
+======= RESTART: /Users/raymond/Dropbox/Public/sj136/looping_idioms.py =======
+Task:  show colors in upper case
+RED
+BLUE
+YELLOW
+GREEN
+RED
+BLUE
+YELLOW
+GREEN
+Task:  show names and the number of the name
+1 -> raymond
+2 -> rachel
+3 -> matthew
+1 -> raymond
+2 -> rachel
+3 -> matthew
+Task:  show the colors in reverse order
+Green
+Yellow
+Blue
+Red
+Green
+Yellow
+Blue
+Red
+Task:  pair the names with the corresponding colors, ignoring mismatches
+>>> names
+['raymond', 'rachel', 'matthew']
+>>> colors
+['red', 'blue', 'yellow', 'green']
+>>> 
+>>> 3 + 5
+8
+>>> 3 - 5
+-2
+>>> x = 10
+>>> -x
+-10
+>>> # Conditional operator and Ternary operator
+>>> # C-like languages:
+>>> #      <cond> ? <posres> : <negres>
+>>> # grade = (score >= 70) ? "pass" : "fail";
+>>> 
+>>> # Python way:
+>>> #      <posres> if <cond> else <negres>
+>>> score = 62
+>>> grade = "pass" if score >= 70 else "fail"
+>>> 
+>>> 
+======= RESTART: /Users/raymond/Dropbox/Public/sj136/looping_idioms.py =======
+Task:  show colors in upper case
+RED
+BLUE
+YELLOW
+GREEN
+RED
+BLUE
+YELLOW
+GREEN
+Task:  show names and the number of the name
+1 -> raymond
+2 -> rachel
+3 -> matthew
+1 -> raymond
+2 -> rachel
+3 -> matthew
+Task:  show the colors in reverse order
+Green
+Yellow
+Blue
+Red
+Green
+Yellow
+Blue
+Red
+Task:  pair the names with the corresponding colors, ignoring mismatches
+raymond -> red
+rachel -> blue
+matthew -> yellow
+>>> 
+>>> 
+>>> 
+>>> min(30, 5, 50)
+5
+>>> 
+======= RESTART: /Users/raymond/Dropbox/Public/sj136/looping_idioms.py =======
+Task:  show colors in upper case
+RED
+BLUE
+YELLOW
+GREEN
+RED
+BLUE
+YELLOW
+GREEN
+Task:  show names and the number of the name
+1 -> raymond
+2 -> rachel
+3 -> matthew
+1 -> raymond
+2 -> rachel
+3 -> matthew
+Task:  show the colors in reverse order
+Green
+Yellow
+Blue
+Red
+Green
+Yellow
+Blue
+Red
+Task:  pair the names with the corresponding colors, ignoring mismatches
+raymond -> red
+rachel -> blue
+matthew -> yellow
+raymond -> red
+rachel -> blue
+matthew -> yellow
+>>> 
+>>> zip('abcdef', range(10))
+[('a', 0), ('b', 1), ('c', 2), ('d', 3), ('e', 4), ('f', 5)]
+>>> 
+======= RESTART: /Users/raymond/Dropbox/Public/sj136/looping_idioms.py =======
+Task:  show colors in upper case
+RED
+BLUE
+YELLOW
+GREEN
+RED
+BLUE
+YELLOW
+GREEN
+Task:  show names and the number of the name
+1 -> raymond
+2 -> rachel
+3 -> matthew
+1 -> raymond
+2 -> rachel
+3 -> matthew
+Task:  show the colors in reverse order
+Green
+Yellow
+Blue
+Red
+Green
+Yellow
+Blue
+Red
+Task:  pair the names with the corresponding colors, ignoring mismatches
+raymond -> red
+rachel -> blue
+matthew -> yellow
+raymond -> red
+rachel -> blue
+matthew -> yellow
+raymond -> red
+rachel -> blue
+matthew -> yellow
+>>> import itertools
+>>> for name, color in izip_longest(names, colors):
+    print '%s -> %s' % (name, color)
+
+    
+
+Traceback (most recent call last):
+  File "<pyshell#364>", line 1, in <module>
+    for name, color in izip_longest(names, colors):
+NameError: name 'izip_longest' is not defined
+>>> for name, color in itertools.izip_longest(names, colors):
+    print '%s -> %s' % (name, color)
+
+    
+raymond -> red
+rachel -> blue
+matthew -> yellow
+None -> green
+>>> for name, color in itertools.izip_longest(names, colors, fillvalue="unknown"):
+    print '%s -> %s' % (name, color)
+
+    
+raymond -> red
+rachel -> blue
+matthew -> yellow
+unknown -> green
+>>> 
+======= RESTART: /Users/raymond/Dropbox/Public/sj136/looping_idioms.py =======
+Task:  show colors in upper case
+RED
+BLUE
+YELLOW
+GREEN
+RED
+BLUE
+YELLOW
+GREEN
+Task:  show names and the number of the name
+1 -> raymond
+2 -> rachel
+3 -> matthew
+1 -> raymond
+2 -> rachel
+3 -> matthew
+Task:  show the colors in reverse order
+Green
+Yellow
+Blue
+Red
+Green
+Yellow
+Blue
+Red
+Task:  pair the names with the corresponding colors, ignoring mismatches
+raymond -> red
+rachel -> blue
+matthew -> yellow
+raymond -> red
+rachel -> blue
+matthew -> yellow
+raymond -> red
+rachel -> blue
+matthew -> yellow
+Task:  show the colors alphabetically
+blue
+green
+red
+yellow
+>>> color = 'red'
+>>> len(color)
+3
+>>> # len() has an arity of one
+>>> 
+======= RESTART: /Users/raymond/Dropbox/Public/sj136/looping_idioms.py =======
+Task:  show colors in upper case
+RED
+BLUE
+YELLOW
+GREEN
+RED
+BLUE
+YELLOW
+GREEN
+Task:  show names and the number of the name
+1 -> raymond
+2 -> rachel
+3 -> matthew
+1 -> raymond
+2 -> rachel
+3 -> matthew
+Task:  show the colors in reverse order
+Green
+Yellow
+Blue
+Red
+Green
+Yellow
+Blue
+Red
+Task:  pair the names with the corresponding colors, ignoring mismatches
+raymond -> red
+rachel -> blue
+matthew -> yellow
+raymond -> red
+rachel -> blue
+matthew -> yellow
+raymond -> red
+rachel -> blue
+matthew -> yellow
+Task:  show the colors alphabetically
+blue
+green
+red
+yellow
+Task:  show the colors ordered by the length of the color
+>>> 
+>>> from pprint import pprint
+>>> pprint(sorted(['raymond', 'rachel', 'matthew']), width=15)
+['matthew',
+ 'rachel',
+ 'raymond']
+>>> pprint(sorted([
+	(5, 1000, 2000),
+	(10, 1, 2),
+	(5, 9, 77777777),
+	(10, 2, 999999),
+	(7, 7, 7),
+]), width=25)
+[(5, 9, 77777777),
+ (5, 1000, 2000),
+ (7, 7, 7),
+ (10, 1, 2),
+ (10, 2, 999999)]
+>>> 
+>>> pprint(sorted([
+	(50, 'teach python'),
+	(0, 'wake up'),
+	(30, 'drive to work'),
+	(20, 'find out what building your teaching'),
+]))
+[(0, 'wake up'),
+ (20, 'find out what building your teaching'),
+ (30, 'drive to work'),
+ (50, 'teach python')]
+>>> 
+>>> 
+>>> # List comprehension:  [<expr> for <var> in <iterable>]
+>>> # List comprehension:  [<expr> for <var> in <iterable> if <cond>]
+>>> [i**2 for i in range(10)]
+[0, 1, 4, 9, 16, 25, 36, 49, 64, 81]
+>>> [i**2 for i in range(10) if i%2==0]
+[0, 4, 16, 36, 64]
+>>> [(i**2, i**3-1) for i in range(10) if i%2==0]
+[(0, -1), (4, 7), (16, 63), (36, 215), (64, 511)]
+>>> 
+>>> 30 + 40
+70
+>>> _ * 10
+700
+>>> _ * 10
+7000
+>>> _ * 10
+70000
+>>> _ + 1
+70001
+>>> type(_)
+<type 'int'>
+>>> [(i**2, i**3-1) for i in range(10) if i%2==0]
+[(0, -1), (4, 7), (16, 63), (36, 215), (64, 511)]
+>>> [s + cm1 for s, cm1 in _]
+[-1, 11, 79, 251, 575]
+>>> 
+>>> 
+>>> 
+>>> colors
+['red', 'blue', 'yellow', 'green']
+>>> [(len(color), color) for color in colors]
+[(3, 'red'), (4, 'blue'), (6, 'yellow'), (5, 'green')]
+>>> sorted(_)
+[(3, 'red'), (4, 'blue'), (5, 'green'), (6, 'yellow')]
+>>> [color for size, color in _]
+['red', 'blue', 'green', 'yellow']
+>>> 
+======= RESTART: /Users/raymond/Dropbox/Public/sj136/looping_idioms.py =======
+Task:  show colors in upper case
+RED
+BLUE
+YELLOW
+GREEN
+RED
+BLUE
+YELLOW
+GREEN
+Task:  show names and the number of the name
+1 -> raymond
+2 -> rachel
+3 -> matthew
+1 -> raymond
+2 -> rachel
+3 -> matthew
+Task:  show the colors in reverse order
+Green
+Yellow
+Blue
+Red
+Green
+Yellow
+Blue
+Red
+Task:  pair the names with the corresponding colors, ignoring mismatches
+raymond -> red
+rachel -> blue
+matthew -> yellow
+raymond -> red
+rachel -> blue
+matthew -> yellow
+raymond -> red
+rachel -> blue
+matthew -> yellow
+Task:  show the colors alphabetically
+blue
+green
+red
+yellow
+Task:  show the colors ordered by the length of the color
+['red', 'blue', 'green', 'yellow']
+>>> 
+======= RESTART: /Users/raymond/Dropbox/Public/sj136/looping_idioms.py =======
+Task:  show colors in upper case
+RED
+BLUE
+YELLOW
+GREEN
+RED
+BLUE
+YELLOW
+GREEN
+Task:  show names and the number of the name
+1 -> raymond
+2 -> rachel
+3 -> matthew
+1 -> raymond
+2 -> rachel
+3 -> matthew
+Task:  show the colors in reverse order
+Green
+Yellow
+Blue
+Red
+Green
+Yellow
+Blue
+Red
+Task:  pair the names with the corresponding colors, ignoring mismatches
+raymond -> red
+rachel -> blue
+matthew -> yellow
+raymond -> red
+rachel -> blue
+matthew -> yellow
+raymond -> red
+rachel -> blue
+matthew -> yellow
+Task:  show the colors alphabetically
+blue
+green
+red
+yellow
+Task:  show the colors ordered by the length of the color
+['red', 'blue', 'green', 'yellow']
+['red', 'blue', 'green', 'yellow']
+>>> # lambda -> make function
+>>> lambda x: x*x
+<function <lambda> at 0x1006ef488>
+>>> (lambda x: x*x)(5)
+25
+>>> 100 + (lambda x: x*x)(5) + 50
+175
+>>> map(hex, [10, 20, 30, 40])
+['0xa', '0x14', '0x1e', '0x28']
+>>> [hex(10), hex(20), hex(30), hex(40)]
+['0xa', '0x14', '0x1e', '0x28']
+>>> 
+>>> map(lambda x: x*x, range(10))
+[0, 1, 4, 9, 16, 25, 36, 49, 64, 81]
+>>> 
+>>> 
+>>> 'abracadabra'.count('a')
+5
+>>> 'abracadabra'.count('e')
+0
+>>> 'abracadabra'.count('b')
+2
+>>> 'abracadabra'.count('c')
+1
+>>> 'abracadabra'.count('z')
+0
+>>> 
+======= RESTART: /Users/raymond/Dropbox/Public/sj136/looping_idioms.py =======
+Task:  show colors in upper case
+RED
+BLUE
+YELLOW
+GREEN
+RED
+BLUE
+YELLOW
+GREEN
+Task:  show names and the number of the name
+1 -> raymond
+2 -> rachel
+3 -> matthew
+1 -> raymond
+2 -> rachel
+3 -> matthew
+Task:  show the colors in reverse order
+Green
+Yellow
+Blue
+Red
+Green
+Yellow
+Blue
+Red
+Task:  pair the names with the corresponding colors, ignoring mismatches
+raymond -> red
+rachel -> blue
+matthew -> yellow
+raymond -> red
+rachel -> blue
+matthew -> yellow
+raymond -> red
+rachel -> blue
+matthew -> yellow
+Task:  show the colors alphabetically
+blue
+green
+red
+yellow
+Task:  show the colors ordered by the length of the color
+['red', 'blue', 'green', 'yellow']
+['red', 'blue', 'green', 'yellow']
+Task:  show the colors ordered by the number of vowels:  aeiouy
+>>> num_vowels('red')
+1
+>>> num_vowels('green')
+2
+>>> map(num_vowels, colors)
+[1, 2, 3, 2]
+>>> colors
+['red', 'blue', 'yellow', 'green']
+>>> 
+======= RESTART: /Users/raymond/Dropbox/Public/sj136/looping_idioms.py =======
+Task:  show colors in upper case
+RED
+BLUE
+YELLOW
+GREEN
+RED
+BLUE
+YELLOW
+GREEN
+Task:  show names and the number of the name
+1 -> raymond
+2 -> rachel
+3 -> matthew
+1 -> raymond
+2 -> rachel
+3 -> matthew
+Task:  show the colors in reverse order
+Green
+Yellow
+Blue
+Red
+Green
+Yellow
+Blue
+Red
+Task:  pair the names with the corresponding colors, ignoring mismatches
+raymond -> red
+rachel -> blue
+matthew -> yellow
+raymond -> red
+rachel -> blue
+matthew -> yellow
+raymond -> red
+rachel -> blue
+matthew -> yellow
+Task:  show the colors alphabetically
+blue
+green
+red
+yellow
+Task:  show the colors ordered by the length of the color
+['red', 'blue', 'green', 'yellow']
+['red', 'blue', 'green', 'yellow']
+Task:  show the colors ordered by the number of vowels:  aeiouy
+['red', 'blue', 'green', 'yellow']
+>>> 
+======= RESTART: /Users/raymond/Dropbox/Public/sj136/looping_idioms.py =======
+Task:  show colors in upper case
+RED
+BLUE
+YELLOW
+GREEN
+RED
+BLUE
+YELLOW
+GREEN
+Task:  show names and the number of the name
+1 -> raymond
+2 -> rachel
+3 -> matthew
+1 -> raymond
+2 -> rachel
+3 -> matthew
+Task:  show the colors in reverse order
+Green
+Yellow
+Blue
+Red
+Green
+Yellow
+Blue
+Red
+Task:  pair the names with the corresponding colors, ignoring mismatches
+raymond -> red
+rachel -> blue
+matthew -> yellow
+raymond -> red
+rachel -> blue
+matthew -> yellow
+raymond -> red
+rachel -> blue
+matthew -> yellow
+Task:  show the colors alphabetically
+blue
+green
+red
+yellow
+Task:  show the colors ordered by the length of the color
+['red', 'blue', 'green', 'yellow']
+['red', 'blue', 'green', 'yellow']
+Task:  show the colors ordered by the number of vowels:  aeiouy
+['red', 'blue', 'green', 'yellow']
+
+Traceback (most recent call last):
+  File "/Users/raymond/Dropbox/Public/sj136/looping_idioms.py", line 59, in <module>
+    print sorted(colors, num_vowels)
+TypeError: num_vowels() takes exactly 1 argument (2 given)
+>>> 
+======= RESTART: /Users/raymond/Dropbox/Public/sj136/looping_idioms.py =======
+Task:  show colors in upper case
+RED
+BLUE
+YELLOW
+GREEN
+RED
+BLUE
+YELLOW
+GREEN
+Task:  show names and the number of the name
+1 -> raymond
+2 -> rachel
+3 -> matthew
+1 -> raymond
+2 -> rachel
+3 -> matthew
+Task:  show the colors in reverse order
+Green
+Yellow
+Blue
+Red
+Green
+Yellow
+Blue
+Red
+Task:  pair the names with the corresponding colors, ignoring mismatches
+raymond -> red
+rachel -> blue
+matthew -> yellow
+raymond -> red
+rachel -> blue
+matthew -> yellow
+raymond -> red
+rachel -> blue
+matthew -> yellow
+Task:  show the colors alphabetically
+blue
+green
+red
+yellow
+Task:  show the colors ordered by the length of the color
+['red', 'blue', 'green', 'yellow']
+['red', 'blue', 'green', 'yellow']
+Task:  show the colors ordered by the number of vowels:  aeiouy
+['red', 'blue', 'green', 'yellow']
+['red', 'blue', 'green', 'yellow']
+>>> 
+======= RESTART: /Users/raymond/Dropbox/Public/sj136/looping_idioms.py =======
+Task:  show colors in upper case
+RED
+BLUE
+YELLOW
+GREEN
+RED
+BLUE
+YELLOW
+GREEN
+Task:  show names and the number of the name
+1 -> raymond
+2 -> rachel
+3 -> matthew
+1 -> raymond
+2 -> rachel
+3 -> matthew
+Task:  show the colors in reverse order
+Green
+Yellow
+Blue
+Red
+Green
+Yellow
+Blue
+Red
+Task:  pair the names with the corresponding colors, ignoring mismatches
+raymond -> red
+rachel -> blue
+matthew -> yellow
+raymond -> red
+rachel -> blue
+matthew -> yellow
+raymond -> red
+rachel -> blue
+matthew -> yellow
+Task:  show the colors alphabetically
+blue
+green
+red
+yellow
+Task:  show the colors ordered by the length of the color
+['red', 'blue', 'green', 'yellow']
+['red', 'blue', 'green', 'yellow']
+Task:  show the colors ordered by the number of vowels:  aeiouy
+['red', 'blue', 'green', 'yellow']
+['red', 'blue', 'green', 'yellow']
+['red', 'blue', 'yellow', 'green']
+>>> 
+>>> 
+>>> 'abracadabra'.count('a')
+5
+>>> 'abracadabra'.count
+<built-in method count of str object at 0x102efc900>
+>>> bm = 'abracadabra'.count
+>>> bm('a')
+5
+>>> bm('b')
+2
+>>> bm('c')
+1
+>>> map('abracadabra'.count, 'abcde')
+[5, 2, 1, 1, 0]
+>>> sum(map('abracadabra'.count, 'abcde'))
+9
+>>> lambda word: sum(map(word.count, 'abcde'))
+<function <lambda> at 0x1007ef050>
+>>> (lambda word: sum(map(word.count, 'abcde')))('abracabra')
+7
+>>> 
+======= RESTART: /Users/raymond/Dropbox/Public/sj136/looping_idioms.py =======
+Task:  show colors in upper case
+RED
+BLUE
+YELLOW
+GREEN
+RED
+BLUE
+YELLOW
+GREEN
+Task:  show names and the number of the name
+1 -> raymond
+2 -> rachel
+3 -> matthew
+1 -> raymond
+2 -> rachel
+3 -> matthew
+Task:  show the colors in reverse order
+Green
+Yellow
+Blue
+Red
+Green
+Yellow
+Blue
+Red
+Task:  pair the names with the corresponding colors, ignoring mismatches
+raymond -> red
+rachel -> blue
+matthew -> yellow
+raymond -> red
+rachel -> blue
+matthew -> yellow
+raymond -> red
+rachel -> blue
+matthew -> yellow
+Task:  show the colors alphabetically
+blue
+green
+red
+yellow
+Task:  show the colors ordered by the length of the color
+['red', 'blue', 'green', 'yellow']
+['red', 'blue', 'green', 'yellow']
+Task:  show the colors ordered by the number of vowels:  aeiouy
+['red', 'blue', 'green', 'yellow']
+['red', 'blue', 'green', 'yellow']
+['red', 'blue', 'green', 'yellow']
+Task:  Show every city, but only once
+AUSTIN
+DALLAS
+CHICAGO
+DALLAS
+AUSTIN
+CHICAGO
+>>> 
+======= RESTART: /Users/raymond/Dropbox/Public/sj136/looping_idioms.py =======
+Task:  show colors in upper case
+RED
+BLUE
+YELLOW
+GREEN
+RED
+BLUE
+YELLOW
+GREEN
+Task:  show names and the number of the name
+1 -> raymond
+2 -> rachel
+3 -> matthew
+1 -> raymond
+2 -> rachel
+3 -> matthew
+Task:  show the colors in reverse order
+Green
+Yellow
+Blue
+Red
+Green
+Yellow
+Blue
+Red
+Task:  pair the names with the corresponding colors, ignoring mismatches
+raymond -> red
+rachel -> blue
+matthew -> yellow
+raymond -> red
+rachel -> blue
+matthew -> yellow
+raymond -> red
+rachel -> blue
+matthew -> yellow
+Task:  show the colors alphabetically
+blue
+green
+red
+yellow
+Task:  show the colors ordered by the length of the color
+['red', 'blue', 'green', 'yellow']
+['red', 'blue', 'green', 'yellow']
+Task:  show the colors ordered by the number of vowels:  aeiouy
+['red', 'blue', 'green', 'yellow']
+['red', 'blue', 'green', 'yellow']
+['red', 'blue', 'green', 'yellow']
+Task:  Show every city, but only once
+CHICAGO
+AUSTIN
+DALLAS
+>>> # 12:34:56.7
+>>> # 1:35
+>>> 
+========== RESTART: /Users/raymond/Dropbox/Public/sj136/for_else.py ==========
+0
+1
+2
+3
+4
+5
+6
+Found six!
+>>> 
+========== RESTART: /Users/raymond/Dropbox/Public/sj136/for_else.py ==========
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+>>> 
+========== RESTART: /Users/raymond/Dropbox/Public/sj136/for_else.py ==========
+0
+1
+2
+3
+4
+5
+6
+Found six!
+Done
+>>> 
+========== RESTART: /Users/raymond/Dropbox/Public/sj136/for_else.py ==========
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+Got all the way to ten!
+Done
+>>> 
+========== RESTART: /Users/raymond/Dropbox/Public/sj136/for_else.py ==========
+The Right Way
+0
+1
+2
+3
+4
+5
+6
+Found six!
+Done
+The Wrong Way
+0
+1
+2
+3
+4
+5
+6
+Found six!
+Done
+>>> 
+>>> 
+>>> 3 < 5
+True
+>>> 3 < '5'
+True
+>>> 3 < '1'
+True
+>>> # By default, cross type comparisons do something crazy
+>>> type(3) < type(5)
+False
+>>> id(type(3)) < id(type(5))
+False
+>>> 
+>>> 
+>>> 123234 < '2352345'
+True
+>>> int < str
+True
+>>> sorted(['123', 456, '789', 101112])
+[456, 101112, '123', '789']
+>>> sorted([123, None, 456, None, 789])     # None is less than every other object
+[None, None, 123, 456, 789]
+>>> max([123, None, 456, None, 789])        # None is less than every other object
+789
+>>> 
+>>> 5.1 < 7.8
+True
+>>> float('NaN') < 7.8
+False
+>>> float('NaN') > 7.8
+False
+>>> sorted([123.5, float('NaN'), 456.1, float('NaN'), 789.0])
+[123.5, nan, 456.1, nan, 789.0]
+>>> # NaNs are weird and don't sort well
+>>> data = [123.5, float('NaN'), 456.1, float('NaN'), 789.0]
+>>> import math
+>>> [x for x in data if not math.isnan(x)]
+[123.5, 456.1, 789.0]
+>>> sorted([x for x in data if not math.isnan(x)])
+[123.5, 456.1, 789.0]
+>>> sum([x for x in data if not math.isnan(x)])
+1368.6
+>>> sum(data)
+nan
+>>> 
+>>> # None is less than everything else
+>>> # NaNs always compare of False
+>>> # Untrained cross-type compares will compare the types not the values
+>>> # Trained cross-type compares:  numbers(bool,int,float,decimal,Fraction, but not complex)
+>>> # Complex numbers don't even compare to each other
+>>> 
+>>> sorted([10, 5.5, True, 1.5, False])
+[False, True, 1.5, 5.5, 10]
+>>> sorted([10, 5.5, True, 0.5, False])
+[False, 0.5, True, 5.5, 10]
+>>> from fractions import Fraction
+>>> from decimal import Decimal
+>>> sorted([10, 5.5, True, 0.5, False, Fraction(2, 3)])
+[False, 0.5, Fraction(2, 3), True, 5.5, 10]
+>>> sorted([10, 5.5, True, 0.5, False, Fraction(2, 3), Decimal('1.1')])
+[False, 0.5, Fraction(2, 3), True, Decimal('1.1'), 5.5, 10]
+>>> # 0  .5      .666         1             1.1     5.5  10
+>>> 
+>>> # (real, imag)   (angle, magnitude)
+>>> 3 + 9j > 2 + 18j
+
+Traceback (most recent call last):
+  File "<pyshell#488>", line 1, in <module>
+    3 + 9j > 2 + 18j
+TypeError: no ordering relation is defined for complex numbers
+>>> sorted([10, 5.5, 2+3j, True, 0.5, False, Fraction(2, 3), Decimal('1.1')])
+
+Traceback (most recent call last):
+  File "<pyshell#489>", line 1, in <module>
+    sorted([10, 5.5, 2+3j, True, 0.5, False, Fraction(2, 3), Decimal('1.1')])
+TypeError: no ordering relation is defined for complex numbers
+>>> 
+>>> 
+>>> sorted(['raymond', u'rachel', 'matthew'])
+['matthew', u'rachel', 'raymond']
+>>> map(type, _)
+[<type 'str'>, <type 'unicode'>, <type 'str'>]
+>>> 
+>>> 
+>>> 
+>>> # Rules:
+>>> # All types compare logically and reasonable to themselves
+>>> #    Except for float('Nan') and complex
+>>> #                ^-- weird          ^-- raises an exception
+>>> 
+>>> # Cross-type compares:
+>>> # None is less that everything else
+>>> # Trained:  (int, bool, float, fraction, decimal) and (str, unicode)
+>>> # Everything else compares the types instead of the values.
+>>> 
+>>> 
+>>> # There are two categories of dunder methods for comparisons
+>>> # 1) __cmp__ does a three-way compare -> -1 for less than, 0 for equal, and 1 for greater than
+>>> # 2) rich comparisons __eq__ __ne__ __lt__ __le__ __gt__ __ge__ -> bool
+>>> 
+>>> dir(int)
+['__abs__', '__add__', '__and__', '__class__', '__cmp__', '__coerce__', '__delattr__', '__div__', '__divmod__', '__doc__', '__float__', '__floordiv__', '__format__', '__getattribute__', '__getnewargs__', '__hash__', '__hex__', '__index__', '__init__', '__int__', '__invert__', '__long__', '__lshift__', '__mod__', '__mul__', '__neg__', '__new__', '__nonzero__', '__oct__', '__or__', '__pos__', '__pow__', '__radd__', '__rand__', '__rdiv__', '__rdivmod__', '__reduce__', '__reduce_ex__', '__repr__', '__rfloordiv__', '__rlshift__', '__rmod__', '__rmul__', '__ror__', '__rpow__', '__rrshift__', '__rshift__', '__rsub__', '__rtruediv__', '__rxor__', '__setattr__', '__sizeof__', '__str__', '__sub__', '__subclasshook__', '__truediv__', '__trunc__', '__xor__', 'bit_length', 'conjugate', 'denominator', 'imag', 'numerator', 'real']
+>>> 3 < 5
+True
+>>> (3).__cmp__(5)
+-1
+>>> (5).__cmp__(5)
+0
+>>> (7).__cmp__(5)
+1
+>>> dir(str)
+['__add__', '__class__', '__contains__', '__delattr__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__getitem__', '__getnewargs__', '__getslice__', '__gt__', '__hash__', '__init__', '__le__', '__len__', '__lt__', '__mod__', '__mul__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__rmod__', '__rmul__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '_formatter_field_name_split', '_formatter_parser', 'capitalize', 'center', 'count', 'decode', 'encode', 'endswith', 'expandtabs', 'find', 'format', 'index', 'isalnum', 'isalpha', 'isdigit', 'islower', 'isspace', 'istitle', 'isupper', 'join', 'ljust', 'lower', 'lstrip', 'partition', 'replace', 'rfind', 'rindex', 'rjust', 'rpartition', 'rsplit', 'rstrip', 'split', 'splitlines', 'startswith', 'strip', 'swapcase', 'title', 'translate', 'upper', 'zfill']
+>>> 
+>>> 'matthew' < 'rachel'
+True
+>>> 'matthew'.__lt__('rachel')
+True
+>>> 'matthew' == 'rachel'
+False
+>>> 'matthew'.__eq__('rachel')
+False
+>>> # Total ordering:   Order is transitive AND exactly one of these is true: x<y x==y x>y
+>>> # Partial order:    Order is transitive
+>>> 
+>>> # Sets override comparisons to create a subset/superset partial ordering
+>>> 
+>>> {2, 4, 6} <= {1, 2, 3, 4, 5, 6}
+True
+>>> {2, 4, 6} <= {1, 2, 3, 4, 5, 6} <= {0, 1, 2, 3, 4, 5, 6, 7, 8}
+True
+>>> 
+>>> s = {2, 4, 6}
+>>> t = {4, 6, 8}
+>>> s <= t
+False
+>>> s == t
+False
+>>> s >= t
+False
+>>> s = {2, 4, 6}
+>>> t = {4, 6, 8}
+>>> s <= t
+False
+>>> for x in s:
+	if x in t:
+		print 'False'
+		break
+else:
+	print 'True'
+
+	
+False
+>>> 
+>>> 
+>>> 
+>>> dir(str)
+['__add__', '__class__', '__contains__', '__delattr__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__getitem__', '__getnewargs__', '__getslice__', '__gt__', '__hash__', '__init__', '__le__', '__len__', '__lt__', '__mod__', '__mul__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__rmod__', '__rmul__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '_formatter_field_name_split', '_formatter_parser', 'capitalize', 'center', 'count', 'decode', 'encode', 'endswith', 'expandtabs', 'find', 'format', 'index', 'isalnum', 'isalpha', 'isdigit', 'islower', 'isspace', 'istitle', 'isupper', 'join', 'ljust', 'lower', 'lstrip', 'partition', 'replace', 'rfind', 'rindex', 'rjust', 'rpartition', 'rsplit', 'rstrip', 'split', 'splitlines', 'startswith', 'strip', 'swapcase', 'title', 'translate', 'upper', 'zfill']
+>>> 
+>>> 
+>>> 'matthew' < 'rachel'
+True
+>>> 
+======= RESTART: /Users/raymond/Dropbox/Public/sj136/looping_idioms.py =======
+Task:  show colors in upper case
+RED
+BLUE
+YELLOW
+GREEN
+RED
+BLUE
+YELLOW
+GREEN
+Task:  show names and the number of the name
+1 -> raymond
+2 -> rachel
+3 -> matthew
+1 -> raymond
+2 -> rachel
+3 -> matthew
+Task:  show the colors in reverse order
+Green
+Yellow
+Blue
+Red
+Green
+Yellow
+Blue
+Red
+Task:  pair the names with the corresponding colors, ignoring mismatches
+raymond -> red
+rachel -> blue
+matthew -> yellow
+raymond -> red
+rachel -> blue
+matthew -> yellow
+raymond -> red
+rachel -> blue
+matthew -> yellow
+Task:  show the colors alphabetically
+blue
+green
+red
+yellow
+Task:  show the colors ordered by the length of the color
+['red', 'blue', 'green', 'yellow']
+['red', 'blue', 'green', 'yellow']
+Task:  show the colors ordered by the number of vowels:  aeiouy
+['red', 'blue', 'green', 'yellow']
+['red', 'blue', 'green', 'yellow']
+['red', 'blue', 'green', 'yellow']
+Task:  Show every city, but only once
+CHICAGO
+AUSTIN
+DALLAS
+>>> 
+>>> 
+>>> 
+>>> names
+['raymond', 'rachel', 'matthew']
+>>> sorted(names)
+['matthew', 'rachel', 'raymond']
+>>> min(names)
+'matthew'
+>>> sorted(names)[0]
+'matthew'
+>>> max(names)
+'raymond'
+>>> sorted(names)[-1]
+'raymond'
+>>> sorted(names)[:2]
+['matthew', 'rachel']
+>>> from heapq import nsmallest, nlargest
+>>> 
+>>> nsmallest(names, 2)
+
+Traceback (most recent call last):
+  File "<pyshell#565>", line 1, in <module>
+    nsmallest(names, 2)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/heapq.py", line 425, in nsmallest
+    it = izip(iterable, count())                        # decorate
+TypeError: izip argument #1 must support iteration
+>>> nsmallest(2, names)
+['matthew', 'rachel']
+>>> sorted(names)[:2]
+['matthew', 'rachel']
+>>> nlargest(2, names)
+['raymond', 'rachel']
+>>> 
+>>> sorted(names)[-2:][::-1]
+['raymond', 'rachel']
+>>> 
+>>> 
+>>> 
+>>> #               RRRRRRR  RRRRR RRRRR                 2 cuts -> 3 pieces
+>>> from bisect import bisect
+>>> cuts = [60, 70, 80, 90]
+>>> grades = 'FDCBA'
+>>> 
+>>> score = 72
+>>> bisect(cuts, score)
+2
+>>> grades(bisect(cuts, score))
+
+Traceback (most recent call last):
+  File "<pyshell#581>", line 1, in <module>
+    grades(bisect(cuts, score))
+TypeError: 'str' object is not callable
+>>> grades[bisect(cuts, score)]
+'C'
+>>> 
+>>> 
+>>> from bisect import bisect
+>>> cuts = [60, 70, 80, 90]
+>>> grades = 'FDCBA'
+>>> [grades[bisect(cuts, score)] for score in [55, 98, 70, 85, 68, 92, 100, 54, 88]]
+['F', 'A', 'C', 'B', 'D', 'A', 'A', 'F', 'B']
+>>> 
+>>> cuts = ['david', 'frodo', 'mary', 'pippin', 'tom']
+>>> sorted(cuts)
+['david', 'frodo', 'mary', 'pippin', 'tom']
+>>> 
+>>> groups = range(cuts + 1)
+
+Traceback (most recent call last):
+  File "<pyshell#593>", line 1, in <module>
+    groups = range(cuts + 1)
+TypeError: can only concatenate list (not "int") to list
+>>> groups = range(len(cuts) + 1)
+>>> 
+>>> 
+>>> 
+>>> from bisect import bisect
+>>> cuts = ['david', 'frodo', 'mary', 'pippin', 'tom']
+>>> groups = range(len(cuts) + 1)
+>>> 
+>>> groups[bisect(cuts, 'amber')]
+0
+>>> groups[bisect(cuts, 'ethel')]
+1
+>>> 
+======== RESTART: /Users/raymond/Dropbox/Public/sj136/sorting_demo.py ========
+>>> 
+>>> p
+Person(fname='raymond', lname='hettinger', age=51, email='python@rcn.com')
+>>> p[0]
+'raymond'
+>>> p[1]
+'hettinger'
+>>> p[2]
+51
+>>> p[3]
+'python@rcn.com'
+>>> p.fname
+'raymond'
+>>> p.lname
+'hettinger'
+>>> p.age
+51
+>>> p.email
+'python@rcn.com'
+>>> 
+======== RESTART: /Users/raymond/Dropbox/Public/sj136/sorting_demo.py ========
+[Person(fname='raymond', lname='hettinger', age=51, email='python@rcn.com'),
+ Person(fname='tom', lname='smith', age=39, email='tom@example.com'),
+ Person(fname='mary', lname='beeman', age=42, email='mary@beeman.me'),
+ Person(fname='david', lname='torpey', age=52, email='david@torp.io'),
+ Person(fname='roger', lname='young', age=25, email='roger@aol.com'),
+ Person(fname='randal', lname='munroe', age=37, email='randal@xkcd.com'),
+ Person(fname='tom', lname='tuttle', age=28, email='tom@peace.org'),
+ Person(fname='matthew', lname='hendricks', age=25, email='matthew@hen.me')]
+>>> 
+======== RESTART: /Users/raymond/Dropbox/Public/sj136/sorting_demo.py ========
+[Person(fname='david', lname='torpey', age=52, email='david@torp.io'),
+ Person(fname='mary', lname='beeman', age=42, email='mary@beeman.me'),
+ Person(fname='matthew', lname='hendricks', age=25, email='matthew@hen.me'),
+ Person(fname='randal', lname='munroe', age=37, email='randal@xkcd.com'),
+ Person(fname='raymond', lname='hettinger', age=51, email='python@rcn.com'),
+ Person(fname='roger', lname='young', age=25, email='roger@aol.com'),
+ Person(fname='tom', lname='tuttle', age=28, email='tom@peace.org'),
+ Person(fname='tom', lname='wicker', age=39, email='tom@example.com')]
+>>> 
+======== RESTART: /Users/raymond/Dropbox/Public/sj136/sorting_demo.py ========
+[Person(fname='david', lname='torpey', age=52, email='david@torp.io'),
+ Person(fname='mary', lname='beeman', age=42, email='mary@beeman.me'),
+ Person(fname='matthew', lname='hendricks', age=25, email='matthew@hen.me'),
+ Person(fname='randal', lname='munroe', age=37, email='randal@xkcd.com'),
+ Person(fname='raymond', lname='hettinger', age=51, email='python@rcn.com'),
+ Person(fname='roger', lname='young', age=25, email='roger@aol.com'),
+ Person(fname='tom', lname='tuttle', age=28, email='tom@peace.org'),
+ Person(fname='tom', lname='wicker', age=39, email='tom@example.com')]
+[Person(fname='david', lname='torpey', age=52, email='david@torp.io'),
+ Person(fname='mary', lname='beeman', age=42, email='mary@beeman.me'),
+ Person(fname='matthew', lname='hendricks', age=25, email='matthew@hen.me'),
+ Person(fname='randal', lname='munroe', age=37, email='randal@xkcd.com'),
+ Person(fname='raymond', lname='hettinger', age=51, email='python@rcn.com'),
+ Person(fname='roger', lname='young', age=25, email='roger@aol.com'),
+ Person(fname='tom', lname='wicker', age=39, email='tom@example.com'),
+ Person(fname='tom', lname='tuttle', age=28, email='tom@peace.org')]
+>>> 
+======== RESTART: /Users/raymond/Dropbox/Public/sj136/sorting_demo.py ========
+[Person(fname='david', lname='torpey', age=52, email='david@torp.io'),
+ Person(fname='mary', lname='beeman', age=42, email='mary@beeman.me'),
+ Person(fname='matthew', lname='hendricks', age=25, email='matthew@hen.me'),
+ Person(fname='randal', lname='munroe', age=37, email='randal@xkcd.com'),
+ Person(fname='raymond', lname='hettinger', age=51, email='python@rcn.com'),
+ Person(fname='roger', lname='young', age=25, email='roger@aol.com'),
+ Person(fname='tom', lname='tuttle', age=28, email='tom@peace.org'),
+ Person(fname='tom', lname='wicker', age=39, email='tom@example.com')]
+[Person(fname='david', lname='torpey', age=52, email='david@torp.io'),
+ Person(fname='mary', lname='beeman', age=42, email='mary@beeman.me'),
+ Person(fname='matthew', lname='hendricks', age=25, email='matthew@hen.me'),
+ Person(fname='randal', lname='munroe', age=37, email='randal@xkcd.com'),
+ Person(fname='raymond', lname='hettinger', age=51, email='python@rcn.com'),
+ Person(fname='roger', lname='young', age=25, email='roger@aol.com'),
+ Person(fname='tom', lname='wicker', age=39, email='tom@example.com'),
+ Person(fname='tom', lname='tuttle', age=28, email='tom@peace.org')]
+[Person(fname='roger', lname='young', age=25, email='roger@aol.com'),
+ Person(fname='matthew', lname='hendricks', age=25, email='matthew@hen.me'),
+ Person(fname='tom', lname='tuttle', age=28, email='tom@peace.org'),
+ Person(fname='randal', lname='munroe', age=37, email='randal@xkcd.com'),
+ Person(fname='tom', lname='wicker', age=39, email='tom@example.com'),
+ Person(fname='mary', lname='beeman', age=42, email='mary@beeman.me'),
+ Person(fname='raymond', lname='hettinger', age=51, email='python@rcn.com'),
+ Person(fname='david', lname='torpey', age=52, email='david@torp.io')]
+>>> 
+======== RESTART: /Users/raymond/Dropbox/Public/sj136/sorting_demo.py ========
+[Person(fname='david', lname='torpey', age=52, email='david@torp.io'),
+ Person(fname='mary', lname='beeman', age=42, email='mary@beeman.me'),
+ Person(fname='matthew', lname='hendricks', age=25, email='matthew@hen.me'),
+ Person(fname='randal', lname='munroe', age=37, email='randal@xkcd.com'),
+ Person(fname='raymond', lname='hettinger', age=51, email='python@rcn.com'),
+ Person(fname='roger', lname='young', age=25, email='roger@aol.com'),
+ Person(fname='tom', lname='tuttle', age=28, email='tom@peace.org'),
+ Person(fname='tom', lname='wicker', age=39, email='tom@example.com')]
+[Person(fname='david', lname='torpey', age=52, email='david@torp.io'),
+ Person(fname='mary', lname='beeman', age=42, email='mary@beeman.me'),
+ Person(fname='matthew', lname='hendricks', age=25, email='matthew@hen.me'),
+ Person(fname='randal', lname='munroe', age=37, email='randal@xkcd.com'),
+ Person(fname='raymond', lname='hettinger', age=51, email='python@rcn.com'),
+ Person(fname='roger', lname='young', age=25, email='roger@aol.com'),
+ Person(fname='tom', lname='wicker', age=39, email='tom@example.com'),
+ Person(fname='tom', lname='tuttle', age=28, email='tom@peace.org')]
+[Person(fname='roger', lname='young', age=25, email='roger@aol.com'),
+ Person(fname='matthew', lname='hendricks', age=25, email='matthew@hen.me'),
+ Person(fname='tom', lname='tuttle', age=28, email='tom@peace.org'),
+ Person(fname='randal', lname='munroe', age=37, email='randal@xkcd.com'),
+ Person(fname='tom', lname='wicker', age=39, email='tom@example.com'),
+ Person(fname='mary', lname='beeman', age=42, email='mary@beeman.me'),
+ Person(fname='raymond', lname='hettinger', age=51, email='python@rcn.com'),
+ Person(fname='david', lname='torpey', age=52, email='david@torp.io')]
+[Person(fname='matthew', lname='hendricks', age=25, email='matthew@hen.me'),
+ Person(fname='roger', lname='young', age=25, email='roger@aol.com'),
+ Person(fname='tom', lname='tuttle', age=28, email='tom@peace.org'),
+ Person(fname='randal', lname='munroe', age=37, email='randal@xkcd.com'),
+ Person(fname='tom', lname='wicker', age=39, email='tom@example.com'),
+ Person(fname='mary', lname='beeman', age=42, email='mary@beeman.me'),
+ Person(fname='raymond', lname='hettinger', age=51, email='python@rcn.com'),
+ Person(fname='david', lname='torpey', age=52, email='david@torp.io')]
+>>> 
+======== RESTART: /Users/raymond/Dropbox/Public/sj136/sorting_demo.py ========
+[Person(fname='david', lname='torpey', age=52, email='david@torp.io'),
+ Person(fname='mary', lname='beeman', age=42, email='mary@beeman.me'),
+ Person(fname='matthew', lname='hendricks', age=25, email='matthew@hen.me'),
+ Person(fname='randal', lname='munroe', age=37, email='randal@xkcd.com'),
+ Person(fname='raymond', lname='hettinger', age=51, email='python@rcn.com'),
+ Person(fname='roger', lname='young', age=25, email='roger@aol.com'),
+ Person(fname='tom', lname='tuttle', age=28, email='tom@peace.org'),
+ Person(fname='tom', lname='wicker', age=39, email='tom@example.com')]
+[Person(fname='david', lname='torpey', age=52, email='david@torp.io'),
+ Person(fname='mary', lname='beeman', age=42, email='mary@beeman.me'),
+ Person(fname='matthew', lname='hendricks', age=25, email='matthew@hen.me'),
+ Person(fname='randal', lname='munroe', age=37, email='randal@xkcd.com'),
+ Person(fname='raymond', lname='hettinger', age=51, email='python@rcn.com'),
+ Person(fname='roger', lname='young', age=25, email='roger@aol.com'),
+ Person(fname='tom', lname='wicker', age=39, email='tom@example.com'),
+ Person(fname='tom', lname='tuttle', age=28, email='tom@peace.org')]
+[Person(fname='roger', lname='young', age=25, email='roger@aol.com'),
+ Person(fname='matthew', lname='hendricks', age=25, email='matthew@hen.me'),
+ Person(fname='tom', lname='tuttle', age=28, email='tom@peace.org'),
+ Person(fname='randal', lname='munroe', age=37, email='randal@xkcd.com'),
+ Person(fname='tom', lname='wicker', age=39, email='tom@example.com'),
+ Person(fname='mary', lname='beeman', age=42, email='mary@beeman.me'),
+ Person(fname='raymond', lname='hettinger', age=51, email='python@rcn.com'),
+ Person(fname='david', lname='torpey', age=52, email='david@torp.io')]
+[Person(fname='matthew', lname='hendricks', age=25, email='matthew@hen.me'),
+ Person(fname='roger', lname='young', age=25, email='roger@aol.com'),
+ Person(fname='tom', lname='tuttle', age=28, email='tom@peace.org'),
+ Person(fname='randal', lname='munroe', age=37, email='randal@xkcd.com'),
+ Person(fname='tom', lname='wicker', age=39, email='tom@example.com'),
+ Person(fname='mary', lname='beeman', age=42, email='mary@beeman.me'),
+ Person(fname='raymond', lname='hettinger', age=51, email='python@rcn.com'),
+ Person(fname='david', lname='torpey', age=52, email='david@torp.io')]
+[Person(fname='matthew', lname='hendricks', age=25, email='matthew@hen.me'),
+ Person(fname='roger', lname='young', age=25, email='roger@aol.com'),
+ Person(fname='tom', lname='tuttle', age=28, email='tom@peace.org'),
+ Person(fname='randal', lname='munroe', age=37, email='randal@xkcd.com'),
+ Person(fname='tom', lname='wicker', age=39, email='tom@example.com'),
+ Person(fname='mary', lname='beeman', age=42, email='mary@beeman.me'),
+ Person(fname='raymond', lname='hettinger', age=51, email='python@rcn.com'),
+ Person(fname='david', lname='torpey', age=52, email='david@torp.io')]
+>>> map(lambda p: (p[2], p[1]), people)
+[(51, 'hettinger'), (39, 'wicker'), (42, 'beeman'), (52, 'torpey'), (25, 'young'), (37, 'munroe'), (28, 'tuttle'), (25, 'hendricks')]
+>>> 
+======== RESTART: /Users/raymond/Dropbox/Public/sj136/sorting_demo.py ========
+[Person(fname='david', lname='torpey', age=52, email='david@torp.io'),
+ Person(fname='mary', lname='beeman', age=42, email='mary@beeman.me'),
+ Person(fname='matthew', lname='hendricks', age=25, email='matthew@hen.me'),
+ Person(fname='randal', lname='munroe', age=37, email='randal@xkcd.com'),
+ Person(fname='raymond', lname='hettinger', age=51, email='python@rcn.com'),
+ Person(fname='roger', lname='young', age=25, email='roger@aol.com'),
+ Person(fname='tom', lname='tuttle', age=28, email='tom@peace.org'),
+ Person(fname='tom', lname='wicker', age=39, email='tom@example.com')]
+[Person(fname='david', lname='torpey', age=52, email='david@torp.io'),
+ Person(fname='mary', lname='beeman', age=42, email='mary@beeman.me'),
+ Person(fname='matthew', lname='hendricks', age=25, email='matthew@hen.me'),
+ Person(fname='randal', lname='munroe', age=37, email='randal@xkcd.com'),
+ Person(fname='raymond', lname='hettinger', age=51, email='python@rcn.com'),
+ Person(fname='roger', lname='young', age=25, email='roger@aol.com'),
+ Person(fname='tom', lname='wicker', age=39, email='tom@example.com'),
+ Person(fname='tom', lname='tuttle', age=28, email='tom@peace.org')]
+[Person(fname='roger', lname='young', age=25, email='roger@aol.com'),
+ Person(fname='matthew', lname='hendricks', age=25, email='matthew@hen.me'),
+ Person(fname='tom', lname='tuttle', age=28, email='tom@peace.org'),
+ Person(fname='randal', lname='munroe', age=37, email='randal@xkcd.com'),
+ Person(fname='tom', lname='wicker', age=39, email='tom@example.com'),
+ Person(fname='mary', lname='beeman', age=42, email='mary@beeman.me'),
+ Person(fname='raymond', lname='hettinger', age=51, email='python@rcn.com'),
+ Person(fname='david', lname='torpey', age=52, email='david@torp.io')]
+[Person(fname='matthew', lname='hendricks', age=25, email='matthew@hen.me'),
+ Person(fname='roger', lname='young', age=25, email='roger@aol.com'),
+ Person(fname='tom', lname='tuttle', age=28, email='tom@peace.org'),
+ Person(fname='randal', lname='munroe', age=37, email='randal@xkcd.com'),
+ Person(fname='tom', lname='wicker', age=39, email='tom@example.com'),
+ Person(fname='mary', lname='beeman', age=42, email='mary@beeman.me'),
+ Person(fname='raymond', lname='hettinger', age=51, email='python@rcn.com'),
+ Person(fname='david', lname='torpey', age=52, email='david@torp.io')]
+[Person(fname='matthew', lname='hendricks', age=25, email='matthew@hen.me'),
+ Person(fname='roger', lname='young', age=25, email='roger@aol.com'),
+ Person(fname='tom', lname='tuttle', age=28, email='tom@peace.org'),
+ Person(fname='randal', lname='munroe', age=37, email='randal@xkcd.com'),
+ Person(fname='tom', lname='wicker', age=39, email='tom@example.com'),
+ Person(fname='mary', lname='beeman', age=42, email='mary@beeman.me'),
+ Person(fname='raymond', lname='hettinger', age=51, email='python@rcn.com'),
+ Person(fname='david', lname='torpey', age=52, email='david@torp.io')]
+[Person(fname='david', lname='torpey', age=52, email='david@torp.io'),
+ Person(fname='mary', lname='beeman', age=42, email='mary@beeman.me'),
+ Person(fname='matthew', lname='hendricks', age=25, email='matthew@hen.me'),
+ Person(fname='randal', lname='munroe', age=37, email='randal@xkcd.com'),
+ Person(fname='raymond', lname='hettinger', age=51, email='python@rcn.com'),
+ Person(fname='roger', lname='young', age=25, email='roger@aol.com'),
+ Person(fname='tom', lname='wicker', age=39, email='tom@example.com'),
+ Person(fname='tom', lname='tuttle', age=28, email='tom@peace.org')]
+>>> 
+======== RESTART: /Users/raymond/Dropbox/Public/sj136/sorting_demo.py ========
+[Person(fname='david', lname='torpey', age=52, email='david@torp.io'),
+ Person(fname='mary', lname='beeman', age=42, email='mary@beeman.me'),
+ Person(fname='matthew', lname='hendricks', age=25, email='matthew@hen.me'),
+ Person(fname='randal', lname='munroe', age=37, email='randal@xkcd.com'),
+ Person(fname='raymond', lname='hettinger', age=51, email='python@rcn.com'),
+ Person(fname='roger', lname='young', age=25, email='roger@aol.com'),
+ Person(fname='tom', lname='tuttle', age=28, email='tom@peace.org'),
+ Person(fname='tom', lname='wicker', age=39, email='tom@example.com')]
+[Person(fname='david', lname='torpey', age=52, email='david@torp.io'),
+ Person(fname='mary', lname='beeman', age=42, email='mary@beeman.me'),
+ Person(fname='matthew', lname='hendricks', age=25, email='matthew@hen.me'),
+ Person(fname='randal', lname='munroe', age=37, email='randal@xkcd.com'),
+ Person(fname='raymond', lname='hettinger', age=51, email='python@rcn.com'),
+ Person(fname='roger', lname='young', age=25, email='roger@aol.com'),
+ Person(fname='tom', lname='wicker', age=39, email='tom@example.com'),
+ Person(fname='tom', lname='tuttle', age=28, email='tom@peace.org')]
+[Person(fname='roger', lname='young', age=25, email='roger@aol.com'),
+ Person(fname='matthew', lname='hendricks', age=25, email='matthew@hen.me'),
+ Person(fname='tom', lname='tuttle', age=28, email='tom@peace.org'),
+ Person(fname='randal', lname='munroe', age=37, email='randal@xkcd.com'),
+ Person(fname='tom', lname='wicker', age=39, email='tom@example.com'),
+ Person(fname='mary', lname='beeman', age=42, email='mary@beeman.me'),
+ Person(fname='raymond', lname='hettinger', age=51, email='python@rcn.com'),
+ Person(fname='david', lname='torpey', age=52, email='david@torp.io')]
+[Person(fname='matthew', lname='hendricks', age=25, email='matthew@hen.me'),
+ Person(fname='roger', lname='young', age=25, email='roger@aol.com'),
+ Person(fname='tom', lname='tuttle', age=28, email='tom@peace.org'),
+ Person(fname='randal', lname='munroe', age=37, email='randal@xkcd.com'),
+ Person(fname='tom', lname='wicker', age=39, email='tom@example.com'),
+ Person(fname='mary', lname='beeman', age=42, email='mary@beeman.me'),
+ Person(fname='raymond', lname='hettinger', age=51, email='python@rcn.com'),
+ Person(fname='david', lname='torpey', age=52, email='david@torp.io')]
+[Person(fname='matthew', lname='hendricks', age=25, email='matthew@hen.me'),
+ Person(fname='roger', lname='young', age=25, email='roger@aol.com'),
+ Person(fname='tom', lname='tuttle', age=28, email='tom@peace.org'),
+ Person(fname='randal', lname='munroe', age=37, email='randal@xkcd.com'),
+ Person(fname='tom', lname='wicker', age=39, email='tom@example.com'),
+ Person(fname='mary', lname='beeman', age=42, email='mary@beeman.me'),
+ Person(fname='raymond', lname='hettinger', age=51, email='python@rcn.com'),
+ Person(fname='david', lname='torpey', age=52, email='david@torp.io')]
+[Person(fname='david', lname='torpey', age=52, email='david@torp.io'),
+ Person(fname='mary', lname='beeman', age=42, email='mary@beeman.me'),
+ Person(fname='matthew', lname='hendricks', age=25, email='matthew@hen.me'),
+ Person(fname='randal', lname='munroe', age=37, email='randal@xkcd.com'),
+ Person(fname='raymond', lname='hettinger', age=51, email='python@rcn.com'),
+ Person(fname='roger', lname='young', age=25, email='roger@aol.com'),
+ Person(fname='tom', lname='wicker', age=39, email='tom@example.com'),
+ Person(fname='tom', lname='tuttle', age=28, email='tom@peace.org')]
+[Person(fname='matthew', lname='hendricks', age=25, email='matthew@hen.me'),
+ Person(fname='roger', lname='young', age=25, email='roger@aol.com'),
+ Person(fname='tom', lname='tuttle', age=28, email='tom@peace.org'),
+ Person(fname='randal', lname='munroe', age=37, email='randal@xkcd.com'),
+ Person(fname='tom', lname='wicker', age=39, email='tom@example.com'),
+ Person(fname='mary', lname='beeman', age=42, email='mary@beeman.me'),
+ Person(fname='raymond', lname='hettinger', age=51, email='python@rcn.com'),
+ Person(fname='david', lname='torpey', age=52, email='david@torp.io')]
+>>> 
+======== RESTART: /Users/raymond/Dropbox/Public/sj136/sorting_demo.py ========
+[Person(fname='david', lname='torpey', age=52, email='david@torp.io'),
+ Person(fname='mary', lname='beeman', age=42, email='mary@beeman.me'),
+ Person(fname='matthew', lname='hendricks', age=25, email='matthew@hen.me'),
+ Person(fname='randal', lname='munroe', age=37, email='randal@xkcd.com'),
+ Person(fname='raymond', lname='hettinger', age=51, email='python@rcn.com'),
+ Person(fname='roger', lname='young', age=25, email='roger@aol.com'),
+ Person(fname='tom', lname='tuttle', age=28, email='tom@peace.org'),
+ Person(fname='tom', lname='wicker', age=39, email='tom@example.com')]
+[Person(fname='david', lname='torpey', age=52, email='david@torp.io'),
+ Person(fname='mary', lname='beeman', age=42, email='mary@beeman.me'),
+ Person(fname='matthew', lname='hendricks', age=25, email='matthew@hen.me'),
+ Person(fname='randal', lname='munroe', age=37, email='randal@xkcd.com'),
+ Person(fname='raymond', lname='hettinger', age=51, email='python@rcn.com'),
+ Person(fname='roger', lname='young', age=25, email='roger@aol.com'),
+ Person(fname='tom', lname='wicker', age=39, email='tom@example.com'),
+ Person(fname='tom', lname='tuttle', age=28, email='tom@peace.org')]
+[Person(fname='roger', lname='young', age=25, email='roger@aol.com'),
+ Person(fname='matthew', lname='hendricks', age=25, email='matthew@hen.me'),
+ Person(fname='tom', lname='tuttle', age=28, email='tom@peace.org'),
+ Person(fname='randal', lname='munroe', age=37, email='randal@xkcd.com'),
+ Person(fname='tom', lname='wicker', age=39, email='tom@example.com'),
+ Person(fname='mary', lname='beeman', age=42, email='mary@beeman.me'),
+ Person(fname='raymond', lname='hettinger', age=51, email='python@rcn.com'),
+ Person(fname='david', lname='torpey', age=52, email='david@torp.io')]
+[Person(fname='matthew', lname='hendricks', age=25, email='matthew@hen.me'),
+ Person(fname='roger', lname='young', age=25, email='roger@aol.com'),
+ Person(fname='tom', lname='tuttle', age=28, email='tom@peace.org'),
+ Person(fname='randal', lname='munroe', age=37, email='randal@xkcd.com'),
+ Person(fname='tom', lname='wicker', age=39, email='tom@example.com'),
+ Person(fname='mary', lname='beeman', age=42, email='mary@beeman.me'),
+ Person(fname='raymond', lname='hettinger', age=51, email='python@rcn.com'),
+ Person(fname='david', lname='torpey', age=52, email='david@torp.io')]
+[Person(fname='matthew', lname='hendricks', age=25, email='matthew@hen.me'),
+ Person(fname='roger', lname='young', age=25, email='roger@aol.com'),
+ Person(fname='tom', lname='tuttle', age=28, email='tom@peace.org'),
+ Person(fname='randal', lname='munroe', age=37, email='randal@xkcd.com'),
+ Person(fname='tom', lname='wicker', age=39, email='tom@example.com'),
+ Person(fname='mary', lname='beeman', age=42, email='mary@beeman.me'),
+ Person(fname='raymond', lname='hettinger', age=51, email='python@rcn.com'),
+ Person(fname='david', lname='torpey', age=52, email='david@torp.io')]
+[Person(fname='david', lname='torpey', age=52, email='david@torp.io'),
+ Person(fname='mary', lname='beeman', age=42, email='mary@beeman.me'),
+ Person(fname='matthew', lname='hendricks', age=25, email='matthew@hen.me'),
+ Person(fname='randal', lname='munroe', age=37, email='randal@xkcd.com'),
+ Person(fname='raymond', lname='hettinger', age=51, email='python@rcn.com'),
+ Person(fname='roger', lname='young', age=25, email='roger@aol.com'),
+ Person(fname='tom', lname='wicker', age=39, email='tom@example.com'),
+ Person(fname='tom', lname='tuttle', age=28, email='tom@peace.org')]
+[Person(fname='matthew', lname='hendricks', age=25, email='matthew@hen.me'),
+ Person(fname='roger', lname='young', age=25, email='roger@aol.com'),
+ Person(fname='tom', lname='tuttle', age=28, email='tom@peace.org'),
+ Person(fname='randal', lname='munroe', age=37, email='randal@xkcd.com'),
+ Person(fname='tom', lname='wicker', age=39, email='tom@example.com'),
+ Person(fname='mary', lname='beeman', age=42, email='mary@beeman.me'),
+ Person(fname='raymond', lname='hettinger', age=51, email='python@rcn.com'),
+ Person(fname='david', lname='torpey', age=52, email='david@torp.io')]
+>>> map(lambda p: p[2], people)
+[51, 39, 42, 52, 25, 37, 28, 25]
+>>> map(itemgetter(2), people)
+[51, 39, 42, 52, 25, 37, 28, 25]
+>>> 
+>>> 
+>>> map(lambda p: (p[2], p[1]), people)
+[(51, 'hettinger'), (39, 'wicker'), (42, 'beeman'), (52, 'torpey'), (25, 'young'), (37, 'munroe'), (28, 'tuttle'), (25, 'hendricks')]
+>>> map(itemgetter(2, 1), people)
+[(51, 'hettinger'), (39, 'wicker'), (42, 'beeman'), (52, 'torpey'), (25, 'young'), (37, 'munroe'), (28, 'tuttle'), (25, 'hendricks')]
+>>> 
+>>> 
+>>> map(lambda p: p.email, people)
+['python@rcn.com', 'tom@example.com', 'mary@beeman.me', 'david@torp.io', 'roger@aol.com', 'randal@xkcd.com', 'tom@peace.org', 'matthew@hen.me']
+>>> map(attrgetter('email'), people)
+['python@rcn.com', 'tom@example.com', 'mary@beeman.me', 'david@torp.io', 'roger@aol.com', 'randal@xkcd.com', 'tom@peace.org', 'matthew@hen.me']
+>>> 
+>>> map(lambda p: (p.age, p.fname), people)
+[(51, 'raymond'), (39, 'tom'), (42, 'mary'), (52, 'david'), (25, 'roger'), (37, 'randal'), (28, 'tom'), (25, 'matthew')]
+>>> map(attrgetter('age', 'fname'), people)
+[(51, 'raymond'), (39, 'tom'), (42, 'mary'), (52, 'david'), (25, 'roger'), (37, 'randal'), (28, 'tom'), (25, 'matthew')]
+>>> 
+======== RESTART: /Users/raymond/Dropbox/Public/sj136/sorting_demo.py ========
+[Person(fname='david', lname='torpey', age=52, email='david@torp.io'),
+ Person(fname='mary', lname='beeman', age=42, email='mary@beeman.me'),
+ Person(fname='matthew', lname='hendricks', age=25, email='matthew@hen.me'),
+ Person(fname='randal', lname='munroe', age=37, email='randal@xkcd.com'),
+ Person(fname='raymond', lname='hettinger', age=51, email='python@rcn.com'),
+ Person(fname='roger', lname='young', age=25, email='roger@aol.com'),
+ Person(fname='tom', lname='tuttle', age=28, email='tom@peace.org'),
+ Person(fname='tom', lname='wicker', age=39, email='tom@example.com')]
+[Person(fname='david', lname='torpey', age=52, email='david@torp.io'),
+ Person(fname='mary', lname='beeman', age=42, email='mary@beeman.me'),
+ Person(fname='matthew', lname='hendricks', age=25, email='matthew@hen.me'),
+ Person(fname='randal', lname='munroe', age=37, email='randal@xkcd.com'),
+ Person(fname='raymond', lname='hettinger', age=51, email='python@rcn.com'),
+ Person(fname='roger', lname='young', age=25, email='roger@aol.com'),
+ Person(fname='tom', lname='wicker', age=39, email='tom@example.com'),
+ Person(fname='tom', lname='tuttle', age=28, email='tom@peace.org')]
+[Person(fname='roger', lname='young', age=25, email='roger@aol.com'),
+ Person(fname='matthew', lname='hendricks', age=25, email='matthew@hen.me'),
+ Person(fname='tom', lname='tuttle', age=28, email='tom@peace.org'),
+ Person(fname='randal', lname='munroe', age=37, email='randal@xkcd.com'),
+ Person(fname='tom', lname='wicker', age=39, email='tom@example.com'),
+ Person(fname='mary', lname='beeman', age=42, email='mary@beeman.me'),
+ Person(fname='raymond', lname='hettinger', age=51, email='python@rcn.com'),
+ Person(fname='david', lname='torpey', age=52, email='david@torp.io')]
+[Person(fname='matthew', lname='hendricks', age=25, email='matthew@hen.me'),
+ Person(fname='roger', lname='young', age=25, email='roger@aol.com'),
+ Person(fname='tom', lname='tuttle', age=28, email='tom@peace.org'),
+ Person(fname='randal', lname='munroe', age=37, email='randal@xkcd.com'),
+ Person(fname='tom', lname='wicker', age=39, email='tom@example.com'),
+ Person(fname='mary', lname='beeman', age=42, email='mary@beeman.me'),
+ Person(fname='raymond', lname='hettinger', age=51, email='python@rcn.com'),
+ Person(fname='david', lname='torpey', age=52, email='david@torp.io')]
+[Person(fname='matthew', lname='hendricks', age=25, email='matthew@hen.me'),
+ Person(fname='roger', lname='young', age=25, email='roger@aol.com'),
+ Person(fname='tom', lname='tuttle', age=28, email='tom@peace.org'),
+ Person(fname='randal', lname='munroe', age=37, email='randal@xkcd.com'),
+ Person(fname='tom', lname='wicker', age=39, email='tom@example.com'),
+ Person(fname='mary', lname='beeman', age=42, email='mary@beeman.me'),
+ Person(fname='raymond', lname='hettinger', age=51, email='python@rcn.com'),
+ Person(fname='david', lname='torpey', age=52, email='david@torp.io')]
+[Person(fname='matthew', lname='hendricks', age=25, email='matthew@hen.me'),
+ Person(fname='roger', lname='young', age=25, email='roger@aol.com'),
+ Person(fname='tom', lname='tuttle', age=28, email='tom@peace.org'),
+ Person(fname='randal', lname='munroe', age=37, email='randal@xkcd.com'),
+ Person(fname='tom', lname='wicker', age=39, email='tom@example.com'),
+ Person(fname='mary', lname='beeman', age=42, email='mary@beeman.me'),
+ Person(fname='raymond', lname='hettinger', age=51, email='python@rcn.com'),
+ Person(fname='david', lname='torpey', age=52, email='david@torp.io')]
+[Person(fname='david', lname='torpey', age=52, email='david@torp.io'),
+ Person(fname='mary', lname='beeman', age=42, email='mary@beeman.me'),
+ Person(fname='matthew', lname='hendricks', age=25, email='matthew@hen.me'),
+ Person(fname='randal', lname='munroe', age=37, email='randal@xkcd.com'),
+ Person(fname='raymond', lname='hettinger', age=51, email='python@rcn.com'),
+ Person(fname='roger', lname='young', age=25, email='roger@aol.com'),
+ Person(fname='tom', lname='wicker', age=39, email='tom@example.com'),
+ Person(fname='tom', lname='tuttle', age=28, email='tom@peace.org')]
+[Person(fname='matthew', lname='hendricks', age=25, email='matthew@hen.me'),
+ Person(fname='roger', lname='young', age=25, email='roger@aol.com'),
+ Person(fname='tom', lname='tuttle', age=28, email='tom@peace.org'),
+ Person(fname='randal', lname='munroe', age=37, email='randal@xkcd.com'),
+ Person(fname='tom', lname='wicker', age=39, email='tom@example.com'),
+ Person(fname='mary', lname='beeman', age=42, email='mary@beeman.me'),
+ Person(fname='raymond', lname='hettinger', age=51, email='python@rcn.com'),
+ Person(fname='david', lname='torpey', age=52, email='david@torp.io')]
+[Person(fname='matthew', lname='hendricks', age=25, email='matthew@hen.me'),
+ Person(fname='roger', lname='young', age=25, email='roger@aol.com'),
+ Person(fname='tom', lname='tuttle', age=28, email='tom@peace.org'),
+ Person(fname='randal', lname='munroe', age=37, email='randal@xkcd.com'),
+ Person(fname='tom', lname='wicker', age=39, email='tom@example.com'),
+ Person(fname='mary', lname='beeman', age=42, email='mary@beeman.me'),
+ Person(fname='raymond', lname='hettinger', age=51, email='python@rcn.com'),
+ Person(fname='david', lname='torpey', age=52, email='david@torp.io')]
+>>> x = 20
+>>> y = 35
+>>> x + y
+55
+>>> x.__add__(y)
+55
+>>> s = 'hello'
+>>> s.upper()
+'HELLO'
+>>> # () -> __call__
+>>> # .  -> __getattribute__
+>>> x+y
+55
+>>> x + y
+55
+>>> s . upper ()
+'HELLO'
+>>> dir(object)
+['__class__', '__delattr__', '__doc__', '__format__', '__getattribute__', '__hash__', '__init__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__']
+>>> 
+========= RESTART: /Users/raymond/Dropbox/Public/sj136/circuitous.py =========
+>>> 
+>>> 
+>>> 
+>>> s = 'hello'
+>>> len(s)
+5
+>>> s.__len__()
+5
+>>> 
+========= RESTART: /Users/raymond/Dropbox/Public/sj136/circuitous.py =========
+>>> 
+========= RESTART: /Users/raymond/Dropbox/Public/sj136/circuitous.py =========
+>>> c = Circle(10)
+>>> c.__dict__
+{'pi': 3.14, 'radius': 10}
+>>> d = Circle(12)
+>>> c.__dict__
+{'pi': 3.14, 'radius': 10}
+>>> d.__dict__
+{'pi': 3.14, 'radius': 12}
+>>> 
+========= RESTART: /Users/raymond/Dropbox/Public/sj136/circuitous.py =========
+>>> c = Circle(10)
+>>> c.pi
+3.14
+>>> d = Circle(12)
+>>> d.pi
+3.14
+>>> d.__dict__
+{'radius': 12}
+>>> Circle.__dict__
+dict_proxy({'__module__': '__main__', 'area': <function area at 0x1006ef050>, '__dict__': <attribute '__dict__' of 'Circle' objects>, 'pi': 3.14, '__weakref__': <attribute '__weakref__' of 'Circle' objects>, '__doc__': 'An Advanced Circle Analytics Toolkit', '__init__': <function __init__ at 0x1006ef500>})
+>>> 
+>>> int('42')
+42
+>>> 
+========== RESTART: /Users/raymond/Dropbox/Public/sj136/download.py ==========
+============================== Source: http://dl.dropbox.com/u/3967849/sj136/links.txt ==============================
+                                    Starting download at Mon Mar  7 17:34:30 2016                                    
+200  OK               https://dl.dropbox.com/u/3967849/sj136/daythree.log     --> notes2/daythree.log       (current) 
+200  OK               https://dl.dropbox.com/u/3967849/sj136/dayfour.log      --> notes2/dayfour.log        (current) 
+200  OK               https://dl.dropbox.com/u/3967849/sj136/daytwo.log       --> notes2/daytwo.log         (current) 
+200* OK               https://dl.dropbox.com/u/3967849/sj136/links.txt        --> notes2/links.txt          (current) 
+304  NOT MODIFIED     https://dl.dropbox.com/u/3967849/sj136/download.py
+304  NOT MODIFIED     https://dl.dropbox.com/u/3967849/shared/mpl_demo.py
+304  NOT MODIFIED     https://dl.dropbox.com/u/3967849/shared/PythonAwesome.pdf
+200* OK               https://dl.dropbox.com/u/3967849/sj136/dayone.log       --> notes2/dayone.log         (updated) 
+304  NOT MODIFIED     https://dl.dropbox.com/u/3967849/shared/spelling.py
+304  NOT MODIFIED     https://dl.dropbox.com/u/3967849/shared/lru_cache.py
+200* OK               https://dl.dropbox.com/u/3967849/shared/common_passwords.txt --> notes2/common_passwords.txt (current) 
+200* OK               https://dl.dropbox.com/u/3967849/shared/hamlet.txt      --> notes2/hamlet.txt         (current) 
+304  NOT MODIFIED     https://dl.dropbox.com/u/3967849/shared/pexpect.py
+304  NOT MODIFIED     https://dl.dropbox.com/u/3967849/shared/IntermediatePython.pdf
+304  NOT MODIFIED     https://dl.dropbox.com/u/3967849/shared/__init__.py
+304  NOT MODIFIED     https://dl.dropbox.com/u/3967849/sj136/p_vs_np_1.py
+304  NOT MODIFIED     https://dl.dropbox.com/u/3967849/shared/PythonTips.pdf
+>>> 
+>>> 
+>>> 
+>>> # IntermediatePython.PDF
+>>> # You Tube:  raymond hettinger
+>>> # python class development toolkit
+>>> # https://docs.python.org/2.7/
+>>> # PythonTips.pdf
+>>> 
+>>> 
+>>> 
+>>> 

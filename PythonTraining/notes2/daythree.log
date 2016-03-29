@@ -1,0 +1,3490 @@
+﻿Python 2.7.11 (v2.7.11:6d1b6a68f775, Dec  5 2015, 12:54:16) 
+[GCC 4.2.1 (Apple Inc. build 5666) (dot 3)] on darwin
+Type "copyright", "credits" or "license()" for more information.
+>>> 
+
+>>> 
+========= RESTART: /Users/raymond/Dropbox/Public/sj136/circuitous.py =========
+>>> c = Circle(10)
+>>> c.__dict__
+{'diameter': 20.0}
+>>> c.radius = 15
+>>> c.__dict__
+{'diameter': 30.0}
+>>> c.radius
+15.0
+>>> 
+======== RESTART: /Users/raymond/Dropbox/Public/sj136/client_code.py ========
+Tutorial for Circuitous™
+Circle version 0.7
+A circle with a radius of 10.0
+has an area of 314.159265359
+
+DARPA grant proposal
+to study the average area of random circles
+using Circuitous version 0.7
+preliminary study using 10000 circles
+seeded using Jenny's number: 8675309
+The average is 1.04170
+
+Spec sheet for the template: [0.1, 0.2, 0.7]
+Circle #1
+A rubber circle with a cut radius of 0.1
+has a perimeter of 0.628318530718
+and a cold area of 0.0314159265359
+and a warm area of 0.0380132711084
+
+Circle #2
+A rubber circle with a cut radius of 0.2
+has a perimeter of 1.25663706144
+and a cold area of 0.125663706144
+and a warm area of 0.152053084434
+
+Circle #3
+A rubber circle with a cut radius of 0.7
+has a perimeter of 4.39822971503
+and a cold area of 1.53938040026
+and a warm area of 1.86265028431
+
+A tire with an inner radius of 30.0
+has an inner area of 2827.43338823
+and an outer perimeter of 235.619449019
+
+An inclinometer reading of 5° is a 8.7% grade
+
+A circle with a bounding box diagonal of 25
+has a radius of 8.83883476483
+an area of 245.436926062
+and a perimeter of 55.536036727
+
+>>> import sys
+>>> sys.getsizeof(3.1)
+24
+>>> sys.getsizeof(())
+56
+>>> sys.getsizeof((3.1,))
+64
+>>> sys.getsizeof({})
+280
+>>> 
+>>> c = Circle(10)
+>>> d = Circle(12)
+>>> 
+>>> c.__dict__
+{'diameter': 20.0}
+>>> d.__dict__
+{'diameter': 24.0}
+>>> # All instances of classes, by default, have an instance dictionary
+>>> # Good news:  easy to look at for debugging   __dict__
+>>> # and easy to add new attribute at any time
+>>> 
+>>> c.color = 'red'
+>>> c.__dict__
+{'color': 'red', 'diameter': 20.0}
+>>> # Bad news:  dicts are HUGE compared to lists and tuples.
+>>> 
+>>> # This is only an issue if there are very many instances of a class.
+>>> 
+========= RESTART: /Users/raymond/Dropbox/Public/sj136/circuitous.py =========
+>>> c = Circle(10)
+>>> c.radius
+10.0
+>>> c.radius = 15
+>>> c.radius
+15.0
+>>> c.area()
+706.8583470577033
+>>> 
+>>> c.__dict__
+
+Traceback (most recent call last):
+  File "<pyshell#32>", line 1, in <module>
+    c.__dict__
+AttributeError: 'Circle' object has no attribute '__dict__'
+>>> 
+>>> c.color = 'red'
+
+Traceback (most recent call last):
+  File "<pyshell#34>", line 1, in <module>
+    c.color = 'red'
+AttributeError: 'Circle' object has no attribute 'color'
+>>> 
+========= RESTART: /Users/raymond/Dropbox/Public/sj136/circuitous.py =========
+>>> c = Circle(10)
+>>> c.color = 'red'
+>>> c.diameter
+20.0
+>>> c.color
+'red'
+>>> c.width = 5
+
+Traceback (most recent call last):
+  File "<pyshell#39>", line 1, in <module>
+    c.width = 5
+AttributeError: 'Circle' object has no attribute 'width'
+>>> 
+>>> 
+>>> 
+>>> s = '''She sells sea shells by the sea shore.
+Which witch had which witches wrist watch.
+Peter Piper picked a peck of pickled peppers.
+'''
+>>> len(s)
+128
+>>> import zlib
+>>> c = zlib.compress(s)
+>>> len(c)
+99
+>>> zlib.decompress(c) == s
+True
+>>> s = ''' Mister Raymond Hettinger Python Programmer
+Miss Rachel Hettinger VB6 Programmer
+Mister Timothy Peters Python Programmer
+Miss Grace Hopper COBOL Programmer
+'''
+>>> # Mister -> Mr
+>>> # Miss -> Ms
+>>> # Python -> Py
+>>> # Programmer -> Pr
+>>> # Hettinger -> He
+>>> # !
+>>> c = '''|Mister|Mr| Raymond |Hettinger|He| |Python|Py |Programmer|Pr|
+|Miss|Ms Rachel !He VB6 !Pr
+!Mr Timothy Peters !Py !Pr
+!Ms Grace Hopper COBOL !Pr
+'''
+>>> len(s)
+156
+>>> len(c)
+144
+>>> s = '''She sells sea shells by the sea shore.
+Which witch had which witches wrist watch.
+Peter Piper picked a peck of pickled peppers.
+'''
+>>> import bz2
+>>> c = bz2.compress(s)
+>>> len(s)
+128
+>>> len(c)
+122
+>>> bz2.decompress(c) == s
+True
+>>> with open('notes2/hamlet.txt') as f:
+	play = f.read()
+
+	
+>>> print play[:200]
+The Tragedy of Hamlet, Prince of Denmark
+Shakespeare homepage | Hamlet | Entire play
+ACT I
+SCENE I. Elsinore. A platform before the castle.
+
+    FRANCISCO at his post. Enter to him BERNARDO 
+
+B
+>>> type(play)
+<type 'str'>
+>>> len(play)
+202238
+>>> len(zlib.compress(play))
+73748
+>>> len(bz2.compress(play))
+56442
+>>> 
+>>> 
+>>> # Use zlib when speed matters.  Also, for short strings it compresses better.
+>>> # Use bz2 when you want extra compression (when size matters) and the input is large.
+>>> # gzip, deflate
+>>> 
+>>> 
+>>> import urllib
+>>> page = urllib.urlopen('http://jython.org').read()
+>>> type(page)
+<type 'str'>
+>>> len(page)
+19210
+>>> print page[:200]
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xh
+>>> 
+>>> len(zlib.compress(page))
+6328
+>>> len(bz2.compress(page))
+6371
+>>> 
+>>> 
+>>> import zlib, urllib
+>>> page = urllib.urlopen('http://jython.org').read()
+>>> len(zlib.compress(page))
+6328
+>>> 
+>>> # A       B       C               -> A+B+C
+>>> # A       -       C               -> newtotal is less, maybe
+>>> # read phones      sort phone      lookup phone numbers x 1,000,000
+>>> # read phones                    lookup phone numbers x 1,000,000
+>>> 
+>>> # HTTP GET      zlib      SOCKET
+>>> # HTTP GET      ----     SOCKET
+>>> #               CPU      wire
+>>> 
+>>> # If something is already compressed, extra compression is a waste
+>>> c = zlib.compress(page)
+>>> d = bz2.compress(c)
+>>> len(c)
+6328
+>>> len(d)
+6822
+>>> # jpg  tar.gz
+>>> 
+>>> 
+>>> hansolo = dict(
+	ship = 'falcon',
+	status = 'wanted by jabba the hut',
+	occupation = 'smuggler',
+	friends = ['luke', 'leia', 'chewy']
+)
+>>> type(hansolo)
+<type 'dict'>
+>>> len(hansolo)
+4
+>>> hansolo.keys()
+['status', 'ship', 'friends', 'occupation']
+>>> hansolo['occupation']
+'smuggler'
+>>> for friend in hansolo['friends']:
+	print "Don' worry Han, %s is here to save you" % friend.title()
+
+	
+Don' worry Han, Luke is here to save you
+Don' worry Han, Leia is here to save you
+Don' worry Han, Chewy is here to save you
+>>> 
+>>> import pickle
+>>> carbonite = pickle.dumps(hansolo)
+>>> del hansolo
+>>> type(carbonite)
+<type 'str'>
+>>> 
+>>> hansolo = pickle.loads(carbonite)
+>>> type(hansolo)
+<type 'dict'>
+>>> hansolo.keys()
+['status', 'ship', 'friends', 'occupation']
+>>> hansolo['occupation']
+'smuggler'
+>>> for friend in hansolo['friends']:
+	print "Don't worry Han, %s is here to save you" % friend.title()
+
+	
+Don't worry Han, Luke is here to save you
+Don't worry Han, Leia is here to save you
+Don't worry Han, Chewy is here to save you
+>>> 
+>>> 
+>>> # object  ---(encoder)---> str  ---(decoder)---> live object
+>>> # Coder/Decoder --> Codecs
+>>> # Codecs:  pickle, marshal, twisted.jelly, json, xml, yaml, ...
+>>> 
+>>> 
+>>> import json
+>>> carbonite = json.dumps(hansolo)
+>>> type(carbonite)
+<type 'str'>
+>>> hansolo = json.loads(carbonite)
+>>> hansolo
+{u'status': u'wanted by jabba the hut', u'ship': u'falcon', u'friends': [u'luke', u'leia', u'chewy'], u'occupation': u'smuggler'}
+>>> 
+>>> 
+>>> # json:  communicating between languages but it is limited to dicts, lists, unicode, bool, None, int, float
+>>> # pickle:  python specific but it is nearly unlimited and can move arbitrary data types.
+>>> 
+>>> # In modern times, never invent your own data layouts.
+>>> # We already have great general purpose codecs:  json, yaml, xml, pickle, ...
+>>> 
+>>> # Tip:  Almost all of these will benefit from compression
+>>> hansolo = dict(
+	ship = 'falcon',
+	status = 'wanted by jabba the hut',
+	occupation = 'smuggler',
+	friends = ['luke', 'leia', 'chewy']
+)
+>>> import pickle, zlib
+>>> cc = zlib.compress(pickle.dumps(hansolo))
+>>> hansolo = pickle.loads(zlib.decompress(cc))
+>>> 
+>>> 
+>>> 
+>>> 
+======= RESTART: /Users/raymond/Dropbox/Public/sj136/warnings_demo.py =======
+
+Warning (from warnings module):
+  File "/Users/raymond/Dropbox/Public/sj136/warnings_demo.py", line 3
+    warnings.warn('Caution, the CPU is getting a little hot')
+UserWarning: Caution, the CPU is getting a little hot
+>>> 
+======= RESTART: /Users/raymond/Dropbox/Public/sj136/warnings_demo.py =======
+
+Warning (from warnings module):
+  File "/Users/raymond/Dropbox/Public/sj136/warnings_demo.py", line 3
+    warnings.warn('Caution, the CPU is getting a little hot')
+UserWarning: Caution, the CPU is getting a little hot
+But I am still doing work anyway
+>>> 
+======= RESTART: /Users/raymond/Dropbox/Public/sj136/warnings_demo.py =======
+
+Warning (from warnings module):
+  File "/Users/raymond/Dropbox/Public/sj136/warnings_demo.py", line 11
+    warnings.warn('Caution, the CPU is getting a little hot')
+UserWarning: Caution, the CPU is getting a little hot
+But I am still doing work anyway
+>>> 
+======= RESTART: /Users/raymond/Dropbox/Public/sj136/warnings_demo.py =======
+>>> sqrt(5)
+2.23606797749979
+>>> sqrt(-5)
+
+Warning (from warnings module):
+  File "/Users/raymond/Dropbox/Public/sj136/warnings_demo.py", line 7
+    warnings.warn('Taking a negative square root returning a complex number')
+UserWarning: Taking a negative square root returning a complex number
+2.23606797749979j
+>>> 
+======= RESTART: /Users/raymond/Dropbox/Public/sj136/warnings_demo.py =======
+11.1803398875
+
+Warning (from warnings module):
+  File "/Users/raymond/Dropbox/Public/sj136/warnings_demo.py", line 7
+    warnings.warn('Taking a negative square root returning a complex number')
+UserWarning: Taking a negative square root returning a complex number
+11.1803398875j
+14.6969384567
+14.6969384567j
+>>> 
+======= RESTART: /Users/raymond/Dropbox/Public/sj136/warnings_demo.py =======
+11.1803398875
+
+Warning (from warnings module):
+  File "/Users/raymond/Dropbox/Public/sj136/warnings_demo.py", line 19
+    warnings.warn('Taking a negative square root returning a complex number')
+UserWarning: Taking a negative square root returning a complex number
+11.1803398875j
+14.6969384567
+
+Warning (from warnings module):
+  File "/Users/raymond/Dropbox/Public/sj136/warnings_demo.py", line 19
+    warnings.warn('Taking a negative square root returning a complex number')
+UserWarning: Taking a negative square root returning a complex number
+14.6969384567j
+>>> 
+======= RESTART: /Users/raymond/Dropbox/Public/sj136/warnings_demo.py =======
+11.1803398875
+11.1803398875j
+14.6969384567
+14.6969384567j
+>>> 
+======= RESTART: /Users/raymond/Dropbox/Public/sj136/warnings_demo.py =======
+11.1803398875
+11.1803398875j
+
+Warning (from warnings module):
+  File "/Users/raymond/Dropbox/Public/sj136/warnings_demo.py", line 29
+    warnings.warn("Oops, I did it again. I played with your heart. I made you believe we're more than just friends")
+UserWarning: Oops, I did it again. I played with your heart. I made you believe we're more than just friends
+14.6969384567
+14.6969384567j
+>>> 
+======= RESTART: /Users/raymond/Dropbox/Public/sj136/warnings_demo.py =======
+11.1803398875
+
+Warning (from warnings module):
+  File "/Users/raymond/Dropbox/Public/sj136/warnings_demo.py", line 19
+    warnings.warn('Taking a negative square root returning a complex number')
+UserWarning: Taking a negative square root returning a complex number
+11.1803398875j
+
+Warning (from warnings module):
+  File "/Users/raymond/Dropbox/Public/sj136/warnings_demo.py", line 29
+    warnings.warn("Oops, I did it again. I played with your heart. I made you believe we're more than just friends")
+UserWarning: Oops, I did it again. I played with your heart. I made you believe we're more than just friends
+14.6969384567
+14.6969384567j
+>>> 
+======= RESTART: /Users/raymond/Dropbox/Public/sj136/warnings_demo.py =======
+11.1803398875
+
+Warning (from warnings module):
+  File "/Users/raymond/Dropbox/Public/sj136/warnings_demo.py", line 19
+    warnings.warn('Taking a negative square root returning a complex number')
+UserWarning: Taking a negative square root returning a complex number
+11.1803398875j
+
+Warning (from warnings module):
+  File "/Users/raymond/Dropbox/Public/sj136/warnings_demo.py", line 29
+    warnings.warn("Oops, I did it again. I played with your heart. I made you believe we're more than just friends")
+UserWarning: Oops, I did it again. I played with your heart. I made you believe we're more than just friends
+14.6969384567
+14.6969384567j
+>>> 
+======= RESTART: /Users/raymond/Dropbox/Public/sj136/warnings_demo.py =======
+11.1803398875
+
+Warning (from warnings module):
+  File "/Users/raymond/Dropbox/Public/sj136/warnings_demo.py", line 20
+    warnings.warn('Taking a negative square root returning a complex number')
+UserWarning: Taking a negative square root returning a complex number
+11.1803398875j
+
+Warning (from warnings module):
+  File "/Users/raymond/Dropbox/Public/sj136/warnings_demo.py", line 31
+    warnings.warn("Oops, I did it again. I played with your heart. I made you believe we're more than just friends")
+UserWarning: Oops, I did it again. I played with your heart. I made you believe we're more than just friends
+14.6969384567
+
+Warning (from warnings module):
+  File "/Users/raymond/Dropbox/Public/sj136/warnings_demo.py", line 20
+    warnings.warn('Taking a negative square root returning a complex number')
+UserWarning: Taking a negative square root returning a complex number
+14.6969384567j
+>>> dir(warnings)
+['WarningMessage', '_OptionError', '__all__', '__builtins__', '__doc__', '__file__', '__name__', '__package__', '_getaction', '_getcategory', '_processoptions', '_setoption', '_show_warning', 'catch_warnings', 'default_action', 'defaultaction', 'filters', 'filterwarnings', 'formatwarning', 'linecache', 'once_registry', 'onceregistry', 'resetwarnings', 'showwarning', 'simplefilter', 'sys', 'types', 'warn', 'warn_explicit', 'warnpy3k']
+>>> help(warnings.warn)
+Help on built-in function warn in module _warnings:
+
+warn(...)
+    Issue a warning, or maybe ignore it or raise an exception.
+
+>>> 
+======= RESTART: /Users/raymond/Dropbox/Public/sj136/warnings_demo.py =======
+
+Traceback (most recent call last):
+  File "/Users/raymond/Dropbox/Public/sj136/warnings_demo.py", line 30, in <module>
+    print user(5)
+  File "/Users/raymond/Dropbox/Public/sj136/warnings_demo.py", line 24, in user
+    warnings.warning('The "user" function is deprecated, use "sqrt" instead', DeprecationWarning)
+AttributeError: 'module' object has no attribute 'warning'
+>>> 
+======= RESTART: /Users/raymond/Dropbox/Public/sj136/warnings_demo.py =======
+
+Traceback (most recent call last):
+  File "/Users/raymond/Dropbox/Public/sj136/warnings_demo.py", line 30, in <module>
+    print user(5)
+  File "/Users/raymond/Dropbox/Public/sj136/warnings_demo.py", line 24, in user
+    warning.warn('The "user" function is deprecated, use "sqrt" instead', DeprecationWarning)
+NameError: global name 'warning' is not defined
+>>> 
+======= RESTART: /Users/raymond/Dropbox/Public/sj136/warnings_demo.py =======
+11.1803398875
+
+Warning (from warnings module):
+  File "/Users/raymond/Dropbox/Public/sj136/warnings_demo.py", line 20
+    warnings.warn('Taking a negative square root returning a complex number')
+UserWarning: Taking a negative square root returning a complex number
+11.1803398875j
+
+Warning (from warnings module):
+  File "/Users/raymond/Dropbox/Public/sj136/warnings_demo.py", line 32
+    warnings.warn("Oops, I did it again. I played with your heart. I made you believe we're more than just friends")
+UserWarning: Oops, I did it again. I played with your heart. I made you believe we're more than just friends
+14.6969384567
+14.6969384567j
+>>> 
+======= RESTART: /Users/raymond/Dropbox/Public/sj136/warnings_demo.py =======
+
+Warning (from warnings module):
+  File "/Users/raymond/Dropbox/Public/sj136/warnings_demo.py", line 24
+    warnings.warn('The "user" function is deprecated, use "sqrt" instead', DeprecationWarning)
+DeprecationWarning: The "user" function is deprecated, use "sqrt" instead
+11.1803398875
+
+Warning (from warnings module):
+  File "/Users/raymond/Dropbox/Public/sj136/warnings_demo.py", line 20
+    warnings.warn('Taking a negative square root returning a complex number')
+UserWarning: Taking a negative square root returning a complex number
+11.1803398875j
+
+Warning (from warnings module):
+  File "/Users/raymond/Dropbox/Public/sj136/warnings_demo.py", line 32
+    warnings.warn("Oops, I did it again. I played with your heart. I made you believe we're more than just friends")
+UserWarning: Oops, I did it again. I played with your heart. I made you believe we're more than just friends
+14.6969384567
+14.6969384567j
+>>> 
+======= RESTART: /Users/raymond/Dropbox/Public/sj136/warnings_demo.py =======
+
+Warning (from warnings module):
+  File "/Users/raymond/Dropbox/Public/sj136/warnings_demo.py", line 26
+    warnings.warn('The "user" function is deprecated, use "sqrt" instead', DeprecationWarning)
+DeprecationWarning: The "user" function is deprecated, use "sqrt" instead
+11.1803398875
+
+Warning (from warnings module):
+  File "/Users/raymond/Dropbox/Public/sj136/warnings_demo.py", line 22
+    warnings.warn('Taking a negative square root returning a complex number')
+UserWarning: Taking a negative square root returning a complex number
+11.1803398875j
+
+Warning (from warnings module):
+  File "/Users/raymond/Dropbox/Public/sj136/warnings_demo.py", line 34
+    warnings.warn("Oops, I did it again. I played with your heart. I made you believe we're more than just friends")
+UserWarning: Oops, I did it again. I played with your heart. I made you believe we're more than just friends
+14.6969384567
+
+Warning (from warnings module):
+  File "/Users/raymond/Dropbox/Public/sj136/warnings_demo.py", line 22
+    warnings.warn('Taking a negative square root returning a complex number')
+UserWarning: Taking a negative square root returning a complex number
+14.6969384567j
+>>> 
+======= RESTART: /Users/raymond/Dropbox/Public/sj136/warnings_demo.py =======
+
+Warning (from warnings module):
+  File "/Users/raymond/Dropbox/Public/sj136/warnings_demo.py", line 30
+    warnings.warn('The "user" function is deprecated, use "sqrt" instead', DeprecationWarning)
+DeprecationWarning: The "user" function is deprecated, use "sqrt" instead
+11.1803398875
+
+Warning (from warnings module):
+  File "/Users/raymond/Dropbox/Public/sj136/warnings_demo.py", line 26
+    warnings.warn('Taking a negative square root returning a complex number')
+UserWarning: Taking a negative square root returning a complex number
+11.1803398875j
+
+Warning (from warnings module):
+  File "/Users/raymond/Dropbox/Public/sj136/warnings_demo.py", line 38
+    warnings.warn("Oops, I did it again. I played with your heart. I made you believe we're more than just friends")
+UserWarning: Oops, I did it again. I played with your heart. I made you believe we're more than just friends
+14.6969384567
+
+Warning (from warnings module):
+  File "/Users/raymond/Dropbox/Public/sj136/warnings_demo.py", line 40
+    warnings.warn('Python is the best', RaymondWarning)
+RaymondWarning: Python is the best
+
+Warning (from warnings module):
+  File "/Users/raymond/Dropbox/Public/sj136/warnings_demo.py", line 26
+    warnings.warn('Taking a negative square root returning a complex number')
+UserWarning: Taking a negative square root returning a complex number
+14.6969384567j
+>>> 
+>>> 
+>>> # Tour of the collections module
+>>> 
+====== RESTART: /Users/raymond/Dropbox/Public/sj136/tour_collections.py ======
+>>> 
+====== RESTART: /Users/raymond/Dropbox/Public/sj136/tour_collections.py ======
+Task:  count the colors
+
+Traceback (most recent call last):
+  File "/Users/raymond/Dropbox/Public/sj136/tour_collections.py", line 15, in <module>
+    cnt[color] += 1
+KeyError: 'red'
+>>> cnt
+{}
+>>> cnt['red']
+
+Traceback (most recent call last):
+  File "<pyshell#184>", line 1, in <module>
+    cnt['red']
+KeyError: 'red'
+>>> 
+====== RESTART: /Users/raymond/Dropbox/Public/sj136/tour_collections.py ======
+Task:  count the colors
+Counter({'red': 4, 'green': 3, 'blue': 2, 'purple': 1})
+>>> cnt['dragons']
+0
+>>> 
+====== RESTART: /Users/raymond/Dropbox/Public/sj136/tour_collections.py ======
+Task:  count the colors
+Counter({'red': 4, 'green': 3, 'blue': 2, 'purple': 1})
+>>> 
+====== RESTART: /Users/raymond/Dropbox/Public/sj136/tour_collections.py ======
+Task:  count the colors
+
+Traceback (most recent call last):
+  File "/Users/raymond/Dropbox/Public/sj136/tour_collections.py", line 14, in <module>
+    print most_common(2)
+NameError: name 'most_common' is not defined
+>>> 
+====== RESTART: /Users/raymond/Dropbox/Public/sj136/tour_collections.py ======
+Task:  count the colors
+[('red', 4), ('green', 3)]
+>>> 
+====== RESTART: /Users/raymond/Dropbox/Public/sj136/tour_collections.py ======
+Task:  count the colors
+[('red', 4), ('green', 3)]
+>>> len(play)
+202238
+>>> len(words)
+32114
+>>> print words[:20]
+['The', 'Tragedy', 'of', 'Hamlet', 'Prince', 'of', 'Denmark', 'Shakespeare', 'homepage', 'Hamlet', 'Entire', 'play', 'ACT', 'I', 'SCENE', 'I', 'Elsinore', 'A', 'platform', 'before']
+>>> 
+====== RESTART: /Users/raymond/Dropbox/Public/sj136/tour_collections.py ======
+Task:  count the colors
+[('red', 4), ('green', 3)]
+>>> print words[:20]
+['the', 'tragedy', 'of', 'hamlet', 'prince', 'of', 'denmark', 'shakespeare', 'homepage', 'hamlet', 'entire', 'play', 'act', 'i', 'scene', 'i', 'elsinore', 'a', 'platform', 'before']
+>>> 
+====== RESTART: /Users/raymond/Dropbox/Public/sj136/tour_collections.py ======
+Task:  count the colors
+[('red', 4), ('green', 3)]
+[('the', 1137),
+ ('and', 963),
+ ('to', 736),
+ ('of', 669),
+ ('you', 547),
+ ('i', 540),
+ ('a', 527),
+ ('my', 513),
+ ('hamlet', 461),
+ ('in', 435),
+ ('it', 415),
+ ('that', 388),
+ ('is', 339),
+ ('not', 312),
+ ('lord', 308),
+ ('his', 296),
+ ('this', 294),
+ ('but', 268),
+ ('with', 267),
+ ('for', 247),
+ ('your', 242),
+ ('me', 232),
+ ('be', 226),
+ ('as', 220),
+ ('he', 215),
+ ('what', 204),
+ ('so', 196),
+ ('him', 196),
+ ('king', 194),
+ ('have', 179),
+ ('will', 169),
+ ('horatio', 157),
+ ('do', 151),
+ ('no', 141),
+ ('we', 139),
+ ('are', 131),
+ ('on', 126),
+ ('all', 120),
+ ('claudius', 120),
+ ('our', 118),
+ ('by', 117),
+ ('queen', 116),
+ ('polonius', 116),
+ ('shall', 114),
+ ('if', 112),
+ ('or', 112),
+ ('o', 110),
+ ('good', 107),
+ ('come', 106),
+ ('they', 103)]
+>>> 
+====== RESTART: /Users/raymond/Dropbox/Public/sj136/tour_collections.py ======
+Task:  count the colors
+[('red', 4), ('green', 3)]
+[('the', 1137),
+ ('and', 963),
+ ('to', 736),
+ ('of', 669),
+ ('you', 547),
+ ('i', 540),
+ ('a', 527),
+ ('my', 513),
+ ('hamlet', 461),
+ ('in', 435),
+ ('it', 415),
+ ('that', 388),
+ ('is', 339),
+ ('not', 312),
+ ('lord', 308),
+ ('his', 296),
+ ('this', 294),
+ ('but', 268),
+ ('with', 267),
+ ('for', 247),
+ ('your', 242),
+ ('me', 232),
+ ('be', 226),
+ ('as', 220),
+ ('he', 215),
+ ('what', 204),
+ ('so', 196),
+ ('him', 196),
+ ('king', 194),
+ ('have', 179),
+ ('will', 169),
+ ('horatio', 157),
+ ('do', 151),
+ ('no', 141),
+ ('we', 139),
+ ('are', 131),
+ ('on', 126),
+ ('all', 120),
+ ('claudius', 120),
+ ('our', 118),
+ ('by', 117),
+ ('queen', 116),
+ ('polonius', 116),
+ ('shall', 114),
+ ('if', 112),
+ ('or', 112),
+ ('o', 110),
+ ('good', 107),
+ ('come', 106),
+ ('they', 103)]
+{'matthew': 'chocolate', 'rachel': 'kale', 'raymond': 'steak'}
+>>> 
+====== RESTART: /Users/raymond/Dropbox/Public/sj136/tour_collections.py ======
+Task:  count the colors
+[('red', 4), ('green', 3)]
+[('the', 1137),
+ ('and', 963),
+ ('to', 736),
+ ('of', 669),
+ ('you', 547),
+ ('i', 540),
+ ('a', 527),
+ ('my', 513),
+ ('hamlet', 461),
+ ('in', 435),
+ ('it', 415),
+ ('that', 388),
+ ('is', 339),
+ ('not', 312),
+ ('lord', 308),
+ ('his', 296),
+ ('this', 294),
+ ('but', 268),
+ ('with', 267),
+ ('for', 247),
+ ('your', 242),
+ ('me', 232),
+ ('be', 226),
+ ('as', 220),
+ ('he', 215),
+ ('what', 204),
+ ('so', 196),
+ ('him', 196),
+ ('king', 194),
+ ('have', 179),
+ ('will', 169),
+ ('horatio', 157),
+ ('do', 151),
+ ('no', 141),
+ ('we', 139),
+ ('are', 131),
+ ('on', 126),
+ ('all', 120),
+ ('claudius', 120),
+ ('our', 118),
+ ('by', 117),
+ ('queen', 116),
+ ('polonius', 116),
+ ('shall', 114),
+ ('if', 112),
+ ('or', 112),
+ ('o', 110),
+ ('good', 107),
+ ('come', 106),
+ ('they', 103)]
+OrderedDict([('raymond', 'steak'), ('rachel', 'kale'), ('matthew', 'chocolate')])
+>>> 
+>>> 
+>>> 
+>>> bool(0)
+False
+>>> bool(10)
+True
+>>> bool(10.5)
+True
+>>> bool(0.0)
+False
+>>> 0.0 == 0
+True
+>>> sum([True, True, False, True])
+3
+>>> issubclass(bool, int)
+True
+>>> bool(True)
+True
+>>> bool(False)
+False
+>>> False == 0 == 0.0
+True
+>>> bool(3 + 4j)
+True
+>>> bool(0 + 4j)
+True
+>>> bool(0 + 0j)
+False
+>>> # All numbers equal to zero are false, other numbers are true
+>>> bool([10, 20, 30])
+True
+>>> bool([])
+False
+>>> bool([False, 0])
+True
+>>> bool([False])
+True
+>>> bool([])
+False
+>>> int('42')
+42
+>>> bool('42')
+True
+>>> bool('True')
+True
+>>> bool('False')
+True
+>>> len('False')
+5
+>>> bool('')
+False
+>>> bool(None)
+False
+>>> 
+>>> 
+>>> 
+>>> int('42')
+42
+>>> int()
+0
+>>> bool(int())
+False
+>>> 
+>>> list('abc')
+['a', 'b', 'c']
+>>> list('')
+[]
+>>> list()
+[]
+>>> bool(list())
+False
+>>> 
+>>> dict(raymond='red')
+{'raymond': 'red'}
+>>> dict()
+{}
+>>> bool(dict())
+False
+>>> bool(set())
+False
+>>> 
+>>> # There are many container contructors that take zero arguments
+>>> # and return an instance of the container who boolean value is False
+>>> [bool(constructor()) for constructor in [unicode, str, tuple, list, set, dict]]
+[False, False, False, False, False, False]
+>>> 
+>>> 
+>>> 
+>>> def make_list_of_list():
+	return [[]]
+
+>>> make_list_of_list()
+[[]]
+>>> s = make_list_of_list()
+>>> t = make_list_of_list()
+>>> s is t
+False
+>>> s[0].append('hello')
+>>> s
+[['hello']]
+>>> t
+[[]]
+>>> 
+>>> 
+>>> s = list()
+>>> t = list()
+>>> s is t
+False
+>>> s.append('hello')
+>>> s
+['hello']
+>>> t
+[]
+>>> 
+>>> d = {}
+>>> d['raymond']
+
+Traceback (most recent call last):
+  File "<pyshell#262>", line 1, in <module>
+    d['raymond']
+KeyError: 'raymond'
+>>> 
+>>> 
+>>> d = defaultdict(set)
+>>> d['raymond']
+set([])
+>>> d
+defaultdict(<type 'set'>, {'raymond': set([])})
+>>> d['raymond'].add('brown')
+>>> d
+defaultdict(<type 'set'>, {'raymond': set(['brown'])})
+>>> 
+>>> d = defaultdict(set)
+>>> d['raymond'].add('brown')
+>>> d['raymond'].add('blue')
+>>> d['rachel'].add('blonde')
+>>> d['rachel'].add('blue')
+>>> d
+defaultdict(<type 'set'>, {'rachel': set(['blue', 'blonde']), 'raymond': set(['blue', 'brown'])})
+>>> d['rachel']
+set(['blue', 'blonde'])
+>>> d['raymond']
+set(['blue', 'brown'])
+>>> 
+>>> 
+>>> name = 'raymond'
+>>> name[0]
+'r'
+>>> name[-1]
+'d'
+>>> len(name)
+7
+>>> 
+====== RESTART: /Users/raymond/Dropbox/Public/sj136/tour_collections.py ======
+Task:  count the colors
+[('red', 4), ('green', 3)]
+[('the', 1137),
+ ('and', 963),
+ ('to', 736),
+ ('of', 669),
+ ('you', 547),
+ ('i', 540),
+ ('a', 527),
+ ('my', 513),
+ ('hamlet', 461),
+ ('in', 435),
+ ('it', 415),
+ ('that', 388),
+ ('is', 339),
+ ('not', 312),
+ ('lord', 308),
+ ('his', 296),
+ ('this', 294),
+ ('but', 268),
+ ('with', 267),
+ ('for', 247),
+ ('your', 242),
+ ('me', 232),
+ ('be', 226),
+ ('as', 220),
+ ('he', 215),
+ ('what', 204),
+ ('so', 196),
+ ('him', 196),
+ ('king', 194),
+ ('have', 179),
+ ('will', 169),
+ ('horatio', 157),
+ ('do', 151),
+ ('no', 141),
+ ('we', 139),
+ ('are', 131),
+ ('on', 126),
+ ('all', 120),
+ ('claudius', 120),
+ ('our', 118),
+ ('by', 117),
+ ('queen', 116),
+ ('polonius', 116),
+ ('shall', 114),
+ ('if', 112),
+ ('or', 112),
+ ('o', 110),
+ ('good', 107),
+ ('come', 106),
+ ('they', 103)]
+OrderedDict([('raymond', 'steak'), ('rachel', 'kale'), ('matthew', 'chocolate')])
+>>> pprint(d)
+defaultdict(<type 'list'>, {'b': ['beatrice', 'brandon', 'bryce', 'bill'], 'd': ['david', 'darlene', 'daily', 'davin', 'dave'], 'm': ['matthew', 'martin', 'mary'], 's': ['susan', 'suzy'], 'r': ['raymond', 'rachel', 'randal', 'rodney'], 't': ['tom', 'timothy']})
+>>> 
+====== RESTART: /Users/raymond/Dropbox/Public/sj136/tour_collections.py ======
+Task:  count the colors
+[('red', 4), ('green', 3)]
+[('the', 1137),
+ ('and', 963),
+ ('to', 736),
+ ('of', 669),
+ ('you', 547),
+ ('i', 540),
+ ('a', 527),
+ ('my', 513),
+ ('hamlet', 461),
+ ('in', 435),
+ ('it', 415),
+ ('that', 388),
+ ('is', 339),
+ ('not', 312),
+ ('lord', 308),
+ ('his', 296),
+ ('this', 294),
+ ('but', 268),
+ ('with', 267),
+ ('for', 247),
+ ('your', 242),
+ ('me', 232),
+ ('be', 226),
+ ('as', 220),
+ ('he', 215),
+ ('what', 204),
+ ('so', 196),
+ ('him', 196),
+ ('king', 194),
+ ('have', 179),
+ ('will', 169),
+ ('horatio', 157),
+ ('do', 151),
+ ('no', 141),
+ ('we', 139),
+ ('are', 131),
+ ('on', 126),
+ ('all', 120),
+ ('claudius', 120),
+ ('our', 118),
+ ('by', 117),
+ ('queen', 116),
+ ('polonius', 116),
+ ('shall', 114),
+ ('if', 112),
+ ('or', 112),
+ ('o', 110),
+ ('good', 107),
+ ('come', 106),
+ ('they', 103)]
+OrderedDict([('raymond', 'steak'), ('rachel', 'kale'), ('matthew', 'chocolate')])
+{'b': ['beatrice', 'brandon', 'bryce', 'bill'],
+ 'd': ['david', 'darlene', 'daily', 'davin', 'dave'],
+ 'm': ['matthew', 'martin', 'mary'],
+ 'r': ['raymond', 'rachel', 'randal', 'rodney'],
+ 's': ['susan', 'suzy'],
+ 't': ['tom', 'timothy']}
+>>> 
+====== RESTART: /Users/raymond/Dropbox/Public/sj136/tour_collections.py ======
+Task:  count the colors
+[('red', 4), ('green', 3)]
+[('the', 1137),
+ ('and', 963),
+ ('to', 736),
+ ('of', 669),
+ ('you', 547),
+ ('i', 540),
+ ('a', 527),
+ ('my', 513),
+ ('hamlet', 461),
+ ('in', 435),
+ ('it', 415),
+ ('that', 388),
+ ('is', 339),
+ ('not', 312),
+ ('lord', 308),
+ ('his', 296),
+ ('this', 294),
+ ('but', 268),
+ ('with', 267),
+ ('for', 247),
+ ('your', 242),
+ ('me', 232),
+ ('be', 226),
+ ('as', 220),
+ ('he', 215),
+ ('what', 204),
+ ('so', 196),
+ ('him', 196),
+ ('king', 194),
+ ('have', 179),
+ ('will', 169),
+ ('horatio', 157),
+ ('do', 151),
+ ('no', 141),
+ ('we', 139),
+ ('are', 131),
+ ('on', 126),
+ ('all', 120),
+ ('claudius', 120),
+ ('our', 118),
+ ('by', 117),
+ ('queen', 116),
+ ('polonius', 116),
+ ('shall', 114),
+ ('if', 112),
+ ('or', 112),
+ ('o', 110),
+ ('good', 107),
+ ('come', 106),
+ ('they', 103)]
+OrderedDict([('raymond', 'steak'), ('rachel', 'kale'), ('matthew', 'chocolate')])
+{'b': ['beatrice', 'brandon', 'bryce', 'bill'],
+ 'd': ['david', 'darlene', 'daily', 'davin', 'dave'],
+ 'm': ['matthew', 'martin', 'mary'],
+ 'r': ['raymond', 'rachel', 'randal', 'rodney'],
+ 's': ['susan', 'suzy'],
+ 't': ['tom', 'timothy']}
+{'d': ['david', 'raymond'],
+ 'e': ['beatrice', 'darlene', 'bryce', 'dave'],
+ 'l': ['rachel', 'randal', 'bill'],
+ 'm': ['tom'],
+ 'n': ['susan', 'brandon', 'martin', 'davin'],
+ 'w': ['matthew'],
+ 'y': ['timothy', 'daily', 'suzy', 'mary', 'rodney']}
+>>> 
+====== RESTART: /Users/raymond/Dropbox/Public/sj136/tour_collections.py ======
+Task:  count the colors
+[('red', 4), ('green', 3)]
+[('the', 1137),
+ ('and', 963),
+ ('to', 736),
+ ('of', 669),
+ ('you', 547),
+ ('i', 540),
+ ('a', 527),
+ ('my', 513),
+ ('hamlet', 461),
+ ('in', 435),
+ ('it', 415),
+ ('that', 388),
+ ('is', 339),
+ ('not', 312),
+ ('lord', 308),
+ ('his', 296),
+ ('this', 294),
+ ('but', 268),
+ ('with', 267),
+ ('for', 247),
+ ('your', 242),
+ ('me', 232),
+ ('be', 226),
+ ('as', 220),
+ ('he', 215),
+ ('what', 204),
+ ('so', 196),
+ ('him', 196),
+ ('king', 194),
+ ('have', 179),
+ ('will', 169),
+ ('horatio', 157),
+ ('do', 151),
+ ('no', 141),
+ ('we', 139),
+ ('are', 131),
+ ('on', 126),
+ ('all', 120),
+ ('claudius', 120),
+ ('our', 118),
+ ('by', 117),
+ ('queen', 116),
+ ('polonius', 116),
+ ('shall', 114),
+ ('if', 112),
+ ('or', 112),
+ ('o', 110),
+ ('good', 107),
+ ('come', 106),
+ ('they', 103)]
+OrderedDict([('raymond', 'steak'), ('rachel', 'kale'), ('matthew', 'chocolate')])
+{'b': ['beatrice', 'brandon', 'bryce', 'bill'],
+ 'd': ['david', 'darlene', 'daily', 'davin', 'dave'],
+ 'm': ['matthew', 'martin', 'mary'],
+ 'r': ['raymond', 'rachel', 'randal', 'rodney'],
+ 's': ['susan', 'suzy'],
+ 't': ['tom', 'timothy']}
+{'d': ['david', 'raymond'],
+ 'e': ['beatrice', 'darlene', 'bryce', 'dave'],
+ 'l': ['rachel', 'randal', 'bill'],
+ 'm': ['tom'],
+ 'n': ['susan', 'brandon', 'martin', 'davin'],
+ 'w': ['matthew'],
+ 'y': ['timothy', 'daily', 'suzy', 'mary', 'rodney']}
+{3: ['tom'],
+ 4: ['suzy', 'mary', 'bill', 'dave'],
+ 5: ['david', 'susan', 'daily', 'bryce', 'davin'],
+ 6: ['rachel', 'martin', 'randal', 'rodney'],
+ 7: ['raymond', 'matthew', 'timothy', 'brandon', 'darlene'],
+ 8: ['beatrice']}
+>>> 
+>>> 
+>>> name = 'raymond'
+>>> 
+>>> s = 'abracadabra'
+>>> s.count('a')
+5
+>>> s.count('b')
+2
+>>> s.count('d')
+1
+>>> 
+====== RESTART: /Users/raymond/Dropbox/Public/sj136/tour_collections.py ======
+Task:  count the colors
+[('red', 4), ('green', 3)]
+[('the', 1137),
+ ('and', 963),
+ ('to', 736),
+ ('of', 669),
+ ('you', 547),
+ ('i', 540),
+ ('a', 527),
+ ('my', 513),
+ ('hamlet', 461),
+ ('in', 435),
+ ('it', 415),
+ ('that', 388),
+ ('is', 339),
+ ('not', 312),
+ ('lord', 308),
+ ('his', 296),
+ ('this', 294),
+ ('but', 268),
+ ('with', 267),
+ ('for', 247)]
+OrderedDict([('raymond', 'steak'), ('rachel', 'kale'), ('matthew', 'chocolate')])
+{'b': ['beatrice', 'brandon', 'bryce', 'bill'],
+ 'd': ['david', 'darlene', 'daily', 'davin', 'dave'],
+ 'm': ['matthew', 'martin', 'mary'],
+ 'r': ['raymond', 'rachel', 'randal', 'rodney'],
+ 's': ['susan', 'suzy'],
+ 't': ['tom', 'timothy']}
+{'d': ['david', 'raymond'],
+ 'e': ['beatrice', 'darlene', 'bryce', 'dave'],
+ 'l': ['rachel', 'randal', 'bill'],
+ 'm': ['tom'],
+ 'n': ['susan', 'brandon', 'martin', 'davin'],
+ 'w': ['matthew'],
+ 'y': ['timothy', 'daily', 'suzy', 'mary', 'rodney']}
+{3: ['tom'],
+ 4: ['suzy', 'mary', 'bill', 'dave'],
+ 5: ['david', 'susan', 'daily', 'bryce', 'davin'],
+ 6: ['rachel', 'martin', 'randal', 'rodney'],
+ 7: ['raymond', 'matthew', 'timothy', 'brandon', 'darlene'],
+ 8: ['beatrice']}
+{1: ['tom', 'bill'],
+ 2: ['david',
+     'rachel',
+     'matthew',
+     'susan',
+     'brandon',
+     'martin',
+     'randal',
+     'suzy',
+     'bryce',
+     'mary',
+     'davin',
+     'dave'],
+ 3: ['raymond', 'timothy', 'darlene', 'daily', 'rodney'],
+ 4: ['beatrice']}
+>>> len(names)
+20
+>>> names
+['tom', 'david', 'raymond', 'rachel', 'matthew', 'susan', 'timothy', 'beatrice', 'brandon', 'martin', 'darlene', 'daily', 'randal', 'suzy', 'bryce', 'mary', 'rodney', 'davin', 'bill', 'dave']
+>>> names.append('jim')
+>>> names
+['tom', 'david', 'raymond', 'rachel', 'matthew', 'susan', 'timothy', 'beatrice', 'brandon', 'martin', 'darlene', 'daily', 'randal', 'suzy', 'bryce', 'mary', 'rodney', 'davin', 'bill', 'dave', 'jim']
+>>> names.pop(0)
+'tom'
+>>> names
+['david', 'raymond', 'rachel', 'matthew', 'susan', 'timothy', 'beatrice', 'brandon', 'martin', 'darlene', 'daily', 'randal', 'suzy', 'bryce', 'mary', 'rodney', 'davin', 'bill', 'dave', 'jim']
+>>> names.append('becky')
+>>> names
+['david', 'raymond', 'rachel', 'matthew', 'susan', 'timothy', 'beatrice', 'brandon', 'martin', 'darlene', 'daily', 'randal', 'suzy', 'bryce', 'mary', 'rodney', 'davin', 'bill', 'dave', 'jim', 'becky']
+>>> names.pop(0)
+'david'
+>>> # FIFO queue
+>>> 
+====== RESTART: /Users/raymond/Dropbox/Public/sj136/tour_collections.py ======
+Task:  count the colors
+[('red', 4), ('green', 3)]
+[('the', 1137),
+ ('and', 963),
+ ('to', 736),
+ ('of', 669),
+ ('you', 547),
+ ('i', 540),
+ ('a', 527),
+ ('my', 513),
+ ('hamlet', 461),
+ ('in', 435),
+ ('it', 415),
+ ('that', 388),
+ ('is', 339),
+ ('not', 312),
+ ('lord', 308),
+ ('his', 296),
+ ('this', 294),
+ ('but', 268),
+ ('with', 267),
+ ('for', 247)]
+OrderedDict([('raymond', 'steak'), ('rachel', 'kale'), ('matthew', 'chocolate')])
+{'b': ['beatrice', 'brandon', 'bryce', 'bill'],
+ 'd': ['david', 'darlene', 'daily', 'davin', 'dave'],
+ 'm': ['matthew', 'martin', 'mary'],
+ 'r': ['raymond', 'rachel', 'randal', 'rodney'],
+ 's': ['susan', 'suzy'],
+ 't': ['tom', 'timothy']}
+{'d': ['david', 'raymond'],
+ 'e': ['beatrice', 'darlene', 'bryce', 'dave'],
+ 'l': ['rachel', 'randal', 'bill'],
+ 'm': ['tom'],
+ 'n': ['susan', 'brandon', 'martin', 'davin'],
+ 'w': ['matthew'],
+ 'y': ['timothy', 'daily', 'suzy', 'mary', 'rodney']}
+{3: ['tom'],
+ 4: ['suzy', 'mary', 'bill', 'dave'],
+ 5: ['david', 'susan', 'daily', 'bryce', 'davin'],
+ 6: ['rachel', 'martin', 'randal', 'rodney'],
+ 7: ['raymond', 'matthew', 'timothy', 'brandon', 'darlene'],
+ 8: ['beatrice']}
+{1: ['tom', 'bill'],
+ 2: ['david',
+     'rachel',
+     'matthew',
+     'susan',
+     'brandon',
+     'martin',
+     'randal',
+     'suzy',
+     'bryce',
+     'mary',
+     'davin',
+     'dave'],
+ 3: ['raymond', 'timothy', 'darlene', 'daily', 'rodney'],
+ 4: ['beatrice']}
+tom
+david
+deque(['raymond', 'rachel', 'matthew', 'susan', 'timothy', 'beatrice', 'brandon', 'martin', 'darlene', 'daily', 'randal', 'suzy', 'bryce', 'mary', 'rodney', 'davin', 'bill', 'dave', 'jim', 'becky'])
+>>> 
+====== RESTART: /Users/raymond/Dropbox/Public/sj136/tour_collections.py ======
+Task:  count the colors
+[('red', 4), ('green', 3)]
+[('the', 1137),
+ ('and', 963),
+ ('to', 736),
+ ('of', 669),
+ ('you', 547),
+ ('i', 540),
+ ('a', 527),
+ ('my', 513),
+ ('hamlet', 461),
+ ('in', 435),
+ ('it', 415),
+ ('that', 388),
+ ('is', 339),
+ ('not', 312),
+ ('lord', 308),
+ ('his', 296),
+ ('this', 294),
+ ('but', 268),
+ ('with', 267),
+ ('for', 247)]
+OrderedDict([('raymond', 'steak'), ('rachel', 'kale'), ('matthew', 'chocolate')])
+{'b': ['beatrice', 'brandon', 'bryce', 'bill'],
+ 'd': ['david', 'darlene', 'daily', 'davin', 'dave'],
+ 'm': ['matthew', 'martin', 'mary'],
+ 'r': ['raymond', 'rachel', 'randal', 'rodney'],
+ 's': ['susan', 'suzy'],
+ 't': ['tom', 'timothy']}
+{'d': ['david', 'raymond'],
+ 'e': ['beatrice', 'darlene', 'bryce', 'dave'],
+ 'l': ['rachel', 'randal', 'bill'],
+ 'm': ['tom'],
+ 'n': ['susan', 'brandon', 'martin', 'davin'],
+ 'w': ['matthew'],
+ 'y': ['timothy', 'daily', 'suzy', 'mary', 'rodney']}
+{3: ['tom'],
+ 4: ['suzy', 'mary', 'bill', 'dave'],
+ 5: ['david', 'susan', 'daily', 'bryce', 'davin'],
+ 6: ['rachel', 'martin', 'randal', 'rodney'],
+ 7: ['raymond', 'matthew', 'timothy', 'brandon', 'darlene'],
+ 8: ['beatrice']}
+{1: ['tom', 'bill'],
+ 2: ['david',
+     'rachel',
+     'matthew',
+     'susan',
+     'brandon',
+     'martin',
+     'randal',
+     'suzy',
+     'bryce',
+     'mary',
+     'davin',
+     'dave'],
+ 3: ['raymond', 'timothy', 'darlene', 'daily', 'rodney'],
+ 4: ['beatrice']}
+tom
+david
+deque(['raymond', 'rachel', 'matthew', 'susan', 'timothy', 'beatrice', 'brandon', 'martin', 'darlene', 'daily', 'randal', 'suzy', 'bryce', 'mary', 'rodney', 'davin', 'bill', 'dave', 'jim', 'becky'])
+>>> line
+deque(['raymond', 'rachel', 'matthew', 'susan', 'timothy', 'beatrice', 'brandon', 'martin', 'darlene', 'daily', 'randal', 'suzy', 'bryce', 'mary', 'rodney', 'davin', 'bill', 'dave', 'jim', 'becky'])
+>>> line.appendleft('vip')
+>>> line
+deque(['vip', 'raymond', 'rachel', 'matthew', 'susan', 'timothy', 'beatrice', 'brandon', 'martin', 'darlene', 'daily', 'randal', 'suzy', 'bryce', 'mary', 'rodney', 'davin', 'bill', 'dave', 'jim', 'becky'])
+>>> line.pop()
+'becky'
+>>> 
+>>> line.rotate(-2)
+>>> line
+deque(['rachel', 'matthew', 'susan', 'timothy', 'beatrice', 'brandon', 'martin', 'darlene', 'daily', 'randal', 'suzy', 'bryce', 'mary', 'rodney', 'davin', 'bill', 'dave', 'jim', 'vip', 'raymond'])
+>>> line.rotate(2)
+>>> line
+deque(['vip', 'raymond', 'rachel', 'matthew', 'susan', 'timothy', 'beatrice', 'brandon', 'martin', 'darlene', 'daily', 'randal', 'suzy', 'bryce', 'mary', 'rodney', 'davin', 'bill', 'dave', 'jim'])
+>>> 
+======= RESTART: /Users/raymond/Dropbox/Public/sj136/property_demo.py =======
+>>> p
+PriceRange(symbol='CSCO', low=22, high=29)
+>>> p.symbol
+'CSCO'
+>>> p.low
+22
+>>> p.high
+29
+>>> p.midpoint
+25
+>>> 
+======= RESTART: /Users/raymond/Dropbox/Public/sj136/property_demo.py =======
+>>> p.midpoint
+25.5
+>>> 
+>>> 
+>>> p.high = 32
+>>> p.low
+22
+>>> p.high
+32
+>>> p.midpoint
+25.5
+>>> # Data is now inconsistent
+>>> p.__dict__
+{'high': 32, 'symbol': 'CSCO', 'midpoint': 25.5, 'low': 22}
+>>> len(p.__dict__)
+4
+>>> # Wasted space
+>>> 
+======= RESTART: /Users/raymond/Dropbox/Public/sj136/property_demo.py =======
+>>> p.symbol
+'CSCO'
+>>> p.low
+22
+>>> p.high
+29
+>>> p.midpoint()
+25.5
+>>> p.high = 32
+>>> p.midpoint()
+27.0
+>>> p.__dict__
+{'high': 32, 'symbol': 'CSCO', 'low': 22}
+>>> len(_)
+3
+>>> 
+======= RESTART: /Users/raymond/Dropbox/Public/sj136/property_demo.py =======
+>>> >>> p.symbol
+'CSCO'
+>>> p.low
+22
+>>> p.high
+29
+>>> p.midpoint()
+SyntaxError: invalid syntax
+>>> 
+>>> 
+>>> 
+>>> 
+>>> 
+======= RESTART: /Users/raymond/Dropbox/Public/sj136/property_demo.py =======
+>>> p.symbol
+'CSCO'
+>>> p.low
+22
+>>> p.high
+29
+>>> p.midpoint
+25.5
+>>> p.high = 32
+>>> p.midpoint
+27.0
+>>> 
+======= RESTART: /Users/raymond/Dropbox/Public/sj136/property_demo.py =======
+>>> p.midpoint
+25.5
+>>> p.get_midpoint()
+25.5
+>>> 
+======= RESTART: /Users/raymond/Dropbox/Public/sj136/property_demo.py =======
+>>> x = 10
+>>> x += 1
+>>> x
+11
+>>> 
+>>> 
+>>> 
+>>> p.low = 'hello'
+>>> 
+>>> 
+
+
+>>> 
+
+
+
+
+>>> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+>>> 
+
+
+>>> 
+
+
+
+
+
+
+
+>>> p.high
+29
+>>> p.xyzpdq
+
+Traceback (most recent call last):
+  File "<pyshell#364>", line 1, in <module>
+    p.xyzpdq
+AttributeError: 'PriceRange' object has no attribute 'xyzpdq'
+>>> 
+>>> 
+>>> 
+>>> 
+>>> p.midpoint
+
+Traceback (most recent call last):
+  File "<pyshell#369>", line 1, in <module>
+    p.midpoint
+  File "/Users/raymond/Dropbox/Public/sj136/property_demo.py", line 28, in midpoint
+    return (self.low + self.high) / 2
+TypeError: cannot concatenate 'str' and 'int' objects
+>>> 
+======= RESTART: /Users/raymond/Dropbox/Public/sj136/property_demo.py =======
+>>> p
+PriceRange(symbol='CSCO', low=22, high=29)
+>>> p.low
+22
+>>> p.high
+29
+>>> p.midpoint
+25.5
+>>> p.high = 32
+>>> p.midpoint
+27.0
+>>> p.__dict__
+{'high': 32, 'symbol': 'CSCO', '_low': 22}
+>>> 
+>>> 
+>>> p.low = 15
+>>> p.__dict__
+{'high': 32, 'symbol': 'CSCO', '_low': 15}
+>>> p.low
+15
+>>> p.get_low()
+15
+>>> 
+======= RESTART: /Users/raymond/Dropbox/Public/sj136/property_demo.py =======
+>>> p.low
+22
+>>> p.high
+29
+>>> p.midpoint
+25.5
+>>> p.high = 32
+>>> p.midpoint
+27.0
+>>> p
+PriceRange(symbol='CSCO', low=22, high=32)
+>>> p.low = 'hello'
+
+Traceback (most recent call last):
+  File "<pyshell#389>", line 1, in <module>
+    p.low = 'hello'
+  File "/Users/raymond/Dropbox/Public/sj136/property_demo.py", line 43, in set_low
+    raise TypeError('Expected int or float')
+TypeError: Expected int or float
+>>> 
+======= RESTART: /Users/raymond/Dropbox/Public/sj136/property_demo.py =======
+>>> p.low = 'hello'
+
+Traceback (most recent call last):
+  File "<pyshell#390>", line 1, in <module>
+    p.low = 'hello'
+  File "/Users/raymond/Dropbox/Public/sj136/property_demo.py", line 49, in set_low
+    raise TypeError('Expected int or float')
+TypeError: Expected int or float
+>>> 
+>>> 
+>>> 
+>>> 
+>>> 
+>>> p.high = 'goodbye'
+>>> 
+
+
+>>> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+>>> 
+
+
+>>> 
+
+
+
+
+>>> p.midpoint
+
+Traceback (most recent call last):
+  File "<pyshell#401>", line 1, in <module>
+    p.midpoint
+  File "/Users/raymond/Dropbox/Public/sj136/property_demo.py", line 34, in midpoint
+    return (self.low + self.high) / 2
+TypeError: unsupported operand type(s) for +: 'int' and 'str'
+>>> 
+======= RESTART: /Users/raymond/Dropbox/Public/sj136/property_demo.py =======
+>>> p.high = 'goodbye'
+
+Traceback (most recent call last):
+  File "<pyshell#402>", line 1, in <module>
+    p.high = 'goodbye'
+  File "/Users/raymond/Dropbox/Public/sj136/property_demo.py", line 61, in set_high
+    raise TypeError('Expected int or float')
+TypeError: Expected int or float
+>>> 
+>>> 
+>>> 
+>>> # DRY -> Code Smell -> Refactor
+>>> # Let's go eat -> skeet
+>>> # 1:40
+>>> 
+======= RESTART: /Users/raymond/Dropbox/Public/sj136/property_demo.py =======
+
+Traceback (most recent call last):
+  File "/Users/raymond/Dropbox/Public/sj136/property_demo.py", line 72, in <module>
+    p = PriceRange('CSCO', 22, 29)
+  File "/Users/raymond/Dropbox/Public/sj136/property_demo.py", line 32, in __init__
+    self.high = high
+  File "/Users/raymond/Dropbox/Public/sj136/property_demo.py", line 67, in set_high
+    validate_percentage(low)
+NameError: global name 'low' is not defined
+>>> 
+======= RESTART: /Users/raymond/Dropbox/Public/sj136/property_demo.py =======
+>>> 
+======= RESTART: /Users/raymond/Dropbox/Public/sj136/property_demo.py =======
+>>> p.symbol = 'csco'
+
+Traceback (most recent call last):
+  File "<pyshell#409>", line 1, in <module>
+    p.symbol = 'csco'
+  File "/Users/raymond/Dropbox/Public/sj136/property_demo.py", line 49, in set_symbol
+    validate_stock_symbol(symbol)
+  File "/Users/raymond/Dropbox/Public/sj136/validators.py", line 15, in validate_stock_symbol
+    raise ValueError('Must be all uppercase')
+ValueError: Must be all uppercase
+>>> p.symbol = 'CSCOAB'
+>>> 
+======= RESTART: /Users/raymond/Dropbox/Public/sj136/property_demo.py =======
+>>> p.symbol = 'CSCOAB'
+>>> p.symbol = 10
+
+Traceback (most recent call last):
+  File "<pyshell#412>", line 1, in <module>
+    p.symbol = 10
+  File "/Users/raymond/Dropbox/Public/sj136/property_demo.py", line 49, in set_symbol
+    validate_stock_symbol(symbol)
+  File "/Users/raymond/Dropbox/Public/sj136/validators.py", line 11, in validate_stock_symbol
+    raise TypeError('Expected a string')
+TypeError: Expected a string
+>>> 
+========= RESTART: /Users/raymond/Dropbox/Public/sj136/validators.py =========
+>>> p.symbol = 'CSCOAB'
+
+Traceback (most recent call last):
+  File "<pyshell#413>", line 1, in <module>
+    p.symbol = 'CSCOAB'
+NameError: name 'p' is not defined
+>>> 
+======= RESTART: /Users/raymond/Dropbox/Public/sj136/property_demo.py =======
+>>> p.symbol = 'CSCOAB'
+
+Traceback (most recent call last):
+  File "<pyshell#414>", line 1, in <module>
+    p.symbol = 'CSCOAB'
+  File "/Users/raymond/Dropbox/Public/sj136/property_demo.py", line 49, in set_symbol
+    validate_stock_symbol(symbol)
+  File "/Users/raymond/Dropbox/Public/sj136/validators.py", line 13, in validate_stock_symbol
+    raise ValueError('Expected 3 to 5 characters')
+ValueError: Expected 3 to 5 characters
+>>> 
+========= RESTART: /Users/raymond/Dropbox/Public/sj136/frequency.py =========
+202238
+>>> 
+========= RESTART: /Users/raymond/Dropbox/Public/sj136/frequency.py =========
+The
+Tragedy
+of
+Hamlet,
+Prince
+of
+Denmark
+Shakespeare
+homepage
+|
+Hamlet
+|
+Entire
+play
+ACT
+Traceback (most recent call last):
+  File "/Users/raymond/Dropbox/Public/sj136/frequency.py", line 9, in <module>
+    print word
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/idlelib/PyShell.py", line 1356, in write
+    return self.shell.write(s, self.tags)
+KeyboardInterrupt
+>>> 
+========= RESTART: /Users/raymond/Dropbox/Public/sj136/frequency.py =========
+the
+tragedy
+of
+hamlet
+prince
+of
+denmark
+shakespeare
+homepage
+hamlet
+entire
+play
+act
+i
+scene
+i
+elsinore
+a
+platform
+before
+the
+castle
+francisco
+at
+his
+post
+enter
+to
+him
+bernardo
+bernardo
+who's
+there
+francisco
+nay
+answer
+me
+stand
+and
+unfold
+yourself
+bernardo
+long
+live
+the
+king
+francisco
+bernardo
+bernardo
+he
+francisco
+you
+come
+most
+carefully
+upon
+your
+hour
+bernardo
+'tis
+now
+struck
+twelve
+get
+thee
+to
+bed
+francisco
+francisco
+for
+this
+relief
+much
+thanks
+'tis
+bitter
+cold
+and
+i
+am
+sick
+at
+heart
+bernardo
+have
+you
+had
+quiet
+guard
+francisco
+not
+a
+mouse
+stirring
+bernardo
+well
+good
+night
+if
+you
+do
+meet
+horatio
+
+=============================== RESTART: Shell ===============================
+>>> 
+========= RESTART: /Users/raymond/Dropbox/Public/sj136/frequency.py =========
+[('the', 1137),
+ ('and', 963),
+ ('to', 736),
+ ('of', 669),
+ ('you', 547),
+ ('i', 540),
+ ('a', 527),
+ ('my', 513),
+ ('hamlet', 461),
+ ('in', 435),
+ ('it', 415),
+ ('that', 388),
+ ('is', 339),
+ ('not', 312),
+ ('lord', 308),
+ ('his', 296),
+ ('this', 294),
+ ('but', 268),
+ ('with', 267),
+ ('for', 247),
+ ('your', 242),
+ ('me', 232),
+ ('be', 226),
+ ('as', 220),
+ ('he', 215),
+ ('what', 204),
+ ('so', 196),
+ ('him', 196),
+ ('king', 194),
+ ('have', 179),
+ ('will', 169),
+ ('horatio', 157),
+ ('do', 151),
+ ('no', 141),
+ ('we', 139),
+ ('are', 131),
+ ('on', 126),
+ ('all', 120),
+ ('claudius', 120),
+ ('our', 118),
+ ('by', 117),
+ ('queen', 116),
+ ('polonius', 116),
+ ('shall', 114),
+ ('if', 112),
+ ('or', 112),
+ ('o', 110),
+ ('good', 107),
+ ('come', 106),
+ ('they', 103)]
+>>> 
+========= RESTART: /Users/raymond/Dropbox/Public/sj136/frequency.py =========
+[('the', 1137),
+ ('and', 963),
+ ('to', 736),
+ ('of', 669),
+ ('you', 547),
+ ('i', 540),
+ ('a', 527),
+ ('my', 513),
+ ('hamlet', 461),
+ ('in', 435),
+ ('it', 415),
+ ('that', 388),
+ ('is', 339),
+ ('not', 312),
+ ('lord', 308),
+ ('his', 296),
+ ('this', 294),
+ ('but', 268),
+ ('with', 267),
+ ('for', 247),
+ ('your', 242),
+ ('me', 232),
+ ('be', 226),
+ ('as', 220),
+ ('he', 215),
+ ('what', 204),
+ ('so', 196),
+ ('him', 196),
+ ('king', 194),
+ ('have', 179),
+ ('will', 169),
+ ('horatio', 157),
+ ('do', 151),
+ ('no', 141),
+ ('we', 139),
+ ('are', 131),
+ ('on', 126),
+ ('all', 120),
+ ('claudius', 120),
+ ('our', 118),
+ ('by', 117),
+ ('queen', 116),
+ ('polonius', 116),
+ ('shall', 114),
+ ('if', 112),
+ ('or', 112),
+ ('o', 110),
+ ('good', 107),
+ ('come', 106),
+ ('they', 103)]
+>>> 
+========= RESTART: /Users/raymond/Dropbox/Public/sj136/frequency.py =========
+[('the', 1137),
+ ('and', 963),
+ ('to', 736),
+ ('of', 669),
+ ('you', 547),
+ ('i', 540),
+ ('a', 527),
+ ('my', 513),
+ ('hamlet', 461),
+ ('in', 435),
+ ('it', 415),
+ ('that', 388),
+ ('is', 339),
+ ('not', 312),
+ ('lord', 308),
+ ('his', 296),
+ ('this', 294),
+ ('but', 268),
+ ('with', 267),
+ ('for', 247),
+ ('your', 242),
+ ('me', 232),
+ ('be', 226),
+ ('as', 220),
+ ('he', 215),
+ ('what', 204),
+ ('so', 196),
+ ('him', 196),
+ ('king', 194),
+ ('have', 179),
+ ('will', 169),
+ ('horatio', 157),
+ ('do', 151),
+ ('no', 141),
+ ('we', 139),
+ ('are', 131),
+ ('on', 126),
+ ('all', 120),
+ ('claudius', 120),
+ ('our', 118),
+ ('by', 117),
+ ('queen', 116),
+ ('polonius', 116),
+ ('shall', 114),
+ ('if', 112),
+ ('or', 112),
+ ('o', 110),
+ ('good', 107),
+ ('come', 106),
+ ('they', 103)]
+>>> 
+========= RESTART: /Users/raymond/Dropbox/Public/sj136/frequency.py =========
+[('the', 1137),
+ ('and', 963),
+ ('to', 736),
+ ('of', 669),
+ ('you', 547),
+ ('i', 540),
+ ('a', 527),
+ ('my', 513),
+ ('hamlet', 461),
+ ('in', 435),
+ ('it', 415),
+ ('that', 388),
+ ('is', 339),
+ ('not', 312),
+ ('lord', 308),
+ ('his', 296),
+ ('this', 294),
+ ('but', 268),
+ ('with', 267),
+ ('for', 247),
+ ('your', 242),
+ ('me', 232),
+ ('be', 226),
+ ('as', 220),
+ ('he', 215),
+ ('what', 204),
+ ('so', 196),
+ ('him', 196),
+ ('king', 194),
+ ('have', 179),
+ ('will', 169),
+ ('horatio', 157),
+ ('do', 151),
+ ('no', 141),
+ ('we', 139),
+ ('are', 131),
+ ('on', 126),
+ ('all', 120),
+ ('claudius', 120),
+ ('our', 118),
+ ('by', 117),
+ ('queen', 116),
+ ('polonius', 116),
+ ('shall', 114),
+ ('if', 112),
+ ('or', 112),
+ ('o', 110),
+ ('good', 107),
+ ('come', 106),
+ ('they', 103)]
+>>> 
+========= RESTART: /Users/raymond/Dropbox/Public/sj136/frequency.py =========
+[('the', 1137),
+ ('and', 963),
+ ('to', 736),
+ ('of', 669),
+ ('you', 547),
+ ('i', 540),
+ ('a', 527),
+ ('my', 513),
+ ('hamlet', 461),
+ ('in', 435),
+ ('it', 415),
+ ('that', 388),
+ ('is', 339),
+ ('not', 312),
+ ('lord', 308),
+ ('his', 296),
+ ('this', 294),
+ ('but', 268),
+ ('with', 267),
+ ('for', 247),
+ ('your', 242),
+ ('me', 232),
+ ('be', 226),
+ ('as', 220),
+ ('he', 215),
+ ('what', 204),
+ ('so', 196),
+ ('him', 196),
+ ('king', 194),
+ ('have', 179),
+ ('will', 169),
+ ('horatio', 157),
+ ('do', 151),
+ ('no', 141),
+ ('we', 139),
+ ('are', 131),
+ ('on', 126),
+ ('all', 120),
+ ('claudius', 120),
+ ('our', 118),
+ ('by', 117),
+ ('queen', 116),
+ ('polonius', 116),
+ ('shall', 114),
+ ('if', 112),
+ ('or', 112),
+ ('o', 110),
+ ('good', 107),
+ ('come', 106),
+ ('they', 103)]
+
+========= RESTART: /Users/raymond/Dropbox/Public/sj136/frequency.py =========
+[('the', 1137),
+ ('and', 963),
+ ('to', 736),
+ ('of', 669),
+ ('you', 547),
+ ('i', 540),
+ ('a', 527),
+ ('my', 513),
+ ('hamlet', 461),
+ ('in', 435)]
+>>> 
+========= RESTART: /Users/raymond/Dropbox/Public/sj136/frequency.py =========
+[('the', 1137),
+ ('and', 963),
+ ('to', 736),
+ ('of', 669),
+ ('you', 547),
+ ('i', 540),
+ ('a', 527),
+ ('my', 513),
+ ('hamlet', 461),
+ ('in', 435)]
+>>> 
+========= RESTART: /Users/raymond/Dropbox/Public/sj136/frequency.py =========
+
+Traceback (most recent call last):
+  File "/Users/raymond/Dropbox/Public/sj136/frequency.py", line 18, in <module>
+    filename = sys.argv[1]
+IndexError: list index out of range
+>>> 
+========= RESTART: /Users/raymond/Dropbox/Public/sj136/frequency.py =========
+Usage:  frequency filename
+>>> 
+========= RESTART: /Users/raymond/Dropbox/Public/sj136/frequency.py =========
+[('the', 1137),
+ ('and', 963),
+ ('to', 736),
+ ('of', 669),
+ ('you', 547),
+ ('i', 540),
+ ('a', 527),
+ ('my', 513),
+ ('hamlet', 461),
+ ('in', 435)]
+>>> 
+========= RESTART: /Users/raymond/Dropbox/Public/sj136/frequency.py =========
+[('the', 1137),
+ ('and', 963),
+ ('to', 736),
+ ('of', 669),
+ ('you', 547),
+ ('i', 540),
+ ('a', 527),
+ ('my', 513),
+ ('hamlet', 461),
+ ('in', 435)]
+>>> 
+========= RESTART: /Users/raymond/Dropbox/Public/sj136/frequency.py =========
+[('the', 1137), ('and', 963), ('to', 736), ('of', 669), ('you', 547)]
+>>> 
+========= RESTART: /Users/raymond/Dropbox/Public/sj136/frequency.py =========
+[('the', 1137), ('and', 963), ('to', 736), ('of', 669), ('you', 547)]
+>>> 
+>>> 
+>>> # Pi:  3:14:15.9
+>>> 
+====== RESTART: /Users/raymond/Dropbox/Public/sj136/monkey_patching.py ======
+My sources tell me that pi is exactly: 3.14157
+>>> 
+====== RESTART: /Users/raymond/Dropbox/Public/sj136/monkey_patching.py ======
+My sources tell me that π is exactly: 3.14157
+>>> import math.pi
+
+Traceback (most recent call last):
+  File "<pyshell#418>", line 1, in <module>
+    import math.pi
+ImportError: No module named pi
+>>> import math
+>>> math.pi
+3.141592653589793
+>>> 
+====== RESTART: /Users/raymond/Dropbox/Public/sj136/monkey_patching.py ======
+My sources tell me that π is exactly: 3.14159265359
+>>> 
+====== RESTART: /Users/raymond/Dropbox/Public/sj136/monkey_patching.py ======
+My sources tell me that π is exactly: 3.14157
+The area of circle with radius ten is: 314.157
+>>> 
+====== RESTART: /Users/raymond/Dropbox/Public/sj136/monkey_patching.py ======
+My sources tell me that π is exactly: 3.14159265359
+The area of circle with radius ten is: 314.159265359
+>>> 
+====== RESTART: /Users/raymond/Dropbox/Public/sj136/monkey_patching.py ======
+My sources tell me that π is exactly: 3.14159265359
+The area of circle with radius ten is: 314.159265359
+The area of the first triangle is 100
+>>> 
+====== RESTART: /Users/raymond/Dropbox/Public/sj136/monkey_patching.py ======
+My sources tell me that π is exactly: 3.14159265359
+The area of circle with radius ten is: 314.159265359
+The area of the first triangle is 100
+The area of the first triangle is
+
+Traceback (most recent call last):
+  File "/Users/raymond/Dropbox/Public/sj136/monkey_patching.py", line 20, in <module>
+    print 'The area of the first triangle is', algebra.area_triangle(10, -20)
+  File "/Users/raymond/Dropbox/Public/sj136/algebra.py", line 29, in area_triangle
+    raise RuntimeError('Imaginary numbers not applicable to Kronecker spaces')
+RuntimeError: Imaginary numbers not applicable to Kronecker spaces
+>>> 
+====== RESTART: /Users/raymond/Dropbox/Public/sj136/monkey_patching.py ======
+My sources tell me that π is exactly: 3.14159265359
+The area of circle with radius ten is: 314.159265359
+The area of the first triangle is 100
+The area of the first triangle is
+
+Traceback (most recent call last):
+  File "/Users/raymond/Dropbox/Public/sj136/monkey_patching.py", line 31, in <module>
+    print 'The area of the first triangle is', algebra.area_triangle(10, -20)
+  File "/Users/raymond/Dropbox/Public/sj136/monkey_patching.py", line 24, in better_area_triangle
+    raise ValueError('The area functions expect non-negative inputs')
+ValueError: The area functions expect non-negative inputs
+>>> 
+====== RESTART: /Users/raymond/Dropbox/Public/sj136/monkey_patching.py ======
+My sources tell me that π is exactly: 3.14159265359
+The area of circle with radius ten is: 314.159265359
+The area of the first triangle is 100
+The area of the first triangle is Oops, sorry about the negative input
+>>> 
+====== RESTART: /Users/raymond/Dropbox/Public/sj136/monkey_patching.py ======
+My sources tell me that π is exactly: 3.14159265359
+The area of circle with radius ten is: 314.159265359
+The area of the first triangle is 100
+The area of the first triangle is 
+Oops, sorry about the negative input
+>>> 
+====== RESTART: /Users/raymond/Dropbox/Public/sj136/monkey_patching.py ======
+My sources tell me that π is exactly: 3.14159265359
+The area of circle with radius ten is: 314.159265359
+The area of the first triangle is 100
+The area of the first triangle is 
+Oops, sorry about the negative input
+>>> 
+====== RESTART: /Users/raymond/Dropbox/Public/sj136/monkey_patching.py ======
+My sources tell me that π is exactly: 3.14159265359
+The area of circle with radius ten is: 314.159265359
+The area of the first triangle is 100
+The area of the first triangle is 
+Oops, sorry about the negative input
+Solution to 12x^2 + 23x + 10 is
+(-0.6666666666666666, -1.25)
+>>> 
+====== RESTART: /Users/raymond/Dropbox/Public/sj136/monkey_patching.py ======
+My sources tell me that π is exactly: 3.14159265359
+The area of circle with radius ten is: 314.159265359
+The area of the first triangle is 100
+The area of the first triangle is 
+Oops, sorry about the negative input
+Solution to 12x^2 + 23x + 10 is
+(-0.6666666666666666, -1.25)
+
+Traceback (most recent call last):
+  File "/Users/raymond/Dropbox/Public/sj136/monkey_patching.py", line 41, in <module>
+    print algebra.quadratic(a=12, b=8, c=10)
+  File "/Users/raymond/Dropbox/Public/sj136/algebra.py", line 46, in quadratic
+    discriminant = math.sqrt(b ** 2.0 - 4.0 * a * c)
+ValueError: math domain error
+>>> 
+====== RESTART: /Users/raymond/Dropbox/Public/sj136/monkey_patching.py ======
+My sources tell me that π is exactly: 3.14159265359
+The area of circle with radius ten is: 314.159265359
+The area of the first triangle is 100
+The area of the first triangle is 
+Oops, sorry about the negative input
+Solution to 12x^2 + 23x + 10 is: (-0.6666666666666666, -1.25)
+Solution to 12x^2 + 8 + 10 is:
+
+Traceback (most recent call last):
+  File "/Users/raymond/Dropbox/Public/sj136/monkey_patching.py", line 42, in <module>
+    print algebra.quadratic(a=12, b=8, c=10)
+  File "/Users/raymond/Dropbox/Public/sj136/algebra.py", line 46, in quadratic
+    discriminant = math.sqrt(b ** 2.0 - 4.0 * a * c)
+ValueError: math domain error
+>>> math.sqrt(25)
+5.0
+>>> math.sqrt(-25)
+
+Traceback (most recent call last):
+  File "<pyshell#422>", line 1, in <module>
+    math.sqrt(-25)
+ValueError: math domain error
+>>> x = 3j
+>>> x ** 2
+(-9+0j)
+>>> 
+====== RESTART: /Users/raymond/Dropbox/Public/sj136/monkey_patching.py ======
+My sources tell me that π is exactly: 3.14159265359
+The area of circle with radius ten is: 314.159265359
+The area of the first triangle is 100
+The area of the first triangle is 
+Oops, sorry about the negative input
+Solution to 12x^2 + 23x + 10 is: (-0.6666666666666666, -1.25)
+Solution to 12x^2 + 8 + 10 is:
+
+Traceback (most recent call last):
+  File "/Users/raymond/Dropbox/Public/sj136/monkey_patching.py", line 50, in <module>
+    print algebra.quadratic(a=12, b=8, c=10)
+  File "/Users/raymond/Dropbox/Public/sj136/algebra.py", line 46, in quadratic
+    discriminant = math.sqrt(b ** 2.0 - 4.0 * a * c)
+ValueError: math domain error
+>>> better_sqrt(25)
+5.0
+>>> better_sqrt(-25)
+5j
+>>> 
+====== RESTART: /Users/raymond/Dropbox/Public/sj136/monkey_patching.py ======
+My sources tell me that π is exactly: 3.14159265359
+The area of circle with radius ten is: 314.159265359
+The area of the first triangle is 100
+The area of the first triangle is 
+Oops, sorry about the negative input
+Solution to 12x^2 + 23x + 10 is: (-0.6666666666666666, -1.25)
+Solution to 12x^2 + 8 + 10 is: ((-0.3333333333333333+0.8498365855987974j), (-0.3333333333333333-0.8498365855987974j))
+>>> 
+========= RESTART: /Users/raymond/Dropbox/Public/sj136/with_demo.py =========
+202238
+>>> 
+========= RESTART: /Users/raymond/Dropbox/Public/sj136/with_demo.py =========
+
+Traceback (most recent call last):
+  File "/Users/raymond/Dropbox/Public/sj136/with_demo.py", line 9, in <module>
+    print 32 / 0
+ZeroDivisionError: integer division or modulo by zero
+>>> f
+<closed file 'notes2/hamlet.txt', mode 'r' at 0x104076d20>
+>>> 
+========= RESTART: /Users/raymond/Dropbox/Public/sj136/with_demo.py =========
+202238
+202238
+>>> 
+========= RESTART: /Users/raymond/Dropbox/Public/sj136/with_demo.py =========
+202238
+202238
+>>> 
+>>> 
+>>> 
+>>> 
+========= RESTART: /Users/raymond/Dropbox/Public/sj136/with_demo.py =========
+202238
+202238
+Critical section 1
+Critical section 2
+Critical section 1
+Critical section 2
+>>> dir(f)
+['__class__', '__delattr__', '__doc__', '__enter__', '__exit__', '__format__', '__getattribute__', '__hash__', '__init__', '__iter__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', 'close', 'closed', 'encoding', 'errors', 'fileno', 'flush', 'isatty', 'mode', 'name', 'newlines', 'next', 'read', 'readinto', 'readline', 'readlines', 'seek', 'softspace', 'tell', 'truncate', 'write', 'writelines', 'xreadlines']
+>>> dir(printer_lock)
+['__class__', '__delattr__', '__doc__', '__enter__', '__exit__', '__format__', '__getattribute__', '__hash__', '__init__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', 'acquire', 'acquire_lock', 'locked', 'locked_lock', 'release', 'release_lock']
+>>> 
+>>> bool(None)
+False
+>>> 
+>>> 
+>>> issubclass(KeyError, Exception)
+True
+>>> 
+>>> k = KeyError('roger')
+>>> isinstance(k, KeyError)
+True
+>>> k.args
+('roger',)
+>>> raise KeyError('roger')
+
+Traceback (most recent call last):
+  File "<pyshell#442>", line 1, in <module>
+    raise KeyError('roger')
+KeyError: 'roger'
+>>> 
+========= RESTART: /Users/raymond/Dropbox/Public/sj136/with_demo.py =========
+202238
+202238
+Critical section 1
+Critical section 2
+Critical section 1
+Critical section 2
+====================
+Initializing with x 3.14159
+Entering and returning 42
+In the beginning with 42
+In the middle
+At the end
+Exiting
+The value of x is still 3.14159
+The exception type is None
+Returning None which is a false value
+Done!
+>>> 
+========= RESTART: /Users/raymond/Dropbox/Public/sj136/with_demo.py =========
+202238
+202238
+Critical section 1
+Critical section 2
+Critical section 1
+Critical section 2
+====================
+Initializing with x 3.14159
+Entering and returning 42
+In the beginning with 42
+In the middle
+At the end
+Exiting
+The value of x is still 3.14159
+The exception type is None
+Returning None which is a false value, meaning unhandled
+Done!
+====================
+Initializing with x 3.14159
+Entering and returning 42
+In the beginning with 42
+In the middle
+Exiting
+The value of x is still 3.14159
+The exception type is <type 'exceptions.KeyError'>
+Returning None which is a false value, meaning unhandled
+
+Traceback (most recent call last):
+  File "/Users/raymond/Dropbox/Public/sj136/with_demo.py", line 85, in <module>
+    raise KeyError('roger')
+KeyError: 'roger'
+>>> 
+========= RESTART: /Users/raymond/Dropbox/Public/sj136/with_demo.py =========
+202238
+202238
+Critical section 1
+Critical section 2
+Critical section 1
+Critical section 2
+====================
+Initializing with x 3.14159
+Entering and returning 42
+In the beginning with 42
+In the middle
+At the end
+Exiting
+The value of x is still 3.14159
+The exception type is None
+Returning None which is a false value, meaning unhandled
+Done!
+====================
+Initializing with x 3.14159
+Entering and returning 42
+In the beginning with 42
+In the middle
+Exiting
+The value of x is still 3.14159
+The exception type is <type 'exceptions.KeyError'>
+Returning None which is a false value, meaning unhandled
+Caught the KeyError
+Done!
+>>> 
+========= RESTART: /Users/raymond/Dropbox/Public/sj136/with_demo.py =========
+202238
+202238
+Critical section 1
+Critical section 2
+Critical section 1
+Critical section 2
+====================
+Initializing with x 3.14159
+Entering and returning 42
+In the beginning with 42
+In the middle
+At the end
+Exiting
+The value of x is still 3.14159
+The exception type is None
+Returning None which is a false value, meaning unhandled
+Done!
+====================
+Initializing with x 3.14159
+Entering and returning 42
+In the beginning with 42
+In the middle
+Exiting
+The value of x is still 3.14159
+The exception type is <type 'exceptions.KeyError'>
+Returning None which is a false value, meaning unhandled
+Caught the KeyError
+Done!
+====================
+Initializing with x 3.14159
+Entering and returning 42
+In the beginning with 42
+In the middle
+Exiting
+The value of x is still 3.14159
+The exception type is <type 'exceptions.IndexError'>
+Caught an IndexError
+The args are (10,)
+Return True to mark as handled
+Done!
+>>> 
+========= RESTART: /Users/raymond/Dropbox/Public/sj136/with_demo.py =========
+202238
+202238
+Critical section 1
+Critical section 2
+Critical section 1
+Critical section 2
+====================
+Initializing with x 3.14159
+Entering and returning 42
+In the beginning with 42
+In the middle
+At the end
+Exiting
+The value of x is still 3.14159
+The exception type is None
+Returning None which is a false value, meaning unhandled
+Done!
+====================
+Initializing with x 3.14159
+Entering and returning 42
+In the beginning with 42
+In the middle
+Exiting
+The value of x is still 3.14159
+The exception type is <type 'exceptions.KeyError'>
+Returning None which is a false value, meaning unhandled
+Caught the KeyError
+Done!
+====================
+Initializing with x 3.14159
+Entering and returning 42
+In the beginning with 42
+In the middle
+Exiting
+The value of x is still 3.14159
+The exception type is <type 'exceptions.IndexError'>
+Caught an IndexError
+The args are (10,)
+Return True to mark as handled
+Done!
+>>> f
+<closed file 'notes2/hamlet.txt', mode 'r' at 0x1041f7390>
+>>> dir(f)
+['__class__', '__delattr__', '__doc__', '__enter__', '__exit__', '__format__', '__getattribute__', '__hash__', '__init__', '__iter__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', 'close', 'closed', 'encoding', 'errors', 'fileno', 'flush', 'isatty', 'mode', 'name', 'newlines', 'next', 'read', 'readinto', 'readline', 'readlines', 'seek', 'softspace', 'tell', 'truncate', 'write', 'writelines', 'xreadlines']
+>>> f.fileno
+<built-in method fileno of file object at 0x1041f7390>
+>>> f.fileno()
+
+Traceback (most recent call last):
+  File "<pyshell#446>", line 1, in <module>
+    f.fileno()
+ValueError: I/O operation on closed file
+>>> f = open('notes2/hamlet.txt')
+>>> f.fileno()
+10
+>>> f
+<open file 'notes2/hamlet.txt', mode 'r' at 0x104175d20>
+>>> 
+========= RESTART: /Users/raymond/Dropbox/Public/sj136/with_demo.py =========
+202238
+202238
+Critical section 1
+Critical section 2
+Critical section 1
+Critical section 2
+====================
+Initializing with x 3.14159
+Entering and returning 42
+In the beginning with 42
+In the middle
+At the end
+Exiting
+The value of x is still 3.14159
+The exception type is None
+Returning None which is a false value, meaning unhandled
+Done!
+====================
+Initializing with x 3.14159
+Entering and returning 42
+In the beginning with 42
+In the middle
+Exiting
+The value of x is still 3.14159
+The exception type is <type 'exceptions.KeyError'>
+Returning None which is a false value, meaning unhandled
+Caught the KeyError
+Done!
+====================
+Initializing with x 3.14159
+Entering and returning 42
+In the beginning with 42
+In the middle
+Exiting
+The value of x is still 3.14159
+The exception type is <type 'exceptions.IndexError'>
+Caught an IndexError
+The args are (10,)
+Return True to mark as handled
+Done!
+>>> File('notes2/hamlet.txt')
+
+Traceback (most recent call last):
+  File "<pyshell#450>", line 1, in <module>
+    File('notes2/hamlet.txt')
+  File "/Users/raymond/Dropbox/Public/sj136/with_demo.py", line 115, in __init__
+    self.fd = os.open(filename, flags)
+NameError: global name 'os' is not defined
+>>> 
+========= RESTART: /Users/raymond/Dropbox/Public/sj136/with_demo.py =========
+202238
+202238
+Critical section 1
+Critical section 2
+Critical section 1
+Critical section 2
+====================
+Initializing with x 3.14159
+Entering and returning 42
+In the beginning with 42
+In the middle
+At the end
+Exiting
+The value of x is still 3.14159
+The exception type is None
+Returning None which is a false value, meaning unhandled
+Done!
+====================
+Initializing with x 3.14159
+Entering and returning 42
+In the beginning with 42
+In the middle
+Exiting
+The value of x is still 3.14159
+The exception type is <type 'exceptions.KeyError'>
+Returning None which is a false value, meaning unhandled
+Caught the KeyError
+Done!
+====================
+Initializing with x 3.14159
+Entering and returning 42
+In the beginning with 42
+In the middle
+Exiting
+The value of x is still 3.14159
+The exception type is <type 'exceptions.IndexError'>
+Caught an IndexError
+The args are (10,)
+Return True to mark as handled
+Done!
+>>> File('notes2/hamlet.txt')
+<open file 'notes2/hamlet.txt', mode 'r' at 0x104b3abd0>
+>>> _.__class__
+<class '__main__.File'>
+>>> 
+========= RESTART: /Users/raymond/Dropbox/Public/sj136/with_demo.py =========
+202238
+202238
+Critical section 1
+Critical section 2
+Critical section 1
+Critical section 2
+====================
+Initializing with x 3.14159
+Entering and returning 42
+In the beginning with 42
+In the middle
+At the end
+Exiting
+The value of x is still 3.14159
+The exception type is None
+Returning None which is a false value, meaning unhandled
+Done!
+====================
+Initializing with x 3.14159
+Entering and returning 42
+In the beginning with 42
+In the middle
+Exiting
+The value of x is still 3.14159
+The exception type is <type 'exceptions.KeyError'>
+Returning None which is a false value, meaning unhandled
+Caught the KeyError
+Done!
+====================
+Initializing with x 3.14159
+Entering and returning 42
+In the beginning with 42
+In the middle
+Exiting
+The value of x is still 3.14159
+The exception type is <type 'exceptions.IndexError'>
+Caught an IndexError
+The args are (10,)
+Return True to mark as handled
+Done!
+>>> f = File('notes2/hamlet.txt')
+>>> dir(f)
+['__class__', '__delattr__', '__dict__', '__doc__', '__format__', '__getattribute__', '__hash__', '__init__', '__module__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', 'close', 'fd', 'filename', 'flags', 'mode', 'read', 'status', 'write']
+>>> f.close()
+>>> f
+<closed file 'notes2/hamlet.txt', mode 'r' at 0x103a64bd0>
+>>> f.read()
+
+Traceback (most recent call last):
+  File "<pyshell#457>", line 1, in <module>
+    f.read()
+  File "/Users/raymond/Dropbox/Public/sj136/with_demo.py", line 126, in read
+    raise ValueError('Operation on closed file')
+ValueError: Operation on closed file
+>>> 
+>>> 
+>>> f = open('notes2/hamlet.txt')
+>>> f
+<open file 'notes2/hamlet.txt', mode 'r' at 0x103876d20>
+>>> play = f.read()
+>>> type(play)
+<type 'str'>
+>>> 
+>>> f.__class__
+<type 'file'>
+>>> dir(_)
+['__class__', '__delattr__', '__doc__', '__enter__', '__exit__', '__format__', '__getattribute__', '__hash__', '__init__', '__iter__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', 'close', 'closed', 'encoding', 'errors', 'fileno', 'flush', 'isatty', 'mode', 'name', 'newlines', 'next', 'read', 'readinto', 'readline', 'readlines', 'seek', 'softspace', 'tell', 'truncate', 'write', 'writelines', 'xreadlines']
+>>> f = file('notes2/hamlet.txt')
+>>> 
+>>> 
+>>> import sys
+>>> print 'hello'
+hello
+>>> print >> sys.stderr, 'hello'
+hello
+>>> 
+========== RESTART: /Users/raymond/Dropbox/Public/sj136/redirect.py ==========
+
+Traceback (most recent call last):
+  File "/Users/raymond/Dropbox/Public/sj136/redirect.py", line 8, in <module>
+    print 'The % Family' % lastname
+TypeError: float argument required, not str
+>>> 
+========== RESTART: /Users/raymond/Dropbox/Public/sj136/redirect.py ==========
+The hettinger Family
+>>> 
+========== RESTART: /Users/raymond/Dropbox/Public/sj136/redirect.py ==========
+The Hettinger Family
+>>> 
+========== RESTART: /Users/raymond/Dropbox/Public/sj136/redirect.py ==========
+The Hettinger Family
+===========
+>>> 
+========== RESTART: /Users/raymond/Dropbox/Public/sj136/redirect.py ==========
+The Hettinger Family
+===========
+>>> 
+========== RESTART: /Users/raymond/Dropbox/Public/sj136/redirect.py ==========
+The Hettinger Family
+====================
+>>> 
+========== RESTART: /Users/raymond/Dropbox/Public/sj136/redirect.py ==========
+The Hettinger Family
+====================
+* raymond
+* rachel
+* matthew
+>>> 
+========== RESTART: /Users/raymond/Dropbox/Public/sj136/redirect.py ==========
+The Hettinger Family
+====================
+* Raymond
+* Rachel
+* Matthew
+>>> 
+========== RESTART: /Users/raymond/Dropbox/Public/sj136/redirect.py ==========
+The Hettinger Family
+====================
+* Raymond
+* Rachel
+* Matthew
+
+>>> 
+========== RESTART: /Users/raymond/Dropbox/Public/sj136/redirect.py ==========
+The Hettinger Family
+====================
+* Raymond
+* Rachel
+* Matthew
+
+>>> 
+========== RESTART: /Users/raymond/Dropbox/Public/sj136/redirect.py ==========
+The Hettinger Family
+====================
+* Raymond
+* Rachel
+* Matthew
+
+The Starks Family
+=================
+* Eddard
+* Catelyn
+* Robb
+* Arya
+* Brandon
+* Rickon
+* Johnsnow
+* Sansa
+
+>>> help(show_family)
+Help on function show_family in module __main__:
+
+show_family(lastname, first_names)
+    Display the family members in a nice tabular format
+
+>>> 
+========== RESTART: /Users/raymond/Dropbox/Public/sj136/redirect.py ==========
+The Hettinger Family
+====================
+* Raymond
+* Rachel
+* Matthew
+
+The Stark Family
+================
+* Eddard
+* Catelyn
+* Robb
+* Arya
+* Brandon
+* Rickon
+* Johnsnow
+* Sansa
+
+Help on function show_family in module __main__:
+
+show_family(lastname, first_names)
+    Display the family members in a nice tabular format
+
+>>> 
+========== RESTART: /Users/raymond/Dropbox/Public/sj136/redirect.py ==========
+The Hettinger Family
+====================
+* Raymond
+* Rachel
+* Matthew
+
+The Stark Family
+================
+* Eddard
+* Catelyn
+* Robb
+* Arya
+* Brandon
+* Rickon
+* Johnsnow
+* Sansa
+
+Help on function show_family in module __main__:
+
+show_family(lastname, first_names)
+    Display the family members in a nice tabular format
+
+>>> def f(x):
+	return x * x
+
+>>> f.__code__.co_code
+'|\x00\x00|\x00\x00\x14S'
+>>> map(ord, f.__code__.co_code)
+[124, 0, 0, 124, 0, 0, 20, 83]
+>>> dis(f)
+  2           0 LOAD_FAST                0 (x)
+              3 LOAD_FAST                0 (x)
+              6 BINARY_MULTIPLY     
+              7 RETURN_VALUE        
+>>> 
+========== RESTART: /Users/raymond/Dropbox/Public/sj136/redirect.py ==========
+The Hettinger Family
+====================
+* Raymond
+* Rachel
+* Matthew
+
+The Stark Family
+================
+* Eddard
+* Catelyn
+* Robb
+* Arya
+* Brandon
+* Rickon
+* Johnsnow
+* Sansa
+
+Help on function show_family in module __main__:
+
+show_family(lastname, first_names)
+    Display the family members in a nice tabular format
+
+  9           0 LOAD_CONST               1 ('The %s Family')
+              3 LOAD_FAST                0 (lastname)
+              6 LOAD_ATTR                0 (title)
+              9 CALL_FUNCTION            0
+             12 BINARY_MODULO       
+             13 PRINT_ITEM          
+             14 PRINT_NEWLINE       
+
+ 10          15 LOAD_CONST               2 ('=')
+             18 LOAD_CONST               3 (11)
+             21 LOAD_GLOBAL              1 (len)
+             24 LOAD_FAST                0 (lastname)
+             27 CALL_FUNCTION            1
+             30 BINARY_ADD          
+             31 BINARY_MULTIPLY     
+             32 PRINT_ITEM          
+             33 PRINT_NEWLINE       
+
+ 11          34 SETUP_LOOP              29 (to 66)
+             37 LOAD_FAST                1 (first_names)
+             40 GET_ITER            
+        >>   41 FOR_ITER                21 (to 65)
+             44 STORE_FAST               2 (name)
+
+ 12          47 LOAD_CONST               4 ('* %s')
+             50 LOAD_FAST                2 (name)
+             53 LOAD_ATTR                0 (title)
+             56 CALL_FUNCTION            0
+             59 BINARY_MODULO       
+             60 PRINT_ITEM          
+             61 PRINT_NEWLINE       
+             62 JUMP_ABSOLUTE           41
+        >>   65 POP_BLOCK           
+
+ 13     >>   66 PRINT_NEWLINE       
+             67 LOAD_CONST               5 (None)
+             70 RETURN_VALUE        
+>>> 
+========== RESTART: /Users/raymond/Dropbox/Public/sj136/redirect.py ==========
+The Hettinger Family
+====================
+* Raymond
+* Rachel
+* Matthew
+
+The Stark Family
+================
+* Eddard
+* Catelyn
+* Robb
+* Arya
+* Brandon
+* Rickon
+* Johnsnow
+* Sansa
+
+Help on function show_family in module __main__:
+
+show_family(lastname, first_names)
+    Display the family members in a nice tabular format
+
+  9           0 LOAD_CONST               1 ('The %s Family')
+              3 LOAD_FAST                0 (lastname)
+              6 LOAD_ATTR                0 (title)
+              9 CALL_FUNCTION            0
+             12 BINARY_MODULO       
+             13 PRINT_ITEM          
+             14 PRINT_NEWLINE       
+
+ 10          15 LOAD_CONST               2 ('=')
+             18 LOAD_CONST               3 (11)
+             21 LOAD_GLOBAL              1 (len)
+             24 LOAD_FAST                0 (lastname)
+             27 CALL_FUNCTION            1
+             30 BINARY_ADD          
+             31 BINARY_MULTIPLY     
+             32 PRINT_ITEM          
+             33 PRINT_NEWLINE       
+
+ 11          34 SETUP_LOOP              29 (to 66)
+             37 LOAD_FAST                1 (first_names)
+             40 GET_ITER            
+        >>   41 FOR_ITER                21 (to 65)
+             44 STORE_FAST               2 (name)
+
+ 12          47 LOAD_CONST               4 ('* %s')
+             50 LOAD_FAST                2 (name)
+             53 LOAD_ATTR                0 (title)
+             56 CALL_FUNCTION            0
+             59 BINARY_MODULO       
+             60 PRINT_ITEM          
+             61 PRINT_NEWLINE       
+             62 JUMP_ABSOLUTE           41
+        >>   65 POP_BLOCK           
+
+ 13     >>   66 PRINT_NEWLINE       
+             67 LOAD_CONST               5 (None)
+             70 RETURN_VALUE        
+Done!
+>>> 
+========== RESTART: /Users/raymond/Dropbox/Public/sj136/redirect.py ==========
+The Hettinger Family
+====================
+* Raymond
+* Rachel
+* Matthew
+
+The Stark Family
+================
+* Eddard
+* Catelyn
+* Robb
+* Arya
+* Brandon
+* Rickon
+* Johnsnow
+* Sansa
+
+Help on function show_family in module __main__:
+
+show_family(lastname, first_names)
+    Display the family members in a nice tabular format
+
+ 10           0 LOAD_CONST               1 ('The %s Family')
+              3 LOAD_FAST                0 (lastname)
+              6 LOAD_ATTR                0 (title)
+              9 CALL_FUNCTION            0
+             12 BINARY_MODULO       
+             13 PRINT_ITEM          
+             14 PRINT_NEWLINE       
+
+ 11          15 LOAD_CONST               2 ('=')
+             18 LOAD_CONST               3 (11)
+             21 LOAD_GLOBAL              1 (len)
+             24 LOAD_FAST                0 (lastname)
+             27 CALL_FUNCTION            1
+             30 BINARY_ADD          
+             31 BINARY_MULTIPLY     
+             32 PRINT_ITEM          
+             33 PRINT_NEWLINE       
+
+ 12          34 SETUP_LOOP              29 (to 66)
+             37 LOAD_FAST                1 (first_names)
+             40 GET_ITER            
+        >>   41 FOR_ITER                21 (to 65)
+             44 STORE_FAST               2 (name)
+
+ 13          47 LOAD_CONST               4 ('* %s')
+             50 LOAD_FAST                2 (name)
+             53 LOAD_ATTR                0 (title)
+             56 CALL_FUNCTION            0
+             59 BINARY_MODULO       
+             60 PRINT_ITEM          
+             61 PRINT_NEWLINE       
+             62 JUMP_ABSOLUTE           41
+        >>   65 POP_BLOCK           
+
+ 14     >>   66 PRINT_NEWLINE       
+             67 LOAD_CONST               5 (None)
+             70 RETURN_VALUE        
+Done!
+>>> 
+========== RESTART: /Users/raymond/Dropbox/Public/sj136/redirect.py ==========
+The Hettinger Family
+====================
+* Raymond
+* Rachel
+* Matthew
+
+The Stark Family
+================
+* Eddard
+* Catelyn
+* Robb
+* Arya
+* Brandon
+* Rickon
+* Johnsnow
+* Sansa
+
+Help on function show_family in module __main__:
+
+show_family(lastname, first_names)
+    Display the family members in a nice tabular format
+
+ 10           0 LOAD_CONST               1 ('The %s Family')
+              3 LOAD_FAST                0 (lastname)
+              6 LOAD_ATTR                0 (title)
+              9 CALL_FUNCTION            0
+             12 BINARY_MODULO       
+             13 PRINT_ITEM          
+             14 PRINT_NEWLINE       
+
+ 11          15 LOAD_CONST               2 ('=')
+             18 LOAD_CONST               3 (11)
+             21 LOAD_GLOBAL              1 (len)
+             24 LOAD_FAST                0 (lastname)
+             27 CALL_FUNCTION            1
+             30 BINARY_ADD          
+             31 BINARY_MULTIPLY     
+             32 PRINT_ITEM          
+             33 PRINT_NEWLINE       
+
+ 12          34 SETUP_LOOP              29 (to 66)
+             37 LOAD_FAST                1 (first_names)
+             40 GET_ITER            
+        >>   41 FOR_ITER                21 (to 65)
+             44 STORE_FAST               2 (name)
+
+ 13          47 LOAD_CONST               4 ('* %s')
+             50 LOAD_FAST                2 (name)
+             53 LOAD_ATTR                0 (title)
+             56 CALL_FUNCTION            0
+             59 BINARY_MODULO       
+             60 PRINT_ITEM          
+             61 PRINT_NEWLINE       
+             62 JUMP_ABSOLUTE           41
+        >>   65 POP_BLOCK           
+
+ 14     >>   66 PRINT_NEWLINE       
+             67 LOAD_CONST               5 (None)
+             70 RETURN_VALUE        
+Done!
+>>> 
+========== RESTART: /Users/raymond/Dropbox/Public/sj136/redirect.py ==========
+The Hettinger Family
+====================
+* Raymond
+* Rachel
+* Matthew
+
+The Stark Family
+================
+* Eddard
+* Catelyn
+* Robb
+* Arya
+* Brandon
+* Rickon
+* Johnsnow
+* Sansa
+
+Help on function show_family in module __main__:
+
+show_family(lastname, first_names)
+    Display the family members in a nice tabular format
+
+Done!
+>>> 
+========== RESTART: /Users/raymond/Dropbox/Public/sj136/redirect.py ==========
+The Hettinger Family
+====================
+* Raymond
+* Rachel
+* Matthew
+
+The Stark Family
+================
+* Eddard
+* Catelyn
+* Robb
+* Arya
+* Brandon
+* Rickon
+* Johnsnow
+* Sansa
+
+Help on function show_family in module __main__:
+
+show_family(lastname, first_names)
+    Display the family members in a nice tabular format
+
+Done!
+>>> 
+========== RESTART: /Users/raymond/Dropbox/Public/sj136/redirect.py ==========
+The Hettinger Family
+====================
+* Raymond
+* Rachel
+* Matthew
+
+The Stark Family
+================
+* Eddard
+* Catelyn
+* Robb
+* Arya
+* Brandon
+* Rickon
+* Johnsnow
+* Sansa
+
+Help on function show_family in module __main__:
+
+show_family(lastname, first_names)
+    Display the family members in a nice tabular format
+
+Done!
+>>> 
+========== RESTART: /Users/raymond/Dropbox/Public/sj136/redirect.py ==========
+The Hettinger Family
+====================
+* Raymond
+* Rachel
+* Matthew
+
+The Stark Family
+================
+* Eddard
+* Catelyn
+* Robb
+* Arya
+* Brandon
+* Rickon
+* Johnsnow
+* Sansa
+
+Help on function show_family in module __main__:
+
+show_family(lastname, first_names)
+    Display the family members in a nice tabular format
+
+Done!
+>>> 
+>>> 
+>>> 
+>>> def welcome(f):
+	f.write('Howdy!\n')
+	f.write("C'ya!\n")
+
+	
+>>> with open('welcome.txt', 'w') as f:
+	welcome(f)
+
+	
+>>> 
+>>> 
+>>> with open('welcome.txt', 'w') as f:
+	welcome(f)
+
+	
+>>> with open('welcome.txt') as f:
+	msg = f.read()
+
+	
+>>> import os
+>>> os.remove('welcome.txt')
+>>> print msg.upper()
+HOWDY!
+C'YA!
+
+>>> from StringIO import StringIO
+>>> f = StringIO()
+>>> welcome(f)
+>>> print f.getvalue().upper()
+HOWDY!
+C'YA!
+
+>>> f.close()
+>>> 
+========== RESTART: /Users/raymond/Dropbox/Public/sj136/redirect.py ==========
+The Hettinger Family
+====================
+* Raymond
+* Rachel
+* Matthew
+
+The Stark Family
+================
+* Eddard
+* Catelyn
+* Robb
+* Arya
+* Brandon
+* Rickon
+* Johnsnow
+* Sansa
+
+HELP ON FUNCTION SHOW_FAMILY IN MODULE __MAIN__:
+
+SHOW_FAMILY(LASTNAME, FIRST_NAMES)
+    DISPLAY THE FAMILY MEMBERS IN A NICE TABULAR FORMAT
+
+
+Done!
+>>> 
+========== RESTART: /Users/raymond/Dropbox/Public/sj136/redirect.py ==========
+The Hettinger Family
+====================
+* Raymond
+* Rachel
+* Matthew
+
+The Stark Family
+================
+* Eddard
+* Catelyn
+* Robb
+* Arya
+* Brandon
+* Rickon
+* Johnsnow
+* Sansa
+
+HELP ON FUNCTION SHOW_FAMILY IN MODULE __MAIN__:
+
+SHOW_FAMILY(LASTNAME, FIRST_NAMES)
+    DISPLAY THE FAMILY MEMBERS IN A NICE TABULAR FORMAT
+
+
+Done!
+>>> dir(StringIO)
+['__doc__', '__init__', '__iter__', '__module__', 'close', 'flush', 'getvalue', 'isatty', 'next', 'read', 'readline', 'readlines', 'seek', 'tell', 'truncate', 'write', 'writelines']
+>>> 
+========== RESTART: /Users/raymond/Dropbox/Public/sj136/redirect.py ==========
+The Hettinger Family
+====================
+* Raymond
+* Rachel
+* Matthew
+
+The Stark Family
+================
+* Eddard
+* Catelyn
+* Robb
+* Arya
+* Brandon
+* Rickon
+* Johnsnow
+* Sansa
+
+Done!
+>>> 
+========== RESTART: /Users/raymond/Dropbox/Public/sj136/redirect.py ==========
+The Hettinger Family
+====================
+* Raymond
+* Rachel
+* Matthew
+
+The Stark Family
+================
+* Eddard
+* Catelyn
+* Robb
+* Arya
+* Brandon
+* Rickon
+* Johnsnow
+* Sansa
+
+Done!
+>>> 
+========== RESTART: /Users/raymond/Dropbox/Public/sj136/redirect.py ==========
+The Hettinger Family
+====================
+* Raymond
+* Rachel
+* Matthew
+
+The Stark Family
+================
+* Eddard
+* Catelyn
+* Robb
+* Arya
+* Brandon
+* Rickon
+* Johnsnow
+* Sansa
+
+!
+X
+Done!
+>>> 
+========== RESTART: /Users/raymond/Dropbox/Public/sj136/redirect.py ==========
+The Hettinger Family
+====================
+* Raymond
+* Rachel
+* Matthew
+
+The Stark Family
+================
+* Eddard
+* Catelyn
+* Robb
+* Arya
+* Brandon
+* Rickon
+* Johnsnow
+* Sansa
+
+!
+X
+<StringIO.StringIO instance at 0x1038d0c20>
+Done!
+>>> 
+========== RESTART: /Users/raymond/Dropbox/Public/sj136/redirect.py ==========
+The Hettinger Family
+====================
+* Raymond
+* Rachel
+* Matthew
+
+The Stark Family
+================
+* Eddard
+* Catelyn
+* Robb
+* Arya
+* Brandon
+* Rickon
+* Johnsnow
+* Sansa
+
+!
+X
+<StringIO.StringIO instance at 0x102b9ed40>
+Hello
+Done!
+>>> 
+========== RESTART: /Users/raymond/Dropbox/Public/sj136/redirect.py ==========
+The Hettinger Family
+====================
+* Raymond
+* Rachel
+* Matthew
+
+The Stark Family
+================
+* Eddard
+* Catelyn
+* Robb
+* Arya
+* Brandon
+* Rickon
+* Johnsnow
+* Sansa
+
+Done!
+>>> 
+>>> 
+>>> 
