@@ -78,3 +78,12 @@ print
 print u'An inclinometer reading of 5\N{degree sign}',
 print 'is a %.1f%% grade' % Circle.angle_to_grade(5)
 print
+
+## National Graphics Company ######################################
+
+c = Circle.from_bbd(25)
+print 'A circle with a bounding box diagonal of 25'
+print 'has a radius of', c.radius
+print 'an area of',c.area()
+print 'and perimeter of', c.perimeter()
+print

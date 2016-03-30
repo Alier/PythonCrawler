@@ -33,6 +33,13 @@ class Circle(object):
     def __init__(self, radius):
         self.radius = radius
 
+    def from_bbd(cls, bbd):         # Use case alternative constructors
+        'Construct a new circle from a bounding box diagonal'
+        radius = bbd / 2.0 / math.sqrt(2.0)
+        return cls(radius)
+
+    from_bbd = classmethod(from_bbd) #Reprograms the dot to add the class as the first argument
+    
     def area(self):
         'Perform quadrature on a planar shape of uniform revolution'
         return math.pi * self.radius**2.0
