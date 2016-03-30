@@ -15,7 +15,7 @@ print
 from random import random, seed
 from pprint import pprint
 
-n = 10
+n = 10000
 jenny = 8675309
 
 print 'DARPA Grant Proposal'
@@ -32,7 +32,7 @@ areas = [circle.area() for circle in circles]
 #pprint(areas2)
 
 average_area = sum(areas)/n
-print 'The average area is %.1f'% average_area
+print 'The average area is %.5f'% average_area
 print
 
 ## Rubber Sheet Company ######################################
@@ -59,7 +59,9 @@ class Tire(Circle):
     def perimeter(self):
         'Perimeter corrected for the rubber on the tire'
         return Circle.perimeter(self) * self.RUBBER_RATIO
-    
+
+    __perimeter = perimeter
+
 class MonsterTire(Tire):
     RUBBER_RATIO = 1.50
     
@@ -87,3 +89,10 @@ print 'has a radius of', c.radius
 print 'an area of',c.area()
 print 'and perimeter of', c.perimeter()
 print
+
+# ISO 10666:   No circle software shall use an area() method that
+# accesses instance variables. It MUST call perimeter and infer
+# the radius indirectly.
+
+# ISO 10667:   No circle software shall store the radius. It MUST
+# store the diameter and only the diameter.
