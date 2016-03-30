@@ -72,3 +72,9 @@ print
 m = MonsterTire(30)
 print 'A tire has an odometer corrected outer perimeter of',m.perimeter()
 print
+
+## National Trucking Company ######################################
+
+print u'An inclinometer reading of 5\N{degree sign}',
+print 'is a %.1f%% grade' % Circle.angle_to_grade(5)
+print

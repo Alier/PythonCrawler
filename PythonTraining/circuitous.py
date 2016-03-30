@@ -23,7 +23,7 @@ from collections import namedtuple
 Version = namedtuple('Version',['major','minor','micro'])
 
 class Circle(object):
-    version = Version(0,1,2)       # Class variables are shared by all instance and visible 
+    version = Version(0,1,5)       # Class variables are shared by all instance and visible 
     
     'Advanced circle analytic toolkit'
     # The use of "self" is a cultural norm
@@ -41,6 +41,12 @@ class Circle(object):
         'Compute the closed line integral for the locus of points equidistant from a given point'
         return 2.0 * math.pi * self.radius
     
+    def angle_to_grade(angle):              # Use case is attaching regular functions to classes to improve findability which is human factor problem that can't be programmed away
+        'Convert an inclinometer reading in degrees into a percent grade'
+        return math.tan(math.radians(angle)) * 100.0
+
+    angle_to_grade = staticmethod(angle_to_grade) #Reprograms the dot to NOT add "self" as parameter
+
     # Best practice for repr is to look like how the object COULD have been created
     # %r is using __repr__
     # Don't assume self means you ,it could be one of your children
