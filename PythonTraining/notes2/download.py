@@ -5,7 +5,7 @@ import os, urllib2, re, dumbdbm, time, gzip, cStringIO, threading, sys
 from collections import namedtuple
 from multiprocessing.pool import ThreadPool as Pool
 
-class_id = 'sj136'
+class_id = 'sj139'
 dirname = 'notes2'
 
 Response = namedtuple('Response', ['code', 'msg', 'compressed', 'written'])

@@ -2,32 +2,520 @@
 [GCC 4.2.1 (Apple Inc. build 5666) (dot 3)] on darwin
 Type "copyright", "credits" or "license()" for more information.
 >>> 
+========= RESTART: /Users/raymond/Dropbox/Public/sj139/circuitous.py =========
+>>> c = Circle(10)
+>>> c.area()
+314.1592653589793
+>>> 
+======== RESTART: /Users/raymond/Dropbox/Public/sj139/client_code.py ========
+Tutorial for Circuitous™
+Using Circle version 0.8
+A circle with a radius of 10
+has an area of 314.159265359
+
+DARPA Grant Proposal
+to study the average area of circles
+using Circuitous version 0.8
+preliminary study using 10 random circles
+seeded using Jenny's number: 8675309
+The average area is 1.0
+
+Spec sheet for the cut template: [0.1, 0.2, 0.7]
+Circle #1
+A rubber circle with a cut radius of 0.1
+has a perimeter of 0.628318530718
+and a cold area of 0.0314159265359
+and a warm area of 0.0380132711084
+
+Circle #2
+A rubber circle with a cut radius of 0.2
+has a perimeter of 1.25663706144
+and a cold area of 0.125663706144
+and a warm area of 0.152053084434
+
+Circle #3
+A rubber circle with a cut radius of 0.7
+has a perimeter of 4.39822971503
+and a cold area of 1.53938040026
+and a warm area of 1.86265028431
+
+A tire with an inner radius of 30
+has an inner area of 4417.86466911
+and an odometer corrected outer perimeter of 235.619449019
+
+A monster tire has an odometer corrected outer perimeter of 282.743338823
+
+An inclinometer reading of 5° is a 8.7% grade.
+
+A circle with a bounding box diagonal of 25
+has a radius of 8.83883476483
+an area of 245.436926062
+and perimeter of 55.536036727
+
+>>> # a.x -> inst -> cls -> base -> AttributeError
+>>> t.__dict__
+{'radius': 30}
+>>> t.radius
+30
+>>> t.perimeter()
+235.61944901923448
+>>> t.__class__
+<class '__main__.Tire'>
+>>> t.__class__.__dict__
+dict_proxy({'perimeter': <function perimeter at 0x104180578>, 'RUBBER_RATIO': 1.25, '__module__': '__main__', '__doc__': 'Circle analytics specialed for tires'})
+>>> from pprint import pprint
+>>> pprint(dict(t.__class__.__dict__))
+{'RUBBER_RATIO': 1.25,
+ '__doc__': 'Circle analytics specialed for tires',
+ '__module__': '__main__',
+ 'perimeter': <function perimeter at 0x104180578>}
+>>> 
+>>> t.area()
+4417.864669110647
+>>> t.__class__.__bases__
+(<class 'circuitous.Circle'>,)
+>>> t.__class__.__bases__[0]
+<class 'circuitous.Circle'>
+>>> t.__class__.__bases__[0].__dict__
+dict_proxy({'perimeter': <function perimeter at 0x104168aa0>, '__module__': 'circuitous', 'area': <function area at 0x104168a28>, 'angle_to_grade': <staticmethod object at 0x1040e7e50>, 'from_bbd': <classmethod object at 0x1040e7e88>, 'version': Version(major=0, minor=8, micro=1), '__repr__': <function __repr__ at 0x104168b18>, '__dict__': <attribute '__dict__' of 'Circle' objects>, '__weakref__': <attribute '__weakref__' of 'Circle' objects>, '__doc__': 'Advanced circle analytic toolkit', '__init__': <function __init__ at 0x1041689b0>})
+>>> pprint(dict(t.__class__.__bases__[0].__dict__))
+{'__dict__': <attribute '__dict__' of 'Circle' objects>,
+ '__doc__': 'Advanced circle analytic toolkit',
+ '__init__': <function __init__ at 0x1041689b0>,
+ '__module__': 'circuitous',
+ '__repr__': <function __repr__ at 0x104168b18>,
+ '__weakref__': <attribute '__weakref__' of 'Circle' objects>,
+ 'angle_to_grade': <staticmethod object at 0x1040e7e50>,
+ 'area': <function area at 0x104168a28>,
+ 'from_bbd': <classmethod object at 0x1040e7e88>,
+ 'perimeter': <function perimeter at 0x104168aa0>,
+ 'version': Version(major=0, minor=8, micro=1)}
+>>> 
+>>> 
+>>> 
+>>> x = 10
+>>> print x**2
+100
+>>> 
+>>> 
+>>> x = 10
+>>> 
+>>> x = 12
+>>> print x**3
+1728
+>>> 
+>>> print x**2
+144
+>>> 
+>>> x = 10
+>>> _x = x
+>>> 
+>>> x = 12
+>>> print x ** 3
+1728
+>>> 
+>>> print _x ** 2
+100
+>>> 
+>>> 
+>>> def f(x):
+	return x**2
+
+>>> y = f(10)
+>>> y
+100
+>>> 
+>>> 
+>>> def f(x):
+	return x**3
+
+>>> f(12)
+1728
+>>> 
+>>> f(10)
+1000
+>>> 
+>>> 
+>>> def f(x):
+	return x**2
+
+>>> _f = f
+>>> 
+>>> def f(x):
+	return x**3
+
+>>> f(12)
+1728
+>>> _f(10)
+100
+>>> 
+======== RESTART: /Users/raymond/Dropbox/Public/sj139/client_code.py ========
+Tutorial for Circuitous™
+Using Circle version 0.8
+A circle with a radius of 10
+has an area of 314.159265359
+
+DARPA Grant Proposal
+to study the average area of circles
+using Circuitous version 0.8
+preliminary study using 10 random circles
+seeded using Jenny's number: 8675309
+The average area is 1.0
+
+Spec sheet for the cut template: [0.1, 0.2, 0.7]
+Circle #1
+A rubber circle with a cut radius of 0.1
+has a perimeter of 0.628318530718
+and a cold area of 0.0314159265359
+and a warm area of 0.0380132711084
+
+Circle #2
+A rubber circle with a cut radius of 0.2
+has a perimeter of 1.25663706144
+and a cold area of 0.125663706144
+and a warm area of 0.152053084434
+
+Circle #3
+A rubber circle with a cut radius of 0.7
+has a perimeter of 4.39822971503
+and a cold area of 1.53938040026
+and a warm area of 1.86265028431
+
+A tire with an inner radius of 30
+has an inner area of 2827.43338823
+and an odometer corrected outer perimeter of 235.619449019
+
+A monster tire has an odometer corrected outer perimeter of 282.743338823
+
+An inclinometer reading of 5° is a 8.7% grade.
+
+A circle with a bounding box diagonal of 25
+has a radius of 8.83883476483
+an area of 245.436926062
+and perimeter of 55.536036727
 
 >>> 
-========= RESTART: /Users/raymond/Dropbox/Public/sj136/circuitous.py =========
->>> c = Circle(10)
->>> c.__dict__
-{'diameter': 20.0}
->>> c.radius = 15
->>> c.__dict__
-{'diameter': 30.0}
->>> c.radius
-15.0
+=============================== RESTART: Shell ===============================
+>>> x = 10
+>>> _x = x
 >>> 
-======== RESTART: /Users/raymond/Dropbox/Public/sj136/client_code.py ========
+>>> x
+10
+>>> _x
+10
+>>> 
+=============================== RESTART: Shell ===============================
+>>> _x = x
+
+Traceback (most recent call last):
+  File "<pyshell#67>", line 1, in <module>
+    _x = x
+NameError: name 'x' is not defined
+>>> 
+========= RESTART: /Users/raymond/Dropbox/Public/sj139/circuitous.py =========
+
+Traceback (most recent call last):
+  File "/Users/raymond/Dropbox/Public/sj139/circuitous.py", line 27, in <module>
+    class Circle(object):
+  File "/Users/raymond/Dropbox/Public/sj139/circuitous.py", line 45, in Circle
+    _perimeter = perimeter
+NameError: name 'perimeter' is not defined
+>>> 
+======== RESTART: /Users/raymond/Dropbox/Public/sj139/client_code.py ========
 Tutorial for Circuitous™
-Circle version 0.7
+Using Circle version 0.8
+A circle with a radius of 10
+has an area of 314.159265359
+
+DARPA Grant Proposal
+to study the average area of circles
+using Circuitous version 0.8
+preliminary study using 10 random circles
+seeded using Jenny's number: 8675309
+The average area is 1.0
+
+Spec sheet for the cut template: [0.1, 0.2, 0.7]
+Circle #1
+A rubber circle with a cut radius of 0.1
+has a perimeter of 0.628318530718
+and a cold area of 0.0314159265359
+and a warm area of 0.0380132711084
+
+Circle #2
+A rubber circle with a cut radius of 0.2
+has a perimeter of 1.25663706144
+and a cold area of 0.125663706144
+and a warm area of 0.152053084434
+
+Circle #3
+A rubber circle with a cut radius of 0.7
+has a perimeter of 4.39822971503
+and a cold area of 1.53938040026
+and a warm area of 1.86265028431
+
+A tire with an inner radius of 30
+has an inner area of 4417.86466911
+and an odometer corrected outer perimeter of 235.619449019
+
+A monster tire has an odometer corrected outer perimeter of 282.743338823
+
+An inclinometer reading of 5° is a 8.7% grade.
+
+A circle with a bounding box diagonal of 25
+has a radius of 8.83883476483
+an area of 245.436926062
+and perimeter of 55.536036727
+
+>>> 
+======== RESTART: /Users/raymond/Dropbox/Public/sj139/client_code.py ========
+Tutorial for Circuitous™
+Using Circle version 0.8
+A circle with a radius of 10
+has an area of
+
+Traceback (most recent call last):
+  File "/Users/raymond/Dropbox/Public/sj139/client_code.py", line 10, in <module>
+    print 'has an area of', c.area()
+  File "/Users/raymond/Dropbox/Public/sj139/circuitous.py", line 41, in area
+    p = self._perimeter()               # Class local reference, because sometimes you need "self" to really be you
+AttributeError: 'Circle' object has no attribute '_perimeter'
+>>> 
+======== RESTART: /Users/raymond/Dropbox/Public/sj139/client_code.py ========
+Tutorial for Circuitous™
+Using Circle version 0.8
+A circle with a radius of 10
+has an area of 314.159265359
+
+DARPA Grant Proposal
+to study the average area of circles
+using Circuitous version 0.8
+preliminary study using 10 random circles
+seeded using Jenny's number: 8675309
+The average area is 1.0
+
+Spec sheet for the cut template: [0.1, 0.2, 0.7]
+Circle #1
+A rubber circle with a cut radius of 0.1
+has a perimeter of 0.628318530718
+and a cold area of 0.0314159265359
+and a warm area of 0.0380132711084
+
+Circle #2
+A rubber circle with a cut radius of 0.2
+has a perimeter of 1.25663706144
+and a cold area of 0.125663706144
+and a warm area of 0.152053084434
+
+Circle #3
+A rubber circle with a cut radius of 0.7
+has a perimeter of 4.39822971503
+and a cold area of 1.53938040026
+and a warm area of 1.86265028431
+
+A tire with an inner radius of 30
+has an inner area of 2827.43338823
+and an odometer corrected outer perimeter of 235.619449019
+
+A monster tire has an odometer corrected outer perimeter of 282.743338823
+
+An inclinometer reading of 5° is a 8.7% grade.
+
+A circle with a bounding box diagonal of 25
+has a radius of 8.83883476483
+an area of 245.436926062
+and perimeter of 55.536036727
+
+>>> dir(tire)
+
+Traceback (most recent call last):
+  File "<pyshell#68>", line 1, in <module>
+    dir(tire)
+NameError: name 'tire' is not defined
+>>> dir(t)
+['RUBBER_RATIO', '_Circle_perimeter', '_Tire_perimeter', '__class__', '__delattr__', '__dict__', '__doc__', '__format__', '__getattribute__', '__hash__', '__init__', '__module__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', 'angle_to_grade', 'area', 'from_bbd', 'perimeter', 'radius', 'version']
+>>> 
+======== RESTART: /Users/raymond/Dropbox/Public/sj139/client_code.py ========
+Tutorial for Circuitous™
+Using Circle version 0.8
+A circle with a radius of 10
+has an area of 314.159265359
+
+DARPA Grant Proposal
+to study the average area of circles
+using Circuitous version 0.8
+preliminary study using 10 random circles
+seeded using Jenny's number: 8675309
+The average area is 1.0
+
+Spec sheet for the cut template: [0.1, 0.2, 0.7]
+Circle #1
+A rubber circle with a cut radius of 0.1
+has a perimeter of 0.628318530718
+and a cold area of 0.0314159265359
+and a warm area of 0.0380132711084
+
+Circle #2
+A rubber circle with a cut radius of 0.2
+has a perimeter of 1.25663706144
+and a cold area of 0.125663706144
+and a warm area of 0.152053084434
+
+Circle #3
+A rubber circle with a cut radius of 0.7
+has a perimeter of 4.39822971503
+and a cold area of 1.53938040026
+and a warm area of 1.86265028431
+
+A tire with an inner radius of 30
+has an inner area of 2827.43338823
+and an odometer corrected outer perimeter of 235.619449019
+
+A monster tire has an odometer corrected outer perimeter of 282.743338823
+
+An inclinometer reading of 5° is a 8.7% grade.
+
+A circle with a bounding box diagonal of 25
+has a radius of 8.83883476483
+an area of 245.436926062
+and perimeter of 55.536036727
+
+>>> dict()
+{}
+>>> dict(x=1, y=2)
+{'y': 2, 'x': 1}
+>>> dict([('abc', 2), ('def', 3)])
+{'abc': 2, 'def': 3}
+>>> dict({'x': 1})
+{'x': 1}
+>>> 
+>>> # dict()   dict(d)   dict(lot)     dict(kwds)
+>>> 
+>>> 
+>>> d = dict(x=1, y=2)
+>>> d.update(y=3, z=4)
+>>> d
+{'y': 3, 'x': 1, 'z': 4}
+>>> d.update([('a', 5), ('z', 6)])
+>>> d
+{'y': 3, 'x': 1, 'z': 6, 'a': 5}
+>>> d.update({'b':7, 'a': 8})
+>>> d
+{'a': 8, 'b': 7, 'y': 3, 'x': 1, 'z': 6}
+>>> # dict()   dict(d)   dict(lot)     dict(kwds)
+>>> # d.update()  d.update(d)   d.update(lot)    d.update(kwds)
+>>> 
+>>> class D(dict):
+	def update(self):
+		raise RuntimeError
+
+	
+>>> D(x=1, y=2)
+{'y': 2, 'x': 1}
+>>> D(x=1, y=2).update()
+
+Traceback (most recent call last):
+  File "<pyshell#93>", line 1, in <module>
+    D(x=1, y=2).update()
+  File "<pyshell#91>", line 3, in update
+    raise RuntimeError
+RuntimeError
+>>> 
+>>> 
+>>> class D(dict):
+	def __init__(self):
+		raise RuntimeError
+
+	
+>>> d = D()
+
+Traceback (most recent call last):
+  File "<pyshell#99>", line 1, in <module>
+    d = D()
+  File "<pyshell#98>", line 3, in __init__
+    raise RuntimeError
+RuntimeError
+>>> class D(dict):
+	def __init__(self, *args, **kwds):
+		print 'Called with', *args, **kwds
+		dict.__init__(self, *args, **kwds)
+		
+SyntaxError: invalid syntax
+>>> class D(dict):
+	def __init__(self, *args, **kwds):
+		print 'Called with', args, kwds
+		dict.__init__(self, *args, **kwds)
+
+		
+>>> d = D(x=1, y=2)
+Called with () {'y': 2, 'x': 1}
+>>> d
+{'y': 2, 'x': 1}
+>>> d.update(z=3)
+>>> d
+{'y': 2, 'x': 1, 'z': 3}
+>>> 
+======== RESTART: /Users/raymond/Dropbox/Public/sj139/client_code.py ========
+Tutorial for Circuitous™
+Using Circle version 0.8
+A circle with a radius of 10
+has an area of 314.159265359
+
+DARPA Grant Proposal
+to study the average area of circles
+using Circuitous version 0.8
+preliminary study using 10 random circles
+seeded using Jenny's number: 8675309
+The average area is 1.0
+
+Spec sheet for the cut template: [0.1, 0.2, 0.7]
+Circle #1
+A rubber circle with a cut radius of 0.1
+has a perimeter of 0.628318530718
+and a cold area of 0.0314159265359
+and a warm area of 0.0380132711084
+
+Circle #2
+A rubber circle with a cut radius of 0.2
+has a perimeter of 1.25663706144
+and a cold area of 0.125663706144
+and a warm area of 0.152053084434
+
+Circle #3
+A rubber circle with a cut radius of 0.7
+has a perimeter of 4.39822971503
+and a cold area of 1.53938040026
+and a warm area of 1.86265028431
+
+A tire with an inner radius of 30
+has an inner area of 2827.43338823
+and an odometer corrected outer perimeter of 235.619449019
+
+A monster tire has an odometer corrected outer perimeter of 282.743338823
+
+An inclinometer reading of 5° is a 8.7% grade.
+
+A circle with a bounding box diagonal of 25
+has a radius of 8.83883476483
+an area of 245.436926062
+and perimeter of 55.536036727
+
+>>> dir(t)
+['RUBBER_RATIO', '_Circle__perimeter', '_Tire__perimeter', '__class__', '__delattr__', '__dict__', '__doc__', '__format__', '__getattribute__', '__hash__', '__init__', '__module__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', 'angle_to_grade', 'area', 'from_bbd', 'perimeter', 'radius', 'version']
+>>> 
+======== RESTART: /Users/raymond/Dropbox/Public/sj139/client_code.py ========
+Tutorial for Circuitous™
+Using Circle version 0.8
 A circle with a radius of 10.0
 has an area of 314.159265359
 
-DARPA grant proposal
-to study the average area of random circles
-using Circuitous version 0.7
-preliminary study using 10000 circles
+DARPA Grant Proposal
+to study the average area of circles
+using Circuitous version 0.8
+preliminary study using 10 random circles
 seeded using Jenny's number: 8675309
-The average is 1.04170
+The average area is 1.0
 
-Spec sheet for the template: [0.1, 0.2, 0.7]
+Spec sheet for the cut template: [0.1, 0.2, 0.7]
 Circle #1
 A rubber circle with a cut radius of 0.1
 has a perimeter of 0.628318530718
@@ -48,3443 +536,2108 @@ and a warm area of 1.86265028431
 
 A tire with an inner radius of 30.0
 has an inner area of 2827.43338823
-and an outer perimeter of 235.619449019
+and an odometer corrected outer perimeter of 235.619449019
 
-An inclinometer reading of 5° is a 8.7% grade
+A monster tire has an odometer corrected outer perimeter of 282.743338823
+
+An inclinometer reading of 5° is a 8.7% grade.
 
 A circle with a bounding box diagonal of 25
 has a radius of 8.83883476483
 an area of 245.436926062
-and a perimeter of 55.536036727
+and perimeter of 55.536036727
 
+>>> c.__dict__
+{'diameter': 17.677669529663685}
+>>> 
+========= RESTART: /Users/raymond/Dropbox/Public/sj139/circuitous.py =========
+>>> c = Circle(12)
+>>> c.__dict__
+{'diameter': 24.0}
+>>> c.radius = 30
+>>> c.__dict__
+{'diameter': 60.0}
+>>> c.radius
+30.0
+>>> 
+======== RESTART: /Users/raymond/Dropbox/Public/sj139/client_code.py ========
+Tutorial for Circuitous™
+Using Circle version 0.8
+A circle with a radius of 10.0
+has an area of 314.159265359
+
+DARPA Grant Proposal
+to study the average area of circles
+using Circuitous version 0.8
+preliminary study using 10000 random circles
+seeded using Jenny's number: 8675309
+The average area is 1.04170
+
+Spec sheet for the cut template: [0.1, 0.2, 0.7]
+Circle #1
+A rubber circle with a cut radius of 0.1
+has a perimeter of 0.628318530718
+and a cold area of 0.0314159265359
+and a warm area of 0.0380132711084
+
+Circle #2
+A rubber circle with a cut radius of 0.2
+has a perimeter of 1.25663706144
+and a cold area of 0.125663706144
+and a warm area of 0.152053084434
+
+Circle #3
+A rubber circle with a cut radius of 0.7
+has a perimeter of 4.39822971503
+and a cold area of 1.53938040026
+and a warm area of 1.86265028431
+
+A tire with an inner radius of 30.0
+has an inner area of 2827.43338823
+and an odometer corrected outer perimeter of 235.619449019
+
+A monster tire has an odometer corrected outer perimeter of 282.743338823
+
+An inclinometer reading of 5° is a 8.7% grade.
+
+A circle with a bounding box diagonal of 25
+has a radius of 8.83883476483
+an area of 245.436926062
+and perimeter of 55.536036727
+
+>>> 
+>>> c.__class__
+<class 'circuitous.Circle'>
+>>> c.__dict__
+{'diameter': 17.677669529663685}
 >>> import sys
->>> sys.getsizeof(3.1)
-24
 >>> sys.getsizeof(())
 56
->>> sys.getsizeof((3.1,))
+>>> sys.getsizeof((10,))
 64
+>>> sys.getsizeof((10, 20))
+72
+>>> sys.getsizeof((10, 20, 30))
+80
+>>> # tuple size = 56 + len(t)*8
 >>> sys.getsizeof({})
 280
+>>> sys.getsizeof({'a': 1})
+280
 >>> 
->>> c = Circle(10)
->>> d = Circle(12)
 >>> 
 >>> c.__dict__
-{'diameter': 20.0}
->>> d.__dict__
-{'diameter': 24.0}
->>> # All instances of classes, by default, have an instance dictionary
->>> # Good news:  easy to look at for debugging   __dict__
->>> # and easy to add new attribute at any time
->>> 
+{'diameter': 17.677669529663685}
 >>> c.color = 'red'
 >>> c.__dict__
-{'color': 'red', 'diameter': 20.0}
->>> # Bad news:  dicts are HUGE compared to lists and tuples.
+{'color': 'red', 'diameter': 17.677669529663685}
+>>> 280 / 64.
+4.375
 >>> 
->>> # This is only an issue if there are very many instances of a class.
+========= RESTART: /Users/raymond/Dropbox/Public/sj139/circuitous.py =========
 >>> 
-========= RESTART: /Users/raymond/Dropbox/Public/sj136/circuitous.py =========
->>> c = Circle(10)
->>> c.radius
-10.0
->>> c.radius = 15
->>> c.radius
-15.0
->>> c.area()
-706.8583470577033
->>> 
+======== RESTART: /Users/raymond/Dropbox/Public/sj139/client_code.py ========
+Tutorial for Circuitous™
+Using Circle version 0.8
+A circle with a radius of 10.0
+has an area of 314.159265359
+
+DARPA Grant Proposal
+to study the average area of circles
+using Circuitous version 0.8
+preliminary study using 10000 random circles
+seeded using Jenny's number: 8675309
+The average area is 1.04170
+
+Spec sheet for the cut template: [0.1, 0.2, 0.7]
+Circle #1
+A rubber circle with a cut radius of 0.1
+has a perimeter of 0.628318530718
+and a cold area of 0.0314159265359
+and a warm area of 0.0380132711084
+
+Circle #2
+A rubber circle with a cut radius of 0.2
+has a perimeter of 1.25663706144
+and a cold area of 0.125663706144
+and a warm area of 0.152053084434
+
+Circle #3
+A rubber circle with a cut radius of 0.7
+has a perimeter of 4.39822971503
+and a cold area of 1.53938040026
+and a warm area of 1.86265028431
+
+A tire with an inner radius of 30.0
+has an inner area of 2827.43338823
+and an odometer corrected outer perimeter of 235.619449019
+
+A monster tire has an odometer corrected outer perimeter of 282.743338823
+
+An inclinometer reading of 5° is a 8.7% grade.
+
+A circle with a bounding box diagonal of 25
+has a radius of 8.83883476483
+an area of 245.436926062
+and perimeter of 55.536036727
+
 >>> c.__dict__
 
 Traceback (most recent call last):
-  File "<pyshell#32>", line 1, in <module>
+  File "<pyshell#131>", line 1, in <module>
     c.__dict__
 AttributeError: 'Circle' object has no attribute '__dict__'
->>> 
 >>> c.color = 'red'
 
 Traceback (most recent call last):
-  File "<pyshell#34>", line 1, in <module>
+  File "<pyshell#132>", line 1, in <module>
     c.color = 'red'
 AttributeError: 'Circle' object has no attribute 'color'
 >>> 
-========= RESTART: /Users/raymond/Dropbox/Public/sj136/circuitous.py =========
+========= RESTART: /Users/raymond/Dropbox/Public/sj139/circuitous.py =========
 >>> c = Circle(10)
->>> c.color = 'red'
+>>> c.color  = 'red'
 >>> c.diameter
 20.0
->>> c.color
-'red'
->>> c.width = 5
+>>> c.radius
+10.0
+>>> c.width = 50
 
 Traceback (most recent call last):
-  File "<pyshell#39>", line 1, in <module>
-    c.width = 5
+  File "<pyshell#137>", line 1, in <module>
+    c.width = 50
 AttributeError: 'Circle' object has no attribute 'width'
+>>> dir(c)
+['_Circle__perimeter', '__class__', '__delattr__', '__doc__', '__format__', '__getattribute__', '__hash__', '__init__', '__module__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__slots__', '__str__', '__subclasshook__', 'angle_to_grade', 'area', 'color', 'diameter', 'from_bbd', 'get_radius', 'perimeter', 'radius', 'set_radius', 'version']
+>>> c.diameter
+20.0
+>>> getattr(c, 'diameter')
+20.0
+>>> c.__slots__
+['diameter', 'color']
 >>> 
 >>> 
 >>> 
->>> s = '''She sells sea shells by the sea shore.
-Which witch had which witches wrist watch.
-Peter Piper picked a peck of pickled peppers.
-'''
->>> len(s)
-128
->>> import zlib
->>> c = zlib.compress(s)
->>> len(c)
-99
->>> zlib.decompress(c) == s
-True
->>> s = ''' Mister Raymond Hettinger Python Programmer
-Miss Rachel Hettinger VB6 Programmer
-Mister Timothy Peters Python Programmer
-Miss Grace Hopper COBOL Programmer
-'''
->>> # Mister -> Mr
->>> # Miss -> Ms
->>> # Python -> Py
->>> # Programmer -> Pr
->>> # Hettinger -> He
->>> # !
->>> c = '''|Mister|Mr| Raymond |Hettinger|He| |Python|Py |Programmer|Pr|
-|Miss|Ms Rachel !He VB6 !Pr
-!Mr Timothy Peters !Py !Pr
-!Ms Grace Hopper COBOL !Pr
-'''
->>> len(s)
-156
->>> len(c)
-144
->>> s = '''She sells sea shells by the sea shore.
-Which witch had which witches wrist watch.
-Peter Piper picked a peck of pickled peppers.
-'''
->>> import bz2
->>> c = bz2.compress(s)
->>> len(s)
-128
->>> len(c)
-122
->>> bz2.decompress(c) == s
-True
->>> with open('notes2/hamlet.txt') as f:
-	play = f.read()
-
-	
->>> print play[:200]
-The Tragedy of Hamlet, Prince of Denmark
-Shakespeare homepage | Hamlet | Entire play
-ACT I
-SCENE I. Elsinore. A platform before the castle.
-
-    FRANCISCO at his post. Enter to him BERNARDO 
-
-B
->>> type(play)
-<type 'str'>
->>> len(play)
-202238
->>> len(zlib.compress(play))
-73748
->>> len(bz2.compress(play))
-56442
->>> 
->>> 
->>> # Use zlib when speed matters.  Also, for short strings it compresses better.
->>> # Use bz2 when you want extra compression (when size matters) and the input is large.
->>> # gzip, deflate
->>> 
->>> 
->>> import urllib
->>> page = urllib.urlopen('http://jython.org').read()
->>> type(page)
-<type 'str'>
->>> len(page)
-19210
->>> print page[:200]
-<?xml version="1.0" encoding="utf-8" ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xh
->>> 
->>> len(zlib.compress(page))
-6328
->>> len(bz2.compress(page))
-6371
->>> 
->>> 
->>> import zlib, urllib
->>> page = urllib.urlopen('http://jython.org').read()
->>> len(zlib.compress(page))
-6328
->>> 
->>> # A       B       C               -> A+B+C
->>> # A       -       C               -> newtotal is less, maybe
->>> # read phones      sort phone      lookup phone numbers x 1,000,000
->>> # read phones                    lookup phone numbers x 1,000,000
->>> 
->>> # HTTP GET      zlib      SOCKET
->>> # HTTP GET      ----     SOCKET
->>> #               CPU      wire
->>> 
->>> # If something is already compressed, extra compression is a waste
->>> c = zlib.compress(page)
->>> d = bz2.compress(c)
->>> len(c)
-6328
->>> len(d)
-6822
->>> # jpg  tar.gz
->>> 
->>> 
->>> hansolo = dict(
-	ship = 'falcon',
-	status = 'wanted by jabba the hut',
-	occupation = 'smuggler',
-	friends = ['luke', 'leia', 'chewy']
-)
->>> type(hansolo)
-<type 'dict'>
->>> len(hansolo)
-4
->>> hansolo.keys()
-['status', 'ship', 'friends', 'occupation']
->>> hansolo['occupation']
-'smuggler'
->>> for friend in hansolo['friends']:
-	print "Don' worry Han, %s is here to save you" % friend.title()
-
-	
-Don' worry Han, Luke is here to save you
-Don' worry Han, Leia is here to save you
-Don' worry Han, Chewy is here to save you
->>> 
->>> import pickle
->>> carbonite = pickle.dumps(hansolo)
->>> del hansolo
->>> type(carbonite)
-<type 'str'>
->>> 
->>> hansolo = pickle.loads(carbonite)
->>> type(hansolo)
-<type 'dict'>
->>> hansolo.keys()
-['status', 'ship', 'friends', 'occupation']
->>> hansolo['occupation']
-'smuggler'
->>> for friend in hansolo['friends']:
-	print "Don't worry Han, %s is here to save you" % friend.title()
-
-	
-Don't worry Han, Luke is here to save you
-Don't worry Han, Leia is here to save you
-Don't worry Han, Chewy is here to save you
->>> 
->>> 
->>> # object  ---(encoder)---> str  ---(decoder)---> live object
->>> # Coder/Decoder --> Codecs
->>> # Codecs:  pickle, marshal, twisted.jelly, json, xml, yaml, ...
->>> 
->>> 
->>> import json
->>> carbonite = json.dumps(hansolo)
->>> type(carbonite)
-<type 'str'>
->>> hansolo = json.loads(carbonite)
->>> hansolo
-{u'status': u'wanted by jabba the hut', u'ship': u'falcon', u'friends': [u'luke', u'leia', u'chewy'], u'occupation': u'smuggler'}
->>> 
->>> 
->>> # json:  communicating between languages but it is limited to dicts, lists, unicode, bool, None, int, float
->>> # pickle:  python specific but it is nearly unlimited and can move arbitrary data types.
->>> 
->>> # In modern times, never invent your own data layouts.
->>> # We already have great general purpose codecs:  json, yaml, xml, pickle, ...
->>> 
->>> # Tip:  Almost all of these will benefit from compression
->>> hansolo = dict(
-	ship = 'falcon',
-	status = 'wanted by jabba the hut',
-	occupation = 'smuggler',
-	friends = ['luke', 'leia', 'chewy']
-)
->>> import pickle, zlib
->>> cc = zlib.compress(pickle.dumps(hansolo))
->>> hansolo = pickle.loads(zlib.decompress(cc))
->>> 
->>> 
->>> 
->>> 
-======= RESTART: /Users/raymond/Dropbox/Public/sj136/warnings_demo.py =======
-
-Warning (from warnings module):
-  File "/Users/raymond/Dropbox/Public/sj136/warnings_demo.py", line 3
-    warnings.warn('Caution, the CPU is getting a little hot')
-UserWarning: Caution, the CPU is getting a little hot
->>> 
-======= RESTART: /Users/raymond/Dropbox/Public/sj136/warnings_demo.py =======
-
-Warning (from warnings module):
-  File "/Users/raymond/Dropbox/Public/sj136/warnings_demo.py", line 3
-    warnings.warn('Caution, the CPU is getting a little hot')
-UserWarning: Caution, the CPU is getting a little hot
-But I am still doing work anyway
->>> 
-======= RESTART: /Users/raymond/Dropbox/Public/sj136/warnings_demo.py =======
-
-Warning (from warnings module):
-  File "/Users/raymond/Dropbox/Public/sj136/warnings_demo.py", line 11
-    warnings.warn('Caution, the CPU is getting a little hot')
-UserWarning: Caution, the CPU is getting a little hot
-But I am still doing work anyway
->>> 
-======= RESTART: /Users/raymond/Dropbox/Public/sj136/warnings_demo.py =======
->>> sqrt(5)
-2.23606797749979
->>> sqrt(-5)
-
-Warning (from warnings module):
-  File "/Users/raymond/Dropbox/Public/sj136/warnings_demo.py", line 7
-    warnings.warn('Taking a negative square root returning a complex number')
-UserWarning: Taking a negative square root returning a complex number
-2.23606797749979j
->>> 
-======= RESTART: /Users/raymond/Dropbox/Public/sj136/warnings_demo.py =======
-11.1803398875
-
-Warning (from warnings module):
-  File "/Users/raymond/Dropbox/Public/sj136/warnings_demo.py", line 7
-    warnings.warn('Taking a negative square root returning a complex number')
-UserWarning: Taking a negative square root returning a complex number
-11.1803398875j
-14.6969384567
-14.6969384567j
->>> 
-======= RESTART: /Users/raymond/Dropbox/Public/sj136/warnings_demo.py =======
-11.1803398875
-
-Warning (from warnings module):
-  File "/Users/raymond/Dropbox/Public/sj136/warnings_demo.py", line 19
-    warnings.warn('Taking a negative square root returning a complex number')
-UserWarning: Taking a negative square root returning a complex number
-11.1803398875j
-14.6969384567
-
-Warning (from warnings module):
-  File "/Users/raymond/Dropbox/Public/sj136/warnings_demo.py", line 19
-    warnings.warn('Taking a negative square root returning a complex number')
-UserWarning: Taking a negative square root returning a complex number
-14.6969384567j
->>> 
-======= RESTART: /Users/raymond/Dropbox/Public/sj136/warnings_demo.py =======
-11.1803398875
-11.1803398875j
-14.6969384567
-14.6969384567j
->>> 
-======= RESTART: /Users/raymond/Dropbox/Public/sj136/warnings_demo.py =======
-11.1803398875
-11.1803398875j
-
-Warning (from warnings module):
-  File "/Users/raymond/Dropbox/Public/sj136/warnings_demo.py", line 29
-    warnings.warn("Oops, I did it again. I played with your heart. I made you believe we're more than just friends")
-UserWarning: Oops, I did it again. I played with your heart. I made you believe we're more than just friends
-14.6969384567
-14.6969384567j
->>> 
-======= RESTART: /Users/raymond/Dropbox/Public/sj136/warnings_demo.py =======
-11.1803398875
-
-Warning (from warnings module):
-  File "/Users/raymond/Dropbox/Public/sj136/warnings_demo.py", line 19
-    warnings.warn('Taking a negative square root returning a complex number')
-UserWarning: Taking a negative square root returning a complex number
-11.1803398875j
-
-Warning (from warnings module):
-  File "/Users/raymond/Dropbox/Public/sj136/warnings_demo.py", line 29
-    warnings.warn("Oops, I did it again. I played with your heart. I made you believe we're more than just friends")
-UserWarning: Oops, I did it again. I played with your heart. I made you believe we're more than just friends
-14.6969384567
-14.6969384567j
->>> 
-======= RESTART: /Users/raymond/Dropbox/Public/sj136/warnings_demo.py =======
-11.1803398875
-
-Warning (from warnings module):
-  File "/Users/raymond/Dropbox/Public/sj136/warnings_demo.py", line 19
-    warnings.warn('Taking a negative square root returning a complex number')
-UserWarning: Taking a negative square root returning a complex number
-11.1803398875j
-
-Warning (from warnings module):
-  File "/Users/raymond/Dropbox/Public/sj136/warnings_demo.py", line 29
-    warnings.warn("Oops, I did it again. I played with your heart. I made you believe we're more than just friends")
-UserWarning: Oops, I did it again. I played with your heart. I made you believe we're more than just friends
-14.6969384567
-14.6969384567j
->>> 
-======= RESTART: /Users/raymond/Dropbox/Public/sj136/warnings_demo.py =======
-11.1803398875
-
-Warning (from warnings module):
-  File "/Users/raymond/Dropbox/Public/sj136/warnings_demo.py", line 20
-    warnings.warn('Taking a negative square root returning a complex number')
-UserWarning: Taking a negative square root returning a complex number
-11.1803398875j
-
-Warning (from warnings module):
-  File "/Users/raymond/Dropbox/Public/sj136/warnings_demo.py", line 31
-    warnings.warn("Oops, I did it again. I played with your heart. I made you believe we're more than just friends")
-UserWarning: Oops, I did it again. I played with your heart. I made you believe we're more than just friends
-14.6969384567
-
-Warning (from warnings module):
-  File "/Users/raymond/Dropbox/Public/sj136/warnings_demo.py", line 20
-    warnings.warn('Taking a negative square root returning a complex number')
-UserWarning: Taking a negative square root returning a complex number
-14.6969384567j
->>> dir(warnings)
-['WarningMessage', '_OptionError', '__all__', '__builtins__', '__doc__', '__file__', '__name__', '__package__', '_getaction', '_getcategory', '_processoptions', '_setoption', '_show_warning', 'catch_warnings', 'default_action', 'defaultaction', 'filters', 'filterwarnings', 'formatwarning', 'linecache', 'once_registry', 'onceregistry', 'resetwarnings', 'showwarning', 'simplefilter', 'sys', 'types', 'warn', 'warn_explicit', 'warnpy3k']
->>> help(warnings.warn)
-Help on built-in function warn in module _warnings:
-
-warn(...)
-    Issue a warning, or maybe ignore it or raise an exception.
-
->>> 
-======= RESTART: /Users/raymond/Dropbox/Public/sj136/warnings_demo.py =======
+========= RESTART: /Users/raymond/Dropbox/Public/sj139/circuitous.py =========
+>>> help(c)
 
 Traceback (most recent call last):
-  File "/Users/raymond/Dropbox/Public/sj136/warnings_demo.py", line 30, in <module>
-    print user(5)
-  File "/Users/raymond/Dropbox/Public/sj136/warnings_demo.py", line 24, in user
-    warnings.warning('The "user" function is deprecated, use "sqrt" instead', DeprecationWarning)
-AttributeError: 'module' object has no attribute 'warning'
+  File "<pyshell#144>", line 1, in <module>
+    help(c)
+NameError: name 'c' is not defined
 >>> 
-======= RESTART: /Users/raymond/Dropbox/Public/sj136/warnings_demo.py =======
+======== RESTART: /Users/raymond/Dropbox/Public/sj139/client_code.py ========
+Tutorial for Circuitous™
+Using Circle version 0.8
+A circle with a radius of 10.0
+has an area of 314.159265359
 
-Traceback (most recent call last):
-  File "/Users/raymond/Dropbox/Public/sj136/warnings_demo.py", line 30, in <module>
-    print user(5)
-  File "/Users/raymond/Dropbox/Public/sj136/warnings_demo.py", line 24, in user
-    warning.warn('The "user" function is deprecated, use "sqrt" instead', DeprecationWarning)
-NameError: global name 'warning' is not defined
+DARPA Grant Proposal
+to study the average area of circles
+using Circuitous version 0.8
+preliminary study using 10000 random circles
+seeded using Jenny's number: 8675309
+The average area is 1.04170
+
+Spec sheet for the cut template: [0.1, 0.2, 0.7]
+Circle #1
+A rubber circle with a cut radius of 0.1
+has a perimeter of 0.628318530718
+and a cold area of 0.0314159265359
+and a warm area of 0.0380132711084
+
+Circle #2
+A rubber circle with a cut radius of 0.2
+has a perimeter of 1.25663706144
+and a cold area of 0.125663706144
+and a warm area of 0.152053084434
+
+Circle #3
+A rubber circle with a cut radius of 0.7
+has a perimeter of 4.39822971503
+and a cold area of 1.53938040026
+and a warm area of 1.86265028431
+
+A tire with an inner radius of 30.0
+has an inner area of 2827.43338823
+and an odometer corrected outer perimeter of 235.619449019
+
+A monster tire has an odometer corrected outer perimeter of 282.743338823
+
+An inclinometer reading of 5° is a 8.7% grade.
+
+A circle with a bounding box diagonal of 25
+has a radius of 8.83883476483
+an area of 245.436926062
+and perimeter of 55.536036727
+
+>>> help(c)
+Help on Circle in module circuitous object:
+
+class Circle(__builtin__.object)
+ |  Advanced circle analytic toolkit
+ |  
+ |  Methods defined here:
+ |  
+ |  __init__(self, radius)
+ |      # The use of "self" is a cultural norm
+ |      # Parameter names are user visible, part of the API and should be spelled-out.
+ |      # Spelling-out avoids cultural bias for abbreviations.  Networking IS a common culture.
+ |      # When copying from one namespace to another, we generally keep the name the same.
+ |  
+ |  __repr__(self)
+ |      # Best practice for repr is to look like how the object COULD have been created
+ |      # Don't assume that "self" means you; instead, it could be one of your children
+ |  
+ |  area(self)
+ |      Perform quadrature on a planar shape of uniform revolution
+ |  
+ |  get_radius(self)
+ |  
+ |  perimeter(self)
+ |      Compute the closed line integral for the locus of points equidistant from a given point
+ |  
+ |  set_radius(self, radius)
+ |  
+ |  ----------------------------------------------------------------------
+ |  Class methods defined here:
+ |  
+ |  from_bbd(cls, bbd) from __builtin__.type
+ |      Construct a new circle from a bounding box diagonal
+ |  
+ |  ----------------------------------------------------------------------
+ |  Static methods defined here:
+ |  
+ |  angle_to_grade(angle)
+ |      Convert an inclinometer reading in degrees into a percent grade
+ |  
+ |  ----------------------------------------------------------------------
+ |  Data descriptors defined here:
+ |  
+ |  diameter
+ |  
+ |  radius
+ |  
+ |  ----------------------------------------------------------------------
+ |  Data and other attributes defined here:
+ |  
+ |  version = Version(major=0, minor=8, micro=1)
+
 >>> 
-======= RESTART: /Users/raymond/Dropbox/Public/sj136/warnings_demo.py =======
-11.1803398875
-
-Warning (from warnings module):
-  File "/Users/raymond/Dropbox/Public/sj136/warnings_demo.py", line 20
-    warnings.warn('Taking a negative square root returning a complex number')
-UserWarning: Taking a negative square root returning a complex number
-11.1803398875j
-
-Warning (from warnings module):
-  File "/Users/raymond/Dropbox/Public/sj136/warnings_demo.py", line 32
-    warnings.warn("Oops, I did it again. I played with your heart. I made you believe we're more than just friends")
-UserWarning: Oops, I did it again. I played with your heart. I made you believe we're more than just friends
-14.6969384567
-14.6969384567j
->>> 
-======= RESTART: /Users/raymond/Dropbox/Public/sj136/warnings_demo.py =======
-
-Warning (from warnings module):
-  File "/Users/raymond/Dropbox/Public/sj136/warnings_demo.py", line 24
-    warnings.warn('The "user" function is deprecated, use "sqrt" instead', DeprecationWarning)
-DeprecationWarning: The "user" function is deprecated, use "sqrt" instead
-11.1803398875
-
-Warning (from warnings module):
-  File "/Users/raymond/Dropbox/Public/sj136/warnings_demo.py", line 20
-    warnings.warn('Taking a negative square root returning a complex number')
-UserWarning: Taking a negative square root returning a complex number
-11.1803398875j
-
-Warning (from warnings module):
-  File "/Users/raymond/Dropbox/Public/sj136/warnings_demo.py", line 32
-    warnings.warn("Oops, I did it again. I played with your heart. I made you believe we're more than just friends")
-UserWarning: Oops, I did it again. I played with your heart. I made you believe we're more than just friends
-14.6969384567
-14.6969384567j
->>> 
-======= RESTART: /Users/raymond/Dropbox/Public/sj136/warnings_demo.py =======
-
-Warning (from warnings module):
-  File "/Users/raymond/Dropbox/Public/sj136/warnings_demo.py", line 26
-    warnings.warn('The "user" function is deprecated, use "sqrt" instead', DeprecationWarning)
-DeprecationWarning: The "user" function is deprecated, use "sqrt" instead
-11.1803398875
-
-Warning (from warnings module):
-  File "/Users/raymond/Dropbox/Public/sj136/warnings_demo.py", line 22
-    warnings.warn('Taking a negative square root returning a complex number')
-UserWarning: Taking a negative square root returning a complex number
-11.1803398875j
-
-Warning (from warnings module):
-  File "/Users/raymond/Dropbox/Public/sj136/warnings_demo.py", line 34
-    warnings.warn("Oops, I did it again. I played with your heart. I made you believe we're more than just friends")
-UserWarning: Oops, I did it again. I played with your heart. I made you believe we're more than just friends
-14.6969384567
-
-Warning (from warnings module):
-  File "/Users/raymond/Dropbox/Public/sj136/warnings_demo.py", line 22
-    warnings.warn('Taking a negative square root returning a complex number')
-UserWarning: Taking a negative square root returning a complex number
-14.6969384567j
->>> 
-======= RESTART: /Users/raymond/Dropbox/Public/sj136/warnings_demo.py =======
-
-Warning (from warnings module):
-  File "/Users/raymond/Dropbox/Public/sj136/warnings_demo.py", line 30
-    warnings.warn('The "user" function is deprecated, use "sqrt" instead', DeprecationWarning)
-DeprecationWarning: The "user" function is deprecated, use "sqrt" instead
-11.1803398875
-
-Warning (from warnings module):
-  File "/Users/raymond/Dropbox/Public/sj136/warnings_demo.py", line 26
-    warnings.warn('Taking a negative square root returning a complex number')
-UserWarning: Taking a negative square root returning a complex number
-11.1803398875j
-
-Warning (from warnings module):
-  File "/Users/raymond/Dropbox/Public/sj136/warnings_demo.py", line 38
-    warnings.warn("Oops, I did it again. I played with your heart. I made you believe we're more than just friends")
-UserWarning: Oops, I did it again. I played with your heart. I made you believe we're more than just friends
-14.6969384567
-
-Warning (from warnings module):
-  File "/Users/raymond/Dropbox/Public/sj136/warnings_demo.py", line 40
-    warnings.warn('Python is the best', RaymondWarning)
-RaymondWarning: Python is the best
-
-Warning (from warnings module):
-  File "/Users/raymond/Dropbox/Public/sj136/warnings_demo.py", line 26
-    warnings.warn('Taking a negative square root returning a complex number')
-UserWarning: Taking a negative square root returning a complex number
-14.6969384567j
->>> 
->>> 
->>> # Tour of the collections module
->>> 
-====== RESTART: /Users/raymond/Dropbox/Public/sj136/tour_collections.py ======
->>> 
-====== RESTART: /Users/raymond/Dropbox/Public/sj136/tour_collections.py ======
-Task:  count the colors
-
-Traceback (most recent call last):
-  File "/Users/raymond/Dropbox/Public/sj136/tour_collections.py", line 15, in <module>
-    cnt[color] += 1
-KeyError: 'red'
->>> cnt
-{}
->>> cnt['red']
-
-Traceback (most recent call last):
-  File "<pyshell#184>", line 1, in <module>
-    cnt['red']
-KeyError: 'red'
->>> 
-====== RESTART: /Users/raymond/Dropbox/Public/sj136/tour_collections.py ======
-Task:  count the colors
-Counter({'red': 4, 'green': 3, 'blue': 2, 'purple': 1})
->>> cnt['dragons']
+>>> import gc
+>>> gc.collect()
 0
 >>> 
-====== RESTART: /Users/raymond/Dropbox/Public/sj136/tour_collections.py ======
-Task:  count the colors
-Counter({'red': 4, 'green': 3, 'blue': 2, 'purple': 1})
 >>> 
-====== RESTART: /Users/raymond/Dropbox/Public/sj136/tour_collections.py ======
-Task:  count the colors
+>>> class A:
+	pass
 
-Traceback (most recent call last):
-  File "/Users/raymond/Dropbox/Public/sj136/tour_collections.py", line 14, in <module>
-    print most_common(2)
-NameError: name 'most_common' is not defined
->>> 
-====== RESTART: /Users/raymond/Dropbox/Public/sj136/tour_collections.py ======
-Task:  count the colors
-[('red', 4), ('green', 3)]
->>> 
-====== RESTART: /Users/raymond/Dropbox/Public/sj136/tour_collections.py ======
-Task:  count the colors
-[('red', 4), ('green', 3)]
->>> len(play)
-202238
->>> len(words)
-32114
->>> print words[:20]
-['The', 'Tragedy', 'of', 'Hamlet', 'Prince', 'of', 'Denmark', 'Shakespeare', 'homepage', 'Hamlet', 'Entire', 'play', 'ACT', 'I', 'SCENE', 'I', 'Elsinore', 'A', 'platform', 'before']
->>> 
-====== RESTART: /Users/raymond/Dropbox/Public/sj136/tour_collections.py ======
-Task:  count the colors
-[('red', 4), ('green', 3)]
->>> print words[:20]
-['the', 'tragedy', 'of', 'hamlet', 'prince', 'of', 'denmark', 'shakespeare', 'homepage', 'hamlet', 'entire', 'play', 'act', 'i', 'scene', 'i', 'elsinore', 'a', 'platform', 'before']
->>> 
-====== RESTART: /Users/raymond/Dropbox/Public/sj136/tour_collections.py ======
-Task:  count the colors
-[('red', 4), ('green', 3)]
-[('the', 1137),
- ('and', 963),
- ('to', 736),
- ('of', 669),
- ('you', 547),
- ('i', 540),
- ('a', 527),
- ('my', 513),
- ('hamlet', 461),
- ('in', 435),
- ('it', 415),
- ('that', 388),
- ('is', 339),
- ('not', 312),
- ('lord', 308),
- ('his', 296),
- ('this', 294),
- ('but', 268),
- ('with', 267),
- ('for', 247),
- ('your', 242),
- ('me', 232),
- ('be', 226),
- ('as', 220),
- ('he', 215),
- ('what', 204),
- ('so', 196),
- ('him', 196),
- ('king', 194),
- ('have', 179),
- ('will', 169),
- ('horatio', 157),
- ('do', 151),
- ('no', 141),
- ('we', 139),
- ('are', 131),
- ('on', 126),
- ('all', 120),
- ('claudius', 120),
- ('our', 118),
- ('by', 117),
- ('queen', 116),
- ('polonius', 116),
- ('shall', 114),
- ('if', 112),
- ('or', 112),
- ('o', 110),
- ('good', 107),
- ('come', 106),
- ('they', 103)]
->>> 
-====== RESTART: /Users/raymond/Dropbox/Public/sj136/tour_collections.py ======
-Task:  count the colors
-[('red', 4), ('green', 3)]
-[('the', 1137),
- ('and', 963),
- ('to', 736),
- ('of', 669),
- ('you', 547),
- ('i', 540),
- ('a', 527),
- ('my', 513),
- ('hamlet', 461),
- ('in', 435),
- ('it', 415),
- ('that', 388),
- ('is', 339),
- ('not', 312),
- ('lord', 308),
- ('his', 296),
- ('this', 294),
- ('but', 268),
- ('with', 267),
- ('for', 247),
- ('your', 242),
- ('me', 232),
- ('be', 226),
- ('as', 220),
- ('he', 215),
- ('what', 204),
- ('so', 196),
- ('him', 196),
- ('king', 194),
- ('have', 179),
- ('will', 169),
- ('horatio', 157),
- ('do', 151),
- ('no', 141),
- ('we', 139),
- ('are', 131),
- ('on', 126),
- ('all', 120),
- ('claudius', 120),
- ('our', 118),
- ('by', 117),
- ('queen', 116),
- ('polonius', 116),
- ('shall', 114),
- ('if', 112),
- ('or', 112),
- ('o', 110),
- ('good', 107),
- ('come', 106),
- ('they', 103)]
-{'matthew': 'chocolate', 'rachel': 'kale', 'raymond': 'steak'}
->>> 
-====== RESTART: /Users/raymond/Dropbox/Public/sj136/tour_collections.py ======
-Task:  count the colors
-[('red', 4), ('green', 3)]
-[('the', 1137),
- ('and', 963),
- ('to', 736),
- ('of', 669),
- ('you', 547),
- ('i', 540),
- ('a', 527),
- ('my', 513),
- ('hamlet', 461),
- ('in', 435),
- ('it', 415),
- ('that', 388),
- ('is', 339),
- ('not', 312),
- ('lord', 308),
- ('his', 296),
- ('this', 294),
- ('but', 268),
- ('with', 267),
- ('for', 247),
- ('your', 242),
- ('me', 232),
- ('be', 226),
- ('as', 220),
- ('he', 215),
- ('what', 204),
- ('so', 196),
- ('him', 196),
- ('king', 194),
- ('have', 179),
- ('will', 169),
- ('horatio', 157),
- ('do', 151),
- ('no', 141),
- ('we', 139),
- ('are', 131),
- ('on', 126),
- ('all', 120),
- ('claudius', 120),
- ('our', 118),
- ('by', 117),
- ('queen', 116),
- ('polonius', 116),
- ('shall', 114),
- ('if', 112),
- ('or', 112),
- ('o', 110),
- ('good', 107),
- ('come', 106),
- ('they', 103)]
-OrderedDict([('raymond', 'steak'), ('rachel', 'kale'), ('matthew', 'chocolate')])
->>> 
->>> 
->>> 
->>> bool(0)
-False
->>> bool(10)
-True
->>> bool(10.5)
-True
->>> bool(0.0)
-False
->>> 0.0 == 0
-True
->>> sum([True, True, False, True])
-3
->>> issubclass(bool, int)
-True
->>> bool(True)
-True
->>> bool(False)
-False
->>> False == 0 == 0.0
-True
->>> bool(3 + 4j)
-True
->>> bool(0 + 4j)
-True
->>> bool(0 + 0j)
-False
->>> # All numbers equal to zero are false, other numbers are true
->>> bool([10, 20, 30])
-True
->>> bool([])
-False
->>> bool([False, 0])
-True
->>> bool([False])
-True
->>> bool([])
-False
->>> int('42')
-42
->>> bool('42')
-True
->>> bool('True')
-True
->>> bool('False')
-True
->>> len('False')
-5
->>> bool('')
-False
->>> bool(None)
-False
->>> 
->>> 
->>> 
->>> int('42')
-42
->>> int()
-0
->>> bool(int())
-False
->>> 
->>> list('abc')
-['a', 'b', 'c']
->>> list('')
-[]
->>> list()
-[]
->>> bool(list())
-False
->>> 
->>> dict(raymond='red')
-{'raymond': 'red'}
->>> dict()
-{}
->>> bool(dict())
-False
->>> bool(set())
-False
->>> 
->>> # There are many container contructors that take zero arguments
->>> # and return an instance of the container who boolean value is False
->>> [bool(constructor()) for constructor in [unicode, str, tuple, list, set, dict]]
-[False, False, False, False, False, False]
->>> 
->>> 
->>> 
->>> def make_list_of_list():
-	return [[]]
-
->>> make_list_of_list()
-[[]]
->>> s = make_list_of_list()
->>> t = make_list_of_list()
->>> s is t
-False
->>> s[0].append('hello')
->>> s
-[['hello']]
->>> t
-[[]]
->>> 
->>> 
->>> s = list()
->>> t = list()
->>> s is t
-False
->>> s.append('hello')
->>> s
-['hello']
->>> t
-[]
->>> 
->>> d = {}
->>> d['raymond']
-
-Traceback (most recent call last):
-  File "<pyshell#262>", line 1, in <module>
-    d['raymond']
-KeyError: 'raymond'
->>> 
->>> 
->>> d = defaultdict(set)
->>> d['raymond']
-set([])
->>> d
-defaultdict(<type 'set'>, {'raymond': set([])})
->>> d['raymond'].add('brown')
->>> d
-defaultdict(<type 'set'>, {'raymond': set(['brown'])})
->>> 
->>> d = defaultdict(set)
->>> d['raymond'].add('brown')
->>> d['raymond'].add('blue')
->>> d['rachel'].add('blonde')
->>> d['rachel'].add('blue')
->>> d
-defaultdict(<type 'set'>, {'rachel': set(['blue', 'blonde']), 'raymond': set(['blue', 'brown'])})
->>> d['rachel']
-set(['blue', 'blonde'])
->>> d['raymond']
-set(['blue', 'brown'])
->>> 
->>> 
->>> name = 'raymond'
->>> name[0]
-'r'
->>> name[-1]
-'d'
->>> len(name)
-7
->>> 
-====== RESTART: /Users/raymond/Dropbox/Public/sj136/tour_collections.py ======
-Task:  count the colors
-[('red', 4), ('green', 3)]
-[('the', 1137),
- ('and', 963),
- ('to', 736),
- ('of', 669),
- ('you', 547),
- ('i', 540),
- ('a', 527),
- ('my', 513),
- ('hamlet', 461),
- ('in', 435),
- ('it', 415),
- ('that', 388),
- ('is', 339),
- ('not', 312),
- ('lord', 308),
- ('his', 296),
- ('this', 294),
- ('but', 268),
- ('with', 267),
- ('for', 247),
- ('your', 242),
- ('me', 232),
- ('be', 226),
- ('as', 220),
- ('he', 215),
- ('what', 204),
- ('so', 196),
- ('him', 196),
- ('king', 194),
- ('have', 179),
- ('will', 169),
- ('horatio', 157),
- ('do', 151),
- ('no', 141),
- ('we', 139),
- ('are', 131),
- ('on', 126),
- ('all', 120),
- ('claudius', 120),
- ('our', 118),
- ('by', 117),
- ('queen', 116),
- ('polonius', 116),
- ('shall', 114),
- ('if', 112),
- ('or', 112),
- ('o', 110),
- ('good', 107),
- ('come', 106),
- ('they', 103)]
-OrderedDict([('raymond', 'steak'), ('rachel', 'kale'), ('matthew', 'chocolate')])
->>> pprint(d)
-defaultdict(<type 'list'>, {'b': ['beatrice', 'brandon', 'bryce', 'bill'], 'd': ['david', 'darlene', 'daily', 'davin', 'dave'], 'm': ['matthew', 'martin', 'mary'], 's': ['susan', 'suzy'], 'r': ['raymond', 'rachel', 'randal', 'rodney'], 't': ['tom', 'timothy']})
->>> 
-====== RESTART: /Users/raymond/Dropbox/Public/sj136/tour_collections.py ======
-Task:  count the colors
-[('red', 4), ('green', 3)]
-[('the', 1137),
- ('and', 963),
- ('to', 736),
- ('of', 669),
- ('you', 547),
- ('i', 540),
- ('a', 527),
- ('my', 513),
- ('hamlet', 461),
- ('in', 435),
- ('it', 415),
- ('that', 388),
- ('is', 339),
- ('not', 312),
- ('lord', 308),
- ('his', 296),
- ('this', 294),
- ('but', 268),
- ('with', 267),
- ('for', 247),
- ('your', 242),
- ('me', 232),
- ('be', 226),
- ('as', 220),
- ('he', 215),
- ('what', 204),
- ('so', 196),
- ('him', 196),
- ('king', 194),
- ('have', 179),
- ('will', 169),
- ('horatio', 157),
- ('do', 151),
- ('no', 141),
- ('we', 139),
- ('are', 131),
- ('on', 126),
- ('all', 120),
- ('claudius', 120),
- ('our', 118),
- ('by', 117),
- ('queen', 116),
- ('polonius', 116),
- ('shall', 114),
- ('if', 112),
- ('or', 112),
- ('o', 110),
- ('good', 107),
- ('come', 106),
- ('they', 103)]
-OrderedDict([('raymond', 'steak'), ('rachel', 'kale'), ('matthew', 'chocolate')])
-{'b': ['beatrice', 'brandon', 'bryce', 'bill'],
- 'd': ['david', 'darlene', 'daily', 'davin', 'dave'],
- 'm': ['matthew', 'martin', 'mary'],
- 'r': ['raymond', 'rachel', 'randal', 'rodney'],
- 's': ['susan', 'suzy'],
- 't': ['tom', 'timothy']}
->>> 
-====== RESTART: /Users/raymond/Dropbox/Public/sj136/tour_collections.py ======
-Task:  count the colors
-[('red', 4), ('green', 3)]
-[('the', 1137),
- ('and', 963),
- ('to', 736),
- ('of', 669),
- ('you', 547),
- ('i', 540),
- ('a', 527),
- ('my', 513),
- ('hamlet', 461),
- ('in', 435),
- ('it', 415),
- ('that', 388),
- ('is', 339),
- ('not', 312),
- ('lord', 308),
- ('his', 296),
- ('this', 294),
- ('but', 268),
- ('with', 267),
- ('for', 247),
- ('your', 242),
- ('me', 232),
- ('be', 226),
- ('as', 220),
- ('he', 215),
- ('what', 204),
- ('so', 196),
- ('him', 196),
- ('king', 194),
- ('have', 179),
- ('will', 169),
- ('horatio', 157),
- ('do', 151),
- ('no', 141),
- ('we', 139),
- ('are', 131),
- ('on', 126),
- ('all', 120),
- ('claudius', 120),
- ('our', 118),
- ('by', 117),
- ('queen', 116),
- ('polonius', 116),
- ('shall', 114),
- ('if', 112),
- ('or', 112),
- ('o', 110),
- ('good', 107),
- ('come', 106),
- ('they', 103)]
-OrderedDict([('raymond', 'steak'), ('rachel', 'kale'), ('matthew', 'chocolate')])
-{'b': ['beatrice', 'brandon', 'bryce', 'bill'],
- 'd': ['david', 'darlene', 'daily', 'davin', 'dave'],
- 'm': ['matthew', 'martin', 'mary'],
- 'r': ['raymond', 'rachel', 'randal', 'rodney'],
- 's': ['susan', 'suzy'],
- 't': ['tom', 'timothy']}
-{'d': ['david', 'raymond'],
- 'e': ['beatrice', 'darlene', 'bryce', 'dave'],
- 'l': ['rachel', 'randal', 'bill'],
- 'm': ['tom'],
- 'n': ['susan', 'brandon', 'martin', 'davin'],
- 'w': ['matthew'],
- 'y': ['timothy', 'daily', 'suzy', 'mary', 'rodney']}
->>> 
-====== RESTART: /Users/raymond/Dropbox/Public/sj136/tour_collections.py ======
-Task:  count the colors
-[('red', 4), ('green', 3)]
-[('the', 1137),
- ('and', 963),
- ('to', 736),
- ('of', 669),
- ('you', 547),
- ('i', 540),
- ('a', 527),
- ('my', 513),
- ('hamlet', 461),
- ('in', 435),
- ('it', 415),
- ('that', 388),
- ('is', 339),
- ('not', 312),
- ('lord', 308),
- ('his', 296),
- ('this', 294),
- ('but', 268),
- ('with', 267),
- ('for', 247),
- ('your', 242),
- ('me', 232),
- ('be', 226),
- ('as', 220),
- ('he', 215),
- ('what', 204),
- ('so', 196),
- ('him', 196),
- ('king', 194),
- ('have', 179),
- ('will', 169),
- ('horatio', 157),
- ('do', 151),
- ('no', 141),
- ('we', 139),
- ('are', 131),
- ('on', 126),
- ('all', 120),
- ('claudius', 120),
- ('our', 118),
- ('by', 117),
- ('queen', 116),
- ('polonius', 116),
- ('shall', 114),
- ('if', 112),
- ('or', 112),
- ('o', 110),
- ('good', 107),
- ('come', 106),
- ('they', 103)]
-OrderedDict([('raymond', 'steak'), ('rachel', 'kale'), ('matthew', 'chocolate')])
-{'b': ['beatrice', 'brandon', 'bryce', 'bill'],
- 'd': ['david', 'darlene', 'daily', 'davin', 'dave'],
- 'm': ['matthew', 'martin', 'mary'],
- 'r': ['raymond', 'rachel', 'randal', 'rodney'],
- 's': ['susan', 'suzy'],
- 't': ['tom', 'timothy']}
-{'d': ['david', 'raymond'],
- 'e': ['beatrice', 'darlene', 'bryce', 'dave'],
- 'l': ['rachel', 'randal', 'bill'],
- 'm': ['tom'],
- 'n': ['susan', 'brandon', 'martin', 'davin'],
- 'w': ['matthew'],
- 'y': ['timothy', 'daily', 'suzy', 'mary', 'rodney']}
-{3: ['tom'],
- 4: ['suzy', 'mary', 'bill', 'dave'],
- 5: ['david', 'susan', 'daily', 'bryce', 'davin'],
- 6: ['rachel', 'martin', 'randal', 'rodney'],
- 7: ['raymond', 'matthew', 'timothy', 'brandon', 'darlene'],
- 8: ['beatrice']}
->>> 
->>> 
->>> name = 'raymond'
->>> 
->>> s = 'abracadabra'
->>> s.count('a')
-5
->>> s.count('b')
+>>> a = A()
+>>> a.x = 10
+>>> a.y = a
+>>> del a
+>>> gc.collect()
 2
->>> s.count('d')
-1
+>>> # slots  --> revisit
+>>> # property -> orange belt  -> black property
+>>> # fun:   password cracker       twitter
 >>> 
-====== RESTART: /Users/raymond/Dropbox/Public/sj136/tour_collections.py ======
-Task:  count the colors
-[('red', 4), ('green', 3)]
-[('the', 1137),
- ('and', 963),
- ('to', 736),
- ('of', 669),
- ('you', 547),
- ('i', 540),
- ('a', 527),
- ('my', 513),
- ('hamlet', 461),
- ('in', 435),
- ('it', 415),
- ('that', 388),
- ('is', 339),
- ('not', 312),
- ('lord', 308),
- ('his', 296),
- ('this', 294),
- ('but', 268),
- ('with', 267),
- ('for', 247)]
-OrderedDict([('raymond', 'steak'), ('rachel', 'kale'), ('matthew', 'chocolate')])
-{'b': ['beatrice', 'brandon', 'bryce', 'bill'],
- 'd': ['david', 'darlene', 'daily', 'davin', 'dave'],
- 'm': ['matthew', 'martin', 'mary'],
- 'r': ['raymond', 'rachel', 'randal', 'rodney'],
- 's': ['susan', 'suzy'],
- 't': ['tom', 'timothy']}
-{'d': ['david', 'raymond'],
- 'e': ['beatrice', 'darlene', 'bryce', 'dave'],
- 'l': ['rachel', 'randal', 'bill'],
- 'm': ['tom'],
- 'n': ['susan', 'brandon', 'martin', 'davin'],
- 'w': ['matthew'],
- 'y': ['timothy', 'daily', 'suzy', 'mary', 'rodney']}
-{3: ['tom'],
- 4: ['suzy', 'mary', 'bill', 'dave'],
- 5: ['david', 'susan', 'daily', 'bryce', 'davin'],
- 6: ['rachel', 'martin', 'randal', 'rodney'],
- 7: ['raymond', 'matthew', 'timothy', 'brandon', 'darlene'],
- 8: ['beatrice']}
-{1: ['tom', 'bill'],
- 2: ['david',
-     'rachel',
-     'matthew',
-     'susan',
-     'brandon',
-     'martin',
-     'randal',
-     'suzy',
-     'bryce',
-     'mary',
-     'davin',
-     'dave'],
- 3: ['raymond', 'timothy', 'darlene', 'daily', 'rodney'],
- 4: ['beatrice']}
->>> len(names)
-20
->>> names
-['tom', 'david', 'raymond', 'rachel', 'matthew', 'susan', 'timothy', 'beatrice', 'brandon', 'martin', 'darlene', 'daily', 'randal', 'suzy', 'bryce', 'mary', 'rodney', 'davin', 'bill', 'dave']
->>> names.append('jim')
->>> names
-['tom', 'david', 'raymond', 'rachel', 'matthew', 'susan', 'timothy', 'beatrice', 'brandon', 'martin', 'darlene', 'daily', 'randal', 'suzy', 'bryce', 'mary', 'rodney', 'davin', 'bill', 'dave', 'jim']
->>> names.pop(0)
-'tom'
->>> names
-['david', 'raymond', 'rachel', 'matthew', 'susan', 'timothy', 'beatrice', 'brandon', 'martin', 'darlene', 'daily', 'randal', 'suzy', 'bryce', 'mary', 'rodney', 'davin', 'bill', 'dave', 'jim']
->>> names.append('becky')
->>> names
-['david', 'raymond', 'rachel', 'matthew', 'susan', 'timothy', 'beatrice', 'brandon', 'martin', 'darlene', 'daily', 'randal', 'suzy', 'bryce', 'mary', 'rodney', 'davin', 'bill', 'dave', 'jim', 'becky']
->>> names.pop(0)
-'david'
->>> # FIFO queue
+====== RESTART: /Users/raymond/Dropbox/Public/sj139/password_cracker.py ======
+False
 >>> 
-====== RESTART: /Users/raymond/Dropbox/Public/sj136/tour_collections.py ======
-Task:  count the colors
-[('red', 4), ('green', 3)]
-[('the', 1137),
- ('and', 963),
- ('to', 736),
- ('of', 669),
- ('you', 547),
- ('i', 540),
- ('a', 527),
- ('my', 513),
- ('hamlet', 461),
- ('in', 435),
- ('it', 415),
- ('that', 388),
- ('is', 339),
- ('not', 312),
- ('lord', 308),
- ('his', 296),
- ('this', 294),
- ('but', 268),
- ('with', 267),
- ('for', 247)]
-OrderedDict([('raymond', 'steak'), ('rachel', 'kale'), ('matthew', 'chocolate')])
-{'b': ['beatrice', 'brandon', 'bryce', 'bill'],
- 'd': ['david', 'darlene', 'daily', 'davin', 'dave'],
- 'm': ['matthew', 'martin', 'mary'],
- 'r': ['raymond', 'rachel', 'randal', 'rodney'],
- 's': ['susan', 'suzy'],
- 't': ['tom', 'timothy']}
-{'d': ['david', 'raymond'],
- 'e': ['beatrice', 'darlene', 'bryce', 'dave'],
- 'l': ['rachel', 'randal', 'bill'],
- 'm': ['tom'],
- 'n': ['susan', 'brandon', 'martin', 'davin'],
- 'w': ['matthew'],
- 'y': ['timothy', 'daily', 'suzy', 'mary', 'rodney']}
-{3: ['tom'],
- 4: ['suzy', 'mary', 'bill', 'dave'],
- 5: ['david', 'susan', 'daily', 'bryce', 'davin'],
- 6: ['rachel', 'martin', 'randal', 'rodney'],
- 7: ['raymond', 'matthew', 'timothy', 'brandon', 'darlene'],
- 8: ['beatrice']}
-{1: ['tom', 'bill'],
- 2: ['david',
-     'rachel',
-     'matthew',
-     'susan',
-     'brandon',
-     'martin',
-     'randal',
-     'suzy',
-     'bryce',
-     'mary',
-     'davin',
-     'dave'],
- 3: ['raymond', 'timothy', 'darlene', 'daily', 'rodney'],
- 4: ['beatrice']}
-tom
-david
-deque(['raymond', 'rachel', 'matthew', 'susan', 'timothy', 'beatrice', 'brandon', 'martin', 'darlene', 'daily', 'randal', 'suzy', 'bryce', 'mary', 'rodney', 'davin', 'bill', 'dave', 'jim', 'becky'])
+====== RESTART: /Users/raymond/Dropbox/Public/sj139/password_cracker.py ======
+True
 >>> 
-====== RESTART: /Users/raymond/Dropbox/Public/sj136/tour_collections.py ======
-Task:  count the colors
-[('red', 4), ('green', 3)]
-[('the', 1137),
- ('and', 963),
- ('to', 736),
- ('of', 669),
- ('you', 547),
- ('i', 540),
- ('a', 527),
- ('my', 513),
- ('hamlet', 461),
- ('in', 435),
- ('it', 415),
- ('that', 388),
- ('is', 339),
- ('not', 312),
- ('lord', 308),
- ('his', 296),
- ('this', 294),
- ('but', 268),
- ('with', 267),
- ('for', 247)]
-OrderedDict([('raymond', 'steak'), ('rachel', 'kale'), ('matthew', 'chocolate')])
-{'b': ['beatrice', 'brandon', 'bryce', 'bill'],
- 'd': ['david', 'darlene', 'daily', 'davin', 'dave'],
- 'm': ['matthew', 'martin', 'mary'],
- 'r': ['raymond', 'rachel', 'randal', 'rodney'],
- 's': ['susan', 'suzy'],
- 't': ['tom', 'timothy']}
-{'d': ['david', 'raymond'],
- 'e': ['beatrice', 'darlene', 'bryce', 'dave'],
- 'l': ['rachel', 'randal', 'bill'],
- 'm': ['tom'],
- 'n': ['susan', 'brandon', 'martin', 'davin'],
- 'w': ['matthew'],
- 'y': ['timothy', 'daily', 'suzy', 'mary', 'rodney']}
-{3: ['tom'],
- 4: ['suzy', 'mary', 'bill', 'dave'],
- 5: ['david', 'susan', 'daily', 'bryce', 'davin'],
- 6: ['rachel', 'martin', 'randal', 'rodney'],
- 7: ['raymond', 'matthew', 'timothy', 'brandon', 'darlene'],
- 8: ['beatrice']}
-{1: ['tom', 'bill'],
- 2: ['david',
-     'rachel',
-     'matthew',
-     'susan',
-     'brandon',
-     'martin',
-     'randal',
-     'suzy',
-     'bryce',
-     'mary',
-     'davin',
-     'dave'],
- 3: ['raymond', 'timothy', 'darlene', 'daily', 'rodney'],
- 4: ['beatrice']}
-tom
-david
-deque(['raymond', 'rachel', 'matthew', 'susan', 'timothy', 'beatrice', 'brandon', 'martin', 'darlene', 'daily', 'randal', 'suzy', 'bryce', 'mary', 'rodney', 'davin', 'bill', 'dave', 'jim', 'becky'])
+====== RESTART: /Users/raymond/Dropbox/Public/sj139/password_cracker.py ======
+True
+True
+>>> 
+====== RESTART: /Users/raymond/Dropbox/Public/sj139/password_cracker.py ======
+True
+True
+>>> pprint(userpass)
+{'ai': 'brazil',
+ 'denis': 'sharapova',
+ 'jeff': 'cisco',
+ 'raymondh': 'superman',
+ 'steven': 'seahawks'}
+>>> 
+====== RESTART: /Users/raymond/Dropbox/Public/sj139/password_cracker.py ======
+True
+True
+>>> hashlib.md5('superman').hexdigest()
+'84d961568a65073a3bcf0eb216b2a576'
+>>> hashlib.sha1('superman').hexdigest()
+'18c28604dd31094a8d69dae60f1bcd347f1afc5a'
+>>> hashlib.sha256('superman').hexdigest()
+'73cd1b16c4fb83061ad18a0b29b9643a68d4640075a466dc9e51682f84a847f5'
+>>> hashlib.sha512('superman').hexdigest()
+'9ad0d01d1766bb60025ba3403e851d1493a1ce2f14bdcf14d198f4a49e083f4547a6e5f9908444aad02d8d2383fbc74af021c7ee797ea13254c6603de76291b8'
+>>> 
+====== RESTART: /Users/raymond/Dropbox/Public/sj139/password_cracker.py ======
+True
+True
+>>> pprint(userpass)
+{'ai': '90d014520eed41efb06dc1736acb362a613988ee',
+ 'denis': 'ee427be01c4bd1867675d80175c70db729173e81',
+ 'jeff': '7af78c911d5b48bea1dc2449d9d89513abeb4be5',
+ 'raymondh': '18c28604dd31094a8d69dae60f1bcd347f1afc5a',
+ 'steven': '317926c9c29b5802a362fcae1eeb74ebae239e55'}
+>>> 
+====== RESTART: /Users/raymond/Dropbox/Public/sj139/password_cracker.py ======
+True
+True
+>>> pprint(userpass)
+{'ai': '6e5fa4d9c48ca921c0a2ce1e64c9ae6f',
+ 'denis': '465b62d32a81df52f61fd5f075d67215',
+ 'jeff': 'dfeaf10390e560aea745ccba53e044ed',
+ 'raymondh': '84d961568a65073a3bcf0eb216b2a576',
+ 'steven': '7b4f86d3e54832dc7df197ed3c9d4172'}
+>>> 
+====== RESTART: /Users/raymond/Dropbox/Public/sj139/password_cracker.py ======
+>>> 
+password, 32027
+
+123456, 25969
+
+12345678, 8667
+
+1234, 5786
+
+qwerty, 5455
+
+12345, 4523
+
+dragon, 4321
+
+pussy, 3945
+
+baseball, 3739
+
+football, 3682
+
+letmein, 3536
+
+monkey, 3487
+
+696969, 3345
+
+abc123, 3310
+
+mustang, 3289
+
+michael, 3249
+
+shadow, 3209
+
+master, 3182
+
+jennifer, 2581
+
+111111, 2570
+
+2000, 2550
+
+jordan, 2538
+
+superman, 2523
+
+harley, 2485
+
+1234567, 2479
+
+fuckme, 2378
+
+hunter, 2377
+
+fuckyou, 2362
+
+trustno1, 2347
+
+ranger, 2265
+
+buster, 2254
+
+thomas, 2194
+
+tigger, 2192
+
+robert, 2176
+
+=============================== RESTART: Shell ===============================
 >>> line
-deque(['raymond', 'rachel', 'matthew', 'susan', 'timothy', 'beatrice', 'brandon', 'martin', 'darlene', 'daily', 'randal', 'suzy', 'bryce', 'mary', 'rodney', 'davin', 'bill', 'dave', 'jim', 'becky'])
->>> line.appendleft('vip')
->>> line
-deque(['vip', 'raymond', 'rachel', 'matthew', 'susan', 'timothy', 'beatrice', 'brandon', 'martin', 'darlene', 'daily', 'randal', 'suzy', 'bryce', 'mary', 'rodney', 'davin', 'bill', 'dave', 'jim', 'becky'])
->>> line.pop()
-'becky'
->>> 
->>> line.rotate(-2)
->>> line
-deque(['rachel', 'matthew', 'susan', 'timothy', 'beatrice', 'brandon', 'martin', 'darlene', 'daily', 'randal', 'suzy', 'bryce', 'mary', 'rodney', 'davin', 'bill', 'dave', 'jim', 'vip', 'raymond'])
->>> line.rotate(2)
->>> line
-deque(['vip', 'raymond', 'rachel', 'matthew', 'susan', 'timothy', 'beatrice', 'brandon', 'martin', 'darlene', 'daily', 'randal', 'suzy', 'bryce', 'mary', 'rodney', 'davin', 'bill', 'dave', 'jim'])
->>> 
-======= RESTART: /Users/raymond/Dropbox/Public/sj136/property_demo.py =======
->>> p
-PriceRange(symbol='CSCO', low=22, high=29)
->>> p.symbol
-'CSCO'
->>> p.low
-22
->>> p.high
-29
->>> p.midpoint
-25
->>> 
-======= RESTART: /Users/raymond/Dropbox/Public/sj136/property_demo.py =======
->>> p.midpoint
-25.5
->>> 
->>> 
->>> p.high = 32
->>> p.low
-22
->>> p.high
-32
->>> p.midpoint
-25.5
->>> # Data is now inconsistent
->>> p.__dict__
-{'high': 32, 'symbol': 'CSCO', 'midpoint': 25.5, 'low': 22}
->>> len(p.__dict__)
-4
->>> # Wasted space
->>> 
-======= RESTART: /Users/raymond/Dropbox/Public/sj136/property_demo.py =======
->>> p.symbol
-'CSCO'
->>> p.low
-22
->>> p.high
-29
->>> p.midpoint()
-25.5
->>> p.high = 32
->>> p.midpoint()
-27.0
->>> p.__dict__
-{'high': 32, 'symbol': 'CSCO', 'low': 22}
->>> len(_)
-3
->>> 
-======= RESTART: /Users/raymond/Dropbox/Public/sj136/property_demo.py =======
->>> >>> p.symbol
-'CSCO'
->>> p.low
-22
->>> p.high
-29
->>> p.midpoint()
-SyntaxError: invalid syntax
->>> 
->>> 
->>> 
->>> 
->>> 
-======= RESTART: /Users/raymond/Dropbox/Public/sj136/property_demo.py =======
->>> p.symbol
-'CSCO'
->>> p.low
-22
->>> p.high
-29
->>> p.midpoint
-25.5
->>> p.high = 32
->>> p.midpoint
-27.0
->>> 
-======= RESTART: /Users/raymond/Dropbox/Public/sj136/property_demo.py =======
->>> p.midpoint
-25.5
->>> p.get_midpoint()
-25.5
->>> 
-======= RESTART: /Users/raymond/Dropbox/Public/sj136/property_demo.py =======
->>> x = 10
->>> x += 1
->>> x
-11
->>> 
->>> 
->>> 
->>> p.low = 'hello'
->>> 
->>> 
-
-
->>> 
-
-
-
-
->>> 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
->>> 
-
-
->>> 
-
-
-
-
-
-
-
->>> p.high
-29
->>> p.xyzpdq
 
 Traceback (most recent call last):
-  File "<pyshell#364>", line 1, in <module>
-    p.xyzpdq
-AttributeError: 'PriceRange' object has no attribute 'xyzpdq'
+  File "<pyshell#170>", line 1, in <module>
+    line
+NameError: name 'line' is not defined
 >>> 
+====== RESTART: /Users/raymond/Dropbox/Public/sj139/password_cracker.py ======
+password
+123456
+12345678
+1234
+qwerty
+12345
+dragon
+pussy
+baseball
+football
+letmein
+monkey
+696969
+abc123
+mustang
+michael
+shadow
+master
+jennifer
+111111
+2000
+jordan
+superman
+harley
+1234567
+fuckme
+hunter
+fuckyou
+trustno1
+ranger
+buster
+thomas
+tigger
+robert
+soccer
+fuck
+batman
+test
+pass
+killer
+hockey
+george
+charlie
+andrew
+michelle
+love
+sunshine
+jessica
+asshole
+6969
+pepper
+daniel
+access
+123456789
+654321
+joshua
+=============================== RESTART: Shell ===============================
 >>> 
->>> 
->>> 
->>> p.midpoint
+====== RESTART: /Users/raymond/Dropbox/Public/sj139/password_cracker.py ======
+password 5f4dcc3b5aa765d61d8327deb882cf99
+123456 e10adc3949ba59abbe56e057f20f883e
+12345678 25d55ad283aa400af464c76d713c07ad
+1234 81dc9bdb52d04dc20036dbd8313ed055
+qwerty d8578edf8458ce06fbc5bb76a58c5ca4
+12345 827ccb0eea8a706c4c34a16891f84e7b
+dragon 8621ffdbc5698829397d97767ac13db3
+pussy acc6f2779b808637d04c71e3d8360eeb
+baseball 276f8db0b86edaa7fc805516c852c889
+football 37b4e2d82900d5e94b8da524fbeb33c0
+letmein 0d107d09f5bbe40cade3de5c71e9e9b7
+monkey d0763edaa9d9bd2a9516280e9044d885
+696969 7d0710824ff191f6a0086a7e3891641e
+
 
 Traceback (most recent call last):
-  File "<pyshell#369>", line 1, in <module>
-    p.midpoint
-  File "/Users/raymond/Dropbox/Public/sj136/property_demo.py", line 28, in midpoint
-    return (self.low + self.high) / 2
-TypeError: cannot concatenate 'str' and 'int' objects
->>> 
-======= RESTART: /Users/raymond/Dropbox/Public/sj136/property_demo.py =======
->>> p
-PriceRange(symbol='CSCO', low=22, high=29)
->>> p.low
-22
->>> p.high
-29
->>> p.midpoint
-25.5
->>> p.high = 32
->>> p.midpoint
-27.0
->>> p.__dict__
-{'high': 32, 'symbol': 'CSCO', '_low': 22}
->>> 
->>> 
->>> p.low = 15
->>> p.__dict__
-{'high': 32, 'symbol': 'CSCO', '_low': 15}
->>> p.low
-15
->>> p.get_low()
-15
->>> 
-======= RESTART: /Users/raymond/Dropbox/Public/sj136/property_demo.py =======
->>> p.low
-22
->>> p.high
-29
->>> p.midpoint
-25.5
->>> p.high = 32
->>> p.midpoint
-27.0
->>> p
-PriceRange(symbol='CSCO', low=22, high=32)
->>> p.low = 'hello'
-
-Traceback (most recent call last):
-  File "<pyshell#389>", line 1, in <module>
-    p.low = 'hello'
-  File "/Users/raymond/Dropbox/Public/sj136/property_demo.py", line 43, in set_low
-    raise TypeError('Expected int or float')
-TypeError: Expected int or float
->>> 
-======= RESTART: /Users/raymond/Dropbox/Public/sj136/property_demo.py =======
->>> p.low = 'hello'
-
-Traceback (most recent call last):
-  File "<pyshell#390>", line 1, in <module>
-    p.low = 'hello'
-  File "/Users/raymond/Dropbox/Public/sj136/property_demo.py", line 49, in set_low
-    raise TypeError('Expected int or float')
-TypeError: Expected int or float
->>> 
->>> 
->>> 
->>> 
->>> 
->>> p.high = 'goodbye'
->>> 
-
-
->>> 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
->>> 
-
-
->>> 
-
-
-
-
->>> p.midpoint
-
-Traceback (most recent call last):
-  File "<pyshell#401>", line 1, in <module>
-    p.midpoint
-  File "/Users/raymond/Dropbox/Public/sj136/property_demo.py", line 34, in midpoint
-    return (self.low + self.high) / 2
-TypeError: unsupported operand type(s) for +: 'int' and 'str'
->>> 
-======= RESTART: /Users/raymond/Dropbox/Public/sj136/property_demo.py =======
->>> p.high = 'goodbye'
-
-Traceback (most recent call last):
-  File "<pyshell#402>", line 1, in <module>
-    p.high = 'goodbye'
-  File "/Users/raymond/Dropbox/Public/sj136/property_demo.py", line 61, in set_high
-    raise TypeError('Expected int or float')
-TypeError: Expected int or float
->>> 
->>> 
->>> 
->>> # DRY -> Code Smell -> Refactor
->>> # Let's go eat -> skeet
->>> # 1:40
->>> 
-======= RESTART: /Users/raymond/Dropbox/Public/sj136/property_demo.py =======
-
-Traceback (most recent call last):
-  File "/Users/raymond/Dropbox/Public/sj136/property_demo.py", line 72, in <module>
-    p = PriceRange('CSCO', 22, 29)
-  File "/Users/raymond/Dropbox/Public/sj136/property_demo.py", line 32, in __init__
-    self.high = high
-  File "/Users/raymond/Dropbox/Public/sj136/property_demo.py", line 67, in set_high
-    validate_percentage(low)
-NameError: global name 'low' is not defined
->>> 
-======= RESTART: /Users/raymond/Dropbox/Public/sj136/property_demo.py =======
->>> 
-======= RESTART: /Users/raymond/Dropbox/Public/sj136/property_demo.py =======
->>> p.symbol = 'csco'
-
-Traceback (most recent call last):
-  File "<pyshell#409>", line 1, in <module>
-    p.symbol = 'csco'
-  File "/Users/raymond/Dropbox/Public/sj136/property_demo.py", line 49, in set_symbol
-    validate_stock_symbol(symbol)
-  File "/Users/raymond/Dropbox/Public/sj136/validators.py", line 15, in validate_stock_symbol
-    raise ValueError('Must be all uppercase')
-ValueError: Must be all uppercase
->>> p.symbol = 'CSCOAB'
->>> 
-======= RESTART: /Users/raymond/Dropbox/Public/sj136/property_demo.py =======
->>> p.symbol = 'CSCOAB'
->>> p.symbol = 10
-
-Traceback (most recent call last):
-  File "<pyshell#412>", line 1, in <module>
-    p.symbol = 10
-  File "/Users/raymond/Dropbox/Public/sj136/property_demo.py", line 49, in set_symbol
-    validate_stock_symbol(symbol)
-  File "/Users/raymond/Dropbox/Public/sj136/validators.py", line 11, in validate_stock_symbol
-    raise TypeError('Expected a string')
-TypeError: Expected a string
->>> 
-========= RESTART: /Users/raymond/Dropbox/Public/sj136/validators.py =========
->>> p.symbol = 'CSCOAB'
-
-Traceback (most recent call last):
-  File "<pyshell#413>", line 1, in <module>
-    p.symbol = 'CSCOAB'
-NameError: name 'p' is not defined
->>> 
-======= RESTART: /Users/raymond/Dropbox/Public/sj136/property_demo.py =======
->>> p.symbol = 'CSCOAB'
-
-Traceback (most recent call last):
-  File "<pyshell#414>", line 1, in <module>
-    p.symbol = 'CSCOAB'
-  File "/Users/raymond/Dropbox/Public/sj136/property_demo.py", line 49, in set_symbol
-    validate_stock_symbol(symbol)
-  File "/Users/raymond/Dropbox/Public/sj136/validators.py", line 13, in validate_stock_symbol
-    raise ValueError('Expected 3 to 5 characters')
-ValueError: Expected 3 to 5 characters
->>> 
-========= RESTART: /Users/raymond/Dropbox/Public/sj136/frequency.py =========
-202238
->>> 
-========= RESTART: /Users/raymond/Dropbox/Public/sj136/frequency.py =========
-The
-Tragedy
-of
-Hamlet,
-Prince
-of
-Denmark
-Shakespeare
-homepage
-|
-Hamlet
-|
-Entire
-play
-ACT
-Traceback (most recent call last):
-  File "/Users/raymond/Dropbox/Public/sj136/frequency.py", line 9, in <module>
-    print word
+  File "/Users/raymond/Dropbox/Public/sj139/password_cracker.py", line 25, in <module>
+    print password, hashpass
   File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/idlelib/PyShell.py", line 1356, in write
     return self.shell.write(s, self.tags)
 KeyboardInterrupt
 >>> 
-========= RESTART: /Users/raymond/Dropbox/Public/sj136/frequency.py =========
-the
-tragedy
-of
-hamlet
-prince
-of
-denmark
-shakespeare
-homepage
-hamlet
-entire
-play
-act
-i
-scene
-i
-elsinore
-a
-platform
-before
-the
-castle
-francisco
-at
-his
-post
-enter
-to
-him
-bernardo
-bernardo
-who's
-there
-francisco
-nay
-answer
-me
-stand
-and
-unfold
-yourself
-bernardo
-long
-live
-the
-king
-francisco
-bernardo
-bernardo
-he
-francisco
-you
-come
-most
-carefully
-upon
-your
-hour
-bernardo
-'tis
-now
-struck
-twelve
-get
-thee
-to
-bed
-francisco
-francisco
-for
-this
-relief
-much
-thanks
-'tis
-bitter
-cold
-and
-i
-am
-sick
-at
-heart
-bernardo
-have
-you
-had
-quiet
-guard
-francisco
-not
-a
-mouse
-stirring
-bernardo
-well
-good
-night
-if
-you
-do
-meet
-horatio
+====== RESTART: /Users/raymond/Dropbox/Public/sj139/password_cracker.py ======
+True
+True
+>>> pprint(userpass)
+{'ai': '6e5fa4d9c48ca921c0a2ce1e64c9ae6f',
+ 'denis': '465b62d32a81df52f61fd5f075d67215',
+ 'jeff': 'dfeaf10390e560aea745ccba53e044ed',
+ 'raymondh': '84d961568a65073a3bcf0eb216b2a576',
+ 'steven': '7b4f86d3e54832dc7df197ed3c9d4172'}
+>>> for username, hashpass in userpass.items():
+	if hashpass in rainbow:
+		print username, rainbow[hashpass]
+
+		
+ai brazil
+steven seahawks
+raymondh superman
+jeff cisco
+>>> 
+====== RESTART: /Users/raymond/Dropbox/Public/sj139/password_cracker.py ======
+True
+True
+ai brazil
+steven seahawks
+raymondh superman
+jeff cisco
+>>> # [<expr> for <var> in <iterable>]
+>>> [x**2 for x in range(10)]
+[0, 1, 4, 9, 16, 25, 36, 49, 64, 81]
+>>> 
+>>> {x**2 for x in range(-10, 10)}
+set([64, 1, 100, 0, 49, 9, 16, 81, 25, 4, 36])
+>>> # {<expr> for <var> in <iterable>}
+>>> 
+>>> {x**2: x for x in range(-10, 10)}
+{64: 8, 1: 1, 100: -10, 0: 0, 49: 7, 9: 3, 16: 4, 81: 9, 25: 5, 4: 2, 36: 6}
+>>> # {<kexpr> : <vexpr> for <var> in <iterable>}
+>>> 
+>>> 
+>>> 
+>>> 
+>>> d = dict(raymond='red', rachel='blue', matthew='yellow')
+>>> d['raymond']
+'red'
+>>> r = {color: name for name, color in d.items()}
+>>> r['yellow']
+'matthew'
+>>> d
+{'matthew': 'yellow', 'rachel': 'blue', 'raymond': 'red'}
+>>> r
+{'blue': 'rachel', 'red': 'raymond', 'yellow': 'matthew'}
+>>> 
+====== RESTART: /Users/raymond/Dropbox/Public/sj139/password_cracker.py ======
+True
+True
+>>> pprint(userpass)
+{'ai': '6e5fa4d9c48ca921c0a2ce1e64c9ae6f',
+ 'denis': '465b62d32a81df52f61fd5f075d67215',
+ 'jeff': 'dfeaf10390e560aea745ccba53e044ed',
+ 'raymondh': '84d961568a65073a3bcf0eb216b2a576',
+ 'steven': '7b4f86d3e54832dc7df197ed3c9d4172'}
+>>> pprint(passuser)
+{}
+>>> 
+====== RESTART: /Users/raymond/Dropbox/Public/sj139/password_cracker.py ======
+True
+True
+>>> pprint(userpass)
+{'ai': '6e5fa4d9c48ca921c0a2ce1e64c9ae6f',
+ 'denis': '465b62d32a81df52f61fd5f075d67215',
+ 'jeff': 'dfeaf10390e560aea745ccba53e044ed',
+ 'raymondh': '84d961568a65073a3bcf0eb216b2a576',
+ 'steven': '7b4f86d3e54832dc7df197ed3c9d4172'}
+>>> pprint(passuser)
+{'465b62d32a81df52f61fd5f075d67215': 'denis',
+ '6e5fa4d9c48ca921c0a2ce1e64c9ae6f': 'ai',
+ '7b4f86d3e54832dc7df197ed3c9d4172': 'steven',
+ '84d961568a65073a3bcf0eb216b2a576': 'raymondh',
+ 'dfeaf10390e560aea745ccba53e044ed': 'jeff'}
+>>> 
+====== RESTART: /Users/raymond/Dropbox/Public/sj139/password_cracker.py ======
+True
+True
+raymondh
+
+Traceback (most recent call last):
+  File "/Users/raymond/Dropbox/Public/sj139/password_cracker.py", line 55, in <module>
+    print passuser[hashpass], passwor
+NameError: name 'passwor' is not defined
+>>> 
+====== RESTART: /Users/raymond/Dropbox/Public/sj139/password_cracker.py ======
+True
+True
+raymondh superman
+ai brazil
+steven seahawks
+jeff cisco
+>>> 
+====== RESTART: /Users/raymond/Dropbox/Public/sj139/password_cracker.py ======
+True
+True
+raymondh superman
+ai brazil
+steven seahawks
+jeff cisco
+>>> 
+>>> 
+>>> 'hello'.islower()
+True
+>>> 'hello'.isupper()
+False
+>>> 'hello'.isdigit()
+False
+>>> '123'.isdigit()
+True
+>>> 'HELLO'.isupper()
+True
+>>> len('hello')
+5
+>>> 
+====== RESTART: /Users/raymond/Dropbox/Public/sj139/password_cracker.py ======
+
+Traceback (most recent call last):
+  File "/Users/raymond/Dropbox/Public/sj139/password_cracker.py", line 53, in <module>
+    new_account('jeff', 'cisco'),
+  File "/Users/raymond/Dropbox/Public/sj139/password_cracker.py", line 18, in new_account
+    raise ValueError('Passwords must be at least 6 letters')
+ValueError: Passwords must be at least 6 letters
+>>> 
+====== RESTART: /Users/raymond/Dropbox/Public/sj139/password_cracker.py ======
+
+Traceback (most recent call last):
+  File "/Users/raymond/Dropbox/Public/sj139/password_cracker.py", line 53, in <module>
+    new_account('jeff', 'cisco'),
+  File "/Users/raymond/Dropbox/Public/sj139/password_cracker.py", line 18, in new_account
+    raise ValueError('Passwords must be at least 6 letters')
+ValueError: Passwords must be at least 6 letters
+>>> 
+====== RESTART: /Users/raymond/Dropbox/Public/sj139/password_cracker.py ======
+True
+True
+raymondh superman
+ai brazil
+steven seahawks
+>>> all([True, True, True, True])
+True
+>>> all([True, True, False, True])
+False
+>>> any([True, True, False, True])
+True
+>>> any([False, False, False])
+False
+>>> password = 'Superman'
+>>> [c.isupper() for c in password]
+[True, False, False, False, False, False, False, False]
+>>> any([c.isupper() for c in password])
+True
+>>> any(c.isupper() for c in password)
+True
+>>> 
+====== RESTART: /Users/raymond/Dropbox/Public/sj139/password_cracker.py ======
+
+Traceback (most recent call last):
+  File "/Users/raymond/Dropbox/Public/sj139/password_cracker.py", line 56, in <module>
+    new_account('raymondh', 'superman')
+  File "/Users/raymond/Dropbox/Public/sj139/password_cracker.py", line 22, in new_account
+    raise ValueError('Passwords must be at least 6 letters')
+ValueError: Passwords must be at least 6 letters
+>>> 
+====== RESTART: /Users/raymond/Dropbox/Public/sj139/password_cracker.py ======
+
+Traceback (most recent call last):
+  File "/Users/raymond/Dropbox/Public/sj139/password_cracker.py", line 57, in <module>
+    new_account('jeff', 'cisco1'),
+  File "/Users/raymond/Dropbox/Public/sj139/password_cracker.py", line 22, in new_account
+    raise ValueError('Passwords must be at least 6 letters')
+ValueError: Passwords must be at least 6 letters
+>>> 
+====== RESTART: /Users/raymond/Dropbox/Public/sj139/password_cracker.py ======
+False
+False
+>>> 
+====== RESTART: /Users/raymond/Dropbox/Public/sj139/password_cracker.py ======
+True
+True
+>>> password = 'superman'
+>>> password.lower()
+'superman'
+>>> password.upper()
+'SUPERMAN'
+>>> password.title()
+'Superman'
+>>> 
+====== RESTART: /Users/raymond/Dropbox/Public/sj139/password_cracker.py ======
+True
+True
+raymondh Superman
+ai Brazil
+steven Seahawks
+>>> 
+====== RESTART: /Users/raymond/Dropbox/Public/sj139/password_cracker.py ======
+
+Traceback (most recent call last):
+  File "/Users/raymond/Dropbox/Public/sj139/password_cracker.py", line 60, in <module>
+    new_account('raymondh', 'Superman')
+  File "/Users/raymond/Dropbox/Public/sj139/password_cracker.py", line 24, in new_account
+    raise ValueError('Passwords must be at least 6 letters, upper and lower and digits')
+ValueError: Passwords must be at least 6 letters, upper and lower and digits
+>>> 
+====== RESTART: /Users/raymond/Dropbox/Public/sj139/password_cracker.py ======
+
+Traceback (most recent call last):
+  File "/Users/raymond/Dropbox/Public/sj139/password_cracker.py", line 62, in <module>
+    new_account('denis', 'Sharapova')
+  File "/Users/raymond/Dropbox/Public/sj139/password_cracker.py", line 24, in new_account
+    raise ValueError('Passwords must be at least 6 letters, upper and lower and digits')
+ValueError: Passwords must be at least 6 letters, upper and lower and digits
+>>> 
+====== RESTART: /Users/raymond/Dropbox/Public/sj139/password_cracker.py ======
+
+Traceback (most recent call last):
+  File "/Users/raymond/Dropbox/Public/sj139/password_cracker.py", line 63, in <module>
+    new_account('ai', 'Brazil')
+  File "/Users/raymond/Dropbox/Public/sj139/password_cracker.py", line 24, in new_account
+    raise ValueError('Passwords must be at least 6 letters, upper and lower and digits')
+ValueError: Passwords must be at least 6 letters, upper and lower and digits
+>>> 
+====== RESTART: /Users/raymond/Dropbox/Public/sj139/password_cracker.py ======
+
+Traceback (most recent call last):
+  File "/Users/raymond/Dropbox/Public/sj139/password_cracker.py", line 64, in <module>
+    new_account('steven', 'Seahawks')
+  File "/Users/raymond/Dropbox/Public/sj139/password_cracker.py", line 24, in new_account
+    raise ValueError('Passwords must be at least 6 letters, upper and lower and digits')
+ValueError: Passwords must be at least 6 letters, upper and lower and digits
+>>> 
+====== RESTART: /Users/raymond/Dropbox/Public/sj139/password_cracker.py ======
+True
+False
+>>> 
+====== RESTART: /Users/raymond/Dropbox/Public/sj139/password_cracker.py ======
+True
+True
+>>> 'hello world'.upper()
+'HELLO WORLD'
+>>> 'hello world'.lower()
+'hello world'
+>>> 'hello world'.title()
+'Hello World'
+>>> 'hello world'.capitalize()
+'Hello world'
+>>> 
+>>> 
+>>> s = 'abcd'
+>>> t = [10, 20, 30]
+>>> for x in s:
+	for y in t:
+		print x, y
+
+		
+a 10
+a 20
+a 30
+b 10
+b 20
+b 30
+c 10
+c 20
+c 30
+d 10
+d 20
+d 30
+>>> for x in s:
+	for y in s:
+		print x, y
+
+		
+a a
+a b
+a c
+a d
+b a
+b b
+b c
+b d
+c a
+c b
+c c
+c d
+d a
+d b
+d c
+d d
+>>> for x in s:
+	for y in s:
+		for z in t:
+			print x, y, z
+
+			
+a a 10
+a a 20
+a a 30
+a b 10
+a b 20
+a b 30
+a c 10
+a c 20
+a c 30
+a d 10
+a d 20
+a d 30
+b a 10
+b a 20
+b a 30
+b b 10
+b b 20
+b b 30
+b c 10
+b c 20
+b c 30
+b d 10
+b d 20
+b d 30
+c a 10
+c a 20
+c a 30
+c b 10
+c b 20
+c b 30
+c c 10
+c c 20
+c c 30
+c d 10
+c d 20
+c d 30
+d a 10
+d a 20
+d a 30
+d b 10
+d b 20
+d b 30
+d c 10
+d c 20
+d c 30
+d d 10
+d d 20
+d d 30
+>>> from itertools import product
+>>> for t in product('abc', range(4)):
+	print t
+
+	
+('a', 0)
+('a', 1)
+('a', 2)
+('a', 3)
+('b', 0)
+('b', 1)
+('b', 2)
+('b', 3)
+('c', 0)
+('c', 1)
+('c', 2)
+('c', 3)
+>>> for t in product('abc', range(4), 'xy'):
+	print t
+
+	
+('a', 0, 'x')
+('a', 0, 'y')
+('a', 1, 'x')
+('a', 1, 'y')
+('a', 2, 'x')
+('a', 2, 'y')
+('a', 3, 'x')
+('a', 3, 'y')
+('b', 0, 'x')
+('b', 0, 'y')
+('b', 1, 'x')
+('b', 1, 'y')
+('b', 2, 'x')
+('b', 2, 'y')
+('b', 3, 'x')
+('b', 3, 'y')
+('c', 0, 'x')
+('c', 0, 'y')
+('c', 1, 'x')
+('c', 1, 'y')
+('c', 2, 'x')
+('c', 2, 'y')
+('c', 3, 'x')
+('c', 3, 'y')
+>>> for t in product('xy', 'xy', 'xy', 'xy'):
+	print t
+
+	
+('x', 'x', 'x', 'x')
+('x', 'x', 'x', 'y')
+('x', 'x', 'y', 'x')
+('x', 'x', 'y', 'y')
+('x', 'y', 'x', 'x')
+('x', 'y', 'x', 'y')
+('x', 'y', 'y', 'x')
+('x', 'y', 'y', 'y')
+('y', 'x', 'x', 'x')
+('y', 'x', 'x', 'y')
+('y', 'x', 'y', 'x')
+('y', 'x', 'y', 'y')
+('y', 'y', 'x', 'x')
+('y', 'y', 'x', 'y')
+('y', 'y', 'y', 'x')
+('y', 'y', 'y', 'y')
+>>> for t in product('xy', repeat=4):
+	print t
+
+	
+('x', 'x', 'x', 'x')
+('x', 'x', 'x', 'y')
+('x', 'x', 'y', 'x')
+('x', 'x', 'y', 'y')
+('x', 'y', 'x', 'x')
+('x', 'y', 'x', 'y')
+('x', 'y', 'y', 'x')
+('x', 'y', 'y', 'y')
+('y', 'x', 'x', 'x')
+('y', 'x', 'x', 'y')
+('y', 'x', 'y', 'x')
+('y', 'x', 'y', 'y')
+('y', 'y', 'x', 'x')
+('y', 'y', 'x', 'y')
+('y', 'y', 'y', 'x')
+('y', 'y', 'y', 'y')
+>>> for t in product(range(2), repeat=4):
+	print t
+
+	
+(0, 0, 0, 0)
+(0, 0, 0, 1)
+(0, 0, 1, 0)
+(0, 0, 1, 1)
+(0, 1, 0, 0)
+(0, 1, 0, 1)
+(0, 1, 1, 0)
+(0, 1, 1, 1)
+(1, 0, 0, 0)
+(1, 0, 0, 1)
+(1, 0, 1, 0)
+(1, 0, 1, 1)
+(1, 1, 0, 0)
+(1, 1, 0, 1)
+(1, 1, 1, 0)
+(1, 1, 1, 1)
+>>> for t in product(range(10), repeat=2):
+	print t
+
+	
+(0, 0)
+(0, 1)
+(0, 2)
+(0, 3)
+(0, 4)
+(0, 5)
+(0, 6)
+(0, 7)
+(0, 8)
+(0, 9)
+(1, 0)
+(1, 1)
+(1, 2)
+(1, 3)
+(1, 4)
+(1, 5)
+(1, 6)
+(1, 7)
+(1, 8)
+(1, 9)
+(2, 0)
+(2, 1)
+(2, 2)
+(2, 3)
+(2, 4)
+(2, 5)
+(2, 6)
+(2, 7)
+(2, 8)
+(2, 9)
+(3, 0)
+(3, 1)
+(3, 2)
+(3, 3)
+(3, 4)
+(3, 5)
+(3, 6)
+(3, 7)
+(3, 8)
+(3, 9)
+(4, 0)
+(4, 1)
+(4, 2)
+(4, 3)
+(4, 4)
+(4, 5)
+(4, 6)
+(4, 7)
+(4, 8)
+(4, 9)
+(5, 0)
+(5, 1)
+(5, 2)
+(5, 3)
+(5, 4)
+(5, 5)
+(5, 6)
+(5, 7)
+(5, 8)
+(5, 9)
+(6, 0)
+(6, 1)
+(6, 2)
+(6, 3)
+(6, 4)
+(6, 5)
+(6, 6)
+(6, 7)
+(6, 8)
+(6, 9)
+(7, 0)
+(7, 1)
+(7, 2)
+(7, 3)
+(7, 4)
+(7, 5)
+(7, 6)
+(7, 7)
+(7, 8)
+(7, 9)
+(8, 0)
+(8, 1)
+(8, 2)
+(8, 3)
+(8, 4)
+(8, 5)
+(8, 6)
+(8, 7)
+(8, 8)
+(8, 9)
+(9, 0)
+(9, 1)
+(9, 2)
+(9, 3)
+(9, 4)
+(9, 5)
+(9, 6)
+(9, 7)
+(9, 8)
+(9, 9)
+>>> for t in product(range(3), repeat=3):
+	print t
+
+	
+(0, 0, 0)
+(0, 0, 1)
+(0, 0, 2)
+(0, 1, 0)
+(0, 1, 1)
+(0, 1, 2)
+(0, 2, 0)
+(0, 2, 1)
+(0, 2, 2)
+(1, 0, 0)
+(1, 0, 1)
+(1, 0, 2)
+(1, 1, 0)
+(1, 1, 1)
+(1, 1, 2)
+(1, 2, 0)
+(1, 2, 1)
+(1, 2, 2)
+(2, 0, 0)
+(2, 0, 1)
+(2, 0, 2)
+(2, 1, 0)
+(2, 1, 1)
+(2, 1, 2)
+(2, 2, 0)
+(2, 2, 1)
+(2, 2, 2)
+>>> range(10)
+[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+>>> map(type, range(10))
+[<type 'int'>, <type 'int'>, <type 'int'>, <type 'int'>, <type 'int'>, <type 'int'>, <type 'int'>, <type 'int'>, <type 'int'>, <type 'int'>]
+>>> map(str, range(10))
+['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
+>>> map(str, range(15))
+['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14']
+>>> 
+====== RESTART: /Users/raymond/Dropbox/Public/sj139/password_cracker.py ======
+True
+True
+raymondh Superman7
+ai Brazil1
+steven Seahawks12
+jeff Cisco1
+>>> 
+====== RESTART: /Users/raymond/Dropbox/Public/sj139/password_cracker.py ======
+True
+True
+raymondh Superman7
+ai 1Brazil
+
+====== RESTART: /Users/raymond/Dropbox/Public/sj139/password_cracker.py ======
+True
+True
+raymondh Superman7
+ai 1Brazil
+steven Seahawks12
+jeff Cisco1
+>>> # 1:45
+>>> pprint(userpass)
+{'ai': '3dcef3f12642e4bf36554bbe2418c86e104db10eaf26cb4e458718cefa8c22298dee78619b13aa666529f9f2ff3a16bba6636b9285e642e0fda86683d35c2caf',
+ 'denis': 'ed1ad03e766f162bb6d17f801e146f74641ecea911db118fc30fbd76314b81fbc10a059eec50e1e7680d333c0f2a1eaf343ca3dd9b1c2b6d192581e109c73487',
+ 'jeff': '67d5a685ba6f7b78ef5e61ccd681dd1cf011a30f0804308d5e85b578c6794a1c2a2771756253f16041a886fcc4c5b7ef7285793d8f2ffc0a072546993c7e9ca3',
+ 'raymondh': '9b02df9223af2fcae087648068fcdb3f8ee0e7aa4a0cb338516d975287af26da6af109fd47dde8244e660f95556668ac8df3453609b377d57fd96e08e0dfeff9',
+ 'steven': '1a621a2c8fc2d348fb49ce6fed6eb7b2ff13940cb64f9814ceafa525a894e7502bc58245fec5d8fad016c69bf0e12d61608e77f9ef57f1bb1d2e99a7822b191b'}
+>>> 
+>>> 
+>>> True
+True
+
+>>> import hashlib
+>>> hashlib.md5('superman4').hexdigest()
+'80f817c91853ef67c01e850f3bac700b'
+>>> 
+>>> 
+>>> hashlib.md5('nedstark').hexdigest()
+'042f02488b57a79fe2649889d8f2a757'
+>>> 
+====== RESTART: /Users/raymond/Dropbox/Public/sj139/password_cracker.py ======
+True
+True
+raymondh Superman7
+
+Traceback (most recent call last):
+  File "/Users/raymond/Dropbox/Public/sj139/password_cracker.py", line 75, in <module>
+    search_common(userpass)
+  File "/Users/raymond/Dropbox/Public/sj139/password_cracker.py", line 60, in search_common
+    hashpass = digest(password)
+  File "/Users/raymond/Dropbox/Public/sj139/password_cracker.py", line 11, in digest
+    return hashlib.sha512(password + secret).hexdigest()
+KeyboardInterrupt
+>>> 
+>>> 
+>>> 
+>>> import hashlib
+>>> hashlib.md5('superman4' + 'the life expectancy of a stark, targyrian, or lannister is very short').hexdigest()
+'02a12d0644c76ae237fd2797ebd51dbb'
+>>> 
+====== RESTART: /Users/raymond/Dropbox/Public/sj139/password_cracker.py ======
+True
+True
+raymondh Superman7
+
+Traceback (most recent call last):
+  File "/Users/raymond/Dropbox/Public/sj139/password_cracker.py", line 75, in <module>
+    search_common(userpass)
+  File "/Users/raymond/Dropbox/Public/sj139/password_cracker.py", line 60, in search_common
+    hashpass = digest(password)
+  File "/Users/raymond/Dropbox/Public/sj139/password_cracker.py", line 11, in digest
+    return hashlib.sha512(password + salt).hexdigest()
+KeyboardInterrupt
+>>> 
+====== RESTART: /Users/raymond/Dropbox/Public/sj139/password_cracker.py ======
+True
+True
+
+====== RESTART: /Users/raymond/Dropbox/Public/sj139/password_cracker.py ======
+True
+True
 
 =============================== RESTART: Shell ===============================
 >>> 
-========= RESTART: /Users/raymond/Dropbox/Public/sj136/frequency.py =========
-[('the', 1137),
- ('and', 963),
- ('to', 736),
- ('of', 669),
- ('you', 547),
- ('i', 540),
- ('a', 527),
- ('my', 513),
- ('hamlet', 461),
- ('in', 435),
- ('it', 415),
- ('that', 388),
- ('is', 339),
- ('not', 312),
- ('lord', 308),
- ('his', 296),
- ('this', 294),
- ('but', 268),
- ('with', 267),
- ('for', 247),
- ('your', 242),
- ('me', 232),
- ('be', 226),
- ('as', 220),
- ('he', 215),
- ('what', 204),
- ('so', 196),
- ('him', 196),
- ('king', 194),
- ('have', 179),
- ('will', 169),
- ('horatio', 157),
- ('do', 151),
- ('no', 141),
- ('we', 139),
- ('are', 131),
- ('on', 126),
- ('all', 120),
- ('claudius', 120),
- ('our', 118),
- ('by', 117),
- ('queen', 116),
- ('polonius', 116),
- ('shall', 114),
- ('if', 112),
- ('or', 112),
- ('o', 110),
- ('good', 107),
- ('come', 106),
- ('they', 103)]
 >>> 
-========= RESTART: /Users/raymond/Dropbox/Public/sj136/frequency.py =========
-[('the', 1137),
- ('and', 963),
- ('to', 736),
- ('of', 669),
- ('you', 547),
- ('i', 540),
- ('a', 527),
- ('my', 513),
- ('hamlet', 461),
- ('in', 435),
- ('it', 415),
- ('that', 388),
- ('is', 339),
- ('not', 312),
- ('lord', 308),
- ('his', 296),
- ('this', 294),
- ('but', 268),
- ('with', 267),
- ('for', 247),
- ('your', 242),
- ('me', 232),
- ('be', 226),
- ('as', 220),
- ('he', 215),
- ('what', 204),
- ('so', 196),
- ('him', 196),
- ('king', 194),
- ('have', 179),
- ('will', 169),
- ('horatio', 157),
- ('do', 151),
- ('no', 141),
- ('we', 139),
- ('are', 131),
- ('on', 126),
- ('all', 120),
- ('claudius', 120),
- ('our', 118),
- ('by', 117),
- ('queen', 116),
- ('polonius', 116),
- ('shall', 114),
- ('if', 112),
- ('or', 112),
- ('o', 110),
- ('good', 107),
- ('come', 106),
- ('they', 103)]
 >>> 
-========= RESTART: /Users/raymond/Dropbox/Public/sj136/frequency.py =========
-[('the', 1137),
- ('and', 963),
- ('to', 736),
- ('of', 669),
- ('you', 547),
- ('i', 540),
- ('a', 527),
- ('my', 513),
- ('hamlet', 461),
- ('in', 435),
- ('it', 415),
- ('that', 388),
- ('is', 339),
- ('not', 312),
- ('lord', 308),
- ('his', 296),
- ('this', 294),
- ('but', 268),
- ('with', 267),
- ('for', 247),
- ('your', 242),
- ('me', 232),
- ('be', 226),
- ('as', 220),
- ('he', 215),
- ('what', 204),
- ('so', 196),
- ('him', 196),
- ('king', 194),
- ('have', 179),
- ('will', 169),
- ('horatio', 157),
- ('do', 151),
- ('no', 141),
- ('we', 139),
- ('are', 131),
- ('on', 126),
- ('all', 120),
- ('claudius', 120),
- ('our', 118),
- ('by', 117),
- ('queen', 116),
- ('polonius', 116),
- ('shall', 114),
- ('if', 112),
- ('or', 112),
- ('o', 110),
- ('good', 107),
- ('come', 106),
- ('they', 103)]
 >>> 
-========= RESTART: /Users/raymond/Dropbox/Public/sj136/frequency.py =========
-[('the', 1137),
- ('and', 963),
- ('to', 736),
- ('of', 669),
- ('you', 547),
- ('i', 540),
- ('a', 527),
- ('my', 513),
- ('hamlet', 461),
- ('in', 435),
- ('it', 415),
- ('that', 388),
- ('is', 339),
- ('not', 312),
- ('lord', 308),
- ('his', 296),
- ('this', 294),
- ('but', 268),
- ('with', 267),
- ('for', 247),
- ('your', 242),
- ('me', 232),
- ('be', 226),
- ('as', 220),
- ('he', 215),
- ('what', 204),
- ('so', 196),
- ('him', 196),
- ('king', 194),
- ('have', 179),
- ('will', 169),
- ('horatio', 157),
- ('do', 151),
- ('no', 141),
- ('we', 139),
- ('are', 131),
- ('on', 126),
- ('all', 120),
- ('claudius', 120),
- ('our', 118),
- ('by', 117),
- ('queen', 116),
- ('polonius', 116),
- ('shall', 114),
- ('if', 112),
- ('or', 112),
- ('o', 110),
- ('good', 107),
- ('come', 106),
- ('they', 103)]
->>> 
-========= RESTART: /Users/raymond/Dropbox/Public/sj136/frequency.py =========
-[('the', 1137),
- ('and', 963),
- ('to', 736),
- ('of', 669),
- ('you', 547),
- ('i', 540),
- ('a', 527),
- ('my', 513),
- ('hamlet', 461),
- ('in', 435),
- ('it', 415),
- ('that', 388),
- ('is', 339),
- ('not', 312),
- ('lord', 308),
- ('his', 296),
- ('this', 294),
- ('but', 268),
- ('with', 267),
- ('for', 247),
- ('your', 242),
- ('me', 232),
- ('be', 226),
- ('as', 220),
- ('he', 215),
- ('what', 204),
- ('so', 196),
- ('him', 196),
- ('king', 194),
- ('have', 179),
- ('will', 169),
- ('horatio', 157),
- ('do', 151),
- ('no', 141),
- ('we', 139),
- ('are', 131),
- ('on', 126),
- ('all', 120),
- ('claudius', 120),
- ('our', 118),
- ('by', 117),
- ('queen', 116),
- ('polonius', 116),
- ('shall', 114),
- ('if', 112),
- ('or', 112),
- ('o', 110),
- ('good', 107),
- ('come', 106),
- ('they', 103)]
+>>> class Person(object):
+	def __init__(self, name, age, email):
+		self.name = name
+		self.age = age
+		self.email = email
 
-========= RESTART: /Users/raymond/Dropbox/Public/sj136/frequency.py =========
-[('the', 1137),
- ('and', 963),
- ('to', 736),
- ('of', 669),
- ('you', 547),
- ('i', 540),
- ('a', 527),
- ('my', 513),
- ('hamlet', 461),
- ('in', 435)]
->>> 
-========= RESTART: /Users/raymond/Dropbox/Public/sj136/frequency.py =========
-[('the', 1137),
- ('and', 963),
- ('to', 736),
- ('of', 669),
- ('you', 547),
- ('i', 540),
- ('a', 527),
- ('my', 513),
- ('hamlet', 461),
- ('in', 435)]
->>> 
-========= RESTART: /Users/raymond/Dropbox/Public/sj136/frequency.py =========
+		
+>>> p = Person('Rachel Hettinger', 46, 'rachelh@outlook.com')
+>>> import sys
+>>> sys.getsizeof(p)
+64
+>>> sys.getsizeof(p.__dict__)
+280
+>>> [sys.getsizeof(key) for key in p.__dict__.keys()]
+[40, 41, 42]
+>>> [sys.getsizeof(value) for values in p.__dict__.values()]
 
 Traceback (most recent call last):
-  File "/Users/raymond/Dropbox/Public/sj136/frequency.py", line 18, in <module>
-    filename = sys.argv[1]
-IndexError: list index out of range
->>> 
-========= RESTART: /Users/raymond/Dropbox/Public/sj136/frequency.py =========
-Usage:  frequency filename
->>> 
-========= RESTART: /Users/raymond/Dropbox/Public/sj136/frequency.py =========
-[('the', 1137),
- ('and', 963),
- ('to', 736),
- ('of', 669),
- ('you', 547),
- ('i', 540),
- ('a', 527),
- ('my', 513),
- ('hamlet', 461),
- ('in', 435)]
->>> 
-========= RESTART: /Users/raymond/Dropbox/Public/sj136/frequency.py =========
-[('the', 1137),
- ('and', 963),
- ('to', 736),
- ('of', 669),
- ('you', 547),
- ('i', 540),
- ('a', 527),
- ('my', 513),
- ('hamlet', 461),
- ('in', 435)]
->>> 
-========= RESTART: /Users/raymond/Dropbox/Public/sj136/frequency.py =========
-[('the', 1137), ('and', 963), ('to', 736), ('of', 669), ('you', 547)]
->>> 
-========= RESTART: /Users/raymond/Dropbox/Public/sj136/frequency.py =========
-[('the', 1137), ('and', 963), ('to', 736), ('of', 669), ('you', 547)]
->>> 
->>> 
->>> # Pi:  3:14:15.9
->>> 
-====== RESTART: /Users/raymond/Dropbox/Public/sj136/monkey_patching.py ======
-My sources tell me that pi is exactly: 3.14157
->>> 
-====== RESTART: /Users/raymond/Dropbox/Public/sj136/monkey_patching.py ======
-My sources tell me that π is exactly: 3.14157
->>> import math.pi
+  File "<pyshell#284>", line 1, in <module>
+    [sys.getsizeof(value) for values in p.__dict__.values()]
+NameError: name 'value' is not defined
+>>> [sys.getsizeof(value) for value in p.__dict__.values()]
+[24, 53, 56]
+>>> class Person(object):
+	__slots__ = ['name', 'age', 'email']
+	def __init__(self, name, age, email):
+		self.name = name
+		self.age = age
+		self.email = email
 
-Traceback (most recent call last):
-  File "<pyshell#418>", line 1, in <module>
-    import math.pi
-ImportError: No module named pi
->>> import math
->>> math.pi
-3.141592653589793
->>> 
-====== RESTART: /Users/raymond/Dropbox/Public/sj136/monkey_patching.py ======
-My sources tell me that π is exactly: 3.14159265359
->>> 
-====== RESTART: /Users/raymond/Dropbox/Public/sj136/monkey_patching.py ======
-My sources tell me that π is exactly: 3.14157
-The area of circle with radius ten is: 314.157
->>> 
-====== RESTART: /Users/raymond/Dropbox/Public/sj136/monkey_patching.py ======
-My sources tell me that π is exactly: 3.14159265359
-The area of circle with radius ten is: 314.159265359
->>> 
-====== RESTART: /Users/raymond/Dropbox/Public/sj136/monkey_patching.py ======
-My sources tell me that π is exactly: 3.14159265359
-The area of circle with radius ten is: 314.159265359
-The area of the first triangle is 100
->>> 
-====== RESTART: /Users/raymond/Dropbox/Public/sj136/monkey_patching.py ======
-My sources tell me that π is exactly: 3.14159265359
-The area of circle with radius ten is: 314.159265359
-The area of the first triangle is 100
-The area of the first triangle is
+		
+>>> p = Person('Rachel Hettinger', 46, 'rachelh@outlook.com')
+>>> Person.__dict__.keys()
+['__module__', 'name', 'age', '__doc__', '__slots__', 'email', '__init__']
+>>> Person.__dict__['name']
+<member 'name' of 'Person' objects>
+>>> sys.getsizeof(p)
+72
+>>> sys.getsizeof(p.name)
+53
+>>> sys.getsizeof(p.age)
+24
+>>> sys.getsizeof(p.email)
+56
+>>> class Person(object):
+	__slots__ = ['name', 'age', 'email', '__dict__']
+	def __init__(self, name, age, email):
+		self.name = name
+		self.age = age
+		self.email = email
 
-Traceback (most recent call last):
-  File "/Users/raymond/Dropbox/Public/sj136/monkey_patching.py", line 20, in <module>
-    print 'The area of the first triangle is', algebra.area_triangle(10, -20)
-  File "/Users/raymond/Dropbox/Public/sj136/algebra.py", line 29, in area_triangle
-    raise RuntimeError('Imaginary numbers not applicable to Kronecker spaces')
-RuntimeError: Imaginary numbers not applicable to Kronecker spaces
->>> 
-====== RESTART: /Users/raymond/Dropbox/Public/sj136/monkey_patching.py ======
-My sources tell me that π is exactly: 3.14159265359
-The area of circle with radius ten is: 314.159265359
-The area of the first triangle is 100
-The area of the first triangle is
-
-Traceback (most recent call last):
-  File "/Users/raymond/Dropbox/Public/sj136/monkey_patching.py", line 31, in <module>
-    print 'The area of the first triangle is', algebra.area_triangle(10, -20)
-  File "/Users/raymond/Dropbox/Public/sj136/monkey_patching.py", line 24, in better_area_triangle
-    raise ValueError('The area functions expect non-negative inputs')
-ValueError: The area functions expect non-negative inputs
->>> 
-====== RESTART: /Users/raymond/Dropbox/Public/sj136/monkey_patching.py ======
-My sources tell me that π is exactly: 3.14159265359
-The area of circle with radius ten is: 314.159265359
-The area of the first triangle is 100
-The area of the first triangle is Oops, sorry about the negative input
->>> 
-====== RESTART: /Users/raymond/Dropbox/Public/sj136/monkey_patching.py ======
-My sources tell me that π is exactly: 3.14159265359
-The area of circle with radius ten is: 314.159265359
-The area of the first triangle is 100
-The area of the first triangle is 
-Oops, sorry about the negative input
->>> 
-====== RESTART: /Users/raymond/Dropbox/Public/sj136/monkey_patching.py ======
-My sources tell me that π is exactly: 3.14159265359
-The area of circle with radius ten is: 314.159265359
-The area of the first triangle is 100
-The area of the first triangle is 
-Oops, sorry about the negative input
->>> 
-====== RESTART: /Users/raymond/Dropbox/Public/sj136/monkey_patching.py ======
-My sources tell me that π is exactly: 3.14159265359
-The area of circle with radius ten is: 314.159265359
-The area of the first triangle is 100
-The area of the first triangle is 
-Oops, sorry about the negative input
-Solution to 12x^2 + 23x + 10 is
-(-0.6666666666666666, -1.25)
->>> 
-====== RESTART: /Users/raymond/Dropbox/Public/sj136/monkey_patching.py ======
-My sources tell me that π is exactly: 3.14159265359
-The area of circle with radius ten is: 314.159265359
-The area of the first triangle is 100
-The area of the first triangle is 
-Oops, sorry about the negative input
-Solution to 12x^2 + 23x + 10 is
-(-0.6666666666666666, -1.25)
-
-Traceback (most recent call last):
-  File "/Users/raymond/Dropbox/Public/sj136/monkey_patching.py", line 41, in <module>
-    print algebra.quadratic(a=12, b=8, c=10)
-  File "/Users/raymond/Dropbox/Public/sj136/algebra.py", line 46, in quadratic
-    discriminant = math.sqrt(b ** 2.0 - 4.0 * a * c)
-ValueError: math domain error
->>> 
-====== RESTART: /Users/raymond/Dropbox/Public/sj136/monkey_patching.py ======
-My sources tell me that π is exactly: 3.14159265359
-The area of circle with radius ten is: 314.159265359
-The area of the first triangle is 100
-The area of the first triangle is 
-Oops, sorry about the negative input
-Solution to 12x^2 + 23x + 10 is: (-0.6666666666666666, -1.25)
-Solution to 12x^2 + 8 + 10 is:
-
-Traceback (most recent call last):
-  File "/Users/raymond/Dropbox/Public/sj136/monkey_patching.py", line 42, in <module>
-    print algebra.quadratic(a=12, b=8, c=10)
-  File "/Users/raymond/Dropbox/Public/sj136/algebra.py", line 46, in quadratic
-    discriminant = math.sqrt(b ** 2.0 - 4.0 * a * c)
-ValueError: math domain error
->>> math.sqrt(25)
-5.0
->>> math.sqrt(-25)
-
-Traceback (most recent call last):
-  File "<pyshell#422>", line 1, in <module>
-    math.sqrt(-25)
-ValueError: math domain error
->>> x = 3j
->>> x ** 2
-(-9+0j)
->>> 
-====== RESTART: /Users/raymond/Dropbox/Public/sj136/monkey_patching.py ======
-My sources tell me that π is exactly: 3.14159265359
-The area of circle with radius ten is: 314.159265359
-The area of the first triangle is 100
-The area of the first triangle is 
-Oops, sorry about the negative input
-Solution to 12x^2 + 23x + 10 is: (-0.6666666666666666, -1.25)
-Solution to 12x^2 + 8 + 10 is:
-
-Traceback (most recent call last):
-  File "/Users/raymond/Dropbox/Public/sj136/monkey_patching.py", line 50, in <module>
-    print algebra.quadratic(a=12, b=8, c=10)
-  File "/Users/raymond/Dropbox/Public/sj136/algebra.py", line 46, in quadratic
-    discriminant = math.sqrt(b ** 2.0 - 4.0 * a * c)
-ValueError: math domain error
->>> better_sqrt(25)
-5.0
->>> better_sqrt(-25)
-5j
->>> 
-====== RESTART: /Users/raymond/Dropbox/Public/sj136/monkey_patching.py ======
-My sources tell me that π is exactly: 3.14159265359
-The area of circle with radius ten is: 314.159265359
-The area of the first triangle is 100
-The area of the first triangle is 
-Oops, sorry about the negative input
-Solution to 12x^2 + 23x + 10 is: (-0.6666666666666666, -1.25)
-Solution to 12x^2 + 8 + 10 is: ((-0.3333333333333333+0.8498365855987974j), (-0.3333333333333333-0.8498365855987974j))
->>> 
-========= RESTART: /Users/raymond/Dropbox/Public/sj136/with_demo.py =========
-202238
->>> 
-========= RESTART: /Users/raymond/Dropbox/Public/sj136/with_demo.py =========
-
-Traceback (most recent call last):
-  File "/Users/raymond/Dropbox/Public/sj136/with_demo.py", line 9, in <module>
-    print 32 / 0
-ZeroDivisionError: integer division or modulo by zero
->>> f
-<closed file 'notes2/hamlet.txt', mode 'r' at 0x104076d20>
->>> 
-========= RESTART: /Users/raymond/Dropbox/Public/sj136/with_demo.py =========
-202238
-202238
->>> 
-========= RESTART: /Users/raymond/Dropbox/Public/sj136/with_demo.py =========
-202238
-202238
+		
+>>> p = Person('Rachel Hettinger', 46, 'rachelh@outlook.com')
+>>> p.__dict__
+{}
+>>> p.color = 'red'
+>>> p
+<__main__.Person object at 0x10400ef50>
 >>> 
 >>> 
->>> 
->>> 
-========= RESTART: /Users/raymond/Dropbox/Public/sj136/with_demo.py =========
-202238
-202238
-Critical section 1
-Critical section 2
-Critical section 1
-Critical section 2
->>> dir(f)
-['__class__', '__delattr__', '__doc__', '__enter__', '__exit__', '__format__', '__getattribute__', '__hash__', '__init__', '__iter__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', 'close', 'closed', 'encoding', 'errors', 'fileno', 'flush', 'isatty', 'mode', 'name', 'newlines', 'next', 'read', 'readinto', 'readline', 'readlines', 'seek', 'softspace', 'tell', 'truncate', 'write', 'writelines', 'xreadlines']
->>> dir(printer_lock)
-['__class__', '__delattr__', '__doc__', '__enter__', '__exit__', '__format__', '__getattribute__', '__hash__', '__init__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', 'acquire', 'acquire_lock', 'locked', 'locked_lock', 'release', 'release_lock']
->>> 
->>> bool(None)
-False
 >>> 
 >>> 
 >>> issubclass(KeyError, Exception)
 True
->>> 
->>> k = KeyError('roger')
->>> isinstance(k, KeyError)
+>>> issubclass(IndexError, Exception)
 True
->>> k.args
-('roger',)
->>> raise KeyError('roger')
+>>> class RaymondError(Exception):
+	pass
+
+>>> raise RaymondError('Doh!')
 
 Traceback (most recent call last):
-  File "<pyshell#442>", line 1, in <module>
-    raise KeyError('roger')
-KeyError: 'roger'
+  File "<pyshell#310>", line 1, in <module>
+    raise RaymondError('Doh!')
+RaymondError: Doh!
+>>> e = KeyError('homer')
+>>> isinstance(e, KeyError)
+True
+>>> e.args
+('homer',)
 >>> 
-========= RESTART: /Users/raymond/Dropbox/Public/sj136/with_demo.py =========
-202238
-202238
-Critical section 1
-Critical section 2
-Critical section 1
-Critical section 2
-====================
-Initializing with x 3.14159
-Entering and returning 42
-In the beginning with 42
-In the middle
-At the end
-Exiting
-The value of x is still 3.14159
-The exception type is None
-Returning None which is a false value
-Done!
+>>> try:
+	raise RaymondError('who learned something new?')
+except Exception as e:
+	print e.args
+
+	
+('who learned something new?',)
 >>> 
-========= RESTART: /Users/raymond/Dropbox/Public/sj136/with_demo.py =========
-202238
-202238
-Critical section 1
-Critical section 2
-Critical section 1
-Critical section 2
-====================
-Initializing with x 3.14159
-Entering and returning 42
-In the beginning with 42
-In the middle
-At the end
-Exiting
-The value of x is still 3.14159
-The exception type is None
-Returning None which is a false value, meaning unhandled
-Done!
-====================
-Initializing with x 3.14159
-Entering and returning 42
-In the beginning with 42
-In the middle
-Exiting
-The value of x is still 3.14159
-The exception type is <type 'exceptions.KeyError'>
-Returning None which is a false value, meaning unhandled
+======= RESTART: /Users/raymond/Dropbox/Public/sj139/warnings_demo.py =======
 
 Traceback (most recent call last):
-  File "/Users/raymond/Dropbox/Public/sj136/with_demo.py", line 85, in <module>
-    raise KeyError('roger')
-KeyError: 'roger'
+  File "/Users/raymond/Dropbox/Public/sj139/warnings_demo.py", line 3, in <module>
+    warning.warn('Oops, I did it again.  I played with heart, ...')
+NameError: name 'warning' is not defined
 >>> 
-========= RESTART: /Users/raymond/Dropbox/Public/sj136/with_demo.py =========
-202238
-202238
-Critical section 1
-Critical section 2
-Critical section 1
-Critical section 2
-====================
-Initializing with x 3.14159
-Entering and returning 42
-In the beginning with 42
-In the middle
-At the end
-Exiting
-The value of x is still 3.14159
-The exception type is None
-Returning None which is a false value, meaning unhandled
-Done!
-====================
-Initializing with x 3.14159
-Entering and returning 42
-In the beginning with 42
-In the middle
-Exiting
-The value of x is still 3.14159
-The exception type is <type 'exceptions.KeyError'>
-Returning None which is a false value, meaning unhandled
-Caught the KeyError
-Done!
+======= RESTART: /Users/raymond/Dropbox/Public/sj139/warnings_demo.py =======
+
+Warning (from warnings module):
+  File "/Users/raymond/Dropbox/Public/sj139/warnings_demo.py", line 3
+    warnings.warn('Oops, I did it again.  I played with heart, ...')
+UserWarning: Oops, I did it again.  I played with heart, ...
+Done
 >>> 
-========= RESTART: /Users/raymond/Dropbox/Public/sj136/with_demo.py =========
-202238
-202238
-Critical section 1
-Critical section 2
-Critical section 1
-Critical section 2
-====================
-Initializing with x 3.14159
-Entering and returning 42
-In the beginning with 42
-In the middle
-At the end
-Exiting
-The value of x is still 3.14159
-The exception type is None
-Returning None which is a false value, meaning unhandled
-Done!
-====================
-Initializing with x 3.14159
-Entering and returning 42
-In the beginning with 42
-In the middle
-Exiting
-The value of x is still 3.14159
-The exception type is <type 'exceptions.KeyError'>
-Returning None which is a false value, meaning unhandled
-Caught the KeyError
-Done!
-====================
-Initializing with x 3.14159
-Entering and returning 42
-In the beginning with 42
-In the middle
-Exiting
-The value of x is still 3.14159
-The exception type is <type 'exceptions.IndexError'>
-Caught an IndexError
-The args are (10,)
-Return True to mark as handled
-Done!
+======= RESTART: /Users/raymond/Dropbox/Public/sj139/warnings_demo.py =======
+
+Warning (from warnings module):
+  File "/Users/raymond/Dropbox/Public/sj139/warnings_demo.py", line 7
+    warnings.warn('Oops, I did it again.  I played with heart, ...')
+UserWarning: Oops, I did it again.  I played with heart, ...
+
+Warning (from warnings module):
+  File "/Users/raymond/Dropbox/Public/sj139/warnings_demo.py", line 8
+    warnings.warn('Python is the best!', RaymondWarning)
+RaymondWarning: Python is the best!
+Done
 >>> 
-========= RESTART: /Users/raymond/Dropbox/Public/sj136/with_demo.py =========
-202238
-202238
-Critical section 1
-Critical section 2
-Critical section 1
-Critical section 2
-====================
-Initializing with x 3.14159
-Entering and returning 42
-In the beginning with 42
-In the middle
-At the end
-Exiting
-The value of x is still 3.14159
-The exception type is None
-Returning None which is a false value, meaning unhandled
-Done!
-====================
-Initializing with x 3.14159
-Entering and returning 42
-In the beginning with 42
-In the middle
-Exiting
-The value of x is still 3.14159
-The exception type is <type 'exceptions.KeyError'>
-Returning None which is a false value, meaning unhandled
-Caught the KeyError
-Done!
-====================
-Initializing with x 3.14159
-Entering and returning 42
-In the beginning with 42
-In the middle
-Exiting
-The value of x is still 3.14159
-The exception type is <type 'exceptions.IndexError'>
-Caught an IndexError
-The args are (10,)
-Return True to mark as handled
-Done!
->>> f
-<closed file 'notes2/hamlet.txt', mode 'r' at 0x1041f7390>
->>> dir(f)
-['__class__', '__delattr__', '__doc__', '__enter__', '__exit__', '__format__', '__getattribute__', '__hash__', '__init__', '__iter__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', 'close', 'closed', 'encoding', 'errors', 'fileno', 'flush', 'isatty', 'mode', 'name', 'newlines', 'next', 'read', 'readinto', 'readline', 'readlines', 'seek', 'softspace', 'tell', 'truncate', 'write', 'writelines', 'xreadlines']
->>> f.fileno
-<built-in method fileno of file object at 0x1041f7390>
->>> f.fileno()
+>>> 
+>>> 
+>>> 
+
+
+>>> 
+
+
+
+>>> 
+
+
+
+
+
+
+
+
+
+
+>>> 
+======= RESTART: /Users/raymond/Dropbox/Public/sj139/warnings_demo.py =======
+11.1803398875
+
+Warning (from warnings module):
+  File "/Users/raymond/Dropbox/Public/sj139/warnings_demo.py", line 10
+    warnings.warn('Taking the square root of a negative number')
+UserWarning: Taking the square root of a negative number
+11.1803398875j
+
+Warning (from warnings module):
+  File "/Users/raymond/Dropbox/Public/sj139/warnings_demo.py", line 19
+    warnings.warn('Oops, I did it again.  I played with heart, ...')
+UserWarning: Oops, I did it again.  I played with heart, ...
+14.6969384567
+
+Warning (from warnings module):
+  File "/Users/raymond/Dropbox/Public/sj139/warnings_demo.py", line 21
+    warnings.warn('Python is the best!', RaymondWarning)
+RaymondWarning: Python is the best!
+14.6969384567j
+Done
+>>> 
+======= RESTART: /Users/raymond/Dropbox/Public/sj139/warnings_demo.py =======
+11.1803398875
+
+Warning (from warnings module):
+  File "/Users/raymond/Dropbox/Public/sj139/warnings_demo.py", line 22
+    warnings.warn('Taking the square root of a negative number')
+UserWarning: Taking the square root of a negative number
+11.1803398875j
+
+Warning (from warnings module):
+  File "/Users/raymond/Dropbox/Public/sj139/warnings_demo.py", line 33
+    warnings.warn('Oops, I did it again.  I played with heart, ...')
+UserWarning: Oops, I did it again.  I played with heart, ...
+14.6969384567
+
+Warning (from warnings module):
+  File "/Users/raymond/Dropbox/Public/sj139/warnings_demo.py", line 35
+    warnings.warn('Python is the best!', RaymondWarning)
+RaymondWarning: Python is the best!
+
+Warning (from warnings module):
+  File "/Users/raymond/Dropbox/Public/sj139/warnings_demo.py", line 22
+    warnings.warn('Taking the square root of a negative number')
+UserWarning: Taking the square root of a negative number
+14.6969384567j
+Done
+>>> 
+======= RESTART: /Users/raymond/Dropbox/Public/sj139/warnings_demo.py =======
+11.1803398875
+11.1803398875j
+
+Warning (from warnings module):
+  File "/Users/raymond/Dropbox/Public/sj139/warnings_demo.py", line 33
+    warnings.warn('Oops, I did it again.  I played with heart, ...')
+UserWarning: Oops, I did it again.  I played with heart, ...
+14.6969384567
+
+Warning (from warnings module):
+  File "/Users/raymond/Dropbox/Public/sj139/warnings_demo.py", line 35
+    warnings.warn('Python is the best!', RaymondWarning)
+RaymondWarning: Python is the best!
+14.6969384567j
+Done
+>>> 
+======= RESTART: /Users/raymond/Dropbox/Public/sj139/warnings_demo.py =======
+11.1803398875
+
+Warning (from warnings module):
+  File "/Users/raymond/Dropbox/Public/sj139/warnings_demo.py", line 22
+    warnings.warn('Taking the square root of a negative number')
+UserWarning: Taking the square root of a negative number
+11.1803398875j
+
+Warning (from warnings module):
+  File "/Users/raymond/Dropbox/Public/sj139/warnings_demo.py", line 33
+    warnings.warn('Oops, I did it again.  I played with heart, ...')
+UserWarning: Oops, I did it again.  I played with heart, ...
+14.6969384567
+
+Warning (from warnings module):
+  File "/Users/raymond/Dropbox/Public/sj139/warnings_demo.py", line 35
+    warnings.warn('Python is the best!', RaymondWarning)
+RaymondWarning: Python is the best!
+
+Warning (from warnings module):
+  File "/Users/raymond/Dropbox/Public/sj139/warnings_demo.py", line 22
+    warnings.warn('Taking the square root of a negative number')
+UserWarning: Taking the square root of a negative number
+14.6969384567j
+Done
+>>> 
+======= RESTART: /Users/raymond/Dropbox/Public/sj139/warnings_demo.py =======
+
+Warning (from warnings module):
+  File "/Users/raymond/Dropbox/Public/sj139/warnings_demo.py", line 26
+    warnings.warn('The "user" function is deprecated, use "sqrt" instead', DeprecationWarning)
+DeprecationWarning: The "user" function is deprecated, use "sqrt" instead
+11.1803398875
+
+Warning (from warnings module):
+  File "/Users/raymond/Dropbox/Public/sj139/warnings_demo.py", line 22
+    warnings.warn('Taking the square root of a negative number')
+UserWarning: Taking the square root of a negative number
+11.1803398875j
+
+Warning (from warnings module):
+  File "/Users/raymond/Dropbox/Public/sj139/warnings_demo.py", line 35
+    warnings.warn('Oops, I did it again.  I played with heart, ...')
+UserWarning: Oops, I did it again.  I played with heart, ...
+14.6969384567
+
+Warning (from warnings module):
+  File "/Users/raymond/Dropbox/Public/sj139/warnings_demo.py", line 37
+    warnings.warn('Python is the best!', RaymondWarning)
+RaymondWarning: Python is the best!
+
+Warning (from warnings module):
+  File "/Users/raymond/Dropbox/Public/sj139/warnings_demo.py", line 22
+    warnings.warn('Taking the square root of a negative number')
+UserWarning: Taking the square root of a negative number
+14.6969384567j
+Done
+>>> 
+>>> 
+>>> import math
+>>> math.pi
+3.141592653589793
+>>> math.pi = 3.2
+>>> 
+>>> 
+>>> import math
+>>> math.pi
+3.2
+>>> from circuitous import Circle
+>>> c = Circle(10)
+>>> c.area()
+320.0
+>>> c.perimeter()
+64.0
+>>> 
+====== RESTART: /Users/raymond/Dropbox/Public/sj139/monkey_patching.py ======
+>>> help(algebra)
+Help on module algebra:
+
+NAME
+    algebra - Fancy, expensive package for rich people who have forgotten all math since the 7th grade
+
+FILE
+    /Users/raymond/Dropbox/Public/sj139/algebra.py
+
+FUNCTIONS
+    area(radius)
+        Compute the area of the circle
+        
+        >>> area(10)
+        314.152
+    
+    area_triangle(base, height)
+        Return the area of a triangle
+        
+        >>> area_triangle(10, 20)
+        100.0
+    
+    quadratic(a, b, c)
+        Return the two roots for the quadratic equation:
+        
+            ax^2 + bx + c = 0
+        
+        Written in Python as:
+        
+            a*x**2.0 + b*x + c == 0.0
+        
+        For example:
+        
+            >>> x1, x2 = quadratic(a=6, b=28, c=30)
+            >>> x1
+            -1.6666666666666667
+            >>> x2
+            -3.0
+            >>> 6*x1**2 + 28*x1 + 30
+            -3.552713678800501e-15
+            >>> 6*x2**2 + 28*x2 + 30
+            0.0
+
+DATA
+    pi = 3.14152
+
+
+>>> 
+====== RESTART: /Users/raymond/Dropbox/Public/sj139/monkey_patching.py ======
+I have on good authority that pi is exactly: 3.14152
+>>> 
+====== RESTART: /Users/raymond/Dropbox/Public/sj139/monkey_patching.py ======
+I have on good authority that π is exactly: 3.14152
+>>> 
+====== RESTART: /Users/raymond/Dropbox/Public/sj139/monkey_patching.py ======
+I have on good authority that π is exactly: 3.14152
+>>> 
+====== RESTART: /Users/raymond/Dropbox/Public/sj139/monkey_patching.py ======
+I have it on good authority that π is exactly: 3.14152
+>>> 
+====== RESTART: /Users/raymond/Dropbox/Public/sj139/monkey_patching.py ======
+I have it on good authority that π is exactly: 3.14159265359
+>>> 
+====== RESTART: /Users/raymond/Dropbox/Public/sj139/monkey_patching.py ======
+I have it on good authority that π is exactly: 3.14159265359
+The area of a circle with radius 10 is: 314.159265359
+>>> 
+====== RESTART: /Users/raymond/Dropbox/Public/sj139/monkey_patching.py ======
+I have it on good authority that π is exactly: 3.14159265359
+The area of a circle with radius 10 is: 314.159265359
+The area of the 1st triangle is: 100.0
+>>> 
+====== RESTART: /Users/raymond/Dropbox/Public/sj139/monkey_patching.py ======
+I have it on good authority that π is exactly: 3.14159265359
+The area of a circle with radius 10 is: 314.159265359
+The area of the 1st triangle is: 100.0
+The area of the 2nd triangle is:
 
 Traceback (most recent call last):
-  File "<pyshell#446>", line 1, in <module>
-    f.fileno()
-ValueError: I/O operation on closed file
->>> f = open('notes2/hamlet.txt')
->>> f.fileno()
-10
->>> f
-<open file 'notes2/hamlet.txt', mode 'r' at 0x104175d20>
+  File "/Users/raymond/Dropbox/Public/sj139/monkey_patching.py", line 16, in <module>
+    print 'The area of the 2nd triangle is:', algebra.area_triangle(5, -40)
+  File "/Users/raymond/Dropbox/Public/sj139/algebra.py", line 29, in area_triangle
+    raise RuntimeError('Imaginary numbers not applicable to Kronecker spaces. '
+RuntimeError: Imaginary numbers not applicable to Kronecker spaces. Try resetting microcontroller L145
 >>> 
-========= RESTART: /Users/raymond/Dropbox/Public/sj136/with_demo.py =========
-202238
-202238
-Critical section 1
-Critical section 2
-Critical section 1
-Critical section 2
-====================
-Initializing with x 3.14159
-Entering and returning 42
-In the beginning with 42
-In the middle
-At the end
-Exiting
-The value of x is still 3.14159
-The exception type is None
-Returning None which is a false value, meaning unhandled
-Done!
-====================
-Initializing with x 3.14159
-Entering and returning 42
-In the beginning with 42
-In the middle
-Exiting
-The value of x is still 3.14159
-The exception type is <type 'exceptions.KeyError'>
-Returning None which is a false value, meaning unhandled
-Caught the KeyError
-Done!
-====================
-Initializing with x 3.14159
-Entering and returning 42
-In the beginning with 42
-In the middle
-Exiting
-The value of x is still 3.14159
-The exception type is <type 'exceptions.IndexError'>
-Caught an IndexError
-The args are (10,)
-Return True to mark as handled
-Done!
->>> File('notes2/hamlet.txt')
+====== RESTART: /Users/raymond/Dropbox/Public/sj139/monkey_patching.py ======
+I have it on good authority that π is exactly: 3.14159265359
+The area of a circle with radius 10 is: 314.159265359
+The area of the 1st triangle is: 100.0
+The area of the 2nd triangle is:
 
 Traceback (most recent call last):
-  File "<pyshell#450>", line 1, in <module>
-    File('notes2/hamlet.txt')
-  File "/Users/raymond/Dropbox/Public/sj136/with_demo.py", line 115, in __init__
-    self.fd = os.open(filename, flags)
-NameError: global name 'os' is not defined
+  File "/Users/raymond/Dropbox/Public/sj139/monkey_patching.py", line 26, in <module>
+    print 'The area of the 2nd triangle is:', algebra.area_triangle(5, -40)
+  File "/Users/raymond/Dropbox/Public/sj139/monkey_patching.py", line 19, in better_area_triangle
+    raise ValueError('Illegal base and height.  No negatives allowed')
+ValueError: Illegal base and height.  No negatives allowed
 >>> 
-========= RESTART: /Users/raymond/Dropbox/Public/sj136/with_demo.py =========
-202238
-202238
-Critical section 1
-Critical section 2
-Critical section 1
-Critical section 2
-====================
-Initializing with x 3.14159
-Entering and returning 42
-In the beginning with 42
-In the middle
-At the end
-Exiting
-The value of x is still 3.14159
-The exception type is None
-Returning None which is a false value, meaning unhandled
-Done!
-====================
-Initializing with x 3.14159
-Entering and returning 42
-In the beginning with 42
-In the middle
-Exiting
-The value of x is still 3.14159
-The exception type is <type 'exceptions.KeyError'>
-Returning None which is a false value, meaning unhandled
-Caught the KeyError
-Done!
-====================
-Initializing with x 3.14159
-Entering and returning 42
-In the beginning with 42
-In the middle
-Exiting
-The value of x is still 3.14159
-The exception type is <type 'exceptions.IndexError'>
-Caught an IndexError
-The args are (10,)
-Return True to mark as handled
-Done!
->>> File('notes2/hamlet.txt')
-<open file 'notes2/hamlet.txt', mode 'r' at 0x104b3abd0>
->>> _.__class__
-<class '__main__.File'>
+====== RESTART: /Users/raymond/Dropbox/Public/sj139/monkey_patching.py ======
+I have it on good authority that π is exactly: 3.14159265359
+The area of a circle with radius 10 is: 314.159265359
+The area of the 1st triangle is: 100.0
+The area of the 2nd triangle is: Doh!  Sorry for the negative input
 >>> 
-========= RESTART: /Users/raymond/Dropbox/Public/sj136/with_demo.py =========
-202238
-202238
-Critical section 1
-Critical section 2
-Critical section 1
-Critical section 2
-====================
-Initializing with x 3.14159
-Entering and returning 42
-In the beginning with 42
-In the middle
-At the end
-Exiting
-The value of x is still 3.14159
-The exception type is None
-Returning None which is a false value, meaning unhandled
-Done!
-====================
-Initializing with x 3.14159
-Entering and returning 42
-In the beginning with 42
-In the middle
-Exiting
-The value of x is still 3.14159
-The exception type is <type 'exceptions.KeyError'>
-Returning None which is a false value, meaning unhandled
-Caught the KeyError
-Done!
-====================
-Initializing with x 3.14159
-Entering and returning 42
-In the beginning with 42
-In the middle
-Exiting
-The value of x is still 3.14159
-The exception type is <type 'exceptions.IndexError'>
-Caught an IndexError
-The args are (10,)
-Return True to mark as handled
-Done!
->>> f = File('notes2/hamlet.txt')
->>> dir(f)
-['__class__', '__delattr__', '__dict__', '__doc__', '__format__', '__getattribute__', '__hash__', '__init__', '__module__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', 'close', 'fd', 'filename', 'flags', 'mode', 'read', 'status', 'write']
->>> f.close()
->>> f
-<closed file 'notes2/hamlet.txt', mode 'r' at 0x103a64bd0>
->>> f.read()
+====== RESTART: /Users/raymond/Dropbox/Public/sj139/monkey_patching.py ======
+I have it on good authority that π is exactly: 3.14159265359
+The area of a circle with radius 10 is: 314.159265359
+The area of the 1st triangle is: 100.0
+The area of the 2nd triangle is: Doh!  Sorry for the negative input
+>>> 
+====== RESTART: /Users/raymond/Dropbox/Public/sj139/monkey_patching.py ======
+I have it on good authority that π is exactly: 3.14159265359
+The area of a circle with radius 10 is: 314.159265359
+The area of the 1st triangle is: 100.0
+The area of the 2nd triangle is: Doh!  Sorry for the negative input
+Solution to 12x^2 + 23x + 10 is:
+(-0.6666666666666666, -1.25)
+>>> 
+====== RESTART: /Users/raymond/Dropbox/Public/sj139/monkey_patching.py ======
+I have it on good authority that π is exactly: 3.14159265359
+The area of a circle with radius 10 is: 314.159265359
+The area of the 1st triangle is: 100.0
+The area of the 2nd triangle is: Doh!  Sorry for the negative input
+Solution to 12x^2 + 23x + 10 is: (-0.6666666666666666, -1.25)
+>>> 
+====== RESTART: /Users/raymond/Dropbox/Public/sj139/monkey_patching.py ======
+I have it on good authority that π is exactly: 3.14159265359
+The area of a circle with radius 10 is: 314.159265359
+The area of the 1st triangle is: 100.0
+The area of the 2nd triangle is: Doh!  Sorry for the negative input
+Solution to 12x^2 + 23x + 10 is: (-0.6666666666666666, -1.25)
+Solution to 12x^2 + 8x + 10 is:
 
 Traceback (most recent call last):
-  File "<pyshell#457>", line 1, in <module>
-    f.read()
-  File "/Users/raymond/Dropbox/Public/sj136/with_demo.py", line 126, in read
-    raise ValueError('Operation on closed file')
-ValueError: Operation on closed file
->>> 
->>> 
->>> f = open('notes2/hamlet.txt')
->>> f
-<open file 'notes2/hamlet.txt', mode 'r' at 0x103876d20>
->>> play = f.read()
->>> type(play)
-<type 'str'>
->>> 
->>> f.__class__
-<type 'file'>
->>> dir(_)
-['__class__', '__delattr__', '__doc__', '__enter__', '__exit__', '__format__', '__getattribute__', '__hash__', '__init__', '__iter__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', 'close', 'closed', 'encoding', 'errors', 'fileno', 'flush', 'isatty', 'mode', 'name', 'newlines', 'next', 'read', 'readinto', 'readline', 'readlines', 'seek', 'softspace', 'tell', 'truncate', 'write', 'writelines', 'xreadlines']
->>> f = file('notes2/hamlet.txt')
->>> 
->>> 
->>> import sys
->>> print 'hello'
-hello
->>> print >> sys.stderr, 'hello'
-hello
->>> 
-========== RESTART: /Users/raymond/Dropbox/Public/sj136/redirect.py ==========
+  File "/Users/raymond/Dropbox/Public/sj139/monkey_patching.py", line 34, in <module>
+    print algebra.quadratic(a=12, b=8, c=10)
+  File "/Users/raymond/Dropbox/Public/sj139/algebra.py", line 55, in quadratic
+    discriminant = math.sqrt(b**2.0 - 4.0*a*c)
+ValueError: math domain error
+>>> math.sqrt(5)
+2.23606797749979
+>>> math.sqrt(-5)
 
 Traceback (most recent call last):
-  File "/Users/raymond/Dropbox/Public/sj136/redirect.py", line 8, in <module>
-    print 'The % Family' % lastname
-TypeError: float argument required, not str
+  File "<pyshell#341>", line 1, in <module>
+    math.sqrt(-5)
+ValueError: math domain error
+>>> 3 + 4j
+(3+4j)
 >>> 
-========== RESTART: /Users/raymond/Dropbox/Public/sj136/redirect.py ==========
-The hettinger Family
+====== RESTART: /Users/raymond/Dropbox/Public/sj139/monkey_patching.py ======
+I have it on good authority that π is exactly: 3.14159265359
+The area of a circle with radius 10 is: 314.159265359
+The area of the 1st triangle is: 100.0
+The area of the 2nd triangle is: Doh!  Sorry for the negative input
+Solution to 12x^2 + 23x + 10 is: (-0.6666666666666666, -1.25)
+Solution to 12x^2 + 8x + 10 is:
+
+Traceback (most recent call last):
+  File "/Users/raymond/Dropbox/Public/sj139/monkey_patching.py", line 45, in <module>
+    print algebra.quadratic(a=12, b=8, c=10)
+  File "/Users/raymond/Dropbox/Public/sj139/algebra.py", line 55, in quadratic
+    discriminant = math.sqrt(b**2.0 - 4.0*a*c)
+ValueError: math domain error
 >>> 
-========== RESTART: /Users/raymond/Dropbox/Public/sj136/redirect.py ==========
-The Hettinger Family
+====== RESTART: /Users/raymond/Dropbox/Public/sj139/monkey_patching.py ======
+I have it on good authority that π is exactly: 3.14159265359
+The area of a circle with radius 10 is: 314.159265359
+The area of the 1st triangle is: 100.0
+The area of the 2nd triangle is: Doh!  Sorry for the negative input
+Solution to 12x^2 + 23x + 10 is: (-0.6666666666666666, -1.25)
+Solution to 12x^2 + 8x + 10 is:
+((-0.3333333333333333+0.8498365855987974j), (-0.3333333333333333-0.8498365855987974j))
 >>> 
-========== RESTART: /Users/raymond/Dropbox/Public/sj136/redirect.py ==========
-The Hettinger Family
-===========
 >>> 
-========== RESTART: /Users/raymond/Dropbox/Public/sj136/redirect.py ==========
-The Hettinger Family
-===========
+======= RESTART: /Users/raymond/Dropbox/Public/sj139/property_demo.py =======
+>>> p
+PriceRange(symbol='CSCO', low=25, high=32)
+>>> p.symbol
+'CSCO'
+>>> p.low
+25
+>>> p.high
+32
+>>> p.midpoint
+28
 >>> 
-========== RESTART: /Users/raymond/Dropbox/Public/sj136/redirect.py ==========
-The Hettinger Family
-====================
+======= RESTART: /Users/raymond/Dropbox/Public/sj139/property_demo.py =======
+>>> p.midpoint
+28.5
+>>> p.__dict__
+{'high': 32, 'symbol': 'CSCO', 'midpoint': 28.5, 'low': 25}
 >>> 
-========== RESTART: /Users/raymond/Dropbox/Public/sj136/redirect.py ==========
-The Hettinger Family
-====================
-* raymond
-* rachel
-* matthew
+>>> p.low = 27
+>>> p.high
+32
+>>> p.midpoint
+28.5
+>>> p
+PriceRange(symbol='CSCO', low=27, high=32)
+>>> p.midpoint
+28.5
 >>> 
-========== RESTART: /Users/raymond/Dropbox/Public/sj136/redirect.py ==========
-The Hettinger Family
-====================
-* Raymond
-* Rachel
-* Matthew
+======= RESTART: /Users/raymond/Dropbox/Public/sj139/property_demo.py =======
+>>> p.__dict__
+{'high': 32, 'symbol': 'CSCO', 'low': 25}
+>>> p.low
+25
+>>> p.high
+32
+>>> p.midpoint()
+28.5
+>>> p.low = 27
+>>> p.midpoint()
+29.5
 >>> 
-========== RESTART: /Users/raymond/Dropbox/Public/sj136/redirect.py ==========
-The Hettinger Family
-====================
-* Raymond
-* Rachel
-* Matthew
-
+======= RESTART: /Users/raymond/Dropbox/Public/sj139/property_demo.py =======
+>>> p.__dict__
+{'high': 32, 'symbol': 'CSCO', 'low': 25}
+>>> p.low
+25
+>>> p.high
+32
+>>> p.midpoint
+28.5
+>>> p.symbol
+'CSCO'
 >>> 
-========== RESTART: /Users/raymond/Dropbox/Public/sj136/redirect.py ==========
-The Hettinger Family
-====================
-* Raymond
-* Rachel
-* Matthew
+======= RESTART: /Users/raymond/Dropbox/Public/sj139/property_demo.py =======
+>>> p.low
+25
+>>> p.xyz
 
+Traceback (most recent call last):
+  File "<pyshell#369>", line 1, in <module>
+    p.xyz
+AttributeError: 'PriceRange' object has no attribute 'xyz'
 >>> 
-========== RESTART: /Users/raymond/Dropbox/Public/sj136/redirect.py ==========
-The Hettinger Family
-====================
-* Raymond
-* Rachel
-* Matthew
-
-The Starks Family
-=================
-* Eddard
-* Catelyn
-* Robb
-* Arya
-* Brandon
-* Rickon
-* Johnsnow
-* Sansa
-
->>> help(show_family)
-Help on function show_family in module __main__:
-
-show_family(lastname, first_names)
-    Display the family members in a nice tabular format
-
 >>> 
-========== RESTART: /Users/raymond/Dropbox/Public/sj136/redirect.py ==========
-The Hettinger Family
-====================
-* Raymond
-* Rachel
-* Matthew
+>>> 
+>>> p.low = 'hello'
+>>> 
+>>> 
 
-The Stark Family
-================
-* Eddard
-* Catelyn
-* Robb
-* Arya
-* Brandon
-* Rickon
-* Johnsnow
-* Sansa
-
-Help on function show_family in module __main__:
-
-show_family(lastname, first_names)
-    Display the family members in a nice tabular format
 
 >>> 
-========== RESTART: /Users/raymond/Dropbox/Public/sj136/redirect.py ==========
-The Hettinger Family
-====================
-* Raymond
-* Rachel
-* Matthew
 
-The Stark Family
-================
-* Eddard
-* Catelyn
-* Robb
-* Arya
-* Brandon
-* Rickon
-* Johnsnow
-* Sansa
 
-Help on function show_family in module __main__:
 
-show_family(lastname, first_names)
-    Display the family members in a nice tabular format
 
+
+
+
+
+
+
+>>> 
+
+
+>>> 
+
+
+
+
+
+
+
+
+
+
+>>> 
+>>> 
+>>> p.symbol
+'CSCO'
+>>> p.high
+32
+>>> p.xyz
+
+Traceback (most recent call last):
+  File "<pyshell#383>", line 1, in <module>
+    p.xyz
+AttributeError: 'PriceRange' object has no attribute 'xyz'
+>>> 
+>>> p.midpoint
+
+Traceback (most recent call last):
+  File "<pyshell#385>", line 1, in <module>
+    p.midpoint
+  File "/Users/raymond/Dropbox/Public/sj139/property_demo.py", line 24, in midpoint
+    return (self.low + self.high) / 2
+TypeError: cannot concatenate 'str' and 'int' objects
+>>> 
+======= RESTART: /Users/raymond/Dropbox/Public/sj139/property_demo.py =======
+>>> 
+======= RESTART: /Users/raymond/Dropbox/Public/sj139/property_demo.py =======
+>>> p
+PriceRange(symbol='CSCO', low=25, high=32)
+>>> p.low
+25
+>>> p.high
+32
+>>> p.midpoint
+28.5
+>>> p.symbol
+'CSCO'
+>>> p.low = 28
+>>> p.midpoint
+30.0
+>>> p.__dict__
+{'high': 32, 'symbol': 'CSCO', '_low': 28}
+>>> p.low
+28
+>>> 
+======= RESTART: /Users/raymond/Dropbox/Public/sj139/property_demo.py =======
+>>> p.low
+25
+>>> p.high
+32
+>>> p.midpoint
+28.5
+>>> p.symbol
+'CSCO'
+>>> p.low = 28
+>>> p.midpoint
+30.0
+>>> p.low = 'hello'
+
+Traceback (most recent call last):
+  File "<pyshell#401>", line 1, in <module>
+    p.low = 'hello'
+  File "/Users/raymond/Dropbox/Public/sj139/property_demo.py", line 39, in set_low
+    raise TypeError('Expected int or float')
+TypeError: Expected int or float
+>>> 
+>>> 
+>>> 
+>>> # PPT XLS DOC
+>>> p.high = 'goodbye'
+>>> 
+>>> 
+
+
+>>> 
+
+
+
+
+
+
+
+
+
+
+
+
+>>> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+>>> 
+
+>>> p.midpoint
+
+Traceback (most recent call last):
+  File "<pyshell#412>", line 1, in <module>
+    p.midpoint
+  File "/Users/raymond/Dropbox/Public/sj139/property_demo.py", line 24, in midpoint
+    def __init__(self, symbol, low, high):
+TypeError: unsupported operand type(s) for +: 'int' and 'str'
+>>> 
+======= RESTART: /Users/raymond/Dropbox/Public/sj139/property_demo.py =======
+>>> p.low = 'hello'
+
+Traceback (most recent call last):
+  File "<pyshell#413>", line 1, in <module>
+    p.low = 'hello'
+  File "/Users/raymond/Dropbox/Public/sj139/property_demo.py", line 45, in set_low
+    raise TypeError('Expected int or float')
+TypeError: Expected int or float
+>>> p.high = 'goodbye'
+
+Traceback (most recent call last):
+  File "<pyshell#414>", line 1, in <module>
+    p.high = 'goodbye'
+  File "/Users/raymond/Dropbox/Public/sj139/property_demo.py", line 57, in set_high
+    raise TypeError('Expected int or float')
+TypeError: Expected int or float
+>>> 
+======= RESTART: /Users/raymond/Dropbox/Public/sj139/property_demo.py =======
+>>> 
+>>> # Python is a consenting adults language
+>>> 
+>>> 
+>>> 
+>>> 
+>>> x = 10
+>>> y = x + 1
+>>> y
+11
+>>> 
+>>> x = 10
+>>> x = x
+>>> 
 >>> def f(x):
+	return x
+
+>>> f(5)
+5
+>>> 
+>>> 
+>>> x = 10
+>>> x = f(x)
+>>> 
+>>> x = 10
+>>> 
+>>> 
+>>> hex(51)
+'0x33'
+>>> 
+>>> hex = f(hex)
+>>> hex(51)
+'0x33'
+>>> f(5)
+5
+>>> 
+>>> 
+>>> d = []
+>>> def f(x):
+	d.append(x.__name__)
+	return x
+
+>>> hex = f(hex)
+>>> hex(51)
+'0x33'
+>>> d
+['hex']
+>>> 
+>>> 
+>>> 
+>>> def square(x):
 	return x * x
 
->>> f.__code__.co_code
-'|\x00\x00|\x00\x00\x14S'
->>> map(ord, f.__code__.co_code)
-[124, 0, 0, 124, 0, 0, 20, 83]
->>> dis(f)
-  2           0 LOAD_FAST                0 (x)
-              3 LOAD_FAST                0 (x)
-              6 BINARY_MULTIPLY     
-              7 RETURN_VALUE        
->>> 
-========== RESTART: /Users/raymond/Dropbox/Public/sj136/redirect.py ==========
-The Hettinger Family
-====================
-* Raymond
-* Rachel
-* Matthew
-
-The Stark Family
-================
-* Eddard
-* Catelyn
-* Robb
-* Arya
-* Brandon
-* Rickon
-* Johnsnow
-* Sansa
-
-Help on function show_family in module __main__:
-
-show_family(lastname, first_names)
-    Display the family members in a nice tabular format
-
-  9           0 LOAD_CONST               1 ('The %s Family')
-              3 LOAD_FAST                0 (lastname)
-              6 LOAD_ATTR                0 (title)
-              9 CALL_FUNCTION            0
-             12 BINARY_MODULO       
-             13 PRINT_ITEM          
-             14 PRINT_NEWLINE       
-
- 10          15 LOAD_CONST               2 ('=')
-             18 LOAD_CONST               3 (11)
-             21 LOAD_GLOBAL              1 (len)
-             24 LOAD_FAST                0 (lastname)
-             27 CALL_FUNCTION            1
-             30 BINARY_ADD          
-             31 BINARY_MULTIPLY     
-             32 PRINT_ITEM          
-             33 PRINT_NEWLINE       
-
- 11          34 SETUP_LOOP              29 (to 66)
-             37 LOAD_FAST                1 (first_names)
-             40 GET_ITER            
-        >>   41 FOR_ITER                21 (to 65)
-             44 STORE_FAST               2 (name)
-
- 12          47 LOAD_CONST               4 ('* %s')
-             50 LOAD_FAST                2 (name)
-             53 LOAD_ATTR                0 (title)
-             56 CALL_FUNCTION            0
-             59 BINARY_MODULO       
-             60 PRINT_ITEM          
-             61 PRINT_NEWLINE       
-             62 JUMP_ABSOLUTE           41
-        >>   65 POP_BLOCK           
-
- 13     >>   66 PRINT_NEWLINE       
-             67 LOAD_CONST               5 (None)
-             70 RETURN_VALUE        
->>> 
-========== RESTART: /Users/raymond/Dropbox/Public/sj136/redirect.py ==========
-The Hettinger Family
-====================
-* Raymond
-* Rachel
-* Matthew
-
-The Stark Family
-================
-* Eddard
-* Catelyn
-* Robb
-* Arya
-* Brandon
-* Rickon
-* Johnsnow
-* Sansa
-
-Help on function show_family in module __main__:
-
-show_family(lastname, first_names)
-    Display the family members in a nice tabular format
-
-  9           0 LOAD_CONST               1 ('The %s Family')
-              3 LOAD_FAST                0 (lastname)
-              6 LOAD_ATTR                0 (title)
-              9 CALL_FUNCTION            0
-             12 BINARY_MODULO       
-             13 PRINT_ITEM          
-             14 PRINT_NEWLINE       
-
- 10          15 LOAD_CONST               2 ('=')
-             18 LOAD_CONST               3 (11)
-             21 LOAD_GLOBAL              1 (len)
-             24 LOAD_FAST                0 (lastname)
-             27 CALL_FUNCTION            1
-             30 BINARY_ADD          
-             31 BINARY_MULTIPLY     
-             32 PRINT_ITEM          
-             33 PRINT_NEWLINE       
-
- 11          34 SETUP_LOOP              29 (to 66)
-             37 LOAD_FAST                1 (first_names)
-             40 GET_ITER            
-        >>   41 FOR_ITER                21 (to 65)
-             44 STORE_FAST               2 (name)
-
- 12          47 LOAD_CONST               4 ('* %s')
-             50 LOAD_FAST                2 (name)
-             53 LOAD_ATTR                0 (title)
-             56 CALL_FUNCTION            0
-             59 BINARY_MODULO       
-             60 PRINT_ITEM          
-             61 PRINT_NEWLINE       
-             62 JUMP_ABSOLUTE           41
-        >>   65 POP_BLOCK           
-
- 13     >>   66 PRINT_NEWLINE       
-             67 LOAD_CONST               5 (None)
-             70 RETURN_VALUE        
-Done!
->>> 
-========== RESTART: /Users/raymond/Dropbox/Public/sj136/redirect.py ==========
-The Hettinger Family
-====================
-* Raymond
-* Rachel
-* Matthew
-
-The Stark Family
-================
-* Eddard
-* Catelyn
-* Robb
-* Arya
-* Brandon
-* Rickon
-* Johnsnow
-* Sansa
-
-Help on function show_family in module __main__:
-
-show_family(lastname, first_names)
-    Display the family members in a nice tabular format
-
- 10           0 LOAD_CONST               1 ('The %s Family')
-              3 LOAD_FAST                0 (lastname)
-              6 LOAD_ATTR                0 (title)
-              9 CALL_FUNCTION            0
-             12 BINARY_MODULO       
-             13 PRINT_ITEM          
-             14 PRINT_NEWLINE       
-
- 11          15 LOAD_CONST               2 ('=')
-             18 LOAD_CONST               3 (11)
-             21 LOAD_GLOBAL              1 (len)
-             24 LOAD_FAST                0 (lastname)
-             27 CALL_FUNCTION            1
-             30 BINARY_ADD          
-             31 BINARY_MULTIPLY     
-             32 PRINT_ITEM          
-             33 PRINT_NEWLINE       
-
- 12          34 SETUP_LOOP              29 (to 66)
-             37 LOAD_FAST                1 (first_names)
-             40 GET_ITER            
-        >>   41 FOR_ITER                21 (to 65)
-             44 STORE_FAST               2 (name)
-
- 13          47 LOAD_CONST               4 ('* %s')
-             50 LOAD_FAST                2 (name)
-             53 LOAD_ATTR                0 (title)
-             56 CALL_FUNCTION            0
-             59 BINARY_MODULO       
-             60 PRINT_ITEM          
-             61 PRINT_NEWLINE       
-             62 JUMP_ABSOLUTE           41
-        >>   65 POP_BLOCK           
-
- 14     >>   66 PRINT_NEWLINE       
-             67 LOAD_CONST               5 (None)
-             70 RETURN_VALUE        
-Done!
->>> 
-========== RESTART: /Users/raymond/Dropbox/Public/sj136/redirect.py ==========
-The Hettinger Family
-====================
-* Raymond
-* Rachel
-* Matthew
-
-The Stark Family
-================
-* Eddard
-* Catelyn
-* Robb
-* Arya
-* Brandon
-* Rickon
-* Johnsnow
-* Sansa
-
-Help on function show_family in module __main__:
-
-show_family(lastname, first_names)
-    Display the family members in a nice tabular format
-
- 10           0 LOAD_CONST               1 ('The %s Family')
-              3 LOAD_FAST                0 (lastname)
-              6 LOAD_ATTR                0 (title)
-              9 CALL_FUNCTION            0
-             12 BINARY_MODULO       
-             13 PRINT_ITEM          
-             14 PRINT_NEWLINE       
-
- 11          15 LOAD_CONST               2 ('=')
-             18 LOAD_CONST               3 (11)
-             21 LOAD_GLOBAL              1 (len)
-             24 LOAD_FAST                0 (lastname)
-             27 CALL_FUNCTION            1
-             30 BINARY_ADD          
-             31 BINARY_MULTIPLY     
-             32 PRINT_ITEM          
-             33 PRINT_NEWLINE       
-
- 12          34 SETUP_LOOP              29 (to 66)
-             37 LOAD_FAST                1 (first_names)
-             40 GET_ITER            
-        >>   41 FOR_ITER                21 (to 65)
-             44 STORE_FAST               2 (name)
-
- 13          47 LOAD_CONST               4 ('* %s')
-             50 LOAD_FAST                2 (name)
-             53 LOAD_ATTR                0 (title)
-             56 CALL_FUNCTION            0
-             59 BINARY_MODULO       
-             60 PRINT_ITEM          
-             61 PRINT_NEWLINE       
-             62 JUMP_ABSOLUTE           41
-        >>   65 POP_BLOCK           
-
- 14     >>   66 PRINT_NEWLINE       
-             67 LOAD_CONST               5 (None)
-             70 RETURN_VALUE        
-Done!
->>> 
-========== RESTART: /Users/raymond/Dropbox/Public/sj136/redirect.py ==========
-The Hettinger Family
-====================
-* Raymond
-* Rachel
-* Matthew
-
-The Stark Family
-================
-* Eddard
-* Catelyn
-* Robb
-* Arya
-* Brandon
-* Rickon
-* Johnsnow
-* Sansa
-
-Help on function show_family in module __main__:
-
-show_family(lastname, first_names)
-    Display the family members in a nice tabular format
-
-Done!
->>> 
-========== RESTART: /Users/raymond/Dropbox/Public/sj136/redirect.py ==========
-The Hettinger Family
-====================
-* Raymond
-* Rachel
-* Matthew
-
-The Stark Family
-================
-* Eddard
-* Catelyn
-* Robb
-* Arya
-* Brandon
-* Rickon
-* Johnsnow
-* Sansa
-
-Help on function show_family in module __main__:
-
-show_family(lastname, first_names)
-    Display the family members in a nice tabular format
-
-Done!
->>> 
-========== RESTART: /Users/raymond/Dropbox/Public/sj136/redirect.py ==========
-The Hettinger Family
-====================
-* Raymond
-* Rachel
-* Matthew
-
-The Stark Family
-================
-* Eddard
-* Catelyn
-* Robb
-* Arya
-* Brandon
-* Rickon
-* Johnsnow
-* Sansa
-
-Help on function show_family in module __main__:
-
-show_family(lastname, first_names)
-    Display the family members in a nice tabular format
-
-Done!
->>> 
-========== RESTART: /Users/raymond/Dropbox/Public/sj136/redirect.py ==========
-The Hettinger Family
-====================
-* Raymond
-* Rachel
-* Matthew
-
-The Stark Family
-================
-* Eddard
-* Catelyn
-* Robb
-* Arya
-* Brandon
-* Rickon
-* Johnsnow
-* Sansa
-
-Help on function show_family in module __main__:
-
-show_family(lastname, first_names)
-    Display the family members in a nice tabular format
-
-Done!
+>>> square = f(square)
+>>> square(6)
+36
+>>> d
+['hex', 'square']
 >>> 
 >>> 
 >>> 
->>> def welcome(f):
-	f.write('Howdy!\n')
-	f.write("C'ya!\n")
+>>> 
+>>> def track_name(func):
+	d.append(func.__name__)
+	return func
 
-	
->>> with open('welcome.txt', 'w') as f:
-	welcome(f)
+>>> d = []
+>>> 
+>>> def square(x):
+	return x * x
 
-	
+>>> square = track_name(square)
+>>> square(7)
+49
+>>> d
+['square']
 >>> 
 >>> 
->>> with open('welcome.txt', 'w') as f:
-	welcome(f)
-
-	
->>> with open('welcome.txt') as f:
-	msg = f.read()
-
-	
->>> import os
->>> os.remove('welcome.txt')
->>> print msg.upper()
-HOWDY!
-C'YA!
-
->>> from StringIO import StringIO
->>> f = StringIO()
->>> welcome(f)
->>> print f.getvalue().upper()
-HOWDY!
-C'YA!
-
->>> f.close()
 >>> 
-========== RESTART: /Users/raymond/Dropbox/Public/sj136/redirect.py ==========
-The Hettinger Family
-====================
-* Raymond
-* Rachel
-* Matthew
-
-The Stark Family
-================
-* Eddard
-* Catelyn
-* Robb
-* Arya
-* Brandon
-* Rickon
-* Johnsnow
-* Sansa
-
-HELP ON FUNCTION SHOW_FAMILY IN MODULE __MAIN__:
-
-SHOW_FAMILY(LASTNAME, FIRST_NAMES)
-    DISPLAY THE FAMILY MEMBERS IN A NICE TABULAR FORMAT
-
-
-Done!
+>>> d = []
 >>> 
-========== RESTART: /Users/raymond/Dropbox/Public/sj136/redirect.py ==========
-The Hettinger Family
-====================
-* Raymond
-* Rachel
-* Matthew
+>>> @track_name
+def cube(x):
+	return x ** 3
 
-The Stark Family
-================
-* Eddard
-* Catelyn
-* Robb
-* Arya
-* Brandon
-* Rickon
-* Johnsnow
-* Sansa
-
-HELP ON FUNCTION SHOW_FAMILY IN MODULE __MAIN__:
-
-SHOW_FAMILY(LASTNAME, FIRST_NAMES)
-    DISPLAY THE FAMILY MEMBERS IN A NICE TABULAR FORMAT
-
-
-Done!
->>> dir(StringIO)
-['__doc__', '__init__', '__iter__', '__module__', 'close', 'flush', 'getvalue', 'isatty', 'next', 'read', 'readline', 'readlines', 'seek', 'tell', 'truncate', 'write', 'writelines']
+>>> cube(5)
+125
+>>> d
+['cube']
 >>> 
-========== RESTART: /Users/raymond/Dropbox/Public/sj136/redirect.py ==========
-The Hettinger Family
-====================
-* Raymond
-* Rachel
-* Matthew
-
-The Stark Family
-================
-* Eddard
-* Catelyn
-* Robb
-* Arya
-* Brandon
-* Rickon
-* Johnsnow
-* Sansa
-
-Done!
+======= RESTART: /Users/raymond/Dropbox/Public/sj139/property_demo.py =======
+>>> p.midpoint
+28.5
+>>> p.low = 28
+>>> p.midpoint
+30.0
 >>> 
-========== RESTART: /Users/raymond/Dropbox/Public/sj136/redirect.py ==========
-The Hettinger Family
-====================
-* Raymond
-* Rachel
-* Matthew
+======== RESTART: /Users/raymond/Dropbox/Public/sj139/client_code.py ========
+Tutorial for Circuitous™
+Using Circle version 0.9
+A circle with a radius of 10.0
+has an area of 314.159265359
 
-The Stark Family
-================
-* Eddard
-* Catelyn
-* Robb
-* Arya
-* Brandon
-* Rickon
-* Johnsnow
-* Sansa
+DARPA Grant Proposal
+to study the average area of circles
+using Circuitous version 0.9
+preliminary study using 10000 random circles
+seeded using Jenny's number: 8675309
+The average area is 1.04170
 
-Done!
+Spec sheet for the cut template: [0.1, 0.2, 0.7]
+Circle #1
+A rubber circle with a cut radius of 0.1
+has a perimeter of 0.628318530718
+and a cold area of 0.0314159265359
+and a warm area of 0.0380132711084
+
+Circle #2
+A rubber circle with a cut radius of 0.2
+has a perimeter of 1.25663706144
+and a cold area of 0.125663706144
+and a warm area of 0.152053084434
+
+Circle #3
+A rubber circle with a cut radius of 0.7
+has a perimeter of 4.39822971503
+and a cold area of 1.53938040026
+and a warm area of 1.86265028431
+
+A tire with an inner radius of 30.0
+has an inner area of 2827.43338823
+and an odometer corrected outer perimeter of 235.619449019
+
+A monster tire has an odometer corrected outer perimeter of 282.743338823
+
+An inclinometer reading of 5° is a 8.7% grade.
+
+A circle with a bounding box diagonal of 25
+has a radius of 8.83883476483
+an area of 245.436926062
+and perimeter of 55.536036727
+
 >>> 
-========== RESTART: /Users/raymond/Dropbox/Public/sj136/redirect.py ==========
-The Hettinger Family
-====================
-* Raymond
-* Rachel
-* Matthew
+>>> help(property)
+Help on class property in module __builtin__:
 
-The Stark Family
-================
-* Eddard
-* Catelyn
-* Robb
-* Arya
-* Brandon
-* Rickon
-* Johnsnow
-* Sansa
+class property(object)
+ |  property(fget=None, fset=None, fdel=None, doc=None) -> property attribute
+ |  
+ |  fget is a function to be used for getting an attribute value, and likewise
+ |  fset is a function for setting, and fdel a function for del'ing, an
+ |  attribute.  Typical use is to define a managed attribute x:
+ |  
+ |  class C(object):
+ |      def getx(self): return self._x
+ |      def setx(self, value): self._x = value
+ |      def delx(self): del self._x
+ |      x = property(getx, setx, delx, "I'm the 'x' property.")
+ |  
+ |  Decorators make defining new properties or modifying existing ones easy:
+ |  
+ |  class C(object):
+ |      @property
+ |      def x(self):
+ |          "I am the 'x' property."
+ |          return self._x
+ |      @x.setter
+ |      def x(self, value):
+ |          self._x = value
+ |      @x.deleter
+ |      def x(self):
+ |          del self._x
+ |  
+ |  Methods defined here:
+ |  
+ |  __delete__(...)
+ |      descr.__delete__(obj)
+ |  
+ |  __get__(...)
+ |      descr.__get__(obj[, type]) -> value
+ |  
+ |  __getattribute__(...)
+ |      x.__getattribute__('name') <==> x.name
+ |  
+ |  __init__(...)
+ |      x.__init__(...) initializes x; see help(type(x)) for signature
+ |  
+ |  __set__(...)
+ |      descr.__set__(obj, value)
+ |  
+ |  deleter(...)
+ |      Descriptor to change the deleter on a property.
+ |  
+ |  getter(...)
+ |      Descriptor to change the getter on a property.
+ |  
+ |  setter(...)
+ |      Descriptor to change the setter on a property.
+ |  
+ |  ----------------------------------------------------------------------
+ |  Data descriptors defined here:
+ |  
+ |  fdel
+ |  
+ |  fget
+ |  
+ |  fset
+ |  
+ |  ----------------------------------------------------------------------
+ |  Data and other attributes defined here:
+ |  
+ |  __new__ = <built-in method __new__ of type object>
+ |      T.__new__(S, ...) -> a new object with type S, a subtype of T
 
-!
-X
-Done!
 >>> 
-========== RESTART: /Users/raymond/Dropbox/Public/sj136/redirect.py ==========
-The Hettinger Family
-====================
-* Raymond
-* Rachel
-* Matthew
-
-The Stark Family
-================
-* Eddard
-* Catelyn
-* Robb
-* Arya
-* Brandon
-* Rickon
-* Johnsnow
-* Sansa
-
-!
-X
-<StringIO.StringIO instance at 0x1038d0c20>
-Done!
->>> 
-========== RESTART: /Users/raymond/Dropbox/Public/sj136/redirect.py ==========
-The Hettinger Family
-====================
-* Raymond
-* Rachel
-* Matthew
-
-The Stark Family
-================
-* Eddard
-* Catelyn
-* Robb
-* Arya
-* Brandon
-* Rickon
-* Johnsnow
-* Sansa
-
-!
-X
-<StringIO.StringIO instance at 0x102b9ed40>
-Hello
-Done!
->>> 
-========== RESTART: /Users/raymond/Dropbox/Public/sj136/redirect.py ==========
-The Hettinger Family
-====================
-* Raymond
-* Rachel
-* Matthew
-
-The Stark Family
-================
-* Eddard
-* Catelyn
-* Robb
-* Arya
-* Brandon
-* Rickon
-* Johnsnow
-* Sansa
-
-Done!
 >>> 
 >>> 
 >>> 

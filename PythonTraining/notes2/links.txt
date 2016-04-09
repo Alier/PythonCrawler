@@ -1,13 +1,13 @@
 Intermediate Python
 Cisco -- San Jose
-March 6, 2015
+March 28, 2015
 ======================
 
 Taught by:  Raymond Hettinger
             python@rcn.com
             @raymondh
 
-            rachel.hettinger@att.net   <== use this ONLY for course requests
+            rachel.hettinger@outlook.com   <== use this ONLY for course requests
 
 Suggested exercises at:
           https://projecteuler.net/
@@ -34,13 +34,13 @@ https://dl.dropbox.com/u/3967849/shared/IntermediatePython.pdf
 
 This file:
 
-https://dl.dropbox.com/u/3967849/sj136/links.txt
+https://dl.dropbox.com/u/3967849/sj139/links.txt
 
 Download tool:
-https://dl.dropbox.com/u/3967849/sj136/download.py
+https://dl.dropbox.com/u/3967849/sj139/download.py
 
 HTML view:
-    https://dl.dropbox.com/u/3967849/sj136/pub/index.html
+    https://dl.dropbox.com/u/3967849/sj139/pub/index.html
 
 REST API Book:
     https://www.amazon.com/RESTful-Web-Services-Cookbook-Scalability/dp/0596801688/ref=sr_1_1?ie=UTF8&qid=1411691580&sr=8-1&keywords=yahoo+rest+api+cookbook
@@ -226,58 +226,58 @@ else clauses on for and while:
             return -1
         return i
     
- https://dl.dropbox.com/u/3967849/sj136/callback_demo.py
- https://dl.dropbox.com/u/3967849/sj136/tuple_unpacking.txt
- https://dl.dropbox.com/u/3967849/sj136/for_else3.txt
- https://dl.dropbox.com/u/3967849/sj136/for_else_demo.py
- https://dl.dropbox.com/u/3967849/sj136/simultaneous_assignment.py
- https://dl.dropbox.com/u/3967849/sj136/furniture.py
- https://dl.dropbox.com/u/3967849/sj136/else_goto.c
- https://dl.dropbox.com/u/3967849/sj136/callables.py
- https://dl.dropbox.com/u/3967849/sj136/lean_startup.txt
- https://dl.dropbox.com/u/3967849/sj136/getmountain.py
- https://dl.dropbox.com/u/3967849/sj136/unicode_demo.py
- https://dl.dropbox.com/u/3967849/sj136/tuple_school.txt
-https://dl.dropbox.com/u/3967849/sj136/sorting_demo.py
-https://dl.dropbox.com/u/3967849/sj136/sort_stability_example.py
-https://dl.dropbox.com/u/3967849/sj136/circuitous.py
-https://dl.dropbox.com/u/3967849/sj136/circuitous.py
-https://dl.dropbox.com/u/3967849/sj136/circuitous.py
-https://dl.dropbox.com/u/3967849/sj136/circuitous.log
- https://dl.dropbox.com/u/3967849/sj136/hansolo.pcl
- https://dl.dropbox.com/u/3967849/sj136/class_demo.html
-https://dl.dropbox.com/u/3967849/sj136/client_code.py
- https://dl.dropbox.com/u/3967849/sj136/ordered_dict_demo.py
- https://dl.dropbox.com/u/3967849/sj136/dict_demo.py
- https://dl.dropbox.com/u/3967849/sj136/timing_demo.py
-https://dl.dropbox.com/u/3967849/sj136/algebra.html
-https://dl.dropbox.com/u/3967849/sj136/algebra.py
-https://dl.dropbox.com/u/3967849/sj136/tour_collections.py
-https://dl.dropbox.com/u/3967849/sj136/monkey_patching.py
-https://dl.dropbox.com/u/3967849/sj136/benford.py
- https://dl.dropbox.com/u/3967849/sj136/dispatcher.py
- https://dl.dropbox.com/u/3967849/sj136/isolate.py
- https://dl.dropbox.com/u/3967849/sj136/robustness.py
- https://dl.dropbox.com/u/3967849/sj136/warts.txt
- https://dl.dropbox.com/u/3967849/sj136/modifying_iterators.py
- https://dl.dropbox.com/u/3967849/sj136/lbyl_vs_eafp.py
- https://dl.dropbox.com/u/3967849/sj136/dictionary_logic.py
- https://dl.dropbox.com/u/3967849/sj136/list_demo.py
-https://dl.dropbox.com/u/3967849/sj136/looping_idioms.py
-https://dl.dropbox.com/u/3967849/sj136/for_else.py
-https://dl.dropbox.com/u/3967849/sj136/redirect.py
-https://dl.dropbox.com/u/3967849/sj136/show_family_dis.txt
- https://dl.dropbox.com/u/3967849/sj136/hettingers.txt
- https://dl.dropbox.com/u/3967849/sj136/adjectives.txt
- https://dl.dropbox.com/u/3967849/sj136/multiple_dispatch.py
-https://dl.dropbox.com/u/3967849/sj136/property_demo.py
-https://dl.dropbox.com/u/3967849/sj136/dba_comparison.py
-https://dl.dropbox.com/u/3967849/sj136/benford.py
-https://dl.dropbox.com/u/3967849/sj136/validators.py
- https://dl.dropbox.com/u/3967849/sj136/price_range_sql_example.py
- https://dl.dropbox.com/u/3967849/sj136/sql_views.txt
- https://dl.dropbox.com/u/3967849/sj136/subprocess_demo.py
- https://dl.dropbox.com/u/3967849/sj136/filedict.py
+ https://dl.dropbox.com/u/3967849/sj139/callback_demo.py
+ https://dl.dropbox.com/u/3967849/sj139/tuple_unpacking.txt
+ https://dl.dropbox.com/u/3967849/sj139/for_else3.txt
+ https://dl.dropbox.com/u/3967849/sj139/for_else_demo.py
+ https://dl.dropbox.com/u/3967849/sj139/simultaneous_assignment.py
+ https://dl.dropbox.com/u/3967849/sj139/furniture.py
+ https://dl.dropbox.com/u/3967849/sj139/else_goto.c
+ https://dl.dropbox.com/u/3967849/sj139/callables.py
+ https://dl.dropbox.com/u/3967849/sj139/lean_startup.txt
+ https://dl.dropbox.com/u/3967849/sj139/getmountain.py
+ https://dl.dropbox.com/u/3967849/sj139/unicode_demo.py
+ https://dl.dropbox.com/u/3967849/sj139/tuple_school.txt
+ https://dl.dropbox.com/u/3967849/sj139/sorting_demo.py
+ https://dl.dropbox.com/u/3967849/sj139/sort_stability_example.py
+https://dl.dropbox.com/u/3967849/sj139/circuitous.py
+https://dl.dropbox.com/u/3967849/sj139/circuitous.log
+ https://dl.dropbox.com/u/3967849/sj139/hansolo.pcl
+ https://dl.dropbox.com/u/3967849/sj139/class_demo.html
+https://dl.dropbox.com/u/3967849/sj139/client_code.py
+https://dl.dropbox.com/u/3967849/sj139/pubsub.py
+https://dl.dropbox.com/u/3967849/sj139/pubsub_session.py
+ https://dl.dropbox.com/u/3967849/sj139/ordered_dict_demo.py
+ https://dl.dropbox.com/u/3967849/sj139/dict_demo.py
+ https://dl.dropbox.com/u/3967849/sj139/timing_demo.py
+ https://dl.dropbox.com/u/3967849/sj139/algebra.html
+https://dl.dropbox.com/u/3967849/sj139/algebra.py
+https://dl.dropbox.com/u/3967849/sj139/tour_collections.py
+https://dl.dropbox.com/u/3967849/sj139/monkey_patching.py
+ https://dl.dropbox.com/u/3967849/sj139/benford.py
+ https://dl.dropbox.com/u/3967849/sj139/dispatcher.py
+ https://dl.dropbox.com/u/3967849/sj139/isolate.py
+ https://dl.dropbox.com/u/3967849/sj139/robustness.py
+ https://dl.dropbox.com/u/3967849/sj139/warts.txt
+ https://dl.dropbox.com/u/3967849/sj139/modifying_iterators.py
+ https://dl.dropbox.com/u/3967849/sj139/lbyl_vs_eafp.py
+ https://dl.dropbox.com/u/3967849/sj139/dictionary_logic.py
+ https://dl.dropbox.com/u/3967849/sj139/list_demo.py
+https://dl.dropbox.com/u/3967849/sj139/looping_idioms.py
+ https://dl.dropbox.com/u/3967849/sj139/for_else.py
+ https://dl.dropbox.com/u/3967849/sj139/redirect.py
+ https://dl.dropbox.com/u/3967849/sj139/show_family_dis.txt
+ https://dl.dropbox.com/u/3967849/sj139/hettingers.txt
+ https://dl.dropbox.com/u/3967849/sj139/adjectives.txt
+ https://dl.dropbox.com/u/3967849/sj139/multiple_dispatch.py
+https://dl.dropbox.com/u/3967849/sj139/property_demo.py
+https://dl.dropbox.com/u/3967849/sj139/dba_comparison.py
+ https://dl.dropbox.com/u/3967849/sj139/benford.py
+https://dl.dropbox.com/u/3967849/sj139/validators.py
+ https://dl.dropbox.com/u/3967849/sj139/price_range_sql_example.py
+ https://dl.dropbox.com/u/3967849/sj139/sql_views.txt
+ https://dl.dropbox.com/u/3967849/sj139/subprocess_demo.py
+ https://dl.dropbox.com/u/3967849/sj139/filedict.py
 
     def sort_with_keyfunc(seq, keyfunc):
         deco = [(keyfunc(x), x) for x in seq]
@@ -333,23 +333,23 @@ How to use collections.Counter
     play = open('notes/hamlet.txt').read()
     Counter(words).most_common(100)
 
- https://dl.dropbox.com/u/3967849/sj136/term.txt
-https://dl.dropbox.com/u/3967849/sj136/p_vs_np_1.py
-https://dl.dropbox.com/u/3967849/sj136/p_vs_np_2.py
-https://dl.dropbox.com/u/3967849/sj136/p_vs_np_3.py
-https://dl.dropbox.com/u/3967849/sj136/nettools.py
- https://dl.dropbox.com/u/3967849/sj136/lbyl_vs_eafp.py
- https://dl.dropbox.com/u/3967849/sj136/showargs.py
- https://dl.dropbox.com/u/3967849/sj136/generator_demo.py
- https://dl.dropbox.com/u/3967849/sj136/popular_words.py
- https://dl.dropbox.com/u/3967849/sj136/abc_demo.py
- https://dl.dropbox.com/u/3967849/sj136/validators.py
- https://dl.dropbox.com/u/3967849/sj136/threading_demo.py
- https://dl.dropbox.com/u/3967849/sj136/threading_demo_sentinel.py
- https://dl.dropbox.com/u/3967849/sj136/threading_demo_with_fuzz.py
- https://dl.dropbox.com/u/3967849/sj136/multiproc_demo.py
- https://dl.dropbox.com/u/3967849/sj136/dict_demo.py
- https://dl.dropbox.com/u/3967849/sj136/dictionary.py
+ https://dl.dropbox.com/u/3967849/sj139/term.txt
+https://dl.dropbox.com/u/3967849/sj139/p_vs_np_1.py
+ https://dl.dropbox.com/u/3967849/sj139/p_vs_np_2.py
+ https://dl.dropbox.com/u/3967849/sj139/p_vs_np_3.py
+ https://dl.dropbox.com/u/3967849/sj139/nettools.py
+ https://dl.dropbox.com/u/3967849/sj139/lbyl_vs_eafp.py
+ https://dl.dropbox.com/u/3967849/sj139/showargs.py
+ https://dl.dropbox.com/u/3967849/sj139/generator_demo.py
+ https://dl.dropbox.com/u/3967849/sj139/popular_words.py
+ https://dl.dropbox.com/u/3967849/sj139/abc_demo.py
+ https://dl.dropbox.com/u/3967849/sj139/validators.py
+ https://dl.dropbox.com/u/3967849/sj139/threading_demo.py
+ https://dl.dropbox.com/u/3967849/sj139/threading_demo_sentinel.py
+ https://dl.dropbox.com/u/3967849/sj139/threading_demo_with_fuzz.py
+ https://dl.dropbox.com/u/3967849/sj139/multiproc_demo.py
+ https://dl.dropbox.com/u/3967849/sj139/dict_demo.py
+ https://dl.dropbox.com/u/3967849/sj139/dictionary.py
 
 
 Truthiness:
@@ -404,81 +404,81 @@ Ways to build a list of tuples from a cursor:
     # The third (popular) way to build a list of tuples
     result = list(c.execute(search_query))
 
- https://dl.dropbox.com/u/3967849/sj136/two_arg_iter.py
- https://dl.dropbox.com/u/3967849/sj136/list_demo.py
-https://dl.dropbox.com/u/3967849/sj136/with_demo.py
-https://dl.dropbox.com/u/3967849/sj136/show_args.py
- https://dl.dropbox.com/u/3967849/sj136/autodiff.py
- https://dl.dropbox.com/u/3967849/sj136/sorting_dicts.py
- https://dl.dropbox.com/u/3967849/sj136/dictionary_challenge.py
- https://dl.dropbox.com/u/3967849/sj136/injection.py
- https://dl.dropbox.com/u/3967849/sj136/file_dict.py
- https://dl.dropbox.com/u/3967849/sj136/fizzbuzz.py
- https://dl.dropbox.com/u/3967849/sj136/trello_fizzbuzz.py
- https://dl.dropbox.com/u/3967849/sj136/abc_demo.py
- https://dl.dropbox.com/u/3967849/sj136/naming.py
- https://dl.dropbox.com/u/3967849/sj136/monkey_patch_for_robustness.py
- https://dl.dropbox.com/u/3967849/sj136/monkey_patch_for_better_error_messages.py
- https://dl.dropbox.com/u/3967849/sj136/frequency.py
- https://dl.dropbox.com/u/3967849/sj136/bash.log
+ https://dl.dropbox.com/u/3967849/sj139/two_arg_iter.py
+ https://dl.dropbox.com/u/3967849/sj139/list_demo.py
+ https://dl.dropbox.com/u/3967849/sj139/with_demo.py
+ https://dl.dropbox.com/u/3967849/sj139/show_args.py
+ https://dl.dropbox.com/u/3967849/sj139/autodiff.py
+ https://dl.dropbox.com/u/3967849/sj139/sorting_dicts.py
+ https://dl.dropbox.com/u/3967849/sj139/dictionary_challenge.py
+ https://dl.dropbox.com/u/3967849/sj139/injection.py
+ https://dl.dropbox.com/u/3967849/sj139/file_dict.py
+ https://dl.dropbox.com/u/3967849/sj139/fizzbuzz.py
+ https://dl.dropbox.com/u/3967849/sj139/trello_fizzbuzz.py
+ https://dl.dropbox.com/u/3967849/sj139/abc_demo.py
+ https://dl.dropbox.com/u/3967849/sj139/naming.py
+ https://dl.dropbox.com/u/3967849/sj139/monkey_patch_for_robustness.py
+ https://dl.dropbox.com/u/3967849/sj139/monkey_patch_for_better_error_messages.py
+ https://dl.dropbox.com/u/3967849/sj139/frequency.py
+ https://dl.dropbox.com/u/3967849/sj139/bash.log
  https://dl.dropbox.com/u/3967849/shared/transform.py
- https://dl.dropbox.com/u/3967849/sj136/bug.py
- https://dl.dropbox.com/u/3967849/sj136/truthiness.py
- https://dl.dropbox.com/u/3967849/sj136/showfile.py
- https://dl.dropbox.com/u/3967849/sj136/iterator_school.py
- https://dl.dropbox.com/u/3967849/sj136/docfinder.py
- https://dl.dropbox.com/u/3967849/sj136/docfinder.html
- https://dl.dropbox.com/u/3967849/sj136/search.py
- https://dl.dropbox.com/u/3967849/sj136/docsearch.py
- https://dl.dropbox.com/u/3967849/sj136/exceptions.py
- https://dl.dropbox.com/u/3967849/sj136/sqldesk.py
- https://dl.dropbox.com/u/3967849/sj136/sqldict_hint.py
- https://dl.dropbox.com/u/3967849/sj136/sqldict.py
- https://dl.dropbox.com/u/3967849/sj136/sql.txt
- https://dl.dropbox.com/u/3967849/sj136/what_objects_are_all_about.txt
+ https://dl.dropbox.com/u/3967849/sj139/bug.py
+ https://dl.dropbox.com/u/3967849/sj139/truthiness.py
+ https://dl.dropbox.com/u/3967849/sj139/showfile.py
+ https://dl.dropbox.com/u/3967849/sj139/iterator_school.py
+ https://dl.dropbox.com/u/3967849/sj139/docfinder.py
+ https://dl.dropbox.com/u/3967849/sj139/docfinder.html
+ https://dl.dropbox.com/u/3967849/sj139/search.py
+ https://dl.dropbox.com/u/3967849/sj139/docsearch.py
+ https://dl.dropbox.com/u/3967849/sj139/exceptions.py
+ https://dl.dropbox.com/u/3967849/sj139/sqldesk.py
+ https://dl.dropbox.com/u/3967849/sj139/sqldict_hint.py
+ https://dl.dropbox.com/u/3967849/sj139/sqldict.py
+ https://dl.dropbox.com/u/3967849/sj139/sql.txt
+ https://dl.dropbox.com/u/3967849/sj139/what_objects_are_all_about.txt
 
 Day Four
 --------
- https://dl.dropbox.com/u/3967849/sj136/circuitous.log
- https://dl.dropbox.com/u/3967849/sj136/functional.py
- https://dl.dropbox.com/u/3967849/sj136/sql_demo.py
-https://dl.dropbox.com/u/3967849/sj136/password_cracker.py
- https://dl.dropbox.com/u/3967849/sj136/secure_password.py
- https://dl.dropbox.com/u/3967849/sj136/third_party.py
- https://dl.dropbox.com/u/3967849/sj136/our_code.py
- https://dl.dropbox.com/u/3967849/sj136/iterators.py
-https://dl.dropbox.com/u/3967849/sj136/decorator_school.py
-https://dl.dropbox.com/u/3967849/sj136/fibo.py
-https://dl.dropbox.com/u/3967849/sj136/fibo.cover
- https://dl.dropbox.com/u/3967849/sj136/generators.py
- https://dl.dropbox.com/u/3967849/sj136/inline_deferred_explanation.py
- https://dl.dropbox.com/u/3967849/sj136/docsearch.py
+ https://dl.dropbox.com/u/3967849/sj139/circuitous.log
+ https://dl.dropbox.com/u/3967849/sj139/functional.py
+ https://dl.dropbox.com/u/3967849/sj139/sql_demo.py
+https://dl.dropbox.com/u/3967849/sj139/password_cracker.py
+ https://dl.dropbox.com/u/3967849/sj139/third_party.py
+ https://dl.dropbox.com/u/3967849/sj139/our_code.py
+ https://dl.dropbox.com/u/3967849/sj139/iterators.py
+https://dl.dropbox.com/u/3967849/sj139/decorator_school.py
+ https://dl.dropbox.com/u/3967849/sj139/fibo.py
+ https://dl.dropbox.com/u/3967849/sj139/fibo.cover
+ https://dl.dropbox.com/u/3967849/sj139/generators.py
+ https://dl.dropbox.com/u/3967849/sj139/inline_deferred_explanation.py
+ https://dl.dropbox.com/u/3967849/sj139/docsearch.py
  
- https://dl.dropbox.com/u/3967849/sj136/repl.py
- https://dl.dropbox.com/u/3967849/sj136/github_rest_api.py
-https://dl.dropbox.com/u/3967849/sj136/warnings_demo.py
-https://dl.dropbox.com/u/3967849/sj136/rest_api_server.py
-https://dl.dropbox.com/u/3967849/sj136/quadratic.tpl
-https://dl.dropbox.com/u/3967849/sj136/graphviz.tpl
- https://dl.dropbox.com/u/3967849/sj136/upload.html
- https://dl.dropbox.com/u/3967849/sj136/improved_http_finder.py
+ https://dl.dropbox.com/u/3967849/sj139/repl.py
+ https://dl.dropbox.com/u/3967849/sj139/github_rest_api.py
+https://dl.dropbox.com/u/3967849/sj139/warnings_demo.py
+https://dl.dropbox.com/u/3967849/sj139/rest_api_server.py
+https://dl.dropbox.com/u/3967849/sj139/quadratic.tpl
+https://dl.dropbox.com/u/3967849/sj139/graphviz.tpl
+https://dl.dropbox.com/u/3967849/shared/bottle.py
+ https://dl.dropbox.com/u/3967849/sj139/upload.html
+ https://dl.dropbox.com/u/3967849/sj139/improved_http_finder.py
 
- https://dl.dropbox.com/u/3967849/sj136/finder_shell.py
- https://dl.dropbox.com/u/3967849/sj136/xmlrpc_example.py
- https://dl.dropbox.com/u/3967849/sj136/rpc_demo.py
- https://dl.dropbox.com/u/3967849/sj136/docsearch.py
- https://dl.dropbox.com/u/3967849/sj136/target.py
- https://dl.dropbox.com/u/3967849/sj136/sumsquares.py
- https://dl.dropbox.com/u/3967849/sj136/argparse_demo.py
- https://dl.dropbox.com/u/3967849/sj136/tweet_bug.py
- https://dl.dropbox.com/u/3967849/sj136/twoway_generators.py
- https://dl.dropbox.com/u/3967849/sj136/turtle_shell.py
- https://dl.dropbox.com/u/3967849/sj136/head.py
- https://dl.dropbox.com/u/3967849/sj136/dbf.py
- https://dl.dropbox.com/u/3967849/sj136/command_line.py
- https://dl.dropbox.com/u/3967849/sj136/udp_telnet_client.py
- https://dl.dropbox.com/u/3967849/sj136/udp_piglatin_server.py
- https://dl.dropbox.com/u/3967849/sj136/how_itty_dispatch_works.py
+ https://dl.dropbox.com/u/3967849/sj139/finder_shell.py
+ https://dl.dropbox.com/u/3967849/sj139/xmlrpc_example.py
+ https://dl.dropbox.com/u/3967849/sj139/rpc_demo.py
+ https://dl.dropbox.com/u/3967849/sj139/docsearch.py
+ https://dl.dropbox.com/u/3967849/sj139/target.py
+ https://dl.dropbox.com/u/3967849/sj139/sumsquares.py
+ https://dl.dropbox.com/u/3967849/sj139/argparse_demo.py
+ https://dl.dropbox.com/u/3967849/sj139/tweet_bug.py
+ https://dl.dropbox.com/u/3967849/sj139/twoway_generators.py
+ https://dl.dropbox.com/u/3967849/sj139/turtle_shell.py
+ https://dl.dropbox.com/u/3967849/sj139/head.py
+ https://dl.dropbox.com/u/3967849/sj139/dbf.py
+ https://dl.dropbox.com/u/3967849/sj139/command_line.py
+ https://dl.dropbox.com/u/3967849/sj139/udp_telnet_client.py
+ https://dl.dropbox.com/u/3967849/sj139/udp_piglatin_server.py
+ https://dl.dropbox.com/u/3967849/sj139/how_itty_dispatch_works.py
 
 How to run the debugger:
 
@@ -504,22 +504,22 @@ https://dl.dropbox.com/u/3967849/shared/lru_cache.py
 
 Session Logs
 ============
-https://dl.dropbox.com/u/3967849/sj136/dayone.log
-https://dl.dropbox.com/u/3967849/sj136/daytwo.log
-https://dl.dropbox.com/u/3967849/sj136/daythree.log
-https://dl.dropbox.com/u/3967849/sj136/dayfour.log
+https://dl.dropbox.com/u/3967849/sj139/dayone.log
+https://dl.dropbox.com/u/3967849/sj139/daytwo.log
+https://dl.dropbox.com/u/3967849/sj139/daythree.log
+https://dl.dropbox.com/u/3967849/sj139/dayfour.log
 
 
 Notes
 =====
- https://dl.dropbox.com/u/3967849/sj136/method_types.txt
- https://dl.dropbox.com/u/3967849/sj136/glossary.txt
- https://dl.dropbox.com/u/3967849/sj136/path.txt
- https://dl.dropbox.com/u/3967849/sj136/sql.txt
- https://dl.dropbox.com/u/3967849/sj136/design_principles.txt
- https://dl.dropbox.com/u/3967849/sj136/advice.txt
- https://dl.dropbox.com/u/3967849/sj136/version_control.txt
- https://dl.dropbox.com/u/3967849/sj136/closures.txt
+ https://dl.dropbox.com/u/3967849/sj139/method_types.txt
+ https://dl.dropbox.com/u/3967849/sj139/glossary.txt
+ https://dl.dropbox.com/u/3967849/sj139/path.txt
+ https://dl.dropbox.com/u/3967849/sj139/sql.txt
+ https://dl.dropbox.com/u/3967849/sj139/design_principles.txt
+ https://dl.dropbox.com/u/3967849/sj139/advice.txt
+ https://dl.dropbox.com/u/3967849/sj139/version_control.txt
+ https://dl.dropbox.com/u/3967849/sj139/closures.txt
 
 
 Sample Data

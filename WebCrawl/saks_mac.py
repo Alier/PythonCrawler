@@ -81,8 +81,8 @@ UrlList = {
 "MB":MBUri,
 "MCM":MCMUri,
 "YSL":YSLUri,
-"MKCollection": MKCollectionUri,
-"MMK":MMKUri
+#"MKCollection": MKCollectionUri,
+#"MMK":MMKUri
 #"AlexanderWang":AlexanderUri
 #"KS":KSUri
 }
@@ -129,7 +129,7 @@ def crawlBrand():
 	
 	while True:
 		if flg:
-			randomt = random.randint(5,10)
+			randomt = random.randint(3,8)
 			print "sleeping "+ str(randomt)
 			time.sleep(randomt)	#refresh every 5 seconds
 		try:
