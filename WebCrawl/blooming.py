@@ -152,7 +152,7 @@ def getItemCount():
             # not first time
         if sizedict and sizedict.get(brand) and len(sizes) > sizedict.get(brand):
             print "new for "+regex
-            #webbrowser.open(url)
+            webbrowser.open(url)
             print url
         newsizedict[brand] = sizes
     
@@ -186,7 +186,7 @@ def crawlAll():
                     print str(len(add_ids)) + " items!!!"
                     for id in add_ids:
                         link = newitemdict.get(id)
-                        #webbrowser.open(link)
+                        webbrowser.open(link)
                         print link
                     itemdict = newitemdict
                 #for size in newsizedict
