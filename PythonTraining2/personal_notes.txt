@@ -1,8 +1,0 @@
-AIZHAN-M-907W:PythonTraining2 aizhang$ 
-python -m timeit -s 'x=10' -s 'y=20' 't=x;x=y;y=t;del t'
-10000000 loops, best of 3: 0.0429 usec per loop
-AIZHAN-M-907W:PythonTraining2 aizhang$ 
-python -m timeit -s 'x=10' -s 'y=20' 'x,y=y,x'
-10000000 loops, best of 3: 0.0369 usec per loop
-
-swig is good for translating codes between c and python, tcl, etc.
