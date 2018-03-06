@@ -22,13 +22,12 @@ BurberryCoat = "http://www1.bloomingdales.com/shop/sale/women/Brand/Burberry?id=
 Longchamp = "http://www1.bloomingdales.com/shop/search?keyword=longchamp+le+pilage"
 
 SFbags = "http://www1.bloomingdales.com/shop/ferragamo/salvatore-ferragamo-handbags?id=19209"
-#"http://www1.bloomingdales.com/shop/ferragamo/salvatore-ferragamo-handbags?id=19209"
 
-MKAva = "http://www1.bloomingdales.com/shop/search?keyword=michael+kors+ava"
+#MKAva = "http://www1.bloomingdales.com/shop/search?keyword=michael+kors+ava"
 
 SFShoes = "http://www1.bloomingdales.com/shop/ferragamo/salvatore-ferragamo-shoes?id=19210"
 
-MCM = "http://www1.bloomingdales.com/shop/mcm?id=1003794&cm_kws=mcm"
+MCM = "http://www1.bloomingdales.com/shop/mcm/handbags-wallets?id=1003796"
 
 TBShoes = "http://www1.bloomingdales.com/shop/tory-burch/tory-burch-shoes?id=1002729"
 
@@ -54,7 +53,7 @@ Singles = {"SFVarina":'"color": "Oxford Blue", "size": "(\d+(\.\d+)?)", "type":'
          "SFWallet":'"color":',
          "SFMissVara":'"color":',
          "SFCarla":'<li title=',}
-         '''
+'''
          
 Links = {
 "SFVarina":"http://www1.bloomingdales.com/shop/product/salvatore-ferragamo-ballet-flats-varina?ID=1066212&CategoryID=16961#fn=ppp%3D180%26spp%3D7%26sp%3D1%26rid%3D%26spc%3D8%26cm_kws%3Dferragamo",
@@ -83,15 +82,16 @@ Links = {
 '''
 Pages = [BurberryScarf, 
         BurberryCoat, 
-        Longchamp, 
-        SFbags, 
+        #Longchamp, 
+        #SFbags, 
         SFShoes, 
-        MKAva, 
+        #MKAva, 
         MCM,
         TBShoes]
 
-itemdict = {}
-sizedict = {}  # {"UGG_Bailey_button":4"} meaning there are 4 colours with size 6
+itemdict ={}
+sizedict ={}  
+# {"UGG_Bailey_button":4"} meaning there are 4 colours with size 6
 
 def getItemList():
     newitemdict ={}
@@ -106,10 +106,11 @@ def getItemList():
         except httplib.IncompleteRead, e:
             source = e.partial
         #source = response.read()
+	#print source
         idList = re.findall(IDregex,source)
         #print idList
         for id in idList:
-            LinkRegex = ' href="http://www1.bloomingdales.com/shop/product/(.*)?ID='+id+'(.*)">'
+            LinkRegex = ' href="http://www1.bloomingdales.com/shop/product/(.*)?ID='+id+'(.*)" class'
             productName = re.search(LinkRegex,source).group(1)
             cat = re.search(LinkRegex,source).group(2)
             #link = re.search(LinkRegex,source).group(3)
@@ -152,7 +153,7 @@ def getItemCount():
             # not first time
         if sizedict and sizedict.get(brand) and len(sizes) > sizedict.get(brand):
             print "new for "+regex
-            webbrowser.open(url)
+            #webbrowser.open(url)
             print url
         newsizedict[brand] = sizes
     
@@ -186,7 +187,7 @@ def crawlAll():
                     print str(len(add_ids)) + " items!!!"
                     for id in add_ids:
                         link = newitemdict.get(id)
-                        webbrowser.open(link)
+                        #webbrowser.open(link)
                         print link
                     itemdict = newitemdict
                 #for size in newsizedict

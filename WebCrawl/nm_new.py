@@ -34,17 +34,20 @@ SFbagsUri = "http://www.neimanmarcus.com/eSearch.jsp?N=4294914334&st=s&Ntt=Salva
 GuccibagsUri = "http://www.neimanmarcus.com/eSearch.jsp?N=4294914334&st=s&Ntt=Gucci&from=brSearchExcep&_requestid=286272"
 #Page1 = "http://www.bergdorfgoodman.com/Handbags/Sale/cat487302_cat257221_cat000000/c.cat"
 
+ShoesUri = "http://www.neimanmarcus.com/Online-Clearance/Shoes/cat46590745_cat46040734_cat980731/c.cat#userConstrainedResults=true&refinements=4294910321,518,551,605&page=1&pageSize=120&sort=PCS_SORT&definitionPath=/nm/commerce/pagedef_rwd/template/EndecaDrivenHome&onlineOnly=instore&allStoresInput=false&rwd=true&catalogId=cat46590745&selectedRecentSize=&activeFavoriteSizesCount=0&activeInteraction=true"
+
 #Page2 = "http://www.bergdorfgoodman.com/Sale/Shoes/Shop-All-Shoes/cat477621_cat421105_cat205700/c.cat"
 UrlList = {
-"Prada":PradabagsUri,
-"Valentino1":VshoesUri,
-"Valentino2":VbagsUri,
-"3.1 Philip Lim":PhilipbagsUri, 
-"YSL": YSLbagsUri, 
-"SF1": SFshoesUri,
-"SF2": SFbagsUri,
+"Shoes":ShoesUri
+#"Prada":PradabagsUri,
+#"Valentino1":VshoesUri,
+#"Valentino2":VbagsUri,
+#"3.1 Philip Lim":PhilipbagsUri, 
+#"YSL": YSLbagsUri, 
+#"SF1": SFshoesUri,
+#"SF2": SFbagsUri,
 #"AlexanderWang":AlexWangUri,
-"Gucci":GuccibagsUri
+#"Gucci":GuccibagsUri
 }
 
 Patterns = ["Bag","Shoe"]
@@ -67,7 +70,7 @@ def getItemList(url):
 	idList = re.findall(IDregex,source)
 	#print idList
 	for id in idList:
-		LinkRegex = 'href=\"/(.*)/prod'+id+'_cat([0-9]*)'+'__/p.prod?(.*)&cmCat=search\">'
+		LinkRegex = 'href=\"/(.*)/prod'+id+'_cat([0-9]*)'+'__/p.prod?(.*)&cmCat=product\">'
 		productName = re.search(LinkRegex,source).group(1)
 		cat = re.search(LinkRegex,source).group(2)
 		link = re.search(LinkRegex,source).group(3)
@@ -111,7 +114,7 @@ def crawlBrand():
 						for id in add_ids:
 							if id not in BlackList:
 								link = new_items.get(id)
-						    	webbrowser.open(link)
+						    	#webbrowser.open(link)
 						    	print link
 				#print old_ids
 				#print new_ids
